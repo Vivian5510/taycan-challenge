@@ -1,0 +1,19 @@
+{
+  "source": "User-confirmed contest requirements, 2026-10-29",
+  "num_keys": 200000000,
+  "key_size_bytes": {"min": 16, "max": 32, "default": 32},
+  "value_size_bytes": 256,
+  "memory_unit": "GB is currently implemented as GiB (1024^3 bytes); use official byte values when provided",
+  "memory_tiers": {
+    "4g": {"mem_limit_bytes": 4294967296, "score_weight": 0.7},
+    "16g": {"mem_limit_bytes": 17179869184, "score_weight": 0.3}
+  },
+  "correctness": {
+    "memory_tier": "4g",
+    "num_keys_policy": "Keep public per-scenario defaults; do not replace every correctness case with 200 million keys",
+    "fixed_basic_cases": "Public Basic retains its manually constructed binary, empty and long key/value cases"
+  },
+  "rss_limit_ratio": {"numerator": 11, "denominator": 10},
+  "paired_dataset": "Use the same key size, seed, generator and 200 million distinct key IDs in both memory tiers",
+  "score_policy": "Weights alone do not define the scoring formula; do not calculate an official score from local throughput"
+}

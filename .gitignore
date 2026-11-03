@@ -1,0 +1,9 @@
+/analysis/
+/build/
+/dist/
+/research/
+.DS_Store
+__pycache__/
+*.pyc
+.cache/
+/taycan_participant_sdk.tar.gz

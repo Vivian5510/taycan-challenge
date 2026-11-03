@@ -1,0 +1,29 @@
+{
+  "research_sources": [
+    {
+      "path": "research/FASTER",
+      "url": "https://github.com/microsoft/FASTER.git",
+      "commit": "332ea7da532a688acf648ee60c4f63a1caeaf1f7"
+    },
+    {
+      "path": "research/KVell",
+      "url": "https://github.com/BLepers/KVell.git",
+      "commit": "a6cbc0cb186c7934dc6be785225d809f62730fea"
+    },
+    {
+      "path": "research/dragonfly",
+      "url": "https://github.com/dragonflydb/dragonfly.git",
+      "commit": "2cd7a2ebaf8c6ee3724c6aa1883abd5ff514b30f"
+    },
+    {
+      "path": "research/garnet",
+      "url": "https://github.com/microsoft/garnet.git",
+      "commit": "a371e041f842e47e2839d82e696f63e56762f66f"
+    },
+    {
+      "path": "research/rocksdb-v8.9.1",
+      "url": "https://github.com/facebook/rocksdb.git",
+      "commit": "49ce8a1064dd1ad89117899839bf136365e49e79"
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "generated_at_utc": "2026-10-27T14:52:51.353380+00:00",
+  "host": "macOS-26.5.1-arm64-arm-64bit",
+  "python": "3.9.6 (default, Apr 30 2025, 02:07:17) \n[Clang 17.0.0 (clang-1700.0.13.5)]",
+  "assumptions": {
+    "target_load_factor": 0.8,
+    "slot_bytes": 16,
+    "flat_bucket_bytes": 256,
+    "index_page_bytes": 8192,
+    "page_header_bytes": 64,
+    "directory_entry_bytes": 16,
+    "physical_index_copies": 2,
+    "note": "This is a capacity model, not a runtime benchmark. It excludes data records, WAL and allocator overhead."
+  },
+  "rows": [
+    {
+      "keys": 100000,
+      "flat_256b": {
+        "buckets": 8334,
+        "pages": 261,
+        "index_bytes": 4276224,
+        "directory_bytes": 4176,
+        "total_bytes": 4280400,
+        "bytes_per_key": 42.804
+      },
+      "packed_64b": {
+        "bucket_bytes": 64,
+        "slots": 3,
+        "buckets": 41667,
+        "pages": 326,
+        "index_bytes": 5341184,
+        "directory_bytes": 5216,
+        "total_bytes": 5346400,
+        "bytes_per_key": 53.464
+      },
+      "packed_128b": {
+        "bucket_bytes": 128,
+        "slots": 7,
+        "buckets": 17858,
+        "pages": 280,
+        "index_bytes": 4587520,
+        "directory_bytes": 4480,
+        "total_bytes": 4592000,
+        "bytes_per_key": 45.92
+      },
+      "packed_256b": {
+        "bucket_bytes": 256,
+        "slots": 15,
+        "buckets": 8334,
+        "pages": 261,
+        "index_bytes": 4276224,
+        "directory_bytes": 4176,
+        "total_bytes": 4280400,
+        "bytes_per_key": 42.804
+      },
+      "mini_slab_4": {
+        "slots_per_slab": 4,
+        "slab_bytes": 80,
+        "slabs": 31250,
+        "index_bytes": 5000000,
+        "directory_bytes": 500000,
+        "total_bytes": 5500000,
+        "bytes_per_key": 55.0
+      },
+      "mini_slab_8": {
+        "slots_per_slab": 8,
+        "slab_bytes": 144,
+        "slabs": 15625,
+        "index_bytes": 4500000,
+        "directory_bytes": 250000,
+        "total_bytes": 4750000,
+        "bytes_per_key": 47.5
+      }
+    },
+    {
+      "keys": 16000000,
+      "flat_256b": {
+        "buckets": 1333334,
+        "pages": 41667,
+        "index_bytes": 682672128,
+        "directory_bytes": 666672,
+        "total_bytes": 683338800,
+        "bytes_per_key": 42.708675
+      },
+      "packed_64b": {
+        "bucket_bytes": 64,
+        "slots": 3,
+        "buckets": 6666667,
+        "pages": 52084,
+        "index_bytes": 853344256,
+        "directory_bytes": 833344,
+        "total_bytes": 854177600,
+        "bytes_per_key": 53.3861
+      },
+      "packed_128b": {
+        "bucket_bytes": 128,
+        "slots": 7,
+        "buckets": 2857143,
+        "pages": 44643,
+        "index_bytes": 731430912,
+        "directory_bytes": 714288,
+        "total_bytes": 732145200,
+        "bytes_per_key": 45.759075
+      },
+      "packed_256b": {
+        "bucket_bytes": 256,
+        "slots": 15,
+        "buckets": 1333334,
+        "pages": 41667,
+        "index_bytes": 682672128,
+        "directory_bytes": 666672,
+        "total_bytes": 683338800,
+        "bytes_per_key": 42.708675
+      },
+      "mini_slab_4": {
+        "slots_per_slab": 4,
+        "slab_bytes": 80,
+        "slabs": 5000000,
+        "index_bytes": 800000000,
+        "directory_bytes": 80000000,
+        "total_bytes": 880000000,
+        "bytes_per_key": 55.0
+      },
+      "mini_slab_8": {
+        "slots_per_slab": 8,
+        "slab_bytes": 144,
+        "slabs": 2500000,
+        "index_bytes": 720000000,
+        "directory_bytes": 40000000,
+        "total_bytes": 760000000,
+        "bytes_per_key": 47.5
+      }
+    },
+    {
+      "keys": 200000000,
+      "flat_256b": {
+        "buckets": 16666667,
+        "pages": 520834,
+        "index_bytes": 8533344256,
+        "directory_bytes": 8333344,
+        "total_bytes": 8541677600,
+        "bytes_per_key": 42.708388
+      },
+      "packed_64b": {
+        "bucket_bytes": 64,
+        "slots": 3,
+        "buckets": 83333334,
+        "pages": 651042,
+        "index_bytes": 10666672128,
+        "directory_bytes": 10416672,
+        "total_bytes": 10677088800,
+        "bytes_per_key": 53.385444
+      },
+      "packed_128b": {
+        "bucket_bytes": 128,
+        "slots": 7,
+        "buckets": 35714286,
+        "pages": 558036,
+        "index_bytes": 9142861824,
+        "directory_bytes": 8928576,
+        "total_bytes": 9151790400,
+        "bytes_per_key": 45.758952
+      },
+      "packed_256b": {
+        "bucket_bytes": 256,
+        "slots": 15,
+        "buckets": 16666667,
+        "pages": 520834,
+        "index_bytes": 8533344256,
+        "directory_bytes": 8333344,
+        "total_bytes": 8541677600,
+        "bytes_per_key": 42.708388
+      },
+      "mini_slab_4": {
+        "slots_per_slab": 4,
+        "slab_bytes": 80,
+        "slabs": 62500000,
+        "index_bytes": 10000000000,
+        "directory_bytes": 1000000000,
+        "total_bytes": 11000000000,
+        "bytes_per_key": 55.0
+      },
+      "mini_slab_8": {
+        "slots_per_slab": 8,
+        "slab_bytes": 144,
+        "slabs": 31250000,
+        "index_bytes": 9000000000,
+        "directory_bytes": 500000000,
+        "total_bytes": 9500000000,
+        "bytes_per_key": 47.5
+      }
+    }
+  ]
+}

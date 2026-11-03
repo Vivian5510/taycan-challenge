@@ -1,0 +1,40 @@
+vmType: qemu
+arch: x86_64
+cpus: 8
+memory: 24GiB
+disk: 96GiB
+firmware:
+  legacyBIOS: true
+containerd:
+  system: false
+  user: false
+images:
+  - location: https://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud-2009.qcow2
+    arch: x86_64
+    digest: sha256:e38bab0475cc6d004d2e17015969c659e5a308111851b0e2715e84646035bdd3
+    variant: genericcloud
+mounts:
+  - location: /Users/rosy/devspace/code/taycan-challenge
+    mountPoint: /workspace/taycan-challenge
+    writable: true
+    sshfs:
+      cache: true
+      followSymlinks: true
+provision:
+  - mode: system
+    script: |
+      #!/bin/bash
+      set -euxo pipefail
+      mkdir -p /workspace/taycan-challenge /var/lib/taycan-data /var/lib/taycan-results
+      chmod 0777 /var/lib/taycan-data /var/lib/taycan-results
+      if [ -f /workspace/taycan-challenge/vm/provision-centos7.sh ]; then
+        bash /workspace/taycan-challenge/vm/provision-centos7.sh
+      fi
+probes:
+  - mode: readiness
+    description: Taycan Linux toolchain is ready
+    script: |
+      #!/bin/bash
+      test -x /usr/local/bin/taycan-env
+      test -f /etc/taycan-vm-ready
+      /usr/local/bin/taycan-env >/dev/null

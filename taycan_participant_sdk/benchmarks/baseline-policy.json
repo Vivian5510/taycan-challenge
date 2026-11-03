@@ -1,0 +1,37 @@
+{
+  "scope": "embedded disk-based KV; synchronous durable acknowledgement; measured process VmRSS budget",
+  "primary_comparison_candidates": [
+    {
+      "engine": "RocksDB",
+      "role": "disk LSM baseline",
+      "required_durability": "WriteOptions.sync=true; disableWAL=false; one key per API write",
+      "memory_requirement": "Bound memtables, block/index/filter cache and background memory; validate actual VmRSS, not cache capacity alone",
+      "adapter_status": "implemented in benchmarks/baselines/rocksdb; validation uses Ubuntu librocksdb 8.9.1; no uncontended large-scale comparison results yet"
+    },
+    {
+      "engine": "Badger",
+      "role": "disk LSM/value-log baseline",
+      "required_durability": "WithSyncWrites(true); one-key transaction; wait for Commit completion",
+      "memory_requirement": "Positive bounded IndexCacheSize; account for memtables, block cache, mappings and Go runtime in actual VmRSS",
+      "configuration_requirement": "Record ValueThreshold: default 1 MiB keeps the 128-byte workload values inside LSM; a separate explicit low-threshold run is needed to test value separation",
+      "adapter_status": "not implemented; no comparison results yet"
+    }
+  ],
+  "conditional_comparison_candidate": {
+    "engine": "LMDB",
+    "role": "disk B+tree alternative",
+    "conditions": "Normal synchronous commits; one key per transaction; account for file-backed resident pages; single-writer and mmap-based VmRSS behavior must be reported"
+  },
+  "architecture_reference": ["Taycan design", "F2 disk ColdIndex", "Bitcask append log and merge"],
+  "method_reference_only": ["Dragonfly", "Garnet", "ordinary FASTER"],
+  "parameter_provenance": {
+    "reference_key_count": "SDK sequential default, 1 million",
+    "reference_duration_seconds": "30; consistent with F2 C++ benchmark kRunSeconds, not a borrowed QPS target",
+    "pressure_key_count_and_memory": "SDK demand_load default, 16 million and 256 MiB",
+    "pressure_duration_seconds": "600; local steady-state window aligned with the contest workload discussion",
+    "contest_scale_and_duration": "200 million keys shared by both 4/16 GiB tiers; 70%/30% weights; sizes and tiers confirmed by user 2026-10-29; existing local 600-second measurement window retained",
+    "key_value_sizes": "16..32-byte keys (default 32), fixed 256-byte values; user-confirmed contest requirements; legacy SDK defaults remain reproducible through tests/run_tests.py",
+    "threads_warmup_repeats": "Local methodology: 1/2/4/8 callers, explicit warmup and 3 repetitions; not official contest rules"
+  },
+  "published_qps_policy": "Only same hardware, durability, operation size, batching and VmRSS constraints qualify for direct performance comparison; historical published figures are context only"
+}

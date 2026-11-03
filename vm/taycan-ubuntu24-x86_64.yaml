@@ -1,0 +1,36 @@
+vmType: qemu
+arch: x86_64
+cpus: 8
+memory: 24GiB
+disk: 96GiB
+containerd:
+  system: false
+  user: false
+images:
+  - location: https://cloud-images.ubuntu.com/releases/noble/release-20260926/ubuntu-24.04-server-cloudimg-amd64.img
+    arch: x86_64
+    digest: sha256:6a81c37564db9b1ee84e141922625e1d7c5b389b99bb3c572e0243607d5bb4d2
+    variant: server
+mounts:
+  - location: /Users/rosy/devspace/code/taycan-challenge
+    mountPoint: /workspace/taycan-challenge
+    writable: true
+    sshfs:
+      cache: true
+      followSymlinks: true
+provision:
+  - mode: system
+    script: |
+      #!/bin/bash
+      set -euxo pipefail
+      mkdir -p /workspace/taycan-challenge /var/lib/taycan-data /var/lib/taycan-results /var/lib/taycan-workspace
+      chmod 0777 /var/lib/taycan-data /var/lib/taycan-results /var/lib/taycan-workspace
+      bash /workspace/taycan-challenge/vm/provision-ubuntu24.sh
+probes:
+  - mode: readiness
+    description: Taycan Ubuntu Linux toolchain is ready
+    script: |
+      #!/bin/bash
+      test -x /usr/local/bin/taycan-env
+      test -f /etc/taycan-vm-ready
+      /usr/local/bin/taycan-env >/dev/null

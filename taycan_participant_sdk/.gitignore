@@ -1,0 +1,8 @@
+!CMakeLists.txt
+/build*/
+/dist/
+.DS_Store
+!/third_party/*.tar.gz
+
+__pycache__/
+*.pyc
