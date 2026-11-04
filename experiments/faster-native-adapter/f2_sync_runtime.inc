@@ -12,9 +12,6 @@ template<class Context>
 void SyncComplete(fc::IAsyncContext* pointer,FStatus status) {
   fc::CallbackContext<Context> context{pointer};
   context->result->status.store(status);context->result->done.store(true);
-#if F2_FIBER_EXPERIMENT
-  context->result->ready.notify_one();
-#endif
 }
 F2Result Convert(FStatus s) {
   if(s==FStatus::Ok) return {F2ResultCode::ok,{}};
@@ -144,47 +141,6 @@ class SyncBackend final:public FasterBackend {
   }
   F2Result Put(const std::string& key,const std::string& value) override {return Mutate(1,key,value);}
   F2Result Delete(const std::string& key) override {return Mutate(2,key,{});}
-#if F2_OWNER_EXPERIMENT
-  F2Result OwnerBatch(rocksdb::WriteBatch& batch) {
-    auto result=store_->SyncApplyRocksBatch(batch,store_->SyncSerial()+1);
-    return result.ok()?F2Result{F2ResultCode::ok,{}}:F2Result{F2ResultCode::error,result.ToString()};
-  }
-#endif
-#if F2_FIBER_EXPERIMENT
-  void FiberBegin() {store_->FiberOwnerBegin();}
-  void FiberEnd() {store_->FiberOwnerEnd();}
-  void FiberPoll() {store_->FiberOwnerPoll();}
-  bool FiberNeedsCheckpoint() const {return store_->FiberOwnerNeedsCheckpoint();}
-  void FiberCheckpoint() {store_->FiberOwnerCheckpoint();}
-  F2Result FiberBatch(rocksdb::WriteBatch& batch) {
-    auto s=store_->FiberOwnerApply(batch);
-    return s.ok()?F2Result{F2ResultCode::ok,{}}:F2Result{F2ResultCode::error,s.ToString()};
-  }
-  // Start from the poller without suspending it. Only a Pending operation is
-  // handed to a read fiber; synchronous hot reads need no fiber round-trip.
-  std::pair<FStatus,std::shared_ptr<Completion>> FiberStartRead(const std::string& key) {
-    auto done=std::make_shared<Completion>();
-    if(store_->FiberOwnerFailed())return {FStatus::IOError,std::move(done)};
-    try {
-      ReadContext c{key,done};
-      auto status=store_->Read(c,SyncComplete<ReadContext>,store_->FiberOwnerReadSerial());
-      return {status,std::move(done)};
-    }catch(const std::exception&){return {FStatus::IOError,std::move(done)};}
-  }
-  F2Result FiberFinishRead(FStatus status,const std::shared_ptr<Completion>& done,std::string* output) {
-    status=Await(status,done);
-    if(status==FStatus::Ok)*output=std::move(done->value);
-    return Convert(status);
-  }
-  F2Result FiberGet(const std::string& key,std::string* value) {
-    if(store_->FiberOwnerFailed())return {F2ResultCode::error,"F2 owner poisoned"};
-    try {
-      auto done=std::make_shared<Completion>();ReadContext c{key,done};
-      const auto s=Await(store_->Read(c,SyncComplete<ReadContext>,store_->FiberOwnerReadSerial()),done);
-      if(s==FStatus::Ok)*value=std::move(done->value);return Convert(s);
-    }catch(const std::exception& e){return {F2ResultCode::error,e.what()};}
-  }
-#endif
   F2Result Get(const std::string& key,std::string* value) override {
     if(key.empty()||!value)return {F2ResultCode::error,"invalid read"};
     try{
@@ -196,12 +152,6 @@ class SyncBackend final:public FasterBackend {
  private:
   void Check(FStatus s){if(s!=FStatus::Ok)throw std::runtime_error(fc::StatusStr(s));}
   FStatus Await(FStatus s,const std::shared_ptr<Completion>& done){
-#if F2_FIBER_EXPERIMENT
-    if(s==FStatus::Pending && ex::fiber_owner) {
-      std::unique_lock<boost::fibers::mutex> guard(done->mutex);
-      done->ready.wait(guard,[&]{return done->done.load();});
-    } else
-#endif
     while(s==FStatus::Pending&&!done->done.load())store_->CompletePending(false);
     return s==FStatus::Pending?done->status.load():s;
   }
@@ -226,19 +176,5 @@ class SyncBackend final:public FasterBackend {
   }
   fs::path directory_;SyncDirectoryLock lock_;std::unique_ptr<Store> store_;
 };
-#if F2_OWNER_EXPERIMENT
-#include "f2_owner_runtime.inc"
-#endif
-#if F2_FIBER_EXPERIMENT
-#include "f2_fiber_runtime.inc"
-#endif
 }
-std::unique_ptr<FasterBackend> CreateFasterBackend(const std::string& directory,uint64_t budget){
-#if F2_FIBER_EXPERIMENT
-  return std::make_unique<FiberBackend>(directory,budget);
-#elif F2_OWNER_EXPERIMENT
-  return std::make_unique<OwnerBackend>(directory,budget);
-#else
-  return std::make_unique<SyncBackend>(directory,budget);
-#endif
-}
+std::unique_ptr<FasterBackend> CreateFasterBackend(const std::string& directory,uint64_t budget){return std::make_unique<SyncBackend>(directory,budget);}

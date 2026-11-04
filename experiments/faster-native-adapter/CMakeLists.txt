@@ -28,12 +28,6 @@ option(TAYCAN_F2_FIX_RECOVERY_FRONTIER "Preserve committed flushed frontier when
 option(TAYCAN_F2_COMMIT_EXPERIMENT "Opt-in F2 internal commit and checkpoint wakeup experiment" OFF)
 option(TAYCAN_F2_WAL_PROFILE "Detailed WAL phase timing; development measurement only" OFF)
 option(TAYCAN_F2_PREFIX_PIPELINE "Bounded in-flight F2 data-log commits inspired by Tsavorite" OFF)
-option(TAYCAN_F2_OWNER_EXPERIMENT "Fixed-owner routing and independent F2 shard commit domains; experiment only" OFF)
-option(TAYCAN_F2_FIBER_EXPERIMENT "Single-owner Boost.Fiber experiment; committed reads and cooperative I/O" OFF)
-option(TAYCAN_F2_HELIO_SATURATION_TEST "Test-only consumer pause to force the full Helio inbox path" OFF)
-if(TAYCAN_F2_OWNER_EXPERIMENT AND (TAYCAN_F2_PREFIX_PIPELINE OR TAYCAN_F2_DURABLE_COMPACTION OR NOT TAYCAN_F2_SYNC_STRATEGY STREQUAL "data-log"))
-  message(FATAL_ERROR "Owner prototype requires data-log, no pipeline or durable compaction")
-endif()
 option(TAYCAN_F2_PIPELINE_TARGETED_WAKE "Experimental per-request completion wakeup instead of broadcasting to all callers" OFF)
 option(TAYCAN_F2_PIPELINE_LOCAL_WAIT "Reuse RocksDB state handshake for pipeline request-local wait" OFF)
 option(TAYCAN_F2_WRITE_ADAPTIVE_YIELD "RocksDB adaptive yield in caller queue or local pipeline wait" ON)
@@ -51,18 +45,6 @@ set(TAYCAN_F2_PIPELINE_SYNC_COLLECT_US 0 CACHE STRING "Bounded ready-prefix coal
 set(TAYCAN_F2_PIPELINE_PREPARE_COLLECT_US 50 CACHE STRING "Bounded request collection window (0..1000 us); zero submits the queued requests immediately")
 set(TAYCAN_F2_SYNC_STRATEGY "native" CACHE STRING "native, data-log, rocksdb-wal, hybridlog, checkpoint, or commit-log")
 set_property(CACHE TAYCAN_F2_SYNC_STRATEGY PROPERTY STRINGS native data-log rocksdb-wal hybridlog checkpoint commit-log)
-if(TAYCAN_F2_FIBER_EXPERIMENT)
-  if(TAYCAN_F2_OWNER_EXPERIMENT OR TAYCAN_F2_PREFIX_PIPELINE OR TAYCAN_F2_DURABLE_COMPACTION OR
-     NOT TAYCAN_F2_SYNC_STRATEGY STREQUAL "data-log" OR NOT TAYCAN_F2_NATIVE_IO STREQUAL "posix-aio" OR
-     NOT TAYCAN_F2_MAC_SYNC STREQUAL "fsync")
-    message(FATAL_ERROR "Fiber experiment requires data-log/posix-aio/fsync, no other owner/pipeline/GC experiment")
-  endif()
-  set(TAYCAN_F2_BOOST_ROOT "${CMAKE_CURRENT_LIST_DIR}/../../build/deps/boost_1_85_0" CACHE PATH "Pinned Boost 1.85.0 source and static stage")
-  if(NOT EXISTS "${TAYCAN_F2_BOOST_ROOT}/stage/lib/libboost_fiber.a" OR
-     NOT EXISTS "${TAYCAN_F2_BOOST_ROOT}/stage/lib/libboost_context.a")
-    message(FATAL_ERROR "Build pinned Boost.Fiber/Context static libraries first")
-  endif()
-endif()
 if(NOT TAYCAN_F2_SYNC_STRATEGY MATCHES "^(native|data-log|rocksdb-wal|hybridlog|checkpoint|commit-log)$")
   message(FATAL_ERROR "Unknown F2 strategy")
 endif()
@@ -129,7 +111,6 @@ add_library(faster_cpp STATIC "${FASTER_SOURCE}/core/address.cc"
 target_include_directories(faster_cpp PUBLIC "${FASTER_SOURCE}")
 target_link_libraries(faster_cpp PUBLIC TBB::tbb)
 target_compile_definitions(faster_cpp PUBLIC
-  F2_FIBER_EXPERIMENT=$<BOOL:${TAYCAN_F2_FIBER_EXPERIMENT}>
   F2_WRITE_ADAPTIVE_YIELD=$<BOOL:${TAYCAN_F2_WRITE_ADAPTIVE_YIELD}>
   F2_WRITE_MAX_YIELD_US=${TAYCAN_F2_WRITE_MAX_YIELD_US}
   F2_AIO_COMPLETION_BATCH=${TAYCAN_F2_AIO_COMPLETION_BATCH}
@@ -211,27 +192,11 @@ endif()
 add_library(contestant_engine STATIC faster_engine.cc faster_backend.cc)
 target_include_directories(contestant_engine PRIVATE "${CMAKE_CURRENT_LIST_DIR}")
 target_link_libraries(contestant_engine PUBLIC contest_sdk PRIVATE faster_cpp)
-if(TAYCAN_F2_FIBER_EXPERIMENT)
-  target_include_directories(contestant_engine SYSTEM PRIVATE "${TAYCAN_F2_BOOST_ROOT}")
-  target_link_libraries(contestant_engine PRIVATE
-    "${TAYCAN_F2_BOOST_ROOT}/stage/lib/libboost_fiber.a"
-    "${TAYCAN_F2_BOOST_ROOT}/stage/lib/libboost_context.a")
-  add_executable(f2_fiber_visibility_probe EXCLUDE_FROM_ALL fiber_visibility_probe.cc)
-  target_link_libraries(f2_fiber_visibility_probe PRIVATE contestant_engine contest_sdk)
-  add_executable(f2_owner_completion_event_test EXCLUDE_FROM_ALL owner_completion_event_test.cc)
-  target_link_libraries(f2_owner_completion_event_test PRIVATE Threads::Threads)
-  if(TAYCAN_F2_HELIO_SATURATION_TEST)
-    target_compile_definitions(contestant_engine PRIVATE F2_HELIO_SATURATION_TEST=1)
-    add_executable(f2_helio_saturation_probe EXCLUDE_FROM_ALL helio_saturation_probe.cc)
-    target_link_libraries(f2_helio_saturation_probe PRIVATE contestant_engine contest_sdk)
-  endif()
-endif()
 if(APPLE)
   target_compile_definitions(contestant_engine PUBLIC
     TAYCAN_BENCH_PLATFORM_SYNC="macOS:_F2_file_sync_policy=${TAYCAN_F2_MAC_SYNC}")
 endif()
 target_compile_definitions(contestant_engine PRIVATE
-  F2_OWNER_EXPERIMENT=$<BOOL:${TAYCAN_F2_OWNER_EXPERIMENT}>
   F2_SYNC_STRATEGY="${TAYCAN_F2_SYNC_STRATEGY}"
   F2_LOG_PAGE_BITS=${TAYCAN_F2_LOG_PAGE_BITS}
   F2_OVERFLOW_PAGE_BITS=${TAYCAN_F2_OVERFLOW_PAGE_BITS}
@@ -249,12 +214,6 @@ if(F2_SYNC_EXPERIMENT)
     string(APPEND F2_BENCH_COMMIT_POLICY "_native_compaction_durable_retirement_segmentbits${TAYCAN_F2_DATA_SEGMENT_BITS}")
   endif()
   string(APPEND F2_BENCH_COMMIT_POLICY "_localwait${TAYCAN_F2_PIPELINE_LOCAL_WAIT}_adaptive${TAYCAN_F2_WRITE_ADAPTIVE_YIELD}_yield${TAYCAN_F2_WRITE_MAX_YIELD_US}_aio${TAYCAN_F2_AIO_COMPLETION_BATCH}")
-  if(TAYCAN_F2_OWNER_EXPERIMENT)
-    string(APPEND F2_BENCH_COMMIT_POLICY "_fixed_owner_shards_from_F2_OWNER_SHARDS_total_budget_partitioned_blocking_sync")
-  endif()
-  if(TAYCAN_F2_FIBER_EXPERIMENT)
-    string(APPEND F2_BENCH_COMMIT_POLICY "_boost185_fiber_single_owner_one_session_committed_reads_syncmode_from_env_dispatchmode_legacy_targeted_batch16_inline_inline32_helio_bounded_inbox_tasklet_consumer_completion_event_optional")
-  endif()
   target_compile_definitions(contestant_engine PUBLIC
     TAYCAN_BENCH_ENGINE_ID="f2_sync_${TAYCAN_F2_SYNC_STRATEGY}"
     TAYCAN_BENCH_ENGINE_VERSION="332ea7da"

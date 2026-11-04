@@ -1,0 +1,109 @@
+{
+  "previous_main": "cc2843777aae73a591d0c98b28e7b766329696ae",
+  "backup_branch": "archive/main-with-dfly-experiments-20261104",
+  "preserved_experiment": "experiment/helio-integration-audit",
+  "preserved_experiment_head": "90eedee48b191eb99b709cb7fdbf3fbc10e3d8ad",
+  "cutoff": "Before f2-dfly-thread-audit / fixed-owner / Boost.Fiber / Helio architecture experiments",
+  "restored": [
+    {
+      "path": "experiments/faster-native-adapter/CMakeLists.txt",
+      "source": "analysis/f2-open-source-wait-20261103/source-final/CMakeLists.txt",
+      "sha256": "1205c0d9d1d9491fed9df341c98f61d63d8631998d1545aac6f40c83ad721f7c",
+      "previous_sha256": "0e9a0f8317a86c9ecdd5017c9ed84611528d8d12d3502597b019fbf165a17710"
+    },
+    {
+      "path": "experiments/faster-native-adapter/prepare_source.py",
+      "source": "analysis/f2-open-source-wait-20261103/source-final/prepare_source.py",
+      "sha256": "72a5b92385790b0a579e458e14bc09c59cd57ec60988471f0b7f8301cc383540",
+      "previous_sha256": "7b2a880cf64401665712d30f954dfe82ab400c10912a8f49f23f4974a5b23cc6"
+    },
+    {
+      "path": "experiments/faster-native-adapter/native_aio_file.inc",
+      "source": "analysis/f2-open-source-wait-20261103/source-final/native_aio_file.inc",
+      "sha256": "251f170f1d1d6cc42b91bcb9f640cb2410f108d6d2a12573e993b6a62e216f88",
+      "previous_sha256": "251f170f1d1d6cc42b91bcb9f640cb2410f108d6d2a12573e993b6a62e216f88"
+    },
+    {
+      "path": "experiments/faster-native-adapter/faster_backend.cc",
+      "source": "analysis/f2-compaction-validation-20261102/v5-source/faster_backend.cc",
+      "sha256": "602a12667788b2b478ee92e71947be846b2e608f65aec78b8b7d067d5929d38a",
+      "previous_sha256": "3415e4544d78dbd46ed26816c0f6c55ce4687f5cc823591da869bc7d44a474f3"
+    },
+    {
+      "path": "experiments/faster-native-adapter/f2_sync_runtime.inc",
+      "source": "analysis/f2-compaction-validation-20261102/v5-source/f2_sync_runtime.inc",
+      "sha256": "eec8c08096bb1c890ba5a7bc768808bd1f5d4f89dfa2466a1f68b52cddac077b",
+      "previous_sha256": "c325cc9fc4b4d1f61120601aafc97112ec0786830fdd45720ad9087d6a9aec39"
+    },
+    {
+      "path": "experiments/faster-native-adapter/f2_commit_experiment.h",
+      "source": "analysis/f2-compaction-validation-20261102/v5-source/f2_commit_experiment.h",
+      "sha256": "0487b95a6b72b08207496e2ccc5049c09c4eb3c87ad1ec985654593083de6a31",
+      "previous_sha256": "68afcbbddf4ea60e6b6331093c97002453011124691f4d0eed016a22a98debb1"
+    },
+    {
+      "path": "experiments/faster-native-adapter/f2_commit_members.inc",
+      "source": "analysis/f2-compaction-validation-20261102/v5-source/f2_commit_members.inc",
+      "sha256": "6bf474ea813b35554f2b16c6f86a7dbf1392fd1ac54161af8dc6699da492e44a",
+      "previous_sha256": "6bf474ea813b35554f2b16c6f86a7dbf1392fd1ac54161af8dc6699da492e44a"
+    },
+    {
+      "path": "experiments/faster-native-adapter/f2_prefix_members.inc",
+      "source": "analysis/f2-compaction-validation-20261102/v5-source/f2_prefix_members.inc",
+      "sha256": "0cf635639999f7100da25f73beb0cde17d99ca3802f08dc1c3ab6f83b33d1db6",
+      "previous_sha256": "e0f19dc29e2890d06e7d0477a69f3f0416cbfc3d225e66a146b1690b22725396"
+    }
+  ],
+  "removed": [
+    {
+      "path": "experiments/faster-native-adapter/f2_owner_runtime.inc",
+      "sha256": "8eaee71ccbc1f6dcd55ec8f14b86c6fb9c679930c7880828c531bd84f08c1ff7",
+      "preserved_at": "archive/main-with-dfly-experiments-20261104"
+    },
+    {
+      "path": "experiments/faster-native-adapter/f2_fiber_hooks.h",
+      "sha256": "e35138fe3912019ca08b1015e5d93129f7bf838261240268b443ae9d2588f821",
+      "preserved_at": "archive/main-with-dfly-experiments-20261104"
+    },
+    {
+      "path": "experiments/faster-native-adapter/f2_fiber_members.inc",
+      "sha256": "6392b64b6337c97b8083ed46656bdc08b20980e519a6f16cd7a4d75951fd0f03",
+      "preserved_at": "archive/main-with-dfly-experiments-20261104"
+    },
+    {
+      "path": "experiments/faster-native-adapter/f2_fiber_runtime.inc",
+      "sha256": "d96de2358c2baeeeddb26d16bfbe0216c2f7c7315deeed58856d529a2663e7e9",
+      "preserved_at": "archive/main-with-dfly-experiments-20261104"
+    },
+    {
+      "path": "experiments/faster-native-adapter/fiber_visibility_probe.cc",
+      "sha256": "c0f3a0346864634e365537a3c9aac6d25f4d20c8ed7d74672f7542956391bccc",
+      "preserved_at": "archive/main-with-dfly-experiments-20261104"
+    },
+    {
+      "path": "experiments/faster-native-adapter/helio_saturation_probe.cc",
+      "sha256": "f86ad185cf7757816ba3ce5a85f94fcf8931360f17cba2c8efcabc76c1e1fa69",
+      "preserved_at": "archive/main-with-dfly-experiments-20261104"
+    },
+    {
+      "path": "experiments/faster-native-adapter/owner_completion_event.h",
+      "sha256": "1c617cdbaa7f8887b1dc81184485b3a4a94091f3c5d774e0bcc7dc866791b19a",
+      "preserved_at": "archive/main-with-dfly-experiments-20261104"
+    },
+    {
+      "path": "experiments/faster-native-adapter/owner_completion_event_test.cc",
+      "sha256": "1fbcd94b951e6eb41821f9baa81072add9575c971b6ca8c6ec8da263e3a7fa0b",
+      "preserved_at": "archive/main-with-dfly-experiments-20261104"
+    },
+    {
+      "path": "experiments/faster-native-adapter/third_party/helio/mpmc_bounded_queue.h",
+      "sha256": "946417f96c1b39fb2ab0b8c9ac72485fbd968810209188113e9c7cd97fe201b2",
+      "preserved_at": "archive/main-with-dfly-experiments-20261104"
+    },
+    {
+      "path": "experiments/faster-native-adapter/third_party/helio/LICENSE.Apache-2.0",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "preserved_at": "archive/main-with-dfly-experiments-20261104"
+    }
+  ]
+}

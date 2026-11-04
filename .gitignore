@@ -2,6 +2,7 @@
 /build/
 /dist/
 /research/
+/third_party/helio/
 .DS_Store
 __pycache__/
 *.pyc

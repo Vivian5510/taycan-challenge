@@ -1,0 +1,1283 @@
+{
+  "status": "PASS",
+  "started_at": "2026-11-04T06:56:25.121815+00:00",
+  "classification": "macOS ARM64 development probes, not contest/power-cut acceptance",
+  "binary_sha256": {
+    "engine/f2_sync_api_probe": "88acffd8d0484569ab62c01899237f694b2ea44201b77933b2d024e6245a7e82",
+    "basic_test": "590fc9867280b45c851f0fe39cbc4b42b62cf46750bd7ae83b172a4f4128182b",
+    "recovery_test": "6789f049e6a04814bfdc7b4681801bf55daca77f1cc63f4c5c8deaf1f4bd1e1d",
+    "concurrent_test": "e8a13cc339d8577037aca578b32c5d0ec7b84b3ad6a35e8c7c4ae66bdda37548",
+    "crash_worker": "586bb6ccda20bb41d3c2d5befa71afa754112838cda95e4bafc5013e0ec1b986"
+  },
+  "tests": [
+    {
+      "test": "basic",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/basic_test",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--gtest_color=no",
+        "--data_dir=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/basic-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.136846084
+    },
+    {
+      "test": "recovery",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/recovery_test",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--gtest_color=no",
+        "--data_dir=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/recovery-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.7383446659999999
+    },
+    {
+      "test": "concurrent",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/concurrent_test",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--gtest_color=no",
+        "--data_dir=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/concurrent-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.486491416
+    },
+    {
+      "test": "sync-error",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "sync-error",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/sync-error-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.49874645800000006
+    },
+    {
+      "test": "io-error",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "io-error",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/io-error-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.05427475000000004
+    },
+    {
+      "test": "apply-error",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "apply-error",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/apply-error-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.05595841700000004
+    },
+    {
+      "test": "same-key-write",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "write-kill",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/same-key-db"
+      ],
+      "expected_returncode": -9,
+      "status": "PASS",
+      "returncode": -9,
+      "seconds": 0.06153720799999984
+    },
+    {
+      "test": "same-key-recover-1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/same-key-db",
+        "42424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.34209924999999997
+    },
+    {
+      "test": "same-key-recover-2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/same-key-db",
+        "42424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.33242195899999993
+    },
+    {
+      "test": "span-write",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "span-write-kill",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/span-db"
+      ],
+      "expected_returncode": -9,
+      "status": "PASS",
+      "returncode": -9,
+      "seconds": 0.23912016699999983
+    },
+    {
+      "test": "partial-tail",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "span-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/partial-tail-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.370720167
+    },
+    {
+      "test": "data-corrupt",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "span-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/data-corrupt-db"
+      ],
+      "expected_returncode": 1,
+      "status": "PASS",
+      "returncode": 1,
+      "seconds": 0.01609691599999996
+    },
+    {
+      "test": "footer-corrupt",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "span-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/footer-corrupt-db"
+      ],
+      "expected_returncode": 1,
+      "status": "PASS",
+      "returncode": 1,
+      "seconds": 0.028453083000000046
+    },
+    {
+      "test": "missing-data",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "span-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/missing-data-db"
+      ],
+      "expected_returncode": 1,
+      "status": "PASS",
+      "returncode": 1,
+      "seconds": 0.011890500000000248
+    },
+    {
+      "test": "root-corrupt",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "span-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/root-corrupt-db"
+      ],
+      "expected_returncode": 1,
+      "status": "PASS",
+      "returncode": 1,
+      "seconds": 0.014720333000000085
+    },
+    {
+      "test": "span-recover-1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "span-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/span-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.33080525000000005
+    },
+    {
+      "test": "span-recover-2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "span-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/span-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.3195422910000003
+    },
+    {
+      "test": "embedded-marker-write",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "embedded-marker-write-kill",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/embedded-marker-db"
+      ],
+      "expected_returncode": -9,
+      "status": "PASS",
+      "returncode": -9,
+      "seconds": 0.08186591599999993
+    },
+    {
+      "test": "embedded-marker-recover-1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "embedded-marker-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/embedded-marker-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.3779889160000005
+    },
+    {
+      "test": "embedded-marker-recover-2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "embedded-marker-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/embedded-marker-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.32792604100000045
+    },
+    {
+      "test": "real-hash-collision",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "hash-collision",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/collision-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.8181180000000001
+    },
+    {
+      "test": "original-sdk-crash",
+      "trials": 5,
+      "status": "PASS"
+    },
+    {
+      "test": "single-before-data-flush-prepare",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/single-before-data-flush/db",
+        "--mode=prepare",
+        "--operations=64"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.05723579100000009
+    },
+    {
+      "test": "single-before-data-flush",
+      "status": "PASS",
+      "acknowledged": 64,
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "before-data-flush",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "65536"
+      },
+      "seconds": 0.9668090409999994,
+      "recovered": 64
+    },
+    {
+      "test": "single-before-data-flush-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/single-before-data-flush/db",
+        "--mode=verify",
+        "--operations=64",
+        "--possible_operation=65"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.31549099999999974
+    },
+    {
+      "test": "single-before-data-flush-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/single-before-data-flush/db",
+        "--mode=verify",
+        "--operations=64"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.3283011249999994
+    },
+    {
+      "test": "single-before-data-sync-prepare",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/single-before-data-sync/db",
+        "--mode=prepare",
+        "--operations=64"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.06649558300000002
+    },
+    {
+      "test": "single-before-data-sync",
+      "status": "PASS",
+      "acknowledged": 64,
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "before-data-sync",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "65536"
+      },
+      "seconds": 0.9642060829999988,
+      "recovered": 65
+    },
+    {
+      "test": "single-before-data-sync-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/single-before-data-sync/db",
+        "--mode=verify",
+        "--operations=64",
+        "--possible_operation=65"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.3410157500000004
+    },
+    {
+      "test": "single-before-data-sync-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/single-before-data-sync/db",
+        "--mode=verify",
+        "--operations=65"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.30386858399999994
+    },
+    {
+      "test": "single-after-data-sync-prepare",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/single-after-data-sync/db",
+        "--mode=prepare",
+        "--operations=64"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.05653158299999994
+    },
+    {
+      "test": "single-after-data-sync",
+      "status": "PASS",
+      "acknowledged": 64,
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "after-data-sync",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "65536"
+      },
+      "seconds": 0.9459624170000005,
+      "recovered": 65
+    },
+    {
+      "test": "single-after-data-sync-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/single-after-data-sync/db",
+        "--mode=verify",
+        "--operations=64",
+        "--possible_operation=65"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.3179142500000012
+    },
+    {
+      "test": "single-after-data-sync-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/single-after-data-sync/db",
+        "--mode=verify",
+        "--operations=65"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.3112218749999993
+    },
+    {
+      "test": "single-after-wal-prepare",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/single-after-wal/db",
+        "--mode=prepare",
+        "--operations=64"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.055945624999999666
+    },
+    {
+      "test": "single-after-wal",
+      "status": "PASS",
+      "acknowledged": 64,
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "after-wal",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "65536"
+      },
+      "seconds": 0.9651398330000003,
+      "recovered": 65
+    },
+    {
+      "test": "single-after-wal-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/single-after-wal/db",
+        "--mode=verify",
+        "--operations=64",
+        "--possible_operation=65"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.3214415420000005
+    },
+    {
+      "test": "single-after-wal-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/single-after-wal/db",
+        "--mode=verify",
+        "--operations=65"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.32819470799999984
+    },
+    {
+      "test": "single-before-ack-prepare",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/single-before-ack/db",
+        "--mode=prepare",
+        "--operations=64"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.06866191700000002
+    },
+    {
+      "test": "single-before-ack",
+      "status": "PASS",
+      "acknowledged": 64,
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "before-ack",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "65536"
+      },
+      "seconds": 0.9614206670000005,
+      "recovered": 65
+    },
+    {
+      "test": "single-before-ack-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/single-before-ack/db",
+        "--mode=verify",
+        "--operations=64",
+        "--possible_operation=65"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.30961808300000015
+    },
+    {
+      "test": "single-before-ack-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/single-before-ack/db",
+        "--mode=verify",
+        "--operations=65"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.3119180830000019
+    },
+    {
+      "test": "single-before-root-prepare",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/single-before-root/db",
+        "--mode=prepare",
+        "--operations=64"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.056363583999999634
+    },
+    {
+      "test": "single-before-root",
+      "status": "PASS",
+      "acknowledged": 191,
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "before-root",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "65536"
+      },
+      "seconds": 1.0223541659999995,
+      "recovered": 192
+    },
+    {
+      "test": "single-before-root-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/single-before-root/db",
+        "--mode=verify",
+        "--operations=191",
+        "--possible_operation=192"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.3284509170000014
+    },
+    {
+      "test": "single-before-root-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/single-before-root/db",
+        "--mode=verify",
+        "--operations=192"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.3207286670000009
+    },
+    {
+      "test": "single-after-root-prepare",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/single-after-root/db",
+        "--mode=prepare",
+        "--operations=64"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.05907399999999896
+    },
+    {
+      "test": "single-after-root",
+      "status": "PASS",
+      "acknowledged": 191,
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "after-root",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "65536"
+      },
+      "seconds": 1.0586315420000005,
+      "recovered": 192
+    },
+    {
+      "test": "single-after-root-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/single-after-root/db",
+        "--mode=verify",
+        "--operations=191",
+        "--possible_operation=192"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.3661056659999993
+    },
+    {
+      "test": "single-after-root-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/single-after-root/db",
+        "--mode=verify",
+        "--operations=192"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.3243798329999983
+    },
+    {
+      "test": "group-before-data-flush",
+      "status": "PASS",
+      "acknowledged": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        5,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "before-data-flush",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "4096"
+      },
+      "seconds": 0.8151258749999997,
+      "recovered": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5
+      ]
+    },
+    {
+      "test": "group-before-data-flush-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/group-before-data-flush/db",
+        "3,3,3,3,3,5,3,3,3,3,3,3,3,3,3,4",
+        "allow-next"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.31298204200000157
+    },
+    {
+      "test": "group-before-data-flush-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/group-before-data-flush/db",
+        "4,4,4,4,4,5,4,4,4,4,4,4,4,4,4,5"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.32040762499999786
+    },
+    {
+      "test": "group-before-data-sync",
+      "status": "PASS",
+      "acknowledged": [
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        3,
+        3,
+        3,
+        3,
+        4,
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "before-data-sync",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "4096"
+      },
+      "seconds": 0.8607835000000001,
+      "recovered": [
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        4,
+        4,
+        4,
+        4,
+        5,
+        4,
+        4,
+        4,
+        4,
+        5
+      ]
+    },
+    {
+      "test": "group-before-data-sync-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/group-before-data-sync/db",
+        "3,3,3,3,4,4,3,3,3,3,4,3,3,3,3,4",
+        "allow-next"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.3277854170000012
+    },
+    {
+      "test": "group-before-data-sync-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/group-before-data-sync/db",
+        "4,4,4,4,5,5,4,4,4,4,5,4,4,4,4,5"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.33581608299999743
+    },
+    {
+      "test": "group-after-data-sync",
+      "status": "PASS",
+      "acknowledged": [
+        4,
+        4,
+        4,
+        3,
+        3,
+        4,
+        3,
+        4,
+        3,
+        5,
+        4,
+        5,
+        4,
+        3,
+        3,
+        3
+      ],
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "after-data-sync",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "4096"
+      },
+      "seconds": 0.8608779159999997,
+      "recovered": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        4,
+        5,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "test": "group-after-data-sync-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/group-after-data-sync/db",
+        "4,4,4,3,3,4,3,4,3,5,4,5,4,3,3,3",
+        "allow-next"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.33827487499999975
+    },
+    {
+      "test": "group-after-data-sync-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/group-after-data-sync/db",
+        "4,4,4,4,4,4,4,4,4,5,4,5,4,4,4,4"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.3241136250000025
+    },
+    {
+      "test": "group-after-wal",
+      "status": "PASS",
+      "acknowledged": [
+        4,
+        3,
+        5,
+        3,
+        4,
+        3,
+        3,
+        3,
+        3,
+        4,
+        3,
+        3,
+        3,
+        4,
+        3,
+        4
+      ],
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "after-wal",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "4096"
+      },
+      "seconds": 0.9705748340000007,
+      "recovered": [
+        5,
+        4,
+        6,
+        4,
+        5,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        4,
+        4
+      ]
+    },
+    {
+      "test": "group-after-wal-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/group-after-wal/db",
+        "4,3,5,3,4,3,3,3,3,4,3,3,3,4,3,4",
+        "allow-next"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.35117750000000214
+    },
+    {
+      "test": "group-after-wal-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/group-after-wal/db",
+        "5,4,6,4,5,4,4,4,4,4,4,4,4,5,4,4"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.4132329580000018
+    },
+    {
+      "test": "group-before-ack",
+      "status": "PASS",
+      "acknowledged": [
+        4,
+        4,
+        5,
+        4,
+        4,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5
+      ],
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "before-ack",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "4096"
+      },
+      "seconds": 1.1189606249999997,
+      "recovered": [
+        5,
+        5,
+        5,
+        4,
+        5,
+        4,
+        4,
+        5,
+        5,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "test": "group-before-ack-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/group-before-ack/db",
+        "4,4,5,4,4,3,4,4,4,4,4,4,4,4,4,5",
+        "allow-next"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.31590683299999966
+    },
+    {
+      "test": "group-before-ack-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/group-before-ack/db",
+        "5,5,5,4,5,4,4,5,5,4,4,5,5,5,5,5"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.3634344590000005
+    },
+    {
+      "test": "group-before-root",
+      "status": "PASS",
+      "acknowledged": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        6,
+        6,
+        6,
+        6,
+        5,
+        6,
+        6,
+        5,
+        5,
+        5,
+        5
+      ],
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "before-root",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "4096"
+      },
+      "seconds": 1.3769887919999988,
+      "recovered": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        7,
+        7,
+        6,
+        6,
+        6,
+        7,
+        6,
+        6,
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "test": "group-before-root-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/group-before-root/db",
+        "5,5,5,5,5,6,6,6,6,5,6,6,5,5,5,5",
+        "allow-next"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.4168163329999999
+    },
+    {
+      "test": "group-before-root-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/group-before-root/db",
+        "6,6,6,6,6,7,7,6,6,6,7,6,6,6,6,6"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.34652033300000085
+    },
+    {
+      "test": "group-after-root",
+      "status": "PASS",
+      "acknowledged": [
+        5,
+        4,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        3,
+        3,
+        4,
+        3
+      ],
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "after-root",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "4096"
+      },
+      "seconds": 1.0558720420000007,
+      "recovered": [
+        5,
+        5,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        4,
+        4,
+        5,
+        4
+      ]
+    },
+    {
+      "test": "group-after-root-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/group-after-root/db",
+        "5,4,3,3,3,3,3,3,3,3,3,4,3,3,4,3",
+        "allow-next"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.4808817910000016
+    },
+    {
+      "test": "group-after-root-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries/group-after-root/db",
+        "5,5,4,4,4,4,4,4,4,4,4,5,4,4,5,4"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.3279816670000031
+    }
+  ],
+  "finished_at": "2026-11-04T06:56:51.080599+00:00"
+}

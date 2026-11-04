@@ -3,16 +3,6 @@
 
 #include "core/f2.h"
 #include "device/file_system_disk.h"
-#if F2_OWNER_EXPERIMENT || F2_FIBER_EXPERIMENT
-#include "core/f2_commit_wait.h"
-#endif
-#if F2_FIBER_EXPERIMENT
-#include <boost/fiber/all.hpp>
-#include <aio.h>
-#include <poll.h>
-#include "third_party/helio/mpmc_bounded_queue.h"
-#include "owner_completion_event.h"
-#endif
 
 #include <fcntl.h>
 #include <sys/file.h>
@@ -88,10 +78,6 @@ struct Completion {
   std::atomic<bool> done{false};
   std::atomic<FStatus> status{FStatus::Corruption};
   std::string value;
-#if F2_FIBER_EXPERIMENT
-  boost::fibers::mutex mutex;
-  boost::fibers::condition_variable ready;
-#endif
 };
 class ReadContext : public fc::IAsyncContext {
  public:

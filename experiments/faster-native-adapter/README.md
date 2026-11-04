@@ -1,26 +1,10 @@
-# FASTER/F2 实验适配器
+# FASTER/F2 调用线程执行基线
 
-2026-11-03 新增默认关闭的 `TAYCAN_F2_FIBER_EXPERIMENT`：Boost.Fiber/Context 1.85.0、
-单 owner/长期 F2 session、已提交索引读取、`aio_fsync` 完成后 ACK。当前只在 macOS
-后端做 C++17 开发实验，拒绝与分片 owner、旧 pipeline 或 durable GC 同时启用。
-51条小规模验证、故障/中断记录、合批窗口和性能边界见
-[fiber 实验报告](../../analysis/f2-fiber-experiment-20261103/README.md)。默认路径未切换。
+2026-11-04 已恢复到 Dragonfly 学习实验之前的代码。SDK 调用线程直接使用 F2，
+写入由既有 caller-led group commit 合批；没有 owner 路由线程、Boost.Fiber 或 Helio runtime。
+[恢复依据、显式持久化构建与限制](../../docs/main-pre-dfly-baseline.md)。
 
-同日进一步对照Helio实现了可选定向通知、16项调度与热读内联，并用保持原批量的
-`inline32` 拆分复验。`F2_FIBER_DISPATCH_MODE=targeted` 在混合/热读中有收益，纯写
-并非统一受益；其余模式未稳定胜出，默认仍为 `legacy`。68条开发验证（含20次SIGKILL）、
-76个性能单元和适用边界见 [调度优化报告](../../analysis/f2-fiber-dispatch-20261103/README.md)。
-
-随后恢复Dragonfly固定owner主线，原样引入Helio BSD有界队列（含许可证），并适配consumer
-短任务执行。`F2_FIBER_INBOX=helio`、`F2_FIBER_CONSUMER=tasklet` 均为默认关闭的实验选项；
-保留owner数据所有权和同步后ACK。热读有收益但混合/纯写回退，原因、采样和不默认采用的
-决定见 [Helio适配报告](../../analysis/f2-helio-queue-20261103/README.md)。
-
-完成端进一步参考Helio `Done/EventCount` 的ready发布、等待登记和对象生命周期，新增
-`F2_FIBER_COMPLETION=event`：为同步SDK调用线程复用OS完成事件，owner仅通知已登记
-等待者。它保持数据访问在owner，macOS使用Mach semaphore，Linux分支尚未验证。
-默认仍为CV。生命周期探针、42条验证、66格对照和ASAN运行库限制见
-[完成通知报告](../../analysis/f2-helio-completion-20261103/README.md)。
+下面保留此前持久化和流水线研究记录；这些选项不代表默认 native 的持久化承诺。
 
 新增显式 `TAYCAN_F2_PREFIX_PIPELINE=ON` 的 F2 内核提交实验，移植 Tsavorite 的有界在途提交、
 持久前沿覆盖与顺序完成机制。第一轮与补齐合并规则后的性能、受控可见性/重叠强杀和源码

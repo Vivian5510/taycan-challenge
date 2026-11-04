@@ -1,0 +1,80 @@
+[
+  {
+    "path": "experiments/faster-native-adapter/f2_commit_experiment.h",
+    "expected": "0487b95a6b72b08207496e2ccc5049c09c4eb3c87ad1ec985654593083de6a31",
+    "actual": "0487b95a6b72b08207496e2ccc5049c09c4eb3c87ad1ec985654593083de6a31",
+    "status": "PASS"
+  },
+  {
+    "path": "experiments/faster-native-adapter/f2_hybridlog_members.inc",
+    "expected": "1ccde12229ef8b6052b50d25319ba7984e32031af46b33599929f1277138e619",
+    "actual": "1ccde12229ef8b6052b50d25319ba7984e32031af46b33599929f1277138e619",
+    "status": "PASS"
+  },
+  {
+    "path": "experiments/faster-native-adapter/f2_prefix_index.inc",
+    "expected": "70a79fec276e58aadbfe63e061b5345677bf2b685680cc344d604d0d830525e4",
+    "actual": "70a79fec276e58aadbfe63e061b5345677bf2b685680cc344d604d0d830525e4",
+    "status": "PASS"
+  },
+  {
+    "path": "experiments/faster-native-adapter/f2_rocks_members.inc",
+    "expected": "821efca58ea2f989a6c6d9f816894d0003e2650f06e50592352cec5044c18918",
+    "actual": "821efca58ea2f989a6c6d9f816894d0003e2650f06e50592352cec5044c18918",
+    "status": "PASS"
+  },
+  {
+    "path": "experiments/faster-native-adapter/f2_prefix_experiment.h",
+    "expected": "905201512347e2add7b82d0aec75a4b95ba775fb32487176fa8111d05913c4b0",
+    "actual": "905201512347e2add7b82d0aec75a4b95ba775fb32487176fa8111d05913c4b0",
+    "status": "PASS"
+  },
+  {
+    "path": "experiments/faster-native-adapter/f2_prefix_members.inc",
+    "expected": "0cf635639999f7100da25f73beb0cde17d99ca3802f08dc1c3ab6f83b33d1db6",
+    "actual": "0cf635639999f7100da25f73beb0cde17d99ca3802f08dc1c3ab6f83b33d1db6",
+    "status": "PASS"
+  },
+  {
+    "path": "experiments/faster-native-adapter/f2_prefix_pipeline.inc",
+    "expected": "7d88a2e15c36f35c31ac8d155c47ed825a53d6d33f5abb4f1d58ede5df8673f8",
+    "actual": "7d88a2e15c36f35c31ac8d155c47ed825a53d6d33f5abb4f1d58ede5df8673f8",
+    "status": "PASS"
+  },
+  {
+    "path": "experiments/faster-native-adapter/f2_gc_trace.h",
+    "expected": "92f2d3b592f077964651959850f01d22fbcf81ead7275d575f1408a4e0e4b1a9",
+    "actual": "92f2d3b592f077964651959850f01d22fbcf81ead7275d575f1408a4e0e4b1a9",
+    "status": "PASS"
+  },
+  {
+    "path": "experiments/faster-native-adapter/f2_sync_members.inc",
+    "expected": "dd77f60ddae90dd5532f1a9bb93e3955bc345a098c3d1cb00571c39f3ea4b25e",
+    "actual": "dd77f60ddae90dd5532f1a9bb93e3955bc345a098c3d1cb00571c39f3ea4b25e",
+    "status": "PASS"
+  },
+  {
+    "path": "experiments/faster-native-adapter/f2_sync_experiment.h",
+    "expected": "b84d66617109a5af30e25c9408644d8de113629b7a7fa40cccc1a44e0c6aacfb",
+    "actual": "b84d66617109a5af30e25c9408644d8de113629b7a7fa40cccc1a44e0c6aacfb",
+    "status": "PASS"
+  },
+  {
+    "path": "experiments/faster-native-adapter/f2_gc_members.inc",
+    "expected": "9eceddf0bfd5f9843753eef1ee829b0cdb7aa3ea524d66d4cdb05bb456f0f5cf",
+    "actual": "9eceddf0bfd5f9843753eef1ee829b0cdb7aa3ea524d66d4cdb05bb456f0f5cf",
+    "status": "PASS"
+  },
+  {
+    "path": "experiments/faster-native-adapter/f2_gc_file.inc",
+    "expected": "23f0d4271bc15cb9bcb4591c77730a07f19ce0ccb2e6b265df9e925904c8996d",
+    "actual": "23f0d4271bc15cb9bcb4591c77730a07f19ce0ccb2e6b265df9e925904c8996d",
+    "status": "PASS"
+  },
+  {
+    "path": "experiments/faster-native-adapter/f2_commit_members.inc",
+    "expected": "6bf474ea813b35554f2b16c6f86a7dbf1392fd1ac54161af8dc6699da492e44a",
+    "actual": "6bf474ea813b35554f2b16c6f86a7dbf1392fd1ac54161af8dc6699da492e44a",
+    "status": "PASS"
+  }
+]

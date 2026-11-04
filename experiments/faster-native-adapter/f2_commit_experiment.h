@@ -15,9 +15,6 @@
 #include <string>
 #include <unistd.h>
 #include <vector>
-#if F2_FIBER_EXPERIMENT
-#include "f2_fiber_hooks.h"
-#endif
 
 namespace FASTER { namespace core { namespace experimental {
 inline std::atomic<uint64_t> sync_calls{0}, sync_ns{0}, write_calls{0}, write_bytes{0};
@@ -26,10 +23,6 @@ inline void Sync(int fd, bool directory = false) {
   const auto begin = std::chrono::steady_clock::now();
   int code;
   do {
-#if F2_FIBER_EXPERIMENT
-    if(fiber_sync && !directory) code=fiber_sync(fiber_owner,fd);
-    else {
-#endif
 #ifdef __APPLE__
 #ifdef F2_MAC_STANDARD_SYNC
     code = ::fsync(fd);
@@ -38,9 +31,6 @@ inline void Sync(int fd, bool directory = false) {
 #endif
 #else
     code = directory ? ::fsync(fd) : ::fdatasync(fd);
-#endif
-#if F2_FIBER_EXPERIMENT
-    }
 #endif
   } while (code < 0 && errno == EINTR);
   ++sync_calls;

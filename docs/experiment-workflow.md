@@ -1,6 +1,8 @@
 # 实验分支与依赖
 
-`main` 保留引入原版 Helio 前的源码基线。每项架构实验在 `experiment/*` 分支开发，
+`main` 保留 Dragonfly 学习实验开始前的 F2 调用线程执行基线，不包含 owner 分片、
+Boost.Fiber、Helio 队列/完成事件和原生 runtime。恢复依据见
+[基线说明](main-pre-dfly-baseline.md)。每项架构实验在 `experiment/*` 分支开发，
 提交记录说明测试结果和未完成项，不把多个失败候选反复叠在同一基线上。
 
 `analysis/`、`build/` 和数据库不进入 Git；报告、运行脚本和必要小型清单可显式加入。

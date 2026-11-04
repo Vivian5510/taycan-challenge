@@ -11,13 +11,7 @@
     return sizeof(RecordInfo)+sizeof(K)+sizeof(V);
   }
   uint64_t PrefixOpenTail() {
-    while(!hot_store.hlog.PrefixEnsureOpenTail()) {CompletePending(false);Refresh();
-#if F2_FIBER_EXPERIMENT
-      experimental::FiberCooperate();
-#else
-      std::this_thread::yield();
-#endif
-    }
+    while(!hot_store.hlog.PrefixEnsureOpenTail()) {CompletePending(false);Refresh();std::this_thread::yield();}
     return hot_store.hlog.GetTailAddress().control();
   }
   void PrefixPadTo(uint64_t until) {
@@ -99,21 +93,10 @@
     if(boundary.control()!=end)throw std::runtime_error("native flush tail differs");
     const auto flush_deadline=std::chrono::steady_clock::now()+std::chrono::seconds(5);
     while(hot_store.hlog.flushed_until_address.load()<boundary) {
-      CompletePending(false);Refresh();
-#if F2_FIBER_EXPERIMENT
-      experimental::FiberCooperate();
-#else
-      std::this_thread::yield();
-#endif
+      CompletePending(false);Refresh();std::this_thread::yield();
       if(std::chrono::steady_clock::now()>flush_deadline)throw std::runtime_error("native data-log flush frontier stalled");
     }
-#if F2_FIBER_EXPERIMENT
-    // The writer awaited its mutation callbacks and the flush frontier above.
-    // Independent outstanding reads must not delay this group's durable sync.
-    CompletePending(false);
-#else
     CompletePending(true);
-#endif
 #ifdef F2_PREFIX_PIPELINE
     s.prefix.prepared_tail=end;
 #else

@@ -1,0 +1,193 @@
+{
+  "status": "PASS",
+  "started_at": "2026-11-04T06:55:42.951063+00:00",
+  "engine_identity": {
+    "engine": "f2_sync_data-log",
+    "version": "332ea7da",
+    "policy": "synchronous_F2_internal_data-log_full_payload_caller_led_group_commit_mac_fsync_localwaitOFF_adaptiveON_yield100_aio1",
+    "platform_sync": "macOS:_F2_file_sync_policy=fsync"
+  },
+  "identity_matches_historical_caller": true,
+  "runs": [
+    {
+      "test": "basic",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/basic_test",
+        "--num_keys=2000",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--gtest_color=no",
+        "--data_dir=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/basic/db"
+      ],
+      "status": "PASS",
+      "started_at": "2026-11-04T06:55:42.976624+00:00",
+      "monitor": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/basic_test",
+          "--num_keys=2000",
+          "--key_size=32",
+          "--value_size=256",
+          "--mem_limit_bytes=4294967296",
+          "--seed=20261021",
+          "--gtest_color=no",
+          "--data_dir=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/basic/db"
+        ],
+        "pid": 72471,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 166985728,
+        "rss_limit_bytes": 4724464025,
+        "samples": 28,
+        "rss_source": "macOS libproc; not Linux VmRSS",
+        "sample_interval_seconds": 0.02,
+        "max_sample_gap_seconds": 0.025187291999999972,
+        "elapsed_seconds": 0.653628875
+      },
+      "finished_at": "2026-11-04T06:55:43.631140+00:00"
+    },
+    {
+      "test": "concurrent",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/concurrent_test",
+        "--num_keys=2000",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--gtest_color=no",
+        "--data_dir=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/concurrent/db",
+        "--reader_threads=31"
+      ],
+      "status": "PASS",
+      "started_at": "2026-11-04T06:55:43.631909+00:00",
+      "monitor": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/concurrent_test",
+          "--num_keys=2000",
+          "--key_size=32",
+          "--value_size=256",
+          "--mem_limit_bytes=4294967296",
+          "--seed=20261021",
+          "--gtest_color=no",
+          "--data_dir=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/concurrent/db",
+          "--reader_threads=31"
+        ],
+        "pid": 72474,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 196837376,
+        "rss_limit_bytes": 4724464025,
+        "samples": 1657,
+        "rss_source": "macOS libproc; not Linux VmRSS",
+        "sample_interval_seconds": 0.02,
+        "max_sample_gap_seconds": 0.03194983300000054,
+        "elapsed_seconds": 39.574227458
+      },
+      "finished_at": "2026-11-04T06:56:23.208525+00:00"
+    },
+    {
+      "test": "recovery",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/recovery_test",
+        "--num_keys=2000",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--gtest_color=no",
+        "--data_dir=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/recovery/db"
+      ],
+      "status": "PASS",
+      "started_at": "2026-11-04T06:56:23.209296+00:00",
+      "monitor": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104/recovery_test",
+          "--num_keys=2000",
+          "--key_size=32",
+          "--value_size=256",
+          "--mem_limit_bytes=4294967296",
+          "--seed=20261021",
+          "--gtest_color=no",
+          "--data_dir=/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/recovery/db"
+        ],
+        "pid": 72902,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 181878784,
+        "rss_limit_bytes": 4724464025,
+        "samples": 82,
+        "rss_source": "macOS libproc; not Linux VmRSS",
+        "sample_interval_seconds": 0.02,
+        "max_sample_gap_seconds": 0.025178291999999658,
+        "elapsed_seconds": 1.8537628340000012
+      },
+      "finished_at": "2026-11-04T06:56:25.063986+00:00"
+    },
+    {
+      "test": "historical-boundaries",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "/Users/rosy/devspace/code/taycan-challenge/experiments/faster-native-adapter/run_data_log_validation.py",
+        "--build-dir",
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104",
+        "--results",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries"
+      ],
+      "status": "PASS",
+      "started_at": "2026-11-04T06:56:25.064580+00:00",
+      "monitor": {
+        "command": [
+          "/Library/Developer/CommandLineTools/usr/bin/python3",
+          "/Users/rosy/devspace/code/taycan-challenge/experiments/faster-native-adapter/run_data_log_validation.py",
+          "--build-dir",
+          "/Users/rosy/devspace/code/taycan-challenge/build/f2-pre-dfly-main-20261104",
+          "--results",
+          "/Users/rosy/devspace/code/taycan-challenge/analysis/main-pre-dfly-restore-20261104/validation/boundaries"
+        ],
+        "pid": 72931,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 150241280,
+        "rss_limit_bytes": 4724464025,
+        "samples": 1096,
+        "rss_source": "macOS libproc; not Linux VmRSS",
+        "sample_interval_seconds": 0.02,
+        "max_sample_gap_seconds": 0.025204875000000015,
+        "elapsed_seconds": 26.020361208000004
+      },
+      "checks": 71,
+      "finished_at": "2026-11-04T06:56:51.086977+00:00"
+    }
+  ],
+  "binaries": {
+    "taycan_kv_bench": "809b025b653d9ea98cad0a191e46bb5921c86fa872e47069e1ae6aaf9e12772d",
+    "basic_test": "590fc9867280b45c851f0fe39cbc4b42b62cf46750bd7ae83b172a4f4128182b",
+    "concurrent_test": "e8a13cc339d8577037aca578b32c5d0ec7b84b3ad6a35e8c7c4ae66bdda37548",
+    "recovery_test": "6789f049e6a04814bfdc7b4681801bf55daca77f1cc63f4c5c8deaf1f4bd1e1d",
+    "crash_worker": "586bb6ccda20bb41d3c2d5befa71afa754112838cda95e4bafc5013e0ec1b986",
+    "engine/f2_sync_api_probe": "88acffd8d0484569ab62c01899237f694b2ea44201b77933b2d024e6245a7e82"
+  },
+  "parameters": {
+    "mem_limit_bytes": 4294967296,
+    "key_size": 32,
+    "value_size": 256,
+    "sdk_check_keys": 2000,
+    "reader_threads": 31,
+    "boundary_suite": "Unmodified historical run_data_log_validation.py: 64 keys; span probe 32MiB"
+  },
+  "storage": {
+    "minimum_free_bytes": 21474836480,
+    "maximum_database_bytes": 2147483648,
+    "free_min_bytes": 165055254528,
+    "database_peak_bytes": 269532142
+  },
+  "boundary_checks": 71,
+  "cleanup": "Successful databases removed after all dependent recovery checks; logs/results retained",
+  "finished_at": "2026-11-04T06:56:51.646153+00:00"
+}

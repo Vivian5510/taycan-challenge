@@ -195,14 +195,12 @@ if args.prefix_experiment:
     shutil.copyfile(here / 'f2_prefix_members.inc', destination / 'core/f2_prefix_members.inc')
     shutil.copyfile(here / 'f2_prefix_index.inc', destination / 'core/f2_prefix_index.inc')
     shutil.copyfile(here / 'f2_prefix_pipeline.inc', destination / 'core/f2_prefix_pipeline.inc')
-    for name in ('f2_fiber_hooks.h', 'f2_fiber_members.inc'):
-        shutil.copyfile(here / name, destination / 'core' / name)
     from prepare_commit_wait import generate as generate_commit_wait
     generate_commit_wait(destination / 'core/f2_commit_wait.h')
     for name in ('f2_gc_trace.h', 'f2_gc_file.inc', 'f2_gc_members.inc'):
         shutil.copyfile(here / name, destination / 'core' / name)
     replace('core/f2.h', '#include "f2_rocks_members.inc"',
-            '#include "f2_rocks_members.inc"\n#include "f2_prefix_members.inc"\n#if F2_FIBER_EXPERIMENT\n#include "f2_fiber_members.inc"\n#endif\n#ifdef F2_PREFIX_PIPELINE\n#include "f2_prefix_pipeline.inc"\n#endif\n#ifdef F2_DURABLE_COMPACTION\n#include "f2_gc_members.inc"\n#endif')
+            '#include "f2_rocks_members.inc"\n#include "f2_prefix_members.inc"\n#ifdef F2_PREFIX_PIPELINE\n#include "f2_prefix_pipeline.inc"\n#endif\n#ifdef F2_DURABLE_COMPACTION\n#include "f2_gc_members.inc"\n#endif')
     replace('device/file_system_disk.h', '#include "../core/gc_state.h"',
             '#include "../core/gc_state.h"\n#ifdef F2_DURABLE_COMPACTION\n#include "../core/f2_gc_trace.h"\n#endif')
     replace('device/file_system_disk.h',

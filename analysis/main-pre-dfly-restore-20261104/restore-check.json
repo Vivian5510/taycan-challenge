@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "restored_files": 8,
+  "removed_files": 10,
+  "preserved_branches": {
+    "archive/main-with-dfly-experiments-20261104": "cc2843777aae73a591d0c98b28e7b766329696ae",
+    "experiment/helio-integration-audit": "90eedee48b191eb99b709cb7fdbf3fbc10e3d8ad"
+  },
+  "active_branch": "main"
+}

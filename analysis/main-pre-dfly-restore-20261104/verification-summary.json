@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "at": "2026-11-04T06:57:53.085125+00:00",
+  "source_checks": {
+    "generated_files": 73,
+    "missing": 0,
+    "different": 0,
+    "extra": 0
+  },
+  "identity": {
+    "engine": "f2_sync_data-log",
+    "version": "332ea7da",
+    "policy": "synchronous_F2_internal_data-log_full_payload_caller_led_group_commit_mac_fsync_localwaitOFF_adaptiveON_yield100_aio1",
+    "platform_sync": "macOS:_F2_file_sync_policy=fsync"
+  },
+  "no_experimental_symbols": true,
+  "dynamic_library_listing": "build/f2-pre-dfly-main-20261104/taycan_kv_bench:\n\t/opt/homebrew/opt/tbb/lib/libtbb.12.dylib (compatibility version 12.0.0, current version 12.20.0)\n\t/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 1900.180.0)\n\t/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1351.0.0)\n",
+  "active_branch": "main",
+  "sdk_checks": [
+    {
+      "test": "basic",
+      "status": "PASS",
+      "rss_peak_bytes": 166985728
+    },
+    {
+      "test": "concurrent",
+      "status": "PASS",
+      "rss_peak_bytes": 196837376
+    },
+    {
+      "test": "recovery",
+      "status": "PASS",
+      "rss_peak_bytes": 181878784
+    },
+    {
+      "test": "historical-boundaries",
+      "status": "PASS",
+      "rss_peak_bytes": 150241280
+    }
+  ],
+  "boundary_checks": 71,
+  "original_sdk_sigkill_trials": 5,
+  "storage": {
+    "minimum_free_bytes": 21474836480,
+    "maximum_database_bytes": 2147483648,
+    "free_min_bytes": 165055254528,
+    "database_peak_bytes": 269532142
+  }
+}
