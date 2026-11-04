@@ -1,0 +1,23 @@
+[
+  "cmake",
+  "-S",
+  "taycan_participant_sdk",
+  "-B",
+  "build/f2-caller-release-20261104",
+  "-G",
+  "Ninja",
+  "-DCMAKE_MAKE_PROGRAM=/Users/rosy/devspace/code/taycan-challenge/build/deps/ninja/bin/ninja",
+  "-DCMAKE_BUILD_TYPE=Release",
+  "-DTAYCAN_BUILD_PERF_BENCHMARKS=ON",
+  "-DTAYCAN_F2_SYNC_STRATEGY=data-log",
+  "-DTAYCAN_F2_PREFIX_BLOCK_BYTES=512",
+  "-DTAYCAN_F2_NATIVE_IO=posix-aio",
+  "-DTAYCAN_F2_MAC_SYNC=fsync",
+  "-DTAYCAN_F2_DURABLE_COMPACTION=OFF",
+  "-DTAYCAN_F2_PREFIX_PIPELINE=OFF",
+  "-DTAYCAN_F2_PIPELINE_TARGETED_WAKE=OFF",
+  "-DTAYCAN_F2_PIPELINE_LOCAL_WAIT=OFF",
+  "-DTAYCAN_F2_WRITE_ADAPTIVE_YIELD=ON",
+  "-DTAYCAN_F2_WRITE_MAX_YIELD_US=100",
+  "-DTAYCAN_F2_AIO_COMPLETION_BATCH=1"
+]

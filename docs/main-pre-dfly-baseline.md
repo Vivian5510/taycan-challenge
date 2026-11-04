@@ -52,3 +52,7 @@ cmake --build build/f2-pre-dfly-main-20261104 --parallel 4 --target \
 新目录可使用默认 Makefiles；本次本机实际构建使用已有 Ninja 程序的绝对路径，完整命令
 保留在恢复记录。GC 实现仍在源码中，但该验证配置关闭 GC；不宣称恢复后已验收
 GC、2 亿 Key/4GiB 或正式 Linux 环境。没有重新跑性能并复用旧吞吐作为恢复版成绩。
+
+恢复后已于 2026-11-04 新测 caller 主干与 `90eedee` Helio 分支：双方 Release、32 线程、
+4GiB、32/256B、同步后 ACK。性能与延迟/CPU取舍见
+[本轮对照报告](../analysis/caller-helio-comparison-20261104/README.md)，不复用旧 main-event 数据。

@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "pinned_source_snapshot": {
+    "experiments/faster-native-adapter/f2_helio_runtime.inc": "17c889416dd8a45c331ab056f67952d65989013812f5ba1f81756d58bd5be3ec",
+    "experiments/faster-native-adapter/CMakeLists.txt": "9869d01cc14ee64e419358211ca62545670a175742d6742b6470a25be8a10bf1",
+    "experiments/faster-native-adapter/helio_contract_probe.cc": "7a9f7c0a7a7f9ab5312d0edf6a7223e8c77a2547a103b5bbd9c80d8ffaf746c4",
+    "experiments/helio-native-runtime/run_audited.py": "4ecdc0fb2841cb9ae7d07a0236257dabc2139e5211bc6b0b0b3279fbf29cc500",
+    "docs/helio-integration-contract.md": "d26d0b08cd937b97f64367f8c77dc0f9e4b501d6107b0c5a182c1232d05144ed",
+    "AGENTS.md": "6f54227f7f74e3000bbcda617e97ecd5bc26809d42e559a930015edc5fb63936"
+  },
+  "workload_sha256": "536b0200135773157f57c05d89ead934087cbb77a1a15377c7334ccc7c27ac49",
+  "common_build_parameters": {
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CXX_COMPILER": "/usr/bin/c++",
+    "CMAKE_CXX_FLAGS": "",
+    "CMAKE_CXX_FLAGS_RELEASE": "-O3 -DNDEBUG",
+    "TAYCAN_F2_SYNC_STRATEGY": "data-log",
+    "TAYCAN_F2_MAC_SYNC": "fsync",
+    "TAYCAN_F2_NATIVE_IO": "posix-aio",
+    "TAYCAN_F2_LOG_PAGE_BITS": "20",
+    "TAYCAN_F2_OVERFLOW_PAGE_BITS": "12",
+    "TAYCAN_F2_PREFIX_BLOCK_BYTES": "512",
+    "TAYCAN_F2_DURABLE_COMPACTION": "OFF",
+    "TAYCAN_F2_PREFIX_PIPELINE": "OFF",
+    "TAYCAN_F2_WRITE_ADAPTIVE_YIELD": "ON",
+    "TAYCAN_F2_WRITE_MAX_YIELD_US": "100",
+    "TAYCAN_F2_AIO_COMPLETION_BATCH": "1"
+  },
+  "source_revisions": {
+    "caller": "cdbc644dcfd949dd4f710efeae7c7a325d982fbb",
+    "helio10": "90eedee48b191eb99b709cb7fdbf3fbc10e3d8ad",
+    "helio50": "90eedee48b191eb99b709cb7fdbf3fbc10e3d8ad"
+  },
+  "reused_helio_binary_sha256": "4369768e780171fd02ecf564e1c067bc74ee4d99d64f5b3130496f709081b2ef",
+  "compiler_dialect_difference": "caller -std=c++17; Helio -std=gnu++17; both -O3 -DNDEBUG, no -march flags",
+  "engine_sources_changed": false,
+  "main_commit": "cdbc644dcfd949dd4f710efeae7c7a325d982fbb"
+}

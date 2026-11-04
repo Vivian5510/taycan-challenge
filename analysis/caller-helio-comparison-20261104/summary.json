@@ -1,0 +1,471 @@
+{
+  "status": "PASS",
+  "source": "cdbc644dcfd949dd4f710efeae7c7a325d982fbb",
+  "helio_source": "90eedee48b191eb99b709cb7fdbf3fbc10e3d8ad",
+  "validation_statuses": {
+    "PASS": 12
+  },
+  "performance_statuses": {
+    "PASS": 33
+  },
+  "summary": [
+    {
+      "phase": "hot",
+      "workload": "contest_mix",
+      "engine": "caller",
+      "valid_repeats": 3,
+      "median_ops_per_second": 327160.984385,
+      "minimum_ops_per_second": 321413.714626,
+      "maximum_ops_per_second": 330903.073097,
+      "repeats_ops_per_second": [
+        330903.073097,
+        321413.714626,
+        327160.984385
+      ],
+      "get_p99_us": 57.855,
+      "put_p99_us": 479.231,
+      "overall_p99_us": 409.599,
+      "rss_peak_mib": 503.1875,
+      "median_setup_seconds": 0.038620917,
+      "median_measured_seconds": 8.000190667,
+      "median_disk_growth_mib": 267.84570503234863,
+      "median_disk_growth_bytes_per_measured_op": 107.27968659520543,
+      "median_writes_per_group": 17.031262314462104,
+      "median_user_cpu_seconds": 13.507021000000009,
+      "median_system_cpu_seconds": 24.474255000000028,
+      "median_whole_run_cpu_us_per_operation": 11.605687060752425,
+      "median_average_cpu_cores": 3.760191156635071,
+      "paired_changes_percent": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "phase": "hot",
+      "workload": "contest_mix",
+      "engine": "helio10",
+      "valid_repeats": 3,
+      "median_ops_per_second": 175702.271918,
+      "minimum_ops_per_second": 174676.400521,
+      "maximum_ops_per_second": 181082.600742,
+      "repeats_ops_per_second": [
+        181082.600742,
+        174676.400521,
+        175702.271918
+      ],
+      "get_p99_us": 286.719,
+      "put_p99_us": 581.631,
+      "overall_p99_us": 532.479,
+      "rss_peak_mib": 364.90625,
+      "median_setup_seconds": 0.047121334,
+      "median_measured_seconds": 8.000273625,
+      "median_disk_growth_mib": 146.34375953674316,
+      "median_disk_growth_bytes_per_measured_op": 109.11469796290531,
+      "median_writes_per_group": 13.712909224094213,
+      "median_user_cpu_seconds": 3.937819999999988,
+      "median_system_cpu_seconds": 10.715217999999993,
+      "median_whole_run_cpu_us_per_operation": 8.342603587133022,
+      "median_average_cpu_cores": 1.4439662633762,
+      "paired_changes_percent": [
+        -45.27624084986422,
+        -45.653719000679516,
+        -46.2948577904891
+      ]
+    },
+    {
+      "phase": "hot",
+      "workload": "contest_mix",
+      "engine": "helio50",
+      "valid_repeats": 3,
+      "median_ops_per_second": 168056.090902,
+      "minimum_ops_per_second": 161031.951822,
+      "maximum_ops_per_second": 175165.865576,
+      "repeats_ops_per_second": [
+        168056.090902,
+        175165.865576,
+        161031.951822
+      ],
+      "get_p99_us": 282.623,
+      "put_p99_us": 622.591,
+      "overall_p99_us": 540.671,
+      "rss_peak_mib": 354.390625,
+      "median_setup_seconds": 0.035209875,
+      "median_measured_seconds": 8.00040625,
+      "median_disk_growth_mib": 137.99366283416748,
+      "median_disk_growth_bytes_per_measured_op": 107.59089963533961,
+      "median_writes_per_group": 16.408550568633874,
+      "median_user_cpu_seconds": 3.7643710000000397,
+      "median_system_cpu_seconds": 10.041533999999956,
+      "median_whole_run_cpu_us_per_operation": 8.138795472399394,
+      "median_average_cpu_cores": 1.3640122271901183,
+      "paired_changes_percent": [
+        -49.21289508461697,
+        -45.501433944775926,
+        -50.7789866433159
+      ]
+    },
+    {
+      "phase": "hot",
+      "workload": "update",
+      "engine": "caller",
+      "valid_repeats": 3,
+      "median_ops_per_second": 141858.080573,
+      "minimum_ops_per_second": 122622.632786,
+      "maximum_ops_per_second": 147810.253364,
+      "repeats_ops_per_second": [
+        141858.080573,
+        147810.253364,
+        122622.632786
+      ],
+      "get_p99_us": null,
+      "put_p99_us": 487.423,
+      "overall_p99_us": 487.423,
+      "rss_peak_mib": 630.890625,
+      "median_setup_seconds": 0.033615,
+      "median_measured_seconds": 8.000228083,
+      "median_disk_growth_mib": 359.23193550109863,
+      "median_disk_growth_bytes_per_measured_op": 331.83164793532404,
+      "median_writes_per_group": 17.398246187518655,
+      "median_user_cpu_seconds": 7.785123999999996,
+      "median_system_cpu_seconds": 15.863055000000031,
+      "median_whole_run_cpu_us_per_operation": 16.963059949905272,
+      "median_average_cpu_cores": 2.3415606803416575,
+      "paired_changes_percent": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "phase": "hot",
+      "workload": "update",
+      "engine": "helio10",
+      "valid_repeats": 3,
+      "median_ops_per_second": 85098.9794982,
+      "minimum_ops_per_second": 82979.9003319,
+      "maximum_ops_per_second": 94674.3101634,
+      "repeats_ops_per_second": [
+        85098.9794982,
+        94674.3101634,
+        82979.9003319
+      ],
+      "get_p99_us": null,
+      "put_p99_us": 638.975,
+      "overall_p99_us": 638.975,
+      "rss_peak_mib": 474.59375,
+      "median_setup_seconds": 0.046887667,
+      "median_measured_seconds": 8.000354458,
+      "median_disk_growth_mib": 216.45508861541748,
+      "median_disk_growth_bytes_per_measured_op": 332.7394458057838,
+      "median_writes_per_group": 16.193283819207245,
+      "median_user_cpu_seconds": 2.3826349999999934,
+      "median_system_cpu_seconds": 7.979412000000025,
+      "median_whole_run_cpu_us_per_operation": 12.23261424989217,
+      "median_average_cpu_cores": 1.0281640084716148,
+      "paired_changes_percent": [
+        -40.011186423456394,
+        -35.948753209796976,
+        -32.32905015445572
+      ]
+    },
+    {
+      "phase": "hot",
+      "workload": "update",
+      "engine": "helio50",
+      "valid_repeats": 3,
+      "median_ops_per_second": 142693.080157,
+      "minimum_ops_per_second": 135515.577116,
+      "maximum_ops_per_second": 146584.825305,
+      "repeats_ops_per_second": [
+        135515.577116,
+        142693.080157,
+        146584.825305
+      ],
+      "get_p99_us": null,
+      "put_p99_us": 409.599,
+      "overall_p99_us": 409.599,
+      "rss_peak_mib": 618.359375,
+      "median_setup_seconds": 0.032776875,
+      "median_measured_seconds": 8.000135667,
+      "median_disk_growth_mib": 348.51709175109863,
+      "median_disk_growth_bytes_per_measured_op": 320.12805063929835,
+      "median_writes_per_group": 31.98412274255684,
+      "median_user_cpu_seconds": 3.3570849999999837,
+      "median_system_cpu_seconds": 10.048901,
+      "median_whole_run_cpu_us_per_operation": 9.60156740827987,
+      "median_average_cpu_cores": 1.3246816938366432,
+      "paired_changes_percent": [
+        -4.471020213569132,
+        -3.461987981576875,
+        19.541410891754897
+      ]
+    },
+    {
+      "phase": "hot",
+      "workload": "read",
+      "engine": "caller",
+      "valid_repeats": 3,
+      "median_ops_per_second": 682577.228154,
+      "minimum_ops_per_second": 674315.99841,
+      "maximum_ops_per_second": 692170.564068,
+      "repeats_ops_per_second": [
+        674315.99841,
+        692170.564068,
+        682577.228154
+      ],
+      "get_p99_us": 581.631,
+      "put_p99_us": null,
+      "overall_p99_us": 581.631,
+      "rss_peak_mib": 166.71875,
+      "median_setup_seconds": 0.036888208,
+      "median_measured_seconds": 8.000081583,
+      "median_disk_growth_mib": 0.0,
+      "median_disk_growth_bytes_per_measured_op": 0.0,
+      "median_writes_per_group": 16.516129032258064,
+      "median_user_cpu_seconds": 29.102923000000033,
+      "median_system_cpu_seconds": 88.74671999999998,
+      "median_whole_run_cpu_us_per_operation": 17.55386535803225,
+      "median_average_cpu_cores": 11.715318389427079,
+      "paired_changes_percent": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "phase": "hot",
+      "workload": "read",
+      "engine": "helio10",
+      "valid_repeats": 3,
+      "median_ops_per_second": 463334.029186,
+      "minimum_ops_per_second": 435739.604044,
+      "maximum_ops_per_second": 463873.157984,
+      "repeats_ops_per_second": [
+        463873.157984,
+        463334.029186,
+        435739.604044
+      ],
+      "get_p99_us": 348.159,
+      "put_p99_us": null,
+      "overall_p99_us": 348.159,
+      "rss_peak_mib": 175.484375,
+      "median_setup_seconds": 0.045668875,
+      "median_measured_seconds": 8.000126834,
+      "median_disk_growth_mib": 0.0,
+      "median_disk_growth_bytes_per_measured_op": 0.0,
+      "median_writes_per_group": 16.0,
+      "median_user_cpu_seconds": 8.801948000000039,
+      "median_system_cpu_seconds": 22.63105699999994,
+      "median_whole_run_cpu_us_per_operation": 6.791927173646467,
+      "median_average_cpu_cores": 3.1067307323260405,
+      "paired_changes_percent": [
+        -31.208341626509327,
+        -33.06071462170973,
+        -36.162592880158265
+      ]
+    },
+    {
+      "phase": "hot",
+      "workload": "read",
+      "engine": "helio50",
+      "valid_repeats": 3,
+      "median_ops_per_second": 465077.764617,
+      "minimum_ops_per_second": 463618.608644,
+      "maximum_ops_per_second": 473004.906067,
+      "repeats_ops_per_second": [
+        473004.906067,
+        465077.764617,
+        463618.608644
+      ],
+      "get_p99_us": 335.871,
+      "put_p99_us": null,
+      "overall_p99_us": 335.871,
+      "rss_peak_mib": 175.578125,
+      "median_setup_seconds": 0.031080792,
+      "median_measured_seconds": 8.000124209,
+      "median_disk_growth_mib": 0.0,
+      "median_disk_growth_bytes_per_measured_op": 0.0,
+      "median_writes_per_group": 32.0,
+      "median_user_cpu_seconds": 8.817745999999943,
+      "median_system_cpu_seconds": 22.803707999999915,
+      "median_whole_run_cpu_us_per_operation": 6.735207967948835,
+      "median_average_cpu_cores": 3.132870306267849,
+      "paired_changes_percent": [
+        -29.854117775298295,
+        -32.80879182673391,
+        -32.078219207834394
+      ]
+    },
+    {
+      "phase": "million",
+      "workload": "load",
+      "engine": "caller",
+      "valid_repeats": 1,
+      "median_ops_per_second": 149977.96448,
+      "minimum_ops_per_second": 149977.96448,
+      "maximum_ops_per_second": 149977.96448,
+      "repeats_ops_per_second": [
+        149977.96448
+      ],
+      "get_p99_us": null,
+      "put_p99_us": 430.079,
+      "overall_p99_us": 430.079,
+      "rss_peak_mib": 480.265625,
+      "median_setup_seconds": 0,
+      "median_measured_seconds": 6.667646167,
+      "median_disk_growth_mib": 316.1796979904175,
+      "median_disk_growth_bytes_per_measured_op": 331.538443,
+      "median_writes_per_group": 17.578399662494725,
+      "median_user_cpu_seconds": 5.641935999999987,
+      "median_system_cpu_seconds": 11.187182000000007,
+      "median_whole_run_cpu_us_per_operation": 16.829117999999994,
+      "median_average_cpu_cores": 2.4973093220297016,
+      "paired_changes_percent": [
+        0.0
+      ]
+    },
+    {
+      "phase": "million",
+      "workload": "load",
+      "engine": "helio10",
+      "valid_repeats": 1,
+      "median_ops_per_second": 93467.4300657,
+      "minimum_ops_per_second": 93467.4300657,
+      "maximum_ops_per_second": 93467.4300657,
+      "repeats_ops_per_second": [
+        93467.4300657
+      ],
+      "get_p99_us": null,
+      "put_p99_us": 471.039,
+      "overall_p99_us": 471.039,
+      "rss_peak_mib": 489.703125,
+      "median_setup_seconds": 0,
+      "median_measured_seconds": 10.698914042,
+      "median_disk_growth_mib": 317.3584089279175,
+      "median_disk_growth_bytes_per_measured_op": 332.774411,
+      "median_writes_per_group": 16.002560409665545,
+      "median_user_cpu_seconds": 2.7000189999999975,
+      "median_system_cpu_seconds": 9.287481999999954,
+      "median_whole_run_cpu_us_per_operation": 11.987500999999952,
+      "median_average_cpu_cores": 1.1107827264424728,
+      "paired_changes_percent": [
+        -37.67922481828045
+      ]
+    },
+    {
+      "phase": "million",
+      "workload": "load",
+      "engine": "helio50",
+      "valid_repeats": 1,
+      "median_ops_per_second": 143894.011426,
+      "minimum_ops_per_second": 143894.011426,
+      "maximum_ops_per_second": 143894.011426,
+      "repeats_ops_per_second": [
+        143894.011426
+      ],
+      "get_p99_us": null,
+      "put_p99_us": 335.871,
+      "overall_p99_us": 335.871,
+      "rss_peak_mib": 476.65625,
+      "median_setup_seconds": 0,
+      "median_measured_seconds": 6.949559541,
+      "median_disk_growth_mib": 305.3066520690918,
+      "median_disk_growth_bytes_per_measured_op": 320.137228,
+      "median_writes_per_group": 31.97851044098366,
+      "median_user_cpu_seconds": 2.349905999999919,
+      "median_system_cpu_seconds": 7.430700000000002,
+      "median_whole_run_cpu_us_per_operation": 9.78060599999992,
+      "median_average_cpu_cores": 1.3943759213134228,
+      "paired_changes_percent": [
+        -4.056564626072978
+      ]
+    },
+    {
+      "phase": "disk-region-read",
+      "workload": "read",
+      "engine": "caller",
+      "valid_repeats": 1,
+      "median_ops_per_second": 103581.422239,
+      "minimum_ops_per_second": 103581.422239,
+      "maximum_ops_per_second": 103581.422239,
+      "repeats_ops_per_second": [
+        103581.422239
+      ],
+      "get_p99_us": 3702.783,
+      "put_p99_us": null,
+      "overall_p99_us": 3702.783,
+      "rss_peak_mib": 679.765625,
+      "median_setup_seconds": 14.161191458,
+      "median_measured_seconds": 8.00033425,
+      "median_disk_growth_mib": 0.0,
+      "median_disk_growth_bytes_per_measured_op": 0.0,
+      "median_writes_per_group": 17.165171866283313,
+      "median_user_cpu_seconds": 19.247701000000006,
+      "median_system_cpu_seconds": 119.19566699999996,
+      "median_whole_run_cpu_us_per_operation": 45.69471104178369,
+      "median_average_cpu_cores": 5.709992685059897,
+      "paired_changes_percent": [
+        0.0
+      ]
+    },
+    {
+      "phase": "disk-region-read",
+      "workload": "read",
+      "engine": "helio10",
+      "valid_repeats": 1,
+      "median_ops_per_second": 39836.3499529,
+      "minimum_ops_per_second": 39836.3499529,
+      "maximum_ops_per_second": 39836.3499529,
+      "repeats_ops_per_second": [
+        39836.3499529
+      ],
+      "get_p99_us": 5177.343,
+      "put_p99_us": null,
+      "overall_p99_us": 5177.343,
+      "rss_peak_mib": 686.65625,
+      "median_setup_seconds": 21.627292333,
+      "median_measured_seconds": 8.003368792,
+      "median_disk_growth_mib": 0.0,
+      "median_disk_growth_bytes_per_measured_op": 0.0,
+      "median_writes_per_group": 16.04003592968048,
+      "median_user_cpu_seconds": 6.452596000000085,
+      "median_system_cpu_seconds": 22.064566999999897,
+      "median_whole_run_cpu_us_per_operation": 11.89817908874746,
+      "median_average_cpu_cores": 0.8994188224579842,
+      "paired_changes_percent": [
+        -61.54102821548149
+      ]
+    },
+    {
+      "phase": "disk-region-read",
+      "workload": "read",
+      "engine": "helio50",
+      "valid_repeats": 1,
+      "median_ops_per_second": 47361.9569115,
+      "minimum_ops_per_second": 47361.9569115,
+      "maximum_ops_per_second": 47361.9569115,
+      "repeats_ops_per_second": [
+        47361.9569115
+      ],
+      "get_p99_us": 4980.735,
+      "put_p99_us": null,
+      "overall_p99_us": 4980.735,
+      "rss_peak_mib": 686.53125,
+      "median_setup_seconds": 13.897476583,
+      "median_measured_seconds": 8.003258833,
+      "median_disk_growth_mib": 0.0,
+      "median_disk_growth_bytes_per_measured_op": 0.0,
+      "median_writes_per_group": 31.985158886276768,
+      "median_user_cpu_seconds": 5.796518999999989,
+      "median_system_cpu_seconds": 19.545373000000154,
+      "median_whole_run_cpu_us_per_operation": 10.23888351977975,
+      "median_average_cpu_cores": 1.0569037074854994,
+      "paired_changes_percent": [
+        -54.27562598800899
+      ]
+    }
+  ],
+  "free_min_gib": 155.49872970581055,
+  "database_peak_mib": 763.3716354370117
+}
