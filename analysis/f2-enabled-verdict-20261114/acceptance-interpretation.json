@@ -1,0 +1,14 @@
+{
+  "overall": "NOT_PASS",
+  "hard_failure": "Pending 100KiB write partially survives page loss; Open rejects valid acknowledged prefix",
+  "hard_failure_scope": "disk-image transformation, SDK-supported variable values; not claim that fixed256B or original SIGKILL fails",
+  "public_failures_are_incomplete": {
+    "random": "600s local deadline, not original 86400s; no assertion reached",
+    "demand_load": "16M final logical dataset3.072GB exceeds local2GiB cap; stopped without reducing count",
+    "memory_limit": "20M final logical live2.560GB exceeds local2GiB cap; not run",
+    "compaction_crash": "preparation exceeded local cap, no crash injected"
+  },
+  "compaction": "Original100K x10rounds space/content/reopen PASS with19real cycles",
+  "ordinary_sigkill": "5/5 PASS",
+  "performance": "Second-round full pair valid; first-round4contendedcells excluded, including update preparation overlap"
+}

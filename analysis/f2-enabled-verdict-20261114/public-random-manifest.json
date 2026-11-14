@@ -1,0 +1,34 @@
+{
+  "started_at": "2026-11-14T10:09:17.417296+00:00",
+  "revision": "144a5ec34535b2e39b2e80f6e53efbf4a35afe86",
+  "argv": [
+    "--native-development",
+    "--strict-rss-limit",
+    "--build-dir",
+    "/Users/rosy/devspace/code/taycan-challenge/build/f2-enabled-verdict-20261114",
+    "--results-dir",
+    "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/public-random",
+    "--tests",
+    "random",
+    "--timeout",
+    "600",
+    "--mem-limit-bytes",
+    "4294967296"
+  ],
+  "scope": "Original public assertions and scenario key counts, user-chosen 4GiB, macOS libproc; explicit local deadline and 2GiB per-database guard, not official timeout",
+  "config": {
+    "durable_compaction": true,
+    "cold_migration": true,
+    "data_segment_bits": 23,
+    "sync_strategy": "data-log",
+    "io": "posix-aio",
+    "sync": "fsync",
+    "prefix_block_bytes": 512,
+    "group_commit": false
+  },
+  "binary_sha256": {
+    "random_test": "911298000aa6f9cf120ae1a2409aa871a381976b3aa80439b10a848eaf58009d",
+    "crash_worker": "db5fddeb54c70e4232530aa8f19dcd04b043627662c0029c6ea74946753be47c"
+  },
+  "finished_at": "2026-11-14T10:19:17.569198+00:00"
+}

@@ -1,0 +1,4 @@
+{"pid": 57936, "elapsed": 0.5061928330000001, "directory_bytes": 9428863, "rss_peak_bytes": 21676032, "free_bytes": 86701277184}
+{"pid": 57936, "elapsed": 5.541603666000004, "directory_bytes": 19918234, "rss_peak_bytes": 42549248, "free_bytes": 86690848768}
+{"pid": 57936, "elapsed": 10.576454000000002, "directory_bytes": 45306395, "rss_peak_bytes": 57589760, "free_bytes": 86664777728}
+{"pid": 57936, "elapsed": 15.629954082999998, "directory_bytes": 65243612, "rss_peak_bytes": 111230976, "free_bytes": 86642073600}

@@ -1,0 +1,150 @@
+{
+  "binary_hashes_match": true,
+  "shared_driver_matches": true,
+  "operation_counters_match": true,
+  "rss_limit_checked": true,
+  "excluded_cells": [
+    "f2-read-r1",
+    "f2-update-r1",
+    "rocksdb-load-r1",
+    "rocksdb-read-r1"
+  ],
+  "cells": [
+    {
+      "cell": "f2-load-r1",
+      "status": "PASS",
+      "included_in_comparison": true,
+      "excluded_due_contention": false,
+      "counters": [
+        "F2_COMMIT_COUNTS single_operations=1000000 full_index=13",
+        "F2_DATA_PREFIX commits=1000000 data_syncs=1000000 directory_syncs=62 write_calls=1000001 write_bytes=512000512 stable_tail=512000512 base_tail=486839296 recovered_commits=0"
+      ]
+    },
+    {
+      "cell": "rocksdb-load-r1",
+      "status": "PASS",
+      "included_in_comparison": false,
+      "excluded_due_contention": true,
+      "counters": []
+    },
+    {
+      "cell": "f2-read-r1",
+      "status": "PASS",
+      "included_in_comparison": false,
+      "excluded_due_contention": true,
+      "counters": [
+        "F2_COMMIT_COUNTS single_operations=1000000 full_index=12",
+        "F2_DATA_PREFIX commits=1000000 data_syncs=1000000 directory_syncs=62 write_calls=1000001 write_bytes=512000512 stable_tail=512000512 base_tail=449852416 recovered_commits=0"
+      ]
+    },
+    {
+      "cell": "rocksdb-read-r1",
+      "status": "PASS",
+      "included_in_comparison": false,
+      "excluded_due_contention": true,
+      "counters": []
+    },
+    {
+      "cell": "f2-update-r1",
+      "status": "PASS",
+      "included_in_comparison": false,
+      "excluded_due_contention": true,
+      "counters": [
+        "F2_COMMIT_COUNTS single_operations=1100911 full_index=14",
+        "F2_DATA_PREFIX commits=1100911 data_syncs=1100911 directory_syncs=68 write_calls=1100912 write_bytes=563666944 stable_tail=563666944 base_tail=559158272 recovered_commits=0"
+      ]
+    },
+    {
+      "cell": "rocksdb-update-r1",
+      "status": "PASS",
+      "included_in_comparison": true,
+      "excluded_due_contention": false,
+      "counters": []
+    },
+    {
+      "cell": "f2-contest_mix-r1",
+      "status": "PASS",
+      "included_in_comparison": true,
+      "excluded_due_contention": false,
+      "counters": [
+        "F2_COMMIT_COUNTS single_operations=1085641 full_index=14",
+        "F2_DATA_PREFIX commits=1085641 data_syncs=1085641 directory_syncs=67 write_calls=1085642 write_bytes=555848704 stable_tail=555848704 base_tail=555784704 recovered_commits=0"
+      ]
+    },
+    {
+      "cell": "rocksdb-contest_mix-r1",
+      "status": "PASS",
+      "included_in_comparison": true,
+      "excluded_due_contention": false,
+      "counters": []
+    },
+    {
+      "cell": "rocksdb-load-r2",
+      "status": "PASS",
+      "included_in_comparison": true,
+      "excluded_due_contention": false,
+      "counters": []
+    },
+    {
+      "cell": "f2-load-r2",
+      "status": "PASS",
+      "included_in_comparison": true,
+      "excluded_due_contention": false,
+      "counters": [
+        "F2_COMMIT_COUNTS single_operations=1000000 full_index=12",
+        "F2_DATA_PREFIX commits=1000000 data_syncs=1000000 directory_syncs=62 write_calls=1000001 write_bytes=512000512 stable_tail=512000512 base_tail=469460480 recovered_commits=0"
+      ]
+    },
+    {
+      "cell": "rocksdb-read-r2",
+      "status": "PASS",
+      "included_in_comparison": true,
+      "excluded_due_contention": false,
+      "counters": []
+    },
+    {
+      "cell": "f2-read-r2",
+      "status": "PASS",
+      "included_in_comparison": true,
+      "excluded_due_contention": false,
+      "counters": [
+        "F2_COMMIT_COUNTS single_operations=1000000 full_index=12",
+        "F2_DATA_PREFIX commits=1000000 data_syncs=1000000 directory_syncs=62 write_calls=1000001 write_bytes=512000512 stable_tail=512000512 base_tail=495329280 recovered_commits=0"
+      ]
+    },
+    {
+      "cell": "rocksdb-update-r2",
+      "status": "PASS",
+      "included_in_comparison": true,
+      "excluded_due_contention": false,
+      "counters": []
+    },
+    {
+      "cell": "f2-update-r2",
+      "status": "PASS",
+      "included_in_comparison": true,
+      "excluded_due_contention": false,
+      "counters": [
+        "F2_COMMIT_COUNTS single_operations=1109569 full_index=14",
+        "F2_DATA_PREFIX commits=1109569 data_syncs=1109569 directory_syncs=68 write_calls=1109570 write_bytes=568099840 stable_tail=568099840 base_tail=523703808 recovered_commits=0"
+      ]
+    },
+    {
+      "cell": "rocksdb-contest_mix-r2",
+      "status": "PASS",
+      "included_in_comparison": true,
+      "excluded_due_contention": false,
+      "counters": []
+    },
+    {
+      "cell": "f2-contest_mix-r2",
+      "status": "PASS",
+      "included_in_comparison": true,
+      "excluded_due_contention": false,
+      "counters": [
+        "F2_COMMIT_COUNTS single_operations=1116977 full_index=15",
+        "F2_DATA_PREFIX commits=1116977 data_syncs=1116977 directory_syncs=69 write_calls=1116978 write_bytes=571892736 stable_tail=571892736 base_tail=560407552 recovered_commits=0"
+      ]
+    }
+  ]
+}

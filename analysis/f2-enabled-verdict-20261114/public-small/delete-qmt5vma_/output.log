@@ -1,0 +1,15 @@
+seed=20261021 num_keys=100000 key_mode=random key_size=64 value_size=128 reader_threads=4 mem_limit_bytes=4294967296
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Delete
+[ RUN      ] Delete.MissingAndRepeated
+F2_COMMIT_COUNTS single_operations=400000 full_index=5
+F2_DATA_PREFIX commits=400000 data_syncs=400000 directory_syncs=25 write_calls=400001 write_bytes=204800512 stable_tail=204800512 base_tail=172238848 recovered_commits=0
+F2_PREFIX_INDEX cross_key_links=0
+F2_SYNC_IO sync_calls=400221 write_calls=402656 write_bytes=311907682
+[       OK ] Delete.MissingAndRepeated (60456 ms)
+[----------] 1 test from Delete (60456 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (60456 ms total)
+[  PASSED  ] 1 test.

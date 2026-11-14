@@ -1,0 +1,9 @@
+{
+  "reason": "Scheduling guard did not match absolute Python process path; remaining suite overlapped f2-read-r1. Stop remaining suite; mark affected performance cell contended, exclude from same-condition summary.",
+  "processes": [
+    {
+      "pid": 66060,
+      "command": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python /Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/run_correctness.py"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "f2_sync_runtime.inc": [
+    {
+      "line": 39,
+      "text": "      +\" durable-gc-v1 segment-bits=\"+std::to_string(F2_DATA_SEGMENT_BITS)+\" index-budget-divisor=65536\""
+    },
+    {
+      "line": 70,
+      "text": "      65536"
+    },
+    {
+      "line": 76,
+      "text": "    uint64_t memory=std::max<uint64_t>(6*page,budget/8/page*page);"
+    },
+    {
+      "line": 81,
+      "text": "    uint64_t reclaim=std::max<uint64_t>(8ULL<<20,budget/64);"
+    },
+    {
+      "line": 86,
+      "text": "    store_->PrefixGcConfigure();"
+    },
+    {
+      "line": 104,
+      "text": "    store_->PrefixGcStart();"
+    }
+  ],
+  "f2_gc_members.inc": [
+    {
+      "line": 51,
+      "text": "      const bool hot_ok=CompactHotLog(hot_until,false,2);"
+    },
+    {
+      "line": 68,
+      "text": "        const bool cold_ok=CompactColdLog(cold_until,false,2);"
+    },
+    {
+      "line": 77,
+      "text": "        const bool index_ok=index.CompactWithLookup(index_until,false,1);"
+    },
+    {
+      "line": 97,
+      "text": "      SyncCheckpointAndReclaim();"
+    },
+    {
+      "line": 100,
+      "text": "      hot_store.disk.log().PrefixReleaseTruncation();"
+    },
+    {
+      "line": 102,
+      "text": "      cold_store.disk.log().PrefixReleaseTruncation();"
+    },
+    {
+      "line": 104,
+      "text": "      index.disk.log().PrefixReleaseTruncation();"
+    }
+  ],
+  "f2_prefix_members.inc": [
+    {
+      "line": 33,
+      "text": "  void PrefixSyncDataFiles() {"
+    },
+    {
+      "line": 95,
+      "text": "    PrefixSyncDataFiles();"
+    },
+    {
+      "line": 183,
+      "text": "        if(malformed_record)throw std::runtime_error(\"malformed data record inside committed prefix: record=\"+std::to_string(record_at)+"
+    }
+  ]
+}

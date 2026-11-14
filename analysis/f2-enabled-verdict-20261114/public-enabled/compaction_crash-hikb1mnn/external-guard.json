@@ -1,0 +1,6 @@
+{
+  "pid": 62146,
+  "command": "/Users/rosy/devspace/code/taycan-challenge/build/f2-enabled-verdict-20261114/crash_worker --seed=20261021 --num_keys=100000 --key_size=16 --key_mode=random --value_size=4096 --mem_limit_bytes=4294967296 --mode=prepare --db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/public-enabled/compaction_crash-hikb1mnn/taycan-crash-buv1jxgx/db-0 --operations=1000000 --possible_operation=0",
+  "directory_bytes": 4048967217,
+  "reason": "local_database_2GiB_guard; original monitor thread called nonexistent abort; partial preparation, not an engine assertion"
+}

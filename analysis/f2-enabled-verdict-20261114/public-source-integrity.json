@@ -1,0 +1,77 @@
+{
+  "original_archive": "/Users/rosy/devspace/code/taycan-challenge/taycan_participant_sdk.tar.gz",
+  "checks": [
+    {
+      "path": "memory_limit_test.cc",
+      "matches": true
+    },
+    {
+      "path": "basic_test.cc",
+      "matches": true
+    },
+    {
+      "path": "test_main.cc",
+      "matches": true
+    },
+    {
+      "path": "delete_test.cc",
+      "matches": true
+    },
+    {
+      "path": "recovery_test.cc",
+      "matches": true
+    },
+    {
+      "path": "workload.h",
+      "matches": true
+    },
+    {
+      "path": "demand_load_test.cc",
+      "matches": true
+    },
+    {
+      "path": "mixed_test.cc",
+      "matches": true
+    },
+    {
+      "path": "compaction_test.cc",
+      "matches": true
+    },
+    {
+      "path": "concurrent_test.cc",
+      "matches": true
+    },
+    {
+      "path": "test_helper.h",
+      "matches": true
+    },
+    {
+      "path": "overwrite_test.cc",
+      "matches": true
+    },
+    {
+      "path": "checkpoint_test.cc",
+      "matches": true
+    },
+    {
+      "path": "sequential_test.cc",
+      "matches": true
+    },
+    {
+      "path": "random_test.cc",
+      "matches": true
+    },
+    {
+      "path": "test_options.h",
+      "matches": true
+    },
+    {
+      "path": "test_options.cc",
+      "matches": true
+    },
+    {
+      "path": "crash_worker.cc",
+      "matches": true
+    }
+  ]
+}

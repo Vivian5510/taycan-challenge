@@ -1,0 +1,37 @@
+{
+  "started_at": "2026-11-14T10:09:17.417308+00:00",
+  "revision": "144a5ec34535b2e39b2e80f6e53efbf4a35afe86",
+  "argv": [
+    "--native-development",
+    "--strict-rss-limit",
+    "--build-dir",
+    "/Users/rosy/devspace/code/taycan-challenge/build/f2-enabled-verdict-20261114",
+    "--results-dir",
+    "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/public-small",
+    "--tests",
+    "overwrite,delete,mixed,checkpoint",
+    "--timeout",
+    "600",
+    "--mem-limit-bytes",
+    "4294967296"
+  ],
+  "scope": "Original public assertions and scenario key counts, user-chosen 4GiB, macOS libproc; explicit local deadline and 2GiB per-database guard, not official timeout",
+  "config": {
+    "durable_compaction": true,
+    "cold_migration": true,
+    "data_segment_bits": 23,
+    "sync_strategy": "data-log",
+    "io": "posix-aio",
+    "sync": "fsync",
+    "prefix_block_bytes": 512,
+    "group_commit": false
+  },
+  "binary_sha256": {
+    "overwrite_test": "defb4ce2f3013a7a8d65e128dbe9460dd1f02f5c6faa74598b48760e1618a545",
+    "delete_test": "1d695aebe359d82b4d2138b6f47b70aab5a0264cfd130c282fc840dd835f95dc",
+    "mixed_test": "98267af8957836a4fdc3008f7f117e3ef88b48eb7411e453ef2d256e0c1e4793",
+    "checkpoint_test": "931bd1bad1ca2d33cec4b9b3fd5a711260d3729ca02662467e8cc141649f5b61",
+    "crash_worker": "db5fddeb54c70e4232530aa8f19dcd04b043627662c0029c6ea74946753be47c"
+  },
+  "finished_at": "2026-11-14T10:21:20.869287+00:00"
+}

@@ -1,0 +1,8 @@
+{
+  "reason": "resource_preflight_original_16M_live_dataset_exceeds_2GiB_local_database_cap; stopping partial run, not an engine assertion",
+  "minimum_live_logical_bytes": 3072000000,
+  "cap_bytes": 2147483648,
+  "pid": 81460,
+  "command": "/Users/rosy/devspace/code/taycan-challenge/build/f2-enabled-verdict-20261114/demand_load_test --num_keys=16000000 --key_size=64 --value_size=128 --rounds=10 --mem_limit_bytes=4294967296 --seed=20261021 --data_dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/public-demand/demand_load-8yazvmuv",
+  "stopped_at": 1794651311.082741
+}

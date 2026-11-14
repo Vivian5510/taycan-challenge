@@ -1,0 +1,10 @@
+Exception in thread Thread-50:
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/threading.py", line 973, in _bootstrap_inner
+    self.run()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/threading.py", line 910, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/run_correctness.py", line 37, in check
+    last=time.monotonic()
+AttributeError: 'GuardedRunner' object has no attribute 'abort'
+Preserved failure logs/database: /Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/public-enabled/compaction_crash-hikb1mnn/taycan-crash-buv1jxgx

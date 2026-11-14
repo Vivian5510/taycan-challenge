@@ -1,0 +1,12 @@
+{
+  "reason": "Controller process detection matched python3 text rather than actual macOS Python executable; sequential/overwrite briefly overlapped performance. All remaining workers stopped; exclude affected observations.",
+  "affected_cells": [
+    "rocksdb-load-r1",
+    "f2-read-r1",
+    "rocksdb-read-r1",
+    "f2-update-r1"
+  ],
+  "remaining_workers_stopped": true,
+  "stopped_at": 1794650135.6839092,
+  "additional_exclusion_note": "F2 update r1 preparation overlapped the orphan overwrite worker until it was stopped; exclude whole cell conservatively even though measured phase ran later."
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "test": "overwrite",
+    "parameters": {
+      "num_keys": 100000,
+      "key_size": 64,
+      "value_size": 128,
+      "rounds": 10,
+      "mem_limit_bytes": 4294967296,
+      "seed": 20261021
+    },
+    "rss_limit_bytes": 4724464025,
+    "harness_allowance_bytes": 0,
+    "validation_scope": "macOS native development",
+    "log": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/public-small/overwrite-cdr8y4_6/output.log",
+    "status": "PASS",
+    "elapsed_seconds": 145.025113583,
+    "rss_peak_bytes": 606289920
+  },
+  {
+    "test": "delete",
+    "parameters": {
+      "num_keys": 100000,
+      "key_size": 64,
+      "value_size": 128,
+      "rounds": 10,
+      "mem_limit_bytes": 4294967296,
+      "seed": 20261021
+    },
+    "rss_limit_bytes": 4724464025,
+    "harness_allowance_bytes": 0,
+    "validation_scope": "macOS native development",
+    "log": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/public-small/delete-qmt5vma_/output.log",
+    "status": "PASS",
+    "elapsed_seconds": 60.949557957999986,
+    "rss_peak_bytes": 289128448
+  },
+  {
+    "test": "mixed",
+    "parameters": {
+      "num_keys": 1000000,
+      "key_size": 64,
+      "value_size": 128,
+      "rounds": 10,
+      "mem_limit_bytes": 4294967296,
+      "seed": 20261021
+    },
+    "rss_limit_bytes": 4724464025,
+    "harness_allowance_bytes": 0,
+    "validation_scope": "macOS native development",
+    "log": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/public-small/mixed-y_peifce/output.log",
+    "status": "PASS",
+    "elapsed_seconds": 439.31704154199997,
+    "rss_peak_bytes": 1643020288
+  },
+  {
+    "test": "checkpoint",
+    "parameters": {
+      "num_keys": 131072,
+      "key_size": 64,
+      "value_size": 4096,
+      "rounds": 10,
+      "mem_limit_bytes": 4294967296,
+      "seed": 20261021
+    },
+    "rss_limit_bytes": 4724464025,
+    "harness_allowance_bytes": 0,
+    "validation_scope": "macOS native development",
+    "log": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/public-small/checkpoint-mg4599nj/output.log",
+    "status": "SKIP",
+    "elapsed_seconds": 78.059208625,
+    "rss_peak_bytes": 1149796352
+  }
+]

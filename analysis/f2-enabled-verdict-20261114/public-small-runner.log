@@ -1,0 +1,5 @@
+Results: /Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/public-small
+PASS overwrite peak=606289920 bytes 145.03s
+PASS delete peak=289128448 bytes 60.95s
+PASS mixed peak=1643020288 bytes 439.32s
+SKIP checkpoint peak=1149796352 bytes 78.06s

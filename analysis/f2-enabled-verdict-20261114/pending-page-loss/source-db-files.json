@@ -1,0 +1,74 @@
+[
+  {
+    "path": "LOCK",
+    "bytes": 0
+  },
+  {
+    "path": "F2-SYNC-CURRENT",
+    "bytes": 168
+  },
+  {
+    "path": "cold/log.log0",
+    "bytes": 1048576
+  },
+  {
+    "path": "cold/cpr-checkpoints/DE2F8F74-A52F-48B1-8AF6-B0FEC59763F8/info.dat",
+    "bytes": 2336
+  },
+  {
+    "path": "cold/cpr-checkpoints/DE2F8F74-A52F-48B1-8AF6-B0FEC59763F8/D236A83F-2217-4F24-9480-71F7C834A598.dat",
+    "bytes": 32
+  },
+  {
+    "path": "cold/cold-index/log.log0",
+    "bytes": 1048576
+  },
+  {
+    "path": "cold/cold-index/cpr-checkpoints/DE2F8F74-A52F-48B1-8AF6-B0FEC59763F8/info.dat",
+    "bytes": 2336
+  },
+  {
+    "path": "cold/cold-index/cpr-checkpoints/DE2F8F74-A52F-48B1-8AF6-B0FEC59763F8/084098B9-3E9E-4843-A55E-F2082D089F58.dat",
+    "bytes": 32
+  },
+  {
+    "path": "cold/cold-index/index-checkpoints/DE2F8F74-A52F-48B1-8AF6-B0FEC59763F8/ofb.dat",
+    "bytes": 262144
+  },
+  {
+    "path": "cold/cold-index/index-checkpoints/DE2F8F74-A52F-48B1-8AF6-B0FEC59763F8/info.dat",
+    "bytes": 512
+  },
+  {
+    "path": "cold/cold-index/index-checkpoints/DE2F8F74-A52F-48B1-8AF6-B0FEC59763F8/ht.dat",
+    "bytes": 4194304
+  },
+  {
+    "path": "cold/index-checkpoints/DE2F8F74-A52F-48B1-8AF6-B0FEC59763F8/info.dat",
+    "bytes": 512
+  },
+  {
+    "path": "hot/log.log0",
+    "bytes": 137728
+  },
+  {
+    "path": "hot/cpr-checkpoints/DE2F8F74-A52F-48B1-8AF6-B0FEC59763F8/info.dat",
+    "bytes": 2336
+  },
+  {
+    "path": "hot/cpr-checkpoints/DE2F8F74-A52F-48B1-8AF6-B0FEC59763F8/D236A83F-2217-4F24-9480-71F7C834A598.dat",
+    "bytes": 32
+  },
+  {
+    "path": "hot/index-checkpoints/DE2F8F74-A52F-48B1-8AF6-B0FEC59763F8/ofb.dat",
+    "bytes": 262144
+  },
+  {
+    "path": "hot/index-checkpoints/DE2F8F74-A52F-48B1-8AF6-B0FEC59763F8/info.dat",
+    "bytes": 512
+  },
+  {
+    "path": "hot/index-checkpoints/DE2F8F74-A52F-48B1-8AF6-B0FEC59763F8/ht.dat",
+    "bytes": 4194304
+  }
+]

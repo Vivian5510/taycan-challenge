@@ -1,0 +1,16 @@
+{
+  "public_states": {
+    "PASS": 9,
+    "FAIL": 3,
+    "SKIP": 1,
+    "NOT_RUN": 1
+  },
+  "public_required_complete": false,
+  "all_sampled_pass_processes_within_rss": true,
+  "original_public_cpp_unchanged": true,
+  "engine_cpp_unchanged": true,
+  "tested_binaries_unchanged": true,
+  "performance_complete_cells": 16,
+  "excluded_contended_cells": 4,
+  "scope": "macOS ARM64 native development; 4GiB; not formal Linux x86_64; no official score"
+}

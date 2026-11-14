@@ -1,0 +1,22 @@
+[
+  {
+    "group": "public-demand",
+    "tests": "demand_load",
+    "returncode": 1
+  },
+  {
+    "group": "public-memory",
+    "tests": "memory_limit",
+    "returncode": 1
+  },
+  {
+    "group": "public-random",
+    "tests": "random",
+    "returncode": 1
+  },
+  {
+    "group": "public-small",
+    "tests": "overwrite,delete,mixed,checkpoint",
+    "returncode": 0
+  }
+]

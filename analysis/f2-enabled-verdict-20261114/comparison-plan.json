@@ -1,0 +1,44 @@
+{
+  "classification": "same-condition local reference only; not official score and not correctness acceptance",
+  "data": {
+    "num_keys": 1000000,
+    "key_size": 32,
+    "value_size": 256,
+    "mem_limit_bytes": 4294967296,
+    "threads": 32,
+    "seed": 20261021,
+    "distribution": "uniform"
+  },
+  "duration_seconds": 10,
+  "warmup_seconds": 2,
+  "repeats": 2,
+  "order": [
+    [
+      "f2",
+      "rocksdb"
+    ],
+    [
+      "rocksdb",
+      "f2"
+    ]
+  ],
+  "workloads": [
+    "load",
+    "read",
+    "update",
+    "contest_mix"
+  ],
+  "sync": "F2 fsync-after-HybridLog-flush, RocksDB sync=true/WAL on using upstream HAVE_FULLFSYNC=OFF",
+  "F2_config": {
+    "group_commit": false,
+    "durable_compaction": true,
+    "data_segment_bits": 23
+  },
+  "cache": "F2 F_NOCACHE; RocksDB ordinary buffered SST/block cache; no cold-disk or architecture claim",
+  "guards": {
+    "single_database_bytes": 2147483648,
+    "free_bytes": 21474836480,
+    "timeout_seconds": 180
+  },
+  "prerequisite": "No correctness worker may be alive; if F2 cell fails or stalls record failure and do not use its partial ops as a successful score"
+}

@@ -1,0 +1,38 @@
+{
+  "started_at": "2026-11-14T09:43:43.346620+00:00",
+  "revision": "144a5ec34535b2e39b2e80f6e53efbf4a35afe86",
+  "argv": [
+    "--native-development",
+    "--strict-rss-limit",
+    "--build-dir",
+    "/Users/rosy/devspace/code/taycan-challenge/build/f2-enabled-verdict-20261114",
+    "--results-dir",
+    "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/public-enabled",
+    "--tests",
+    "basic,recovery,concurrent,compaction,crash_recovery,compaction_crash",
+    "--timeout",
+    "300",
+    "--mem-limit-bytes",
+    "4294967296"
+  ],
+  "scope": "Original public assertions and scenario key counts, user-chosen 4GiB, macOS libproc; 300s local deadline and 2GiB per-database guard, not official timeout",
+  "config": {
+    "durable_compaction": true,
+    "cold_migration": true,
+    "data_segment_bits": 23,
+    "sync_strategy": "data-log",
+    "io": "posix-aio",
+    "sync": "fsync",
+    "prefix_block_bytes": 512,
+    "group_commit": false
+  },
+  "binary_sha256": {
+    "basic_test": "41a921c5a1c00ba6be82b638cd7bec0b95b722a1bdde917d6425c70558e505ba",
+    "recovery_test": "d167f23e42bfc5c65d381d812f16a0192ccb13cf85e57eced21f7ae8dd4cce39",
+    "concurrent_test": "f51984647c7d07778ecaffec864abe25a3710156d63dff6d14deb16f4aefe7f4",
+    "compaction_test": "7d054518c9e2a42a1bca94a38cfbe0205ac7398ad3b1b00fadd3a9bd3d948e2f",
+    "crash_worker": "db5fddeb54c70e4232530aa8f19dcd04b043627662c0029c6ea74946753be47c"
+  },
+  "finished_at": "2026-11-14T09:50:53.517146+00:00",
+  "runner_source_changed_while_running": "Corrected disk guard abort API on disk; in-memory first controller still used old nonexistent abort. Exact worker was stopped manually with command verification; preserve exception and reason as monitor limitation."
+}

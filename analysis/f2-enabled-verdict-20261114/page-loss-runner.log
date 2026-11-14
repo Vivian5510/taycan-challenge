@@ -1,0 +1,4 @@
+all-pending-lost PASS
+all-pending-survives PASS
+earlier-pending-page-lost FAIL
+last-pending-page-lost PASS

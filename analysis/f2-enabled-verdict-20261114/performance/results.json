@@ -1,0 +1,4142 @@
+{
+  "started_at": "2026-11-14T09:51:09.631020+00:00",
+  "status": "PASS",
+  "plan": {
+    "classification": "same-condition local reference only; not official score and not correctness acceptance",
+    "data": {
+      "num_keys": 1000000,
+      "key_size": 32,
+      "value_size": 256,
+      "mem_limit_bytes": 4294967296,
+      "threads": 32,
+      "seed": 20261021,
+      "distribution": "uniform"
+    },
+    "duration_seconds": 10,
+    "warmup_seconds": 2,
+    "repeats": 2,
+    "order": [
+      [
+        "f2",
+        "rocksdb"
+      ],
+      [
+        "rocksdb",
+        "f2"
+      ]
+    ],
+    "workloads": [
+      "load",
+      "read",
+      "update",
+      "contest_mix"
+    ],
+    "sync": "F2 fsync-after-HybridLog-flush, RocksDB sync=true/WAL on using upstream HAVE_FULLFSYNC=OFF",
+    "F2_config": {
+      "group_commit": false,
+      "durable_compaction": true,
+      "data_segment_bits": 23
+    },
+    "cache": "F2 F_NOCACHE; RocksDB ordinary buffered SST/block cache; no cold-disk or architecture claim",
+    "guards": {
+      "single_database_bytes": 2147483648,
+      "free_bytes": 21474836480,
+      "timeout_seconds": 180
+    },
+    "prerequisite": "No correctness worker may be alive; if F2 cell fails or stalls record failure and do not use its partial ops as a successful score"
+  },
+  "identities": {
+    "f2": {
+      "engine": "f2_sync_data-log",
+      "version": "332ea7da",
+      "policy": "synchronous_F2_internal_data-log_full_payload_direct_F2_single_request_mac_fsync_native_compaction_durable_retirement_segmentbits23",
+      "platform_sync": "macOS:_F2_file_sync_policy=fsync"
+    },
+    "rocksdb": {
+      "engine": "rocksdb",
+      "version": "8.9.1",
+      "policy": "sync=true,disableWAL=false,compression=none,one_key_per_API,shared_cache=5/8_budget,write_buffer_manager=1/4_budget,VmRSS_monitored",
+      "platform_sync": "macOS:RocksDB8.9.1_HAVE_FULLFSYNC_OFF_fsync"
+    }
+  },
+  "binary_sha256": {
+    "f2": "1bad26266b63a38cd8c247fd967b8cafea8011a4edb015925b29fab043534c5d",
+    "rocksdb": "aaecbc6a47c0819e82f7186def10970ae3e9f5312bd5da273faf5bf1045dc614"
+  },
+  "shared_driver_sha256": "536b0200135773157f57c05d89ead934087cbb77a1a15377c7334ccc7c27ac49",
+  "runs": [
+    {
+      "cell": "f2-load-r1",
+      "engine": "f2",
+      "workload": "load",
+      "repeat": 1,
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-enabled-verdict-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/f2-load-r1/db",
+        "--workload=load",
+        "--num-keys=1000000",
+        "--key-size=32",
+        "--value-size=256",
+        "--mem-limit-bytes=4294967296",
+        "--threads=32",
+        "--seed=20261021",
+        "--distribution=uniform",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--progress-interval-seconds=1"
+      ],
+      "status": "PASS",
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/f2-enabled-verdict-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/f2-load-r1/db",
+          "--workload=load",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--threads=32",
+          "--seed=20261021",
+          "--distribution=uniform",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--progress-interval-seconds=1"
+        ],
+        "pid": 64754,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 1526431744,
+        "rss_limit_bytes": 4724464025,
+        "samples": 7698,
+        "rss_source": "macOS libproc native development",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.015711125000001047,
+        "elapsed_seconds": 84.3092545
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 1000000,
+        "gets": 0,
+        "puts": 1000000,
+        "deletes": 0,
+        "read_misses": 0,
+        "ops_per_second": 11875.9268363,
+        "open_seconds": 0.060380916,
+        "setup_seconds": 0,
+        "warmup_seconds": 0,
+        "measured_seconds": 84.20395425,
+        "close_seconds": 0.001087875,
+        "data_bytes_before_measure": 8922212,
+        "data_bytes_after_measure": 395854960,
+        "data_bytes_after_close": 395854960,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 9964,
+          "p50_us": 68.607,
+          "p95_us": 159.743,
+          "p99_us": 31457.279,
+          "p999_us": 515899.391,
+          "max_us": 1187841.875
+        },
+        "get_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        },
+        "put_latency": {
+          "samples": 9964,
+          "p50_us": 68.607,
+          "p95_us": 159.743,
+          "p99_us": 31457.279,
+          "p999_us": 515899.391,
+          "max_us": 1187841.875
+        },
+        "delete_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        }
+      },
+      "database_files": [
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "F2-SYNC-CURRENT",
+          "bytes": 176
+        },
+        {
+          "path": "cold/log.log142",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log145",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log127",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log129",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log144",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log143",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log128",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log126",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log132",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log135",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log150",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log157",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log134",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log133",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log156",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log151",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log158",
+          "bytes": 2316800
+        },
+        {
+          "path": "cold/log.log124",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log123",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log146",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log141",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log148",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log125",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log149",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log140",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log147",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log154",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log153",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log138",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log136",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log131",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log152",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log155",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log130",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log137",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log139",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cpr-checkpoints/ABCD5636-2B74-4DFA-AD6E-9EFEC6F572FA/1D66AAAF-EA3F-436F-8F9A-E998B8050978.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cpr-checkpoints/ABCD5636-2B74-4DFA-AD6E-9EFEC6F572FA/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cold-index/log.log56",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log51",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log57",
+          "bytes": 6833664
+        },
+        {
+          "path": "cold/cold-index/log.log52",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log55",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log54",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log53",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/ABCD5636-2B74-4DFA-AD6E-9EFEC6F572FA/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/ABCD5636-2B74-4DFA-AD6E-9EFEC6F572FA/676B2EAB-1DB5-46F7-A9FE-0AED7A7517FF.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/ABCD5636-2B74-4DFA-AD6E-9EFEC6F572FA/ofb.dat",
+          "bytes": 262144
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/ABCD5636-2B74-4DFA-AD6E-9EFEC6F572FA/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/ABCD5636-2B74-4DFA-AD6E-9EFEC6F572FA/ht.dat",
+          "bytes": 4194304
+        },
+        {
+          "path": "cold/index-checkpoints/ABCD5636-2B74-4DFA-AD6E-9EFEC6F572FA/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/log.log58",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log60",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log57",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log61",
+          "bytes": 295424
+        },
+        {
+          "path": "hot/log.log59",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/cpr-checkpoints/ABCD5636-2B74-4DFA-AD6E-9EFEC6F572FA/1D66AAAF-EA3F-436F-8F9A-E998B8050978.dat",
+          "bytes": 32
+        },
+        {
+          "path": "hot/cpr-checkpoints/ABCD5636-2B74-4DFA-AD6E-9EFEC6F572FA/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "hot/index-checkpoints/ABCD5636-2B74-4DFA-AD6E-9EFEC6F572FA/ofb.dat",
+          "bytes": 262144
+        },
+        {
+          "path": "hot/index-checkpoints/ABCD5636-2B74-4DFA-AD6E-9EFEC6F572FA/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/index-checkpoints/ABCD5636-2B74-4DFA-AD6E-9EFEC6F572FA/ht.dat",
+          "bytes": 4194304
+        }
+      ],
+      "wall_seconds": 84.342463916
+    },
+    {
+      "cell": "rocksdb-load-r1",
+      "engine": "rocksdb",
+      "workload": "load",
+      "repeat": 1,
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/rocks-enabled-verdict-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/rocksdb-load-r1/db",
+        "--workload=load",
+        "--num-keys=1000000",
+        "--key-size=32",
+        "--value-size=256",
+        "--mem-limit-bytes=4294967296",
+        "--threads=32",
+        "--seed=20261021",
+        "--distribution=uniform",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--progress-interval-seconds=1"
+      ],
+      "status": "PASS",
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/rocks-enabled-verdict-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/rocksdb-load-r1/db",
+          "--workload=load",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--threads=32",
+          "--seed=20261021",
+          "--distribution=uniform",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--progress-interval-seconds=1"
+        ],
+        "pid": 65930,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 302874624,
+        "rss_limit_bytes": 4724464025,
+        "samples": 391,
+        "rss_source": "macOS libproc native development",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.012577792000001864,
+        "elapsed_seconds": 4.716810291999991
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 1000000,
+        "gets": 0,
+        "puts": 1000000,
+        "deletes": 0,
+        "read_misses": 0,
+        "ops_per_second": 213112.442775,
+        "open_seconds": 0.007795042,
+        "setup_seconds": 0,
+        "warmup_seconds": 0,
+        "measured_seconds": 4.692358583,
+        "close_seconds": 0.000323917,
+        "data_bytes_before_measure": 27946,
+        "data_bytes_after_measure": 296784579,
+        "data_bytes_after_close": 296784769,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 9964,
+          "p50_us": 145.407,
+          "p95_us": 198.655,
+          "p99_us": 251.903,
+          "p999_us": 761.855,
+          "max_us": 3488.958
+        },
+        "get_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        },
+        "put_latency": {
+          "samples": 9964,
+          "p50_us": 145.407,
+          "p95_us": 198.655,
+          "p99_us": 251.903,
+          "p999_us": 761.855,
+          "max_us": 3488.958
+        },
+        "delete_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        }
+      },
+      "database_files": [
+        {
+          "path": "OPTIONS-000007",
+          "bytes": 7268
+        },
+        {
+          "path": "IDENTITY",
+          "bytes": 36
+        },
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "CURRENT",
+          "bytes": 16
+        },
+        {
+          "path": "LOG",
+          "bytes": 28093
+        },
+        {
+          "path": "000009.sst",
+          "bytes": 252487206
+        },
+        {
+          "path": "MANIFEST-000005",
+          "bytes": 250
+        },
+        {
+          "path": "000008.log",
+          "bytes": 44261900
+        }
+      ],
+      "wall_seconds": 4.739342250000007
+    },
+    {
+      "cell": "f2-read-r1",
+      "engine": "f2",
+      "workload": "read",
+      "repeat": 1,
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-enabled-verdict-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/f2-read-r1/db",
+        "--workload=read",
+        "--num-keys=1000000",
+        "--key-size=32",
+        "--value-size=256",
+        "--mem-limit-bytes=4294967296",
+        "--threads=32",
+        "--seed=20261021",
+        "--distribution=uniform",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--progress-interval-seconds=1"
+      ],
+      "status": "PASS",
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/f2-enabled-verdict-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/f2-read-r1/db",
+          "--workload=read",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--threads=32",
+          "--seed=20261021",
+          "--distribution=uniform",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--progress-interval-seconds=1"
+        ],
+        "pid": 66058,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 1390592000,
+        "rss_limit_bytes": 4724464025,
+        "samples": 11980,
+        "rss_source": "macOS libproc native development",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.035584166999996114,
+        "elapsed_seconds": 130.48755395799998
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 6221687,
+        "gets": 6221687,
+        "puts": 0,
+        "deletes": 0,
+        "read_misses": 0,
+        "ops_per_second": 622159.966429,
+        "open_seconds": 0.04426525,
+        "setup_seconds": 118.391680458,
+        "warmup_seconds": 2.000366209,
+        "measured_seconds": 10.000140375,
+        "close_seconds": 0.001232,
+        "data_bytes_before_measure": 409633392,
+        "data_bytes_after_measure": 409633392,
+        "data_bytes_after_close": 409633392,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 62036,
+          "p50_us": 12.671,
+          "p95_us": 204.799,
+          "p99_us": 770.047,
+          "p999_us": 2326.527,
+          "max_us": 8891.75
+        },
+        "get_latency": {
+          "samples": 62036,
+          "p50_us": 12.671,
+          "p95_us": 204.799,
+          "p99_us": 770.047,
+          "p999_us": 2326.527,
+          "max_us": 8891.75
+        },
+        "put_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        },
+        "delete_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        }
+      },
+      "database_files": [
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "F2-SYNC-CURRENT",
+          "bytes": 176
+        },
+        {
+          "path": "cold/log.log142",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log145",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log120",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log118",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log127",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log129",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log116",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log144",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log143",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log128",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log117",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log119",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log126",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log121",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log132",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log135",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log134",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log133",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log124",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log123",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log146",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log141",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log148",
+          "bytes": 6161408
+        },
+        {
+          "path": "cold/log.log122",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log125",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log140",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log147",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log138",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log136",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log131",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log130",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log137",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log139",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cpr-checkpoints/85C03707-F5A3-42AA-998D-8E44E1F53A15/69074476-3BCA-4A05-8E59-D57587C0E9E0.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cpr-checkpoints/85C03707-F5A3-42AA-998D-8E44E1F53A15/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cold-index/log.log51",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log50",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log52",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log55",
+          "bytes": 8378880
+        },
+        {
+          "path": "cold/cold-index/log.log54",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log53",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log49",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/85C03707-F5A3-42AA-998D-8E44E1F53A15/42DDDD8F-51BD-41BB-A49F-208AEA7EB812.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/85C03707-F5A3-42AA-998D-8E44E1F53A15/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/85C03707-F5A3-42AA-998D-8E44E1F53A15/ofb.dat",
+          "bytes": 262144
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/85C03707-F5A3-42AA-998D-8E44E1F53A15/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/85C03707-F5A3-42AA-998D-8E44E1F53A15/ht.dat",
+          "bytes": 4194304
+        },
+        {
+          "path": "cold/index-checkpoints/85C03707-F5A3-42AA-998D-8E44E1F53A15/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/log.log58",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log60",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log56",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log57",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log61",
+          "bytes": 295424
+        },
+        {
+          "path": "hot/log.log59",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log55",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log54",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log53",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/cpr-checkpoints/85C03707-F5A3-42AA-998D-8E44E1F53A15/69074476-3BCA-4A05-8E59-D57587C0E9E0.dat",
+          "bytes": 32
+        },
+        {
+          "path": "hot/cpr-checkpoints/85C03707-F5A3-42AA-998D-8E44E1F53A15/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "hot/index-checkpoints/85C03707-F5A3-42AA-998D-8E44E1F53A15/ofb.dat",
+          "bytes": 262144
+        },
+        {
+          "path": "hot/index-checkpoints/85C03707-F5A3-42AA-998D-8E44E1F53A15/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/index-checkpoints/85C03707-F5A3-42AA-998D-8E44E1F53A15/ht.dat",
+          "bytes": 4194304
+        }
+      ],
+      "wall_seconds": 130.53706525
+    },
+    {
+      "cell": "rocksdb-read-r1",
+      "engine": "rocksdb",
+      "workload": "read",
+      "repeat": 1,
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/rocks-enabled-verdict-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/rocksdb-read-r1/db",
+        "--workload=read",
+        "--num-keys=1000000",
+        "--key-size=32",
+        "--value-size=256",
+        "--mem-limit-bytes=4294967296",
+        "--threads=32",
+        "--seed=20261021",
+        "--distribution=uniform",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--progress-interval-seconds=1"
+      ],
+      "status": "PASS",
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/rocks-enabled-verdict-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/rocksdb-read-r1/db",
+          "--workload=read",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--threads=32",
+          "--seed=20261021",
+          "--distribution=uniform",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--progress-interval-seconds=1"
+        ],
+        "pid": 67867,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 597622784,
+        "rss_limit_bytes": 4724464025,
+        "samples": 2007,
+        "rss_source": "macOS libproc native development",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.012753292000013516,
+        "elapsed_seconds": 23.566620166000007
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 7648806,
+        "gets": 7648806,
+        "puts": 0,
+        "deletes": 0,
+        "read_misses": 0,
+        "ops_per_second": 764873.43566,
+        "open_seconds": 0.007028167,
+        "setup_seconds": 11.509862292,
+        "warmup_seconds": 2.000217917,
+        "measured_seconds": 10.000093667,
+        "close_seconds": 0.027151875,
+        "data_bytes_before_measure": 296784788,
+        "data_bytes_after_measure": 296784788,
+        "data_bytes_after_close": 296784978,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 76156,
+          "p50_us": 8.959,
+          "p95_us": 110.591,
+          "p99_us": 303.103,
+          "p999_us": 3276.799,
+          "max_us": 90494.5
+        },
+        "get_latency": {
+          "samples": 76156,
+          "p50_us": 8.959,
+          "p95_us": 110.591,
+          "p99_us": 303.103,
+          "p999_us": 3276.799,
+          "max_us": 90494.5
+        },
+        "put_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        },
+        "delete_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        }
+      },
+      "database_files": [
+        {
+          "path": "OPTIONS-000007",
+          "bytes": 7268
+        },
+        {
+          "path": "IDENTITY",
+          "bytes": 36
+        },
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "CURRENT",
+          "bytes": 16
+        },
+        {
+          "path": "LOG",
+          "bytes": 28093
+        },
+        {
+          "path": "000009.sst",
+          "bytes": 252502084
+        },
+        {
+          "path": "MANIFEST-000005",
+          "bytes": 250
+        },
+        {
+          "path": "000008.log",
+          "bytes": 44247231
+        }
+      ],
+      "wall_seconds": 23.599067708999996
+    },
+    {
+      "cell": "f2-update-r1",
+      "engine": "f2",
+      "workload": "update",
+      "repeat": 1,
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-enabled-verdict-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/f2-update-r1/db",
+        "--workload=update",
+        "--num-keys=1000000",
+        "--key-size=32",
+        "--value-size=256",
+        "--mem-limit-bytes=4294967296",
+        "--threads=32",
+        "--seed=20261021",
+        "--distribution=uniform",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--progress-interval-seconds=1"
+      ],
+      "status": "PASS",
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/f2-enabled-verdict-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/f2-update-r1/db",
+          "--workload=update",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--threads=32",
+          "--seed=20261021",
+          "--distribution=uniform",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--progress-interval-seconds=1"
+        ],
+        "pid": 68255,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 1413120000,
+        "rss_limit_bytes": 4724464025,
+        "samples": 11744,
+        "rss_source": "macOS libproc native development",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.027711707999969803,
+        "elapsed_seconds": 132.296607333
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 78894,
+        "gets": 0,
+        "puts": 78894,
+        "deletes": 0,
+        "read_misses": 0,
+        "ops_per_second": 7886.68625751,
+        "open_seconds": 0.553751459,
+        "setup_seconds": 118.964098709,
+        "warmup_seconds": 2.70308725,
+        "measured_seconds": 10.003440916,
+        "close_seconds": 0.001481875,
+        "data_bytes_before_measure": 408832624,
+        "data_bytes_after_measure": 389434481,
+        "data_bytes_after_close": 389434481,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 837,
+          "p50_us": 77.823,
+          "p95_us": 294.911,
+          "p99_us": 127926.271,
+          "p999_us": 525646.5,
+          "max_us": 525646.5
+        },
+        "get_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        },
+        "put_latency": {
+          "samples": 837,
+          "p50_us": 77.823,
+          "p95_us": 294.911,
+          "p99_us": 127926.271,
+          "p999_us": 525646.5,
+          "max_us": 525646.5
+        },
+        "delete_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        }
+      },
+      "database_files": [
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "F2-SYNC-CURRENT",
+          "bytes": 177
+        },
+        {
+          "path": "cold/log.log173",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log187",
+          "bytes": 2717184
+        },
+        {
+          "path": "cold/log.log180",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log174",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log175",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log181",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log186",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log172",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log161",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log159",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log166",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log150",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log168",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log157",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log169",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log156",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log151",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log158",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log167",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log160",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log179",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log183",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log177",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log170",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log184",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log185",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log171",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log176",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log182",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log178",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log165",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log162",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log154",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log153",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log152",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log155",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log163",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log164",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cpr-checkpoints/C3C24825-8F22-4D0D-A5A3-FB8BEA964FDF/8B65BE5B-48DB-43E1-8DA7-A4A2436D13D0.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cpr-checkpoints/C3C24825-8F22-4D0D-A5A3-FB8BEA964FDF/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cold-index/log.log58",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log60",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log61",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log59",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log63",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log64",
+          "bytes": 6804480
+        },
+        {
+          "path": "cold/cold-index/log.log62",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/C3C24825-8F22-4D0D-A5A3-FB8BEA964FDF/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/C3C24825-8F22-4D0D-A5A3-FB8BEA964FDF/F3021CA0-1DF8-41FF-B446-92A3C95A9CEA.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/C3C24825-8F22-4D0D-A5A3-FB8BEA964FDF/ofb.dat",
+          "bytes": 262144
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/C3C24825-8F22-4D0D-A5A3-FB8BEA964FDF/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/C3C24825-8F22-4D0D-A5A3-FB8BEA964FDF/ht.dat",
+          "bytes": 4194304
+        },
+        {
+          "path": "cold/index-checkpoints/C3C24825-8F22-4D0D-A5A3-FB8BEA964FDF/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/log.log67",
+          "bytes": 1630208
+        },
+        {
+          "path": "hot/log.log66",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/cpr-checkpoints/C3C24825-8F22-4D0D-A5A3-FB8BEA964FDF/8B65BE5B-48DB-43E1-8DA7-A4A2436D13D0.dat",
+          "bytes": 32
+        },
+        {
+          "path": "hot/cpr-checkpoints/C3C24825-8F22-4D0D-A5A3-FB8BEA964FDF/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "hot/index-checkpoints/C3C24825-8F22-4D0D-A5A3-FB8BEA964FDF/ofb.dat",
+          "bytes": 524288
+        },
+        {
+          "path": "hot/index-checkpoints/C3C24825-8F22-4D0D-A5A3-FB8BEA964FDF/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/index-checkpoints/C3C24825-8F22-4D0D-A5A3-FB8BEA964FDF/ht.dat",
+          "bytes": 4194304
+        }
+      ],
+      "wall_seconds": 132.32563620799996
+    },
+    {
+      "cell": "rocksdb-update-r1",
+      "engine": "rocksdb",
+      "workload": "update",
+      "repeat": 1,
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/rocks-enabled-verdict-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/rocksdb-update-r1/db",
+        "--workload=update",
+        "--num-keys=1000000",
+        "--key-size=32",
+        "--value-size=256",
+        "--mem-limit-bytes=4294967296",
+        "--threads=32",
+        "--seed=20261021",
+        "--distribution=uniform",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--progress-interval-seconds=1"
+      ],
+      "status": "PASS",
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/rocks-enabled-verdict-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/rocksdb-update-r1/db",
+          "--workload=update",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--threads=32",
+          "--seed=20261021",
+          "--distribution=uniform",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--progress-interval-seconds=1"
+        ],
+        "pid": 70030,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 324976640,
+        "rss_limit_bytes": 4724464025,
+        "samples": 1717,
+        "rss_source": "macOS libproc native development",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.013417167000000063,
+        "elapsed_seconds": 20.832877334000045
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 1165417,
+        "gets": 0,
+        "puts": 1165417,
+        "deletes": 0,
+        "read_misses": 0,
+        "ops_per_second": 116539.586741,
+        "open_seconds": 0.008205583,
+        "setup_seconds": 8.802994,
+        "warmup_seconds": 2.000148458,
+        "measured_seconds": 10.000181334,
+        "close_seconds": 0.000637208,
+        "data_bytes_before_measure": 335888957,
+        "data_bytes_after_measure": 600347991,
+        "data_bytes_after_close": 600348181,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 11610,
+          "p50_us": 159.743,
+          "p95_us": 235.519,
+          "p99_us": 4390.911,
+          "p999_us": 7667.711,
+          "max_us": 472148.209
+        },
+        "get_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        },
+        "put_latency": {
+          "samples": 11610,
+          "p50_us": 159.743,
+          "p95_us": 235.519,
+          "p99_us": 4390.911,
+          "p999_us": 7667.711,
+          "max_us": 472148.209
+        },
+        "delete_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        }
+      },
+      "database_files": [
+        {
+          "path": "OPTIONS-000007",
+          "bytes": 7268
+        },
+        {
+          "path": "000010.log",
+          "bytes": 176419452
+        },
+        {
+          "path": "IDENTITY",
+          "bytes": 36
+        },
+        {
+          "path": "000011.sst",
+          "bytes": 171480863
+        },
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "CURRENT",
+          "bytes": 16
+        },
+        {
+          "path": "LOG",
+          "bytes": 32261
+        },
+        {
+          "path": "000009.sst",
+          "bytes": 252407854
+        },
+        {
+          "path": "MANIFEST-000005",
+          "bytes": 431
+        }
+      ],
+      "wall_seconds": 20.854822207999973
+    },
+    {
+      "cell": "f2-contest_mix-r1",
+      "engine": "f2",
+      "workload": "contest_mix",
+      "repeat": 1,
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-enabled-verdict-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/f2-contest_mix-r1/db",
+        "--workload=contest_mix",
+        "--num-keys=1000000",
+        "--key-size=32",
+        "--value-size=256",
+        "--mem-limit-bytes=4294967296",
+        "--threads=32",
+        "--seed=20261021",
+        "--distribution=uniform",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--progress-interval-seconds=1"
+      ],
+      "status": "PASS",
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/f2-enabled-verdict-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/f2-contest_mix-r1/db",
+          "--workload=contest_mix",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--threads=32",
+          "--seed=20261021",
+          "--distribution=uniform",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--progress-interval-seconds=1"
+        ],
+        "pid": 70254,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 1598013440,
+        "rss_limit_bytes": 4724464025,
+        "samples": 10897,
+        "rss_source": "macOS libproc native development",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.024257124999962798,
+        "elapsed_seconds": 122.75566833299996
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 182662,
+        "gets": 109743,
+        "puts": 54842,
+        "deletes": 18077,
+        "read_misses": 1299,
+        "ops_per_second": 18222.6446139,
+        "open_seconds": 0.040549542,
+        "setup_seconds": 110.594893541,
+        "warmup_seconds": 2.002743875,
+        "measured_seconds": 10.023901792,
+        "close_seconds": 0.000858,
+        "data_bytes_before_measure": 411320944,
+        "data_bytes_after_measure": 378616433,
+        "data_bytes_after_close": 378616433,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 1848,
+          "p50_us": 4.351,
+          "p95_us": 7208.959,
+          "p99_us": 22544.383,
+          "p999_us": 104857.599,
+          "max_us": 144546
+        },
+        "get_latency": {
+          "samples": 1125,
+          "p50_us": 2.399,
+          "p95_us": 9.215,
+          "p99_us": 17.407,
+          "p999_us": 26.367,
+          "max_us": 30.584
+        },
+        "put_latency": {
+          "samples": 556,
+          "p50_us": 274.431,
+          "p95_us": 15073.279,
+          "p99_us": 61341.695,
+          "p999_us": 144546,
+          "max_us": 144546
+        },
+        "delete_latency": {
+          "samples": 167,
+          "p50_us": 190.463,
+          "p95_us": 13369.343,
+          "p99_us": 24903.679,
+          "p999_us": 62896.417,
+          "max_us": 62896.417
+        }
+      },
+      "database_files": [
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "F2-SYNC-CURRENT",
+          "bytes": 177
+        },
+        {
+          "path": "cold/log.log142",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log145",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log172",
+          "bytes": 4961280
+        },
+        {
+          "path": "cold/log.log144",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log143",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log161",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log159",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log166",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log150",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log168",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log157",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log169",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log156",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log151",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log158",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log167",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log160",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log146",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log141",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log148",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log170",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log171",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log149",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log140",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log147",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log165",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log162",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log154",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log153",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log138",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log136",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log152",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log155",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log163",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log164",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log137",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log139",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cpr-checkpoints/E38D9474-C510-4F87-94E1-0F05232D361E/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cpr-checkpoints/E38D9474-C510-4F87-94E1-0F05232D361E/8E1A9482-16AC-416A-8838-7237C804D64D.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cold-index/log.log58",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log56",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log57",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log59",
+          "bytes": 1560576
+        },
+        {
+          "path": "cold/cold-index/log.log52",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log55",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log54",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log53",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/E38D9474-C510-4F87-94E1-0F05232D361E/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/E38D9474-C510-4F87-94E1-0F05232D361E/F96979E0-CEB3-4606-922E-AC42376A0EEB.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/E38D9474-C510-4F87-94E1-0F05232D361E/ofb.dat",
+          "bytes": 262144
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/E38D9474-C510-4F87-94E1-0F05232D361E/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/E38D9474-C510-4F87-94E1-0F05232D361E/ht.dat",
+          "bytes": 4194304
+        },
+        {
+          "path": "cold/index-checkpoints/E38D9474-C510-4F87-94E1-0F05232D361E/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/log.log66",
+          "bytes": 2200576
+        },
+        {
+          "path": "hot/cpr-checkpoints/E38D9474-C510-4F87-94E1-0F05232D361E/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "hot/cpr-checkpoints/E38D9474-C510-4F87-94E1-0F05232D361E/8E1A9482-16AC-416A-8838-7237C804D64D.dat",
+          "bytes": 32
+        },
+        {
+          "path": "hot/index-checkpoints/E38D9474-C510-4F87-94E1-0F05232D361E/ofb.dat",
+          "bytes": 524288
+        },
+        {
+          "path": "hot/index-checkpoints/E38D9474-C510-4F87-94E1-0F05232D361E/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/index-checkpoints/E38D9474-C510-4F87-94E1-0F05232D361E/ht.dat",
+          "bytes": 4194304
+        }
+      ],
+      "wall_seconds": 122.82168691699997
+    },
+    {
+      "cell": "rocksdb-contest_mix-r1",
+      "engine": "rocksdb",
+      "workload": "contest_mix",
+      "repeat": 1,
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/rocks-enabled-verdict-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/rocksdb-contest_mix-r1/db",
+        "--workload=contest_mix",
+        "--num-keys=1000000",
+        "--key-size=32",
+        "--value-size=256",
+        "--mem-limit-bytes=4294967296",
+        "--threads=32",
+        "--seed=20261021",
+        "--distribution=uniform",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--progress-interval-seconds=1"
+      ],
+      "status": "PASS",
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/rocks-enabled-verdict-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/rocksdb-contest_mix-r1/db",
+          "--workload=contest_mix",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--threads=32",
+          "--seed=20261021",
+          "--distribution=uniform",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--progress-interval-seconds=1"
+        ],
+        "pid": 72083,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 786825216,
+        "rss_limit_bytes": 4724464025,
+        "samples": 1643,
+        "rss_source": "macOS libproc native development",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.013631165999981931,
+        "elapsed_seconds": 19.894054541999935
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 2391985,
+        "gets": 1434609,
+        "puts": 717974,
+        "deletes": 239402,
+        "read_misses": 160928,
+        "ops_per_second": 239033.818655,
+        "open_seconds": 0.109998625,
+        "setup_seconds": 7.686123542,
+        "warmup_seconds": 2.004666083,
+        "measured_seconds": 10.006889458,
+        "close_seconds": 0.034921625,
+        "data_bytes_before_measure": 332754529,
+        "data_bytes_after_measure": 461585015,
+        "data_bytes_after_close": 461585205,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 23825,
+          "p50_us": 7.743,
+          "p95_us": 196.607,
+          "p99_us": 307.199,
+          "p999_us": 7602.175,
+          "max_us": 97076.083
+        },
+        "get_latency": {
+          "samples": 14209,
+          "p50_us": 4.671,
+          "p95_us": 16.127,
+          "p99_us": 27.903,
+          "p999_us": 52.223,
+          "max_us": 132.459
+        },
+        "put_latency": {
+          "samples": 7229,
+          "p50_us": 157.695,
+          "p95_us": 225.279,
+          "p99_us": 7340.031,
+          "p999_us": 8257.535,
+          "max_us": 97076.083
+        },
+        "delete_latency": {
+          "samples": 2387,
+          "p50_us": 157.695,
+          "p95_us": 225.279,
+          "p99_us": 7405.567,
+          "p999_us": 8126.463,
+          "max_us": 8301.041
+        }
+      },
+      "database_files": [
+        {
+          "path": "OPTIONS-000007",
+          "bytes": 7268
+        },
+        {
+          "path": "000010.log",
+          "bytes": 54666110
+        },
+        {
+          "path": "IDENTITY",
+          "bytes": 36
+        },
+        {
+          "path": "000011.sst",
+          "bytes": 154457527
+        },
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "CURRENT",
+          "bytes": 16
+        },
+        {
+          "path": "LOG",
+          "bytes": 32301
+        },
+        {
+          "path": "000009.sst",
+          "bytes": 252421516
+        },
+        {
+          "path": "MANIFEST-000005",
+          "bytes": 431
+        }
+      ],
+      "wall_seconds": 19.925586291999934
+    },
+    {
+      "cell": "rocksdb-load-r2",
+      "engine": "rocksdb",
+      "workload": "load",
+      "repeat": 2,
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/rocks-enabled-verdict-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/rocksdb-load-r2/db",
+        "--workload=load",
+        "--num-keys=1000000",
+        "--key-size=32",
+        "--value-size=256",
+        "--mem-limit-bytes=4294967296",
+        "--threads=32",
+        "--seed=20261021",
+        "--distribution=uniform",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--progress-interval-seconds=1"
+      ],
+      "status": "PASS",
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/rocks-enabled-verdict-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/rocksdb-load-r2/db",
+          "--workload=load",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--threads=32",
+          "--seed=20261021",
+          "--distribution=uniform",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--progress-interval-seconds=1"
+        ],
+        "pid": 72592,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 308248576,
+        "rss_limit_bytes": 4724464025,
+        "samples": 654,
+        "rss_source": "macOS libproc native development",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.012679790999982288,
+        "elapsed_seconds": 7.909861540999941
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 1000000,
+        "gets": 0,
+        "puts": 1000000,
+        "deletes": 0,
+        "read_misses": 0,
+        "ops_per_second": 126886.685405,
+        "open_seconds": 0.009702334,
+        "setup_seconds": 0,
+        "warmup_seconds": 0,
+        "measured_seconds": 7.881047541,
+        "close_seconds": 0.000361458,
+        "data_bytes_before_measure": 27946,
+        "data_bytes_after_measure": 296785430,
+        "data_bytes_after_close": 296785620,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 9964,
+          "p50_us": 149.503,
+          "p95_us": 206.847,
+          "p99_us": 6815.743,
+          "p999_us": 7667.711,
+          "max_us": 23229.375
+        },
+        "get_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        },
+        "put_latency": {
+          "samples": 9964,
+          "p50_us": 149.503,
+          "p95_us": 206.847,
+          "p99_us": 6815.743,
+          "p999_us": 7667.711,
+          "max_us": 23229.375
+        },
+        "delete_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        }
+      },
+      "database_files": [
+        {
+          "path": "OPTIONS-000007",
+          "bytes": 7268
+        },
+        {
+          "path": "IDENTITY",
+          "bytes": 36
+        },
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "CURRENT",
+          "bytes": 16
+        },
+        {
+          "path": "LOG",
+          "bytes": 28093
+        },
+        {
+          "path": "000009.sst",
+          "bytes": 252554400
+        },
+        {
+          "path": "MANIFEST-000005",
+          "bytes": 250
+        },
+        {
+          "path": "000008.log",
+          "bytes": 44195557
+        }
+      ],
+      "wall_seconds": 7.9369415409998965
+    },
+    {
+      "cell": "f2-load-r2",
+      "engine": "f2",
+      "workload": "load",
+      "repeat": 2,
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-enabled-verdict-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/f2-load-r2/db",
+        "--workload=load",
+        "--num-keys=1000000",
+        "--key-size=32",
+        "--value-size=256",
+        "--mem-limit-bytes=4294967296",
+        "--threads=32",
+        "--seed=20261021",
+        "--distribution=uniform",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--progress-interval-seconds=1"
+      ],
+      "status": "PASS",
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/f2-enabled-verdict-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/f2-load-r2/db",
+          "--workload=load",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--threads=32",
+          "--seed=20261021",
+          "--distribution=uniform",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--progress-interval-seconds=1"
+        ],
+        "pid": 72731,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 1429487616,
+        "rss_limit_bytes": 4724464025,
+        "samples": 9602,
+        "rss_source": "macOS libproc native development",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.013081332999945516,
+        "elapsed_seconds": 107.97541612500004
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 1000000,
+        "gets": 0,
+        "puts": 1000000,
+        "deletes": 0,
+        "read_misses": 0,
+        "ops_per_second": 9272.86406051,
+        "open_seconds": 0.068332625,
+        "setup_seconds": 0,
+        "warmup_seconds": 0,
+        "measured_seconds": 107.841546417,
+        "close_seconds": 0.000997167,
+        "data_bytes_before_measure": 8922213,
+        "data_bytes_after_measure": 404850799,
+        "data_bytes_after_close": 404850799,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 9964,
+          "p50_us": 68.607,
+          "p95_us": 163.839,
+          "p99_us": 30408.703,
+          "p999_us": 889192.447,
+          "max_us": 1713157.084
+        },
+        "get_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        },
+        "put_latency": {
+          "samples": 9964,
+          "p50_us": 68.607,
+          "p95_us": 163.839,
+          "p99_us": 30408.703,
+          "p999_us": 889192.447,
+          "max_us": 1713157.084
+        },
+        "delete_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        }
+      },
+      "database_files": [
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "F2-SYNC-CURRENT",
+          "bytes": 175
+        },
+        {
+          "path": "cold/log.log142",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log145",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log120",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log127",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log129",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log144",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log143",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log128",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log126",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log121",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log132",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log135",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log150",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log134",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log133",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log151",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log124",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log123",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log146",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log141",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log148",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log122",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log125",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log149",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log140",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log147",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log154",
+          "bytes": 1527808
+        },
+        {
+          "path": "cold/log.log153",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log138",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log136",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log131",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log152",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log130",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log137",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log139",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cpr-checkpoints/CBE7C689-C365-4631-B2E4-80743C5415E4/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cpr-checkpoints/CBE7C689-C365-4631-B2E4-80743C5415E4/39F89DEB-F87A-4BDD-9355-2E3BD5762F7E.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cold-index/log.log56",
+          "bytes": 8229888
+        },
+        {
+          "path": "cold/cold-index/log.log51",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log50",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log52",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log55",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log54",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log53",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/CBE7C689-C365-4631-B2E4-80743C5415E4/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/CBE7C689-C365-4631-B2E4-80743C5415E4/894CE736-41DE-4D1E-A696-C9F5DB8D9018.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/CBE7C689-C365-4631-B2E4-80743C5415E4/ofb.dat",
+          "bytes": 262144
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/CBE7C689-C365-4631-B2E4-80743C5415E4/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/CBE7C689-C365-4631-B2E4-80743C5415E4/ht.dat",
+          "bytes": 4194304
+        },
+        {
+          "path": "cold/index-checkpoints/CBE7C689-C365-4631-B2E4-80743C5415E4/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/log.log58",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log60",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log56",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log57",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log61",
+          "bytes": 295424
+        },
+        {
+          "path": "hot/log.log59",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log55",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/cpr-checkpoints/CBE7C689-C365-4631-B2E4-80743C5415E4/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "hot/cpr-checkpoints/CBE7C689-C365-4631-B2E4-80743C5415E4/39F89DEB-F87A-4BDD-9355-2E3BD5762F7E.dat",
+          "bytes": 32
+        },
+        {
+          "path": "hot/index-checkpoints/CBE7C689-C365-4631-B2E4-80743C5415E4/ofb.dat",
+          "bytes": 262144
+        },
+        {
+          "path": "hot/index-checkpoints/CBE7C689-C365-4631-B2E4-80743C5415E4/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/index-checkpoints/CBE7C689-C365-4631-B2E4-80743C5415E4/ht.dat",
+          "bytes": 4194304
+        }
+      ],
+      "wall_seconds": 108.01960045800001
+    },
+    {
+      "cell": "rocksdb-read-r2",
+      "engine": "rocksdb",
+      "workload": "read",
+      "repeat": 2,
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/rocks-enabled-verdict-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/rocksdb-read-r2/db",
+        "--workload=read",
+        "--num-keys=1000000",
+        "--key-size=32",
+        "--value-size=256",
+        "--mem-limit-bytes=4294967296",
+        "--threads=32",
+        "--seed=20261021",
+        "--distribution=uniform",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--progress-interval-seconds=1"
+      ],
+      "status": "PASS",
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/rocks-enabled-verdict-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/rocksdb-read-r2/db",
+          "--workload=read",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--threads=32",
+          "--seed=20261021",
+          "--distribution=uniform",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--progress-interval-seconds=1"
+        ],
+        "pid": 74342,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 590643200,
+        "rss_limit_bytes": 4724464025,
+        "samples": 1683,
+        "rss_source": "macOS libproc native development",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.012847249999936139,
+        "elapsed_seconds": 20.579692791999946
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 7806578,
+        "gets": 7806578,
+        "puts": 0,
+        "deletes": 0,
+        "read_misses": 0,
+        "ops_per_second": 780649.987021,
+        "open_seconds": 0.008631917,
+        "setup_seconds": 8.525488375,
+        "warmup_seconds": 2.000091417,
+        "measured_seconds": 10.000100083,
+        "close_seconds": 0.026809625,
+        "data_bytes_before_measure": 296784269,
+        "data_bytes_after_measure": 296784269,
+        "data_bytes_after_close": 296784459,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 77734,
+          "p50_us": 10.879,
+          "p95_us": 80.895,
+          "p99_us": 233.471,
+          "p999_us": 4587.519,
+          "max_us": 39898.375
+        },
+        "get_latency": {
+          "samples": 77734,
+          "p50_us": 10.879,
+          "p95_us": 80.895,
+          "p99_us": 233.471,
+          "p999_us": 4587.519,
+          "max_us": 39898.375
+        },
+        "put_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        },
+        "delete_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        }
+      },
+      "database_files": [
+        {
+          "path": "OPTIONS-000007",
+          "bytes": 7268
+        },
+        {
+          "path": "IDENTITY",
+          "bytes": 36
+        },
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "CURRENT",
+          "bytes": 16
+        },
+        {
+          "path": "LOG",
+          "bytes": 28093
+        },
+        {
+          "path": "000009.sst",
+          "bytes": 252472332
+        },
+        {
+          "path": "MANIFEST-000005",
+          "bytes": 250
+        },
+        {
+          "path": "000008.log",
+          "bytes": 44276464
+        }
+      ],
+      "wall_seconds": 20.61129358300002
+    },
+    {
+      "cell": "f2-read-r2",
+      "engine": "f2",
+      "workload": "read",
+      "repeat": 2,
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-enabled-verdict-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/f2-read-r2/db",
+        "--workload=read",
+        "--num-keys=1000000",
+        "--key-size=32",
+        "--value-size=256",
+        "--mem-limit-bytes=4294967296",
+        "--threads=32",
+        "--seed=20261021",
+        "--distribution=uniform",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--progress-interval-seconds=1"
+      ],
+      "status": "PASS",
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/f2-enabled-verdict-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/f2-read-r2/db",
+          "--workload=read",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--threads=32",
+          "--seed=20261021",
+          "--distribution=uniform",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--progress-interval-seconds=1"
+        ],
+        "pid": 75059,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 1437057024,
+        "rss_limit_bytes": 4724464025,
+        "samples": 8652,
+        "rss_source": "macOS libproc native development",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.01541345900000124,
+        "elapsed_seconds": 97.7852170000001
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 6925177,
+        "gets": 6925177,
+        "puts": 0,
+        "deletes": 0,
+        "read_misses": 0,
+        "ops_per_second": 692512.058935,
+        "open_seconds": 0.030536791,
+        "setup_seconds": 85.701403083,
+        "warmup_seconds": 2.000100541,
+        "measured_seconds": 10.000081458,
+        "close_seconds": 0.00085275,
+        "data_bytes_before_measure": 423441008,
+        "data_bytes_after_measure": 423441008,
+        "data_bytes_after_close": 423441008,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 68987,
+          "p50_us": 13.567,
+          "p95_us": 112.639,
+          "p99_us": 581.631,
+          "p999_us": 3768.319,
+          "max_us": 11468.541
+        },
+        "get_latency": {
+          "samples": 68987,
+          "p50_us": 13.567,
+          "p95_us": 112.639,
+          "p99_us": 581.631,
+          "p999_us": 3768.319,
+          "max_us": 11468.541
+        },
+        "put_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        },
+        "delete_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        }
+      },
+      "database_files": [
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "F2-SYNC-CURRENT",
+          "bytes": 176
+        },
+        {
+          "path": "cold/log.log120",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log118",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log127",
+          "bytes": 4274176
+        },
+        {
+          "path": "cold/log.log111",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log116",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log117",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log110",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log119",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log126",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log121",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log103",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log104",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log105",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log102",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log124",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log123",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log115",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log112",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log113",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log114",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log122",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log125",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log97",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log99",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log98",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log96",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log107",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log100",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log109",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log108",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log101",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log106",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cpr-checkpoints/67CE70BB-EB38-4493-B5C3-ED4D903F9AF3/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cpr-checkpoints/67CE70BB-EB38-4493-B5C3-ED4D903F9AF3/1916F43A-783B-4774-9B9E-458E76AF3387.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cold-index/log.log44",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log43",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log42",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log45",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log40",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log46",
+          "bytes": 7296512
+        },
+        {
+          "path": "cold/cold-index/log.log41",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/67CE70BB-EB38-4493-B5C3-ED4D903F9AF3/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/67CE70BB-EB38-4493-B5C3-ED4D903F9AF3/BDF69CCD-A02D-4AE8-B95A-9334CB1D4714.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/67CE70BB-EB38-4493-B5C3-ED4D903F9AF3/ofb.dat",
+          "bytes": 262144
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/67CE70BB-EB38-4493-B5C3-ED4D903F9AF3/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/67CE70BB-EB38-4493-B5C3-ED4D903F9AF3/ht.dat",
+          "bytes": 4194304
+        },
+        {
+          "path": "cold/index-checkpoints/67CE70BB-EB38-4493-B5C3-ED4D903F9AF3/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/log.log58",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log60",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log56",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log51",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log50",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log57",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log61",
+          "bytes": 295424
+        },
+        {
+          "path": "hot/log.log59",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log52",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log55",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log54",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log53",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/cpr-checkpoints/67CE70BB-EB38-4493-B5C3-ED4D903F9AF3/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "hot/cpr-checkpoints/67CE70BB-EB38-4493-B5C3-ED4D903F9AF3/1916F43A-783B-4774-9B9E-458E76AF3387.dat",
+          "bytes": 32
+        },
+        {
+          "path": "hot/index-checkpoints/67CE70BB-EB38-4493-B5C3-ED4D903F9AF3/ofb.dat",
+          "bytes": 262144
+        },
+        {
+          "path": "hot/index-checkpoints/67CE70BB-EB38-4493-B5C3-ED4D903F9AF3/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/index-checkpoints/67CE70BB-EB38-4493-B5C3-ED4D903F9AF3/ht.dat",
+          "bytes": 4194304
+        }
+      ],
+      "wall_seconds": 97.84440566699993
+    },
+    {
+      "cell": "rocksdb-update-r2",
+      "engine": "rocksdb",
+      "workload": "update",
+      "repeat": 2,
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/rocks-enabled-verdict-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/rocksdb-update-r2/db",
+        "--workload=update",
+        "--num-keys=1000000",
+        "--key-size=32",
+        "--value-size=256",
+        "--mem-limit-bytes=4294967296",
+        "--threads=32",
+        "--seed=20261021",
+        "--distribution=uniform",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--progress-interval-seconds=1"
+      ],
+      "status": "PASS",
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/rocks-enabled-verdict-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/rocksdb-update-r2/db",
+          "--workload=update",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--threads=32",
+          "--seed=20261021",
+          "--distribution=uniform",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--progress-interval-seconds=1"
+        ],
+        "pid": 76736,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 339410944,
+        "rss_limit_bytes": 4724464025,
+        "samples": 1232,
+        "rss_source": "macOS libproc native development",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.015080208999961542,
+        "elapsed_seconds": 16.747018208999975
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 2074244,
+        "gets": 0,
+        "puts": 2074244,
+        "deletes": 0,
+        "read_misses": 0,
+        "ops_per_second": 207420.556684,
+        "open_seconds": 0.00922475,
+        "setup_seconds": 4.714304,
+        "warmup_seconds": 2.0001485,
+        "measured_seconds": 10.000185291,
+        "close_seconds": 0.004242167,
+        "data_bytes_before_measure": 420036358,
+        "data_bytes_after_measure": 982369136,
+        "data_bytes_after_close": 793166074,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 20590,
+          "p50_us": 151.551,
+          "p95_us": 204.799,
+          "p99_us": 249.855,
+          "p999_us": 696.319,
+          "max_us": 22199.875
+        },
+        "get_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        },
+        "put_latency": {
+          "samples": 20590,
+          "p50_us": 151.551,
+          "p95_us": 204.799,
+          "p99_us": 249.855,
+          "p999_us": 696.319,
+          "max_us": 22199.875
+        },
+        "delete_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        }
+      },
+      "database_files": [
+        {
+          "path": "000015.sst",
+          "bytes": 169999201
+        },
+        {
+          "path": "OPTIONS-000007",
+          "bytes": 7268
+        },
+        {
+          "path": "000013.sst",
+          "bytes": 170136825
+        },
+        {
+          "path": "000014.log",
+          "bytes": 28989085
+        },
+        {
+          "path": "IDENTITY",
+          "bytes": 36
+        },
+        {
+          "path": "000011.sst",
+          "bytes": 171694855
+        },
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "CURRENT",
+          "bytes": 16
+        },
+        {
+          "path": "LOG",
+          "bytes": 42618
+        },
+        {
+          "path": "000009.sst",
+          "bytes": 252295370
+        },
+        {
+          "path": "MANIFEST-000005",
+          "bytes": 800
+        }
+      ],
+      "wall_seconds": 16.839819749999947
+    },
+    {
+      "cell": "f2-update-r2",
+      "engine": "f2",
+      "workload": "update",
+      "repeat": 2,
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-enabled-verdict-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/f2-update-r2/db",
+        "--workload=update",
+        "--num-keys=1000000",
+        "--key-size=32",
+        "--value-size=256",
+        "--mem-limit-bytes=4294967296",
+        "--threads=32",
+        "--seed=20261021",
+        "--distribution=uniform",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--progress-interval-seconds=1"
+      ],
+      "status": "PASS",
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/f2-enabled-verdict-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/f2-update-r2/db",
+          "--workload=update",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--threads=32",
+          "--seed=20261021",
+          "--distribution=uniform",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--progress-interval-seconds=1"
+        ],
+        "pid": 77132,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 1566523392,
+        "rss_limit_bytes": 4724464025,
+        "samples": 9205,
+        "rss_source": "macOS libproc native development",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.015216375000022708,
+        "elapsed_seconds": 106.60403450000001
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 90895,
+        "gets": 0,
+        "puts": 90895,
+        "deletes": 0,
+        "read_misses": 0,
+        "ops_per_second": 9087.37434955,
+        "open_seconds": 0.035440792,
+        "setup_seconds": 94.486500208,
+        "warmup_seconds": 2.002311083,
+        "measured_seconds": 10.002339125,
+        "close_seconds": 0.000899083,
+        "data_bytes_before_measure": 413878896,
+        "data_bytes_after_measure": 460417137,
+        "data_bytes_after_close": 460417137,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 948,
+          "p50_us": 71.679,
+          "p95_us": 143.359,
+          "p99_us": 7602.175,
+          "p999_us": 798732.542,
+          "max_us": 798732.542
+        },
+        "get_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        },
+        "put_latency": {
+          "samples": 948,
+          "p50_us": 71.679,
+          "p95_us": 143.359,
+          "p99_us": 7602.175,
+          "p999_us": 798732.542,
+          "max_us": 798732.542
+        },
+        "delete_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        }
+      },
+      "database_files": [
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "F2-SYNC-CURRENT",
+          "bytes": 177
+        },
+        {
+          "path": "cold/log.log142",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log145",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log120",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log118",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log127",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log129",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log116",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log144",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log143",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log128",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log117",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log119",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log126",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log121",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log132",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log135",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log134",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log133",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log124",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log123",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log115",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log146",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log141",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log114",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log122",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log125",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log140",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log147",
+          "bytes": 559104
+        },
+        {
+          "path": "cold/log.log138",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log136",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log131",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log130",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log137",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log139",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cpr-checkpoints/8ACE7E05-46D2-43EF-9ADA-F8163082E824/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cpr-checkpoints/8ACE7E05-46D2-43EF-9ADA-F8163082E824/F325D55A-B5C2-4F9B-8FEC-A1E273E28ABD.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cold-index/log.log51",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log50",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log52",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log55",
+          "bytes": 276992
+        },
+        {
+          "path": "cold/cold-index/log.log54",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log53",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log49",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log48",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/8ACE7E05-46D2-43EF-9ADA-F8163082E824/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/8ACE7E05-46D2-43EF-9ADA-F8163082E824/91003834-8D5C-478C-BAE8-9A120CC72767.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/8ACE7E05-46D2-43EF-9ADA-F8163082E824/ofb.dat",
+          "bytes": 262144
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/8ACE7E05-46D2-43EF-9ADA-F8163082E824/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/8ACE7E05-46D2-43EF-9ADA-F8163082E824/ht.dat",
+          "bytes": 4194304
+        },
+        {
+          "path": "cold/index-checkpoints/8ACE7E05-46D2-43EF-9ADA-F8163082E824/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/log.log58",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log67",
+          "bytes": 6063104
+        },
+        {
+          "path": "hot/log.log60",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log56",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log57",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log61",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log59",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log66",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log63",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log64",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log55",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log54",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log65",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log62",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/cpr-checkpoints/8ACE7E05-46D2-43EF-9ADA-F8163082E824/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "hot/cpr-checkpoints/8ACE7E05-46D2-43EF-9ADA-F8163082E824/F325D55A-B5C2-4F9B-8FEC-A1E273E28ABD.dat",
+          "bytes": 32
+        },
+        {
+          "path": "hot/index-checkpoints/8ACE7E05-46D2-43EF-9ADA-F8163082E824/ofb.dat",
+          "bytes": 262144
+        },
+        {
+          "path": "hot/index-checkpoints/8ACE7E05-46D2-43EF-9ADA-F8163082E824/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/index-checkpoints/8ACE7E05-46D2-43EF-9ADA-F8163082E824/ht.dat",
+          "bytes": 4194304
+        }
+      ],
+      "wall_seconds": 106.67794320899998
+    },
+    {
+      "cell": "rocksdb-contest_mix-r2",
+      "engine": "rocksdb",
+      "workload": "contest_mix",
+      "repeat": 2,
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/rocks-enabled-verdict-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/rocksdb-contest_mix-r2/db",
+        "--workload=contest_mix",
+        "--num-keys=1000000",
+        "--key-size=32",
+        "--value-size=256",
+        "--mem-limit-bytes=4294967296",
+        "--threads=32",
+        "--seed=20261021",
+        "--distribution=uniform",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--progress-interval-seconds=1"
+      ],
+      "status": "PASS",
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/rocks-enabled-verdict-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/rocksdb-contest_mix-r2/db",
+          "--workload=contest_mix",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--threads=32",
+          "--seed=20261021",
+          "--distribution=uniform",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--progress-interval-seconds=1"
+        ],
+        "pid": 78797,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 793018368,
+        "rss_limit_bytes": 4724464025,
+        "samples": 1507,
+        "rss_source": "macOS libproc native development",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.015131916999962414,
+        "elapsed_seconds": 20.938517042000058
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 2324607,
+        "gets": 1394139,
+        "puts": 697752,
+        "deletes": 232716,
+        "read_misses": 148011,
+        "ops_per_second": 232457.507568,
+        "open_seconds": 0.0133125,
+        "setup_seconds": 8.862279959,
+        "warmup_seconds": 2.000153625,
+        "measured_seconds": 10.000137334,
+        "close_seconds": 0.030698458,
+        "data_bytes_before_measure": 325465447,
+        "data_bytes_after_measure": 448096526,
+        "data_bytes_after_close": 448096716,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 23130,
+          "p50_us": 7.551,
+          "p95_us": 194.559,
+          "p99_us": 290.815,
+          "p999_us": 7864.319,
+          "max_us": 102977.375
+        },
+        "get_latency": {
+          "samples": 13799,
+          "p50_us": 4.543,
+          "p95_us": 15.359,
+          "p99_us": 27.135,
+          "p999_us": 50.687,
+          "max_us": 87
+        },
+        "put_latency": {
+          "samples": 7018,
+          "p50_us": 155.647,
+          "p95_us": 221.183,
+          "p99_us": 7667.711,
+          "p999_us": 15990.783,
+          "max_us": 102977.375
+        },
+        "delete_latency": {
+          "samples": 2313,
+          "p50_us": 153.599,
+          "p95_us": 217.087,
+          "p99_us": 7471.103,
+          "p999_us": 7995.391,
+          "max_us": 16049.209
+        }
+      },
+      "database_files": [
+        {
+          "path": "OPTIONS-000007",
+          "bytes": 7268
+        },
+        {
+          "path": "000010.log",
+          "bytes": 41302613
+        },
+        {
+          "path": "IDENTITY",
+          "bytes": 36
+        },
+        {
+          "path": "000011.sst",
+          "bytes": 154443555
+        },
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "CURRENT",
+          "bytes": 16
+        },
+        {
+          "path": "LOG",
+          "bytes": 32301
+        },
+        {
+          "path": "000009.sst",
+          "bytes": 252310496
+        },
+        {
+          "path": "MANIFEST-000005",
+          "bytes": 431
+        }
+      ],
+      "wall_seconds": 20.964314999999942
+    },
+    {
+      "cell": "f2-contest_mix-r2",
+      "engine": "f2",
+      "workload": "contest_mix",
+      "repeat": 2,
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-enabled-verdict-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/f2-contest_mix-r2/db",
+        "--workload=contest_mix",
+        "--num-keys=1000000",
+        "--key-size=32",
+        "--value-size=256",
+        "--mem-limit-bytes=4294967296",
+        "--threads=32",
+        "--seed=20261021",
+        "--distribution=uniform",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--progress-interval-seconds=1"
+      ],
+      "status": "PASS",
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/f2-enabled-verdict-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/performance/f2-contest_mix-r2/db",
+          "--workload=contest_mix",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--threads=32",
+          "--seed=20261021",
+          "--distribution=uniform",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--progress-interval-seconds=1"
+        ],
+        "pid": 79131,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 1645494272,
+        "rss_limit_bytes": 4724464025,
+        "samples": 9370,
+        "rss_source": "macOS libproc native development",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.015146624999943015,
+        "elapsed_seconds": 108.55938970800003
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 232532,
+        "gets": 139519,
+        "puts": 69868,
+        "deletes": 23145,
+        "read_misses": 2294,
+        "ops_per_second": 23202.7382023,
+        "open_seconds": 0.028886375,
+        "setup_seconds": 96.443858417,
+        "warmup_seconds": 2.002728333,
+        "measured_seconds": 10.021748208,
+        "close_seconds": 0.000881417,
+        "data_bytes_before_measure": 411304560,
+        "data_bytes_after_measure": 394874481,
+        "data_bytes_after_close": 394874481,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 2338,
+          "p50_us": 4.159,
+          "p95_us": 7143.423,
+          "p99_us": 15990.783,
+          "p999_us": 49807.359,
+          "max_us": 88635
+        },
+        "get_latency": {
+          "samples": 1431,
+          "p50_us": 2.303,
+          "p95_us": 8.447,
+          "p99_us": 15.103,
+          "p999_us": 48.127,
+          "max_us": 84.25
+        },
+        "put_latency": {
+          "samples": 698,
+          "p50_us": 147.455,
+          "p95_us": 12320.767,
+          "p99_us": 31719.423,
+          "p999_us": 88635,
+          "max_us": 88635
+        },
+        "delete_latency": {
+          "samples": 209,
+          "p50_us": 98.303,
+          "p95_us": 11141.119,
+          "p99_us": 24117.247,
+          "p999_us": 49473.291,
+          "max_us": 49473.291
+        }
+      },
+      "database_files": [
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "F2-SYNC-CURRENT",
+          "bytes": 177
+        },
+        {
+          "path": "cold/log.log189",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log173",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log187",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log180",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log174",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log175",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log181",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log186",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log172",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log188",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log161",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log159",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log192",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log166",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log168",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log157",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log169",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log156",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log158",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log167",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log193",
+          "bytes": 193536
+        },
+        {
+          "path": "cold/log.log160",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log179",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log183",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log177",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log170",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log184",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log185",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log171",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log176",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log182",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log178",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log191",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log165",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log162",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log163",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log164",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log190",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cpr-checkpoints/B0A26212-34E2-42F3-BA95-C156C9E2915B/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cpr-checkpoints/B0A26212-34E2-42F3-BA95-C156C9E2915B/30DC4FE3-C4EB-49BE-B5E2-527ED268DD59.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cold-index/log.log67",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log68",
+          "bytes": 6804480
+        },
+        {
+          "path": "cold/cold-index/log.log66",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log63",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log64",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log65",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log62",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/B0A26212-34E2-42F3-BA95-C156C9E2915B/BDDF92FB-FC0F-4349-9246-D6B47A98BE4F.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/B0A26212-34E2-42F3-BA95-C156C9E2915B/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/B0A26212-34E2-42F3-BA95-C156C9E2915B/ofb.dat",
+          "bytes": 262144
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/B0A26212-34E2-42F3-BA95-C156C9E2915B/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/B0A26212-34E2-42F3-BA95-C156C9E2915B/ht.dat",
+          "bytes": 4194304
+        },
+        {
+          "path": "cold/index-checkpoints/B0A26212-34E2-42F3-BA95-C156C9E2915B/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/log.log67",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log68",
+          "bytes": 1467392
+        },
+        {
+          "path": "hot/log.log66",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/cpr-checkpoints/B0A26212-34E2-42F3-BA95-C156C9E2915B/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "hot/cpr-checkpoints/B0A26212-34E2-42F3-BA95-C156C9E2915B/30DC4FE3-C4EB-49BE-B5E2-527ED268DD59.dat",
+          "bytes": 32
+        },
+        {
+          "path": "hot/index-checkpoints/B0A26212-34E2-42F3-BA95-C156C9E2915B/ofb.dat",
+          "bytes": 262144
+        },
+        {
+          "path": "hot/index-checkpoints/B0A26212-34E2-42F3-BA95-C156C9E2915B/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/index-checkpoints/B0A26212-34E2-42F3-BA95-C156C9E2915B/ht.dat",
+          "bytes": 4194304
+        }
+      ],
+      "wall_seconds": 108.59411733299999
+    }
+  ],
+  "linked_libraries": {
+    "f2": "/Users/rosy/devspace/code/taycan-challenge/build/f2-enabled-verdict-20261114/taycan_kv_bench:\n\t/opt/homebrew/opt/tbb/lib/libtbb.12.dylib (compatibility version 12.0.0, current version 12.20.0)\n\t/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 1900.180.0)\n\t/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1351.0.0)\n",
+    "rocksdb": "/Users/rosy/devspace/code/taycan-challenge/build/rocks-enabled-verdict-20261114/taycan_kv_bench:\n\t/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 1900.180.0)\n\t/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1351.0.0)\n"
+  },
+  "rocksdb_static_library_sha256": "bd4030d1154c369ab4135ca4198e393839fafe7b51701b02226d68ade6c42e6b",
+  "rocksdb_sync_build_cache": [
+    "HAVE_FULLFSYNC:UNINITIALIZED=OFF"
+  ],
+  "finished_at": "2026-11-14T10:08:16.487216+00:00"
+}

@@ -1,0 +1,7 @@
+Results: /Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/public-enabled
+PASS basic peak=21856256 bytes 0.85s
+PASS recovery peak=244662272 bytes 28.40s
+PASS concurrent peak=114933760 bytes 15.95s
+PASS compaction peak=1442185216 bytes 119.19s
+PASS crash_recovery peak=161431552 bytes 86.60s
+FAIL compaction_crash peak=1148207104 bytes 179.04s: unexpected_exit: -9

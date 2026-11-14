@@ -1,0 +1,33 @@
+[
+  {
+    "test": "sequential",
+    "parameters": {
+      "num_keys": 1000000,
+      "key_size": 64,
+      "value_size": 128,
+      "rounds": 10,
+      "mem_limit_bytes": 4294967296,
+      "seed": 20261021,
+      "key_mode": "sequential"
+    },
+    "rss_limit_bytes": 4724464025,
+    "harness_allowance_bytes": 0,
+    "validation_scope": "macOS native development",
+    "log": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/public-remaining/sequential-cfzvg87v/output.log",
+    "status": "PASS",
+    "elapsed_seconds": 117.610465167,
+    "rss_peak_bytes": 1516568576
+  },
+  {
+    "test": "overwrite",
+    "status": "INTERRUPTED",
+    "reason": "Stopped to eliminate accidental overlap with performance; not an engine assertion",
+    "parameters": {
+      "num_keys": 100000,
+      "rounds": 10,
+      "mem_limit_bytes": 4294967296,
+      "key_size": 64,
+      "value_size": 128
+    }
+  }
+]

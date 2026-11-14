@@ -1,0 +1,15 @@
+[
+  {
+    "test": "memory_limit",
+    "status": "NOT_RUN",
+    "parameters": {
+      "num_keys": 20000000,
+      "key_size": 64,
+      "value_size": 128,
+      "rounds": 10,
+      "mem_limit_bytes": 4294967296
+    },
+    "reason": "Preflight: final live uncompressed KV bytes alone exceed local 2GiB database cap; no smaller dataset substituted",
+    "minimum_live_logical_bytes": 2559999936
+  }
+]

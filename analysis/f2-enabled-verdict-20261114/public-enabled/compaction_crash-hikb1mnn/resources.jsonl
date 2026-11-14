@@ -1,0 +1,11 @@
+{"pid": 62146, "elapsed": 0.5037390829999993, "directory_bytes": 34152155, "rss_peak_bytes": 46039040, "free_bytes": 86649597952}
+{"pid": 62146, "elapsed": 5.548317249999997, "directory_bytes": 289704173, "rss_peak_bytes": 478117888, "free_bytes": 86403710976}
+{"pid": 62146, "elapsed": 10.594049749999982, "directory_bytes": 477953608, "rss_peak_bytes": 1077346304, "free_bytes": 86215503872}
+{"pid": 62146, "elapsed": 15.631051332999988, "directory_bytes": 492446525, "rss_peak_bytes": 1148092416, "free_bytes": 86200717312}
+{"pid": 62146, "elapsed": 20.680760790999983, "directory_bytes": 678137280, "rss_peak_bytes": 1148174336, "free_bytes": 86013943808}
+{"pid": 62146, "elapsed": 25.72608175000002, "directory_bytes": 921250376, "rss_peak_bytes": 1148190720, "free_bytes": 85767479296}
+{"pid": 62146, "elapsed": 30.780137208000014, "directory_bytes": 1141806284, "rss_peak_bytes": 1148207104, "free_bytes": 85543473152}
+{"pid": 62146, "elapsed": 35.83729925000003, "directory_bytes": 1359467858, "rss_peak_bytes": 1148207104, "free_bytes": 85320552448}
+{"pid": 62146, "elapsed": 40.91090312500003, "directory_bytes": 1591797207, "rss_peak_bytes": 1148207104, "free_bytes": 85087752192}
+{"pid": 62146, "elapsed": 45.96303012500002, "directory_bytes": 1761920091, "rss_peak_bytes": 1148207104, "free_bytes": 84916838400}
+{"pid": 62146, "elapsed": 51.01368241600002, "directory_bytes": 1964254433, "rss_peak_bytes": 1148207104, "free_bytes": 84710522880}

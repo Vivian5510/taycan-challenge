@@ -1,0 +1,21 @@
+[
+  {
+    "test": "random",
+    "parameters": {
+      "num_keys": 5000000,
+      "key_size": 64,
+      "value_size": 128,
+      "rounds": 10,
+      "mem_limit_bytes": 4294967296,
+      "seed": 20261021
+    },
+    "rss_limit_bytes": 4724464025,
+    "harness_allowance_bytes": 0,
+    "validation_scope": "macOS native development",
+    "log": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/public-random/random-9oll1lwp/output.log",
+    "status": "FAIL",
+    "reason": "timeout",
+    "elapsed_seconds": 600.0536765,
+    "rss_peak_bytes": 1634959360
+  }
+]

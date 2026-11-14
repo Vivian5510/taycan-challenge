@@ -4,6 +4,10 @@
 完整合批实现保留在 `experiment/f2-group-commit-preserved-20261114`（`c529214`）。
 [拆分范围、构建与验证](../../docs/main-without-group-commit-20261114.md)。
 
+后续启用冷热迁移与回收的复测见 [验收结论](../../docs/f2-enabled-verdict-20261114.md)。
+本机完整功能配置用 `cmake --preset f2-durable-arm64-dev -S taycan_participant_sdk`；
+该预设开启 data-log/posix-aio/fsync、512 B 提交对齐和 durable compaction，仍是开发配置。
+
 数据与索引仍由 F2 执行。显式 `data-log` 路径现在由 SDK 调用线程一次执行一条
 F2 Upsert/Delete，等待 HybridLog 写完成及文件同步，再发布索引并返回。
 写请求通过实例互斥锁串行进入，不设收集窗口、批量队列或后台提交线程。

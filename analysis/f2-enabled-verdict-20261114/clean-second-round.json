@@ -1,0 +1,71 @@
+{
+  "scope": "Both engines complete, same fixed second-round cells; reference only",
+  "excluded_first_round": [
+    "rocksdb-load-r1",
+    "f2-read-r1",
+    "rocksdb-read-r1",
+    "f2-update-r1"
+  ],
+  "workloads": {
+    "load": {
+      "f2": {
+        "ops_per_second": 9272.86406051,
+        "rss_peak_bytes": 1429487616,
+        "directory_growth_bytes": 395928586,
+        "disk_bytes_after_measure": 404850799
+      },
+      "rocksdb": {
+        "ops_per_second": 126886.685405,
+        "rss_peak_bytes": 308248576,
+        "directory_growth_bytes": 296757484,
+        "disk_bytes_after_measure": 296785430
+      },
+      "rocksdb_over_f2": 13.683656373802306
+    },
+    "read": {
+      "f2": {
+        "ops_per_second": 692512.058935,
+        "rss_peak_bytes": 1437057024,
+        "directory_growth_bytes": 0,
+        "disk_bytes_after_measure": 423441008
+      },
+      "rocksdb": {
+        "ops_per_second": 780649.987021,
+        "rss_peak_bytes": 590643200,
+        "directory_growth_bytes": 0,
+        "disk_bytes_after_measure": 296784269
+      },
+      "rocksdb_over_f2": 1.127272770125542
+    },
+    "update": {
+      "f2": {
+        "ops_per_second": 9087.37434955,
+        "rss_peak_bytes": 1566523392,
+        "directory_growth_bytes": 46538241,
+        "disk_bytes_after_measure": 460417137
+      },
+      "rocksdb": {
+        "ops_per_second": 207420.556684,
+        "rss_peak_bytes": 339410944,
+        "directory_growth_bytes": 562332778,
+        "disk_bytes_after_measure": 982369136
+      },
+      "rocksdb_over_f2": 22.82513614004152
+    },
+    "contest_mix": {
+      "f2": {
+        "ops_per_second": 23202.7382023,
+        "rss_peak_bytes": 1645494272,
+        "directory_growth_bytes": -16430079,
+        "disk_bytes_after_measure": 394874481
+      },
+      "rocksdb": {
+        "ops_per_second": 232457.507568,
+        "rss_peak_bytes": 793018368,
+        "directory_growth_bytes": 122631079,
+        "disk_bytes_after_measure": 448096526
+      },
+      "rocksdb_over_f2": 10.018537706250436
+    }
+  }
+}

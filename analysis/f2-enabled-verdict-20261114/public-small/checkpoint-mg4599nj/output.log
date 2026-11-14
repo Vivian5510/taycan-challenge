@@ -1,0 +1,30 @@
+seed=20261021 num_keys=131072 key_mode=random key_size=64 value_size=4096 reader_threads=4 mem_limit_bytes=4294967296
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from Checkpoint
+[ RUN      ] Checkpoint.IndependentCopy
+/Users/rosy/devspace/code/taycan-challenge/taycan_participant_sdk/tests/checkpoint_test.cc:21: Skipped
+Checkpoint not implemented
+
+F2_COMMIT_COUNTS single_operations=147456 full_index=10
+F2_DATA_PREFIX commits=147456 data_syncs=147528 directory_syncs=74 write_calls=148034 write_bytes=613845504 stable_tail=613845504 base_tail=558330880 recovered_commits=0
+F2_PREFIX_INDEX cross_key_links=0
+F2_SYNC_IO sync_calls=147990 write_calls=153372 write_bytes=865123018
+[  SKIPPED ] Checkpoint.IndependentCopy (31171 ms)
+[ RUN      ] Checkpoint.ConcurrentReadWrite
+/Users/rosy/devspace/code/taycan-challenge/taycan_participant_sdk/tests/checkpoint_test.cc:134: Skipped
+Checkpoint not implemented
+
+F2_COMMIT_COUNTS single_operations=262144 full_index=15
+F2_DATA_PREFIX commits=262144 data_syncs=262256 directory_syncs=113 write_calls=411077 write_bytes=1556157952 stable_tail=942312448 base_tail=918476288 recovered_commits=0
+F2_PREFIX_INDEX cross_key_links=0
+F2_SYNC_IO sync_calls=411093 write_calls=425592 write_bytes=3409170694
+[  SKIPPED ] Checkpoint.ConcurrentReadWrite (46383 ms)
+[----------] 2 tests from Checkpoint (77554 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (77554 ms total)
+[  PASSED  ] 0 tests.
+[  SKIPPED ] 2 tests, listed below:
+[  SKIPPED ] Checkpoint.IndependentCopy
+[  SKIPPED ] Checkpoint.ConcurrentReadWrite

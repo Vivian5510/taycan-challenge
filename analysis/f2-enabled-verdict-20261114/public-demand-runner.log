@@ -1,0 +1,2 @@
+Results: /Users/rosy/devspace/code/taycan-challenge/analysis/f2-enabled-verdict-20261114/public-demand
+FAIL demand_load peak=1636876288 bytes 353.62s: unexpected_exit: -9

@@ -1,0 +1,32 @@
+START f2-load-r1
+PASS f2-load-r1 11875.9268363
+START rocksdb-load-r1
+PASS rocksdb-load-r1 213112.442775
+START f2-read-r1
+PASS f2-read-r1 622159.966429
+START rocksdb-read-r1
+PASS rocksdb-read-r1 764873.43566
+START f2-update-r1
+PASS f2-update-r1 7886.68625751
+START rocksdb-update-r1
+PASS rocksdb-update-r1 116539.586741
+START f2-contest_mix-r1
+PASS f2-contest_mix-r1 18222.6446139
+START rocksdb-contest_mix-r1
+PASS rocksdb-contest_mix-r1 239033.818655
+START rocksdb-load-r2
+PASS rocksdb-load-r2 126886.685405
+START f2-load-r2
+PASS f2-load-r2 9272.86406051
+START rocksdb-read-r2
+PASS rocksdb-read-r2 780649.987021
+START f2-read-r2
+PASS f2-read-r2 692512.058935
+START rocksdb-update-r2
+PASS rocksdb-update-r2 207420.556684
+START f2-update-r2
+PASS f2-update-r2 9087.37434955
+START rocksdb-contest_mix-r2
+PASS rocksdb-contest_mix-r2 232457.507568
+START f2-contest_mix-r2
+PASS f2-contest_mix-r2 23202.7382023

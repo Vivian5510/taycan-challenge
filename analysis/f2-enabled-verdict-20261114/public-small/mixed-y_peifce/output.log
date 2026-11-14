@@ -1,0 +1,15 @@
+seed=20261021 num_keys=1000000 key_mode=random key_size=64 value_size=128 reader_threads=4 mem_limit_bytes=4294967296
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Mixed
+[ RUN      ] Mixed.ReferenceVersions
+F2_COMMIT_COUNTS single_operations=2999090 full_index=33
+F2_DATA_PREFIX commits=2999090 data_syncs=2999090 directory_syncs=184 write_calls=2999091 write_bytes=1535534592 stable_tail=1535534592 base_tail=1535534592 recovered_commits=0
+F2_PREFIX_INDEX cross_key_links=0
+F2_SYNC_IO sync_calls=3001073 write_calls=3020306 write_bytes=6062556350
+[       OK ] Mixed.ReferenceVersions (438783 ms)
+[----------] 1 test from Mixed (438783 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (438783 ms total)
+[  PASSED  ] 1 test.
