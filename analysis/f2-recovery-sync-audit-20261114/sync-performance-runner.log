@@ -1,0 +1,16 @@
+START f2-t1-default-audit
+PASS f2-t1-default-audit 11977.7235783 
+START rocksdb-t1-default-audit
+PASS rocksdb-t1-default-audit 39493.5259398 
+START rocksdb-t1-group1-audit
+PASS rocksdb-t1-group1-audit 39832.4988994 
+START f2-t32-default-audit
+PASS f2-t32-default-audit 11826.5927727 
+START rocksdb-t32-default-audit
+PASS rocksdb-t32-default-audit 210395.796558 
+START rocksdb-t32-group1-audit
+PASS rocksdb-t32-group1-audit 34162.675945 
+START f2-t32-default-plain
+PASS f2-t32-default-plain 12733.9336559 
+START rocksdb-t32-default-plain
+PASS rocksdb-t32-default-plain 141337.889266 

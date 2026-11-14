@@ -1,0 +1,9 @@
+{
+  "cells": 8,
+  "all_complete": true,
+  "puts_per_cell": 1000000,
+  "sync_error_count": 0,
+  "binary_hashes_unchanged": true,
+  "single_request_sync_count_verified": true,
+  "concurrent_jobs_during_performance": 0
+}

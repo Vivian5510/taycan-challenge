@@ -1,0 +1,5213 @@
+{
+  "status": "COMPLETE: reproduced recovery bug fixed; formal full scale not complete",
+  "fix_branch": "fix/f2-recovery-and-sync-audit-20261114",
+  "tests": {
+    "page_loss": {
+      "classification": "partial unsynced page disk-image model, not real power cut",
+      "budget": 4294967296,
+      "acknowledged_operations": 67,
+      "stable_tail": 34816,
+      "source_bytes": 137728,
+      "binary_sha256": "cd534d224c0be3e246226cbd12e75cdeae6ca3881e9c81dc8083c35d2fb307d6",
+      "cases": [
+        {
+          "case": "all-pending-lost",
+          "acknowledged_bytes_unchanged": true,
+          "checks": [
+            {
+              "returncode": 0
+            },
+            {
+              "returncode": 0
+            }
+          ],
+          "status": "PASS"
+        },
+        {
+          "case": "all-pending-survives",
+          "acknowledged_bytes_unchanged": true,
+          "checks": [
+            {
+              "returncode": 0
+            },
+            {
+              "returncode": 0
+            }
+          ],
+          "status": "PASS"
+        },
+        {
+          "case": "earlier-pending-page-lost",
+          "acknowledged_bytes_unchanged": true,
+          "checks": [
+            {
+              "returncode": 0
+            },
+            {
+              "returncode": 0
+            }
+          ],
+          "status": "PASS"
+        },
+        {
+          "case": "last-pending-page-lost",
+          "acknowledged_bytes_unchanged": true,
+          "checks": [
+            {
+              "returncode": 0
+            },
+            {
+              "returncode": 0
+            }
+          ],
+          "status": "PASS"
+        }
+      ]
+    },
+    "page_matrix": {
+      "stable": 34816,
+      "end": 137728,
+      "cases": [
+        {
+          "page": 8,
+          "lost": [
+            34816,
+            36864
+          ],
+          "returncode": 0,
+          "status": "PASS"
+        },
+        {
+          "page": 9,
+          "lost": [
+            36864,
+            40960
+          ],
+          "returncode": 0,
+          "status": "PASS"
+        },
+        {
+          "page": 10,
+          "lost": [
+            40960,
+            45056
+          ],
+          "returncode": 0,
+          "status": "PASS"
+        },
+        {
+          "page": 11,
+          "lost": [
+            45056,
+            49152
+          ],
+          "returncode": 0,
+          "status": "PASS"
+        },
+        {
+          "page": 12,
+          "lost": [
+            49152,
+            53248
+          ],
+          "returncode": 0,
+          "status": "PASS"
+        },
+        {
+          "page": 13,
+          "lost": [
+            53248,
+            57344
+          ],
+          "returncode": 0,
+          "status": "PASS"
+        },
+        {
+          "page": 14,
+          "lost": [
+            57344,
+            61440
+          ],
+          "returncode": 0,
+          "status": "PASS"
+        },
+        {
+          "page": 15,
+          "lost": [
+            61440,
+            65536
+          ],
+          "returncode": 0,
+          "status": "PASS"
+        },
+        {
+          "page": 16,
+          "lost": [
+            65536,
+            69632
+          ],
+          "returncode": 0,
+          "status": "PASS"
+        },
+        {
+          "page": 17,
+          "lost": [
+            69632,
+            73728
+          ],
+          "returncode": 0,
+          "status": "PASS"
+        },
+        {
+          "page": 18,
+          "lost": [
+            73728,
+            77824
+          ],
+          "returncode": 0,
+          "status": "PASS"
+        },
+        {
+          "page": 19,
+          "lost": [
+            77824,
+            81920
+          ],
+          "returncode": 0,
+          "status": "PASS"
+        },
+        {
+          "page": 20,
+          "lost": [
+            81920,
+            86016
+          ],
+          "returncode": 0,
+          "status": "PASS"
+        },
+        {
+          "page": 21,
+          "lost": [
+            86016,
+            90112
+          ],
+          "returncode": 0,
+          "status": "PASS"
+        },
+        {
+          "page": 22,
+          "lost": [
+            90112,
+            94208
+          ],
+          "returncode": 0,
+          "status": "PASS"
+        },
+        {
+          "page": 23,
+          "lost": [
+            94208,
+            98304
+          ],
+          "returncode": 0,
+          "status": "PASS"
+        },
+        {
+          "page": 24,
+          "lost": [
+            98304,
+            102400
+          ],
+          "returncode": 0,
+          "status": "PASS"
+        },
+        {
+          "page": 25,
+          "lost": [
+            102400,
+            106496
+          ],
+          "returncode": 0,
+          "status": "PASS"
+        },
+        {
+          "page": 26,
+          "lost": [
+            106496,
+            110592
+          ],
+          "returncode": 0,
+          "status": "PASS"
+        },
+        {
+          "page": 27,
+          "lost": [
+            110592,
+            114688
+          ],
+          "returncode": 0,
+          "status": "PASS"
+        },
+        {
+          "page": 28,
+          "lost": [
+            114688,
+            118784
+          ],
+          "returncode": 0,
+          "status": "PASS"
+        },
+        {
+          "page": 29,
+          "lost": [
+            118784,
+            122880
+          ],
+          "returncode": 0,
+          "status": "PASS"
+        },
+        {
+          "page": 30,
+          "lost": [
+            122880,
+            126976
+          ],
+          "returncode": 0,
+          "status": "PASS"
+        },
+        {
+          "page": 31,
+          "lost": [
+            126976,
+            131072
+          ],
+          "returncode": 0,
+          "status": "PASS"
+        },
+        {
+          "page": 32,
+          "lost": [
+            131072,
+            135168
+          ],
+          "returncode": 0,
+          "status": "PASS"
+        },
+        {
+          "page": 33,
+          "lost": [
+            135168,
+            137728
+          ],
+          "returncode": 0,
+          "status": "PASS"
+        }
+      ]
+    },
+    "recovery_boundaries": {
+      "status": "PASS",
+      "started_at": "2026-11-14T10:39:33.131054+00:00",
+      "classification": "macOS ARM64 development probes, not contest/power-cut acceptance",
+      "binary_sha256": {
+        "engine/f2_sync_api_probe": "cd534d224c0be3e246226cbd12e75cdeae6ca3881e9c81dc8083c35d2fb307d6",
+        "basic_test": "07b2dc4bfae31fca91283869eff7b36a52777f56413539b79a24d9b81fd895b1",
+        "recovery_test": "74dd1a8b54bb362bbc0fb038a8ab1ee2b10acf87d5b5fc917881b1bea5fc9e4b",
+        "concurrent_test": "47c7621f245152812c0542109c8a459b455e45b5a71c713b0dbfdef2f0c6e7b0",
+        "crash_worker": "87bc793d033716c21a222b77cc273262dbafc72eeb9064defb649bfdef559ee7"
+      },
+      "tests": [
+        {
+          "test": "basic",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/basic_test",
+            "--num_keys=64",
+            "--key_size=32",
+            "--value_size=256",
+            "--mem_limit_bytes=4294967296",
+            "--seed=20261021",
+            "--gtest_color=no",
+            "--data_dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/basic-db"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.15284975
+        },
+        {
+          "test": "recovery",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/recovery_test",
+            "--num_keys=64",
+            "--key_size=32",
+            "--value_size=256",
+            "--mem_limit_bytes=4294967296",
+            "--seed=20261021",
+            "--gtest_color=no",
+            "--data_dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/recovery-db"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.726038709
+        },
+        {
+          "test": "concurrent",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/concurrent_test",
+            "--num_keys=64",
+            "--key_size=32",
+            "--value_size=256",
+            "--mem_limit_bytes=4294967296",
+            "--seed=20261021",
+            "--gtest_color=no",
+            "--data_dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/concurrent-db"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.539275625
+        },
+        {
+          "test": "sync-error",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "sync-error",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/sync-error-db"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.0457510000000001
+        },
+        {
+          "test": "io-error",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "io-error",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/io-error-db"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.06262429199999997
+        },
+        {
+          "test": "apply-error",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "apply-error",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/apply-error-db"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.05855858299999994
+        },
+        {
+          "test": "same-key-write",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "write-kill",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/same-key-db"
+          ],
+          "expected_returncode": -9,
+          "status": "PASS",
+          "returncode": -9,
+          "seconds": 0.06192945800000005
+        },
+        {
+          "test": "same-key-recover-1",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "verify",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/same-key-db",
+            "42424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.28397570800000005
+        },
+        {
+          "test": "same-key-recover-2",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "verify",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/same-key-db",
+            "42424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.29012779199999983
+        },
+        {
+          "test": "span-write",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "span-write-kill",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/span-db"
+          ],
+          "expected_returncode": -9,
+          "status": "PASS",
+          "returncode": -9,
+          "seconds": 0.21533495899999977
+        },
+        {
+          "test": "partial-tail",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "span-verify",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/partial-tail-db"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.37799866599999987
+        },
+        {
+          "test": "data-corrupt",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "span-verify",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/data-corrupt-db"
+          ],
+          "expected_returncode": 1,
+          "status": "PASS",
+          "returncode": 1,
+          "seconds": 0.009961708000000069
+        },
+        {
+          "test": "footer-corrupt",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "span-verify",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/footer-corrupt-db"
+          ],
+          "expected_returncode": 1,
+          "status": "PASS",
+          "returncode": 1,
+          "seconds": 0.014216750000000111
+        },
+        {
+          "test": "missing-data",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "span-verify",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/missing-data-db"
+          ],
+          "expected_returncode": 1,
+          "status": "PASS",
+          "returncode": 1,
+          "seconds": 0.00951358400000002
+        },
+        {
+          "test": "root-corrupt",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "span-verify",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/root-corrupt-db"
+          ],
+          "expected_returncode": 1,
+          "status": "PASS",
+          "returncode": 1,
+          "seconds": 0.008609334000000413
+        },
+        {
+          "test": "span-recover-1",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "span-verify",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/span-db"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.3089431250000003
+        },
+        {
+          "test": "span-recover-2",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "span-verify",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/span-db"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.31245554099999984
+        },
+        {
+          "test": "embedded-marker-write",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "embedded-marker-write-kill",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/embedded-marker-db"
+          ],
+          "expected_returncode": -9,
+          "status": "PASS",
+          "returncode": -9,
+          "seconds": 0.05744129099999995
+        },
+        {
+          "test": "embedded-marker-recover-1",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "embedded-marker-verify",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/embedded-marker-db"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.2809410840000002
+        },
+        {
+          "test": "embedded-marker-recover-2",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "embedded-marker-verify",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/embedded-marker-db"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.2870959590000002
+        },
+        {
+          "test": "real-hash-collision",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "hash-collision",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/collision-db"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.8612195419999997
+        },
+        {
+          "test": "original-sdk-crash",
+          "trials": 5,
+          "status": "PASS"
+        },
+        {
+          "test": "single-before-data-flush-prepare",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/crash_worker",
+            "--num_keys=64",
+            "--key_size=32",
+            "--value_size=256",
+            "--mem_limit_bytes=4294967296",
+            "--seed=20261021",
+            "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-before-data-flush/db",
+            "--mode=prepare",
+            "--operations=64"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.04828804100000106
+        },
+        {
+          "test": "single-before-data-flush",
+          "status": "PASS",
+          "acknowledged": 64,
+          "serve_returncode": -9,
+          "environment": {
+            "F2_SYNC_FAULT": "before-data-flush",
+            "F2_SYNC_FAULT_MIN_SERIAL": "65",
+            "F2_SYNC_RECLAIM_BYTES": "65536"
+          },
+          "seconds": 0.8603705829999999,
+          "recovered": 64
+        },
+        {
+          "test": "single-before-data-flush-verify1",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/crash_worker",
+            "--num_keys=64",
+            "--key_size=32",
+            "--value_size=256",
+            "--mem_limit_bytes=4294967296",
+            "--seed=20261021",
+            "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-before-data-flush/db",
+            "--mode=verify",
+            "--operations=64",
+            "--possible_operation=65"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.2812265409999988
+        },
+        {
+          "test": "single-before-data-flush-verify2",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/crash_worker",
+            "--num_keys=64",
+            "--key_size=32",
+            "--value_size=256",
+            "--mem_limit_bytes=4294967296",
+            "--seed=20261021",
+            "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-before-data-flush/db",
+            "--mode=verify",
+            "--operations=64"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.29310924999999877
+        },
+        {
+          "test": "single-before-data-sync-prepare",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/crash_worker",
+            "--num_keys=64",
+            "--key_size=32",
+            "--value_size=256",
+            "--mem_limit_bytes=4294967296",
+            "--seed=20261021",
+            "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-before-data-sync/db",
+            "--mode=prepare",
+            "--operations=64"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.046416542000001115
+        },
+        {
+          "test": "single-before-data-sync",
+          "status": "PASS",
+          "acknowledged": 64,
+          "serve_returncode": -9,
+          "environment": {
+            "F2_SYNC_FAULT": "before-data-sync",
+            "F2_SYNC_FAULT_MIN_SERIAL": "65",
+            "F2_SYNC_RECLAIM_BYTES": "65536"
+          },
+          "seconds": 0.899878750000001,
+          "recovered": 65
+        },
+        {
+          "test": "single-before-data-sync-verify1",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/crash_worker",
+            "--num_keys=64",
+            "--key_size=32",
+            "--value_size=256",
+            "--mem_limit_bytes=4294967296",
+            "--seed=20261021",
+            "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-before-data-sync/db",
+            "--mode=verify",
+            "--operations=64",
+            "--possible_operation=65"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.323314667
+        },
+        {
+          "test": "single-before-data-sync-verify2",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/crash_worker",
+            "--num_keys=64",
+            "--key_size=32",
+            "--value_size=256",
+            "--mem_limit_bytes=4294967296",
+            "--seed=20261021",
+            "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-before-data-sync/db",
+            "--mode=verify",
+            "--operations=65"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.29509029199999937
+        },
+        {
+          "test": "single-after-data-sync-prepare",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/crash_worker",
+            "--num_keys=64",
+            "--key_size=32",
+            "--value_size=256",
+            "--mem_limit_bytes=4294967296",
+            "--seed=20261021",
+            "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-after-data-sync/db",
+            "--mode=prepare",
+            "--operations=64"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.05681845900000049
+        },
+        {
+          "test": "single-after-data-sync",
+          "status": "PASS",
+          "acknowledged": 64,
+          "serve_returncode": -9,
+          "environment": {
+            "F2_SYNC_FAULT": "after-data-sync",
+            "F2_SYNC_FAULT_MIN_SERIAL": "65",
+            "F2_SYNC_RECLAIM_BYTES": "65536"
+          },
+          "seconds": 0.8602003750000016,
+          "recovered": 65
+        },
+        {
+          "test": "single-after-data-sync-verify1",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/crash_worker",
+            "--num_keys=64",
+            "--key_size=32",
+            "--value_size=256",
+            "--mem_limit_bytes=4294967296",
+            "--seed=20261021",
+            "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-after-data-sync/db",
+            "--mode=verify",
+            "--operations=64",
+            "--possible_operation=65"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.28359362499999996
+        },
+        {
+          "test": "single-after-data-sync-verify2",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/crash_worker",
+            "--num_keys=64",
+            "--key_size=32",
+            "--value_size=256",
+            "--mem_limit_bytes=4294967296",
+            "--seed=20261021",
+            "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-after-data-sync/db",
+            "--mode=verify",
+            "--operations=65"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.2819411669999994
+        },
+        {
+          "test": "single-after-wal-prepare",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/crash_worker",
+            "--num_keys=64",
+            "--key_size=32",
+            "--value_size=256",
+            "--mem_limit_bytes=4294967296",
+            "--seed=20261021",
+            "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-after-wal/db",
+            "--mode=prepare",
+            "--operations=64"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.05691437499999985
+        },
+        {
+          "test": "single-after-wal",
+          "status": "PASS",
+          "acknowledged": 64,
+          "serve_returncode": -9,
+          "environment": {
+            "F2_SYNC_FAULT": "after-wal",
+            "F2_SYNC_FAULT_MIN_SERIAL": "65",
+            "F2_SYNC_RECLAIM_BYTES": "65536"
+          },
+          "seconds": 0.8869461659999995,
+          "recovered": 65
+        },
+        {
+          "test": "single-after-wal-verify1",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/crash_worker",
+            "--num_keys=64",
+            "--key_size=32",
+            "--value_size=256",
+            "--mem_limit_bytes=4294967296",
+            "--seed=20261021",
+            "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-after-wal/db",
+            "--mode=verify",
+            "--operations=64",
+            "--possible_operation=65"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.2862737079999995
+        },
+        {
+          "test": "single-after-wal-verify2",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/crash_worker",
+            "--num_keys=64",
+            "--key_size=32",
+            "--value_size=256",
+            "--mem_limit_bytes=4294967296",
+            "--seed=20261021",
+            "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-after-wal/db",
+            "--mode=verify",
+            "--operations=65"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.30473029200000035
+        },
+        {
+          "test": "single-before-ack-prepare",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/crash_worker",
+            "--num_keys=64",
+            "--key_size=32",
+            "--value_size=256",
+            "--mem_limit_bytes=4294967296",
+            "--seed=20261021",
+            "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-before-ack/db",
+            "--mode=prepare",
+            "--operations=64"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.04611466699999944
+        },
+        {
+          "test": "single-before-ack",
+          "status": "PASS",
+          "acknowledged": 64,
+          "serve_returncode": -9,
+          "environment": {
+            "F2_SYNC_FAULT": "before-ack",
+            "F2_SYNC_FAULT_MIN_SERIAL": "65",
+            "F2_SYNC_RECLAIM_BYTES": "65536"
+          },
+          "seconds": 0.8693278749999998,
+          "recovered": 65
+        },
+        {
+          "test": "single-before-ack-verify1",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/crash_worker",
+            "--num_keys=64",
+            "--key_size=32",
+            "--value_size=256",
+            "--mem_limit_bytes=4294967296",
+            "--seed=20261021",
+            "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-before-ack/db",
+            "--mode=verify",
+            "--operations=64",
+            "--possible_operation=65"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.28653233400000033
+        },
+        {
+          "test": "single-before-ack-verify2",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/crash_worker",
+            "--num_keys=64",
+            "--key_size=32",
+            "--value_size=256",
+            "--mem_limit_bytes=4294967296",
+            "--seed=20261021",
+            "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-before-ack/db",
+            "--mode=verify",
+            "--operations=65"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.29726629199999977
+        },
+        {
+          "test": "single-before-root-prepare",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/crash_worker",
+            "--num_keys=64",
+            "--key_size=32",
+            "--value_size=256",
+            "--mem_limit_bytes=4294967296",
+            "--seed=20261021",
+            "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-before-root/db",
+            "--mode=prepare",
+            "--operations=64"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.04805050000000044
+        },
+        {
+          "test": "single-before-root",
+          "status": "PASS",
+          "acknowledged": 191,
+          "serve_returncode": -9,
+          "environment": {
+            "F2_SYNC_FAULT": "before-root",
+            "F2_SYNC_FAULT_MIN_SERIAL": "65",
+            "F2_SYNC_RECLAIM_BYTES": "65536"
+          },
+          "seconds": 0.8647515000000006,
+          "recovered": 192
+        },
+        {
+          "test": "single-before-root-verify1",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/crash_worker",
+            "--num_keys=64",
+            "--key_size=32",
+            "--value_size=256",
+            "--mem_limit_bytes=4294967296",
+            "--seed=20261021",
+            "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-before-root/db",
+            "--mode=verify",
+            "--operations=191",
+            "--possible_operation=192"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.2785425419999985
+        },
+        {
+          "test": "single-before-root-verify2",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/crash_worker",
+            "--num_keys=64",
+            "--key_size=32",
+            "--value_size=256",
+            "--mem_limit_bytes=4294967296",
+            "--seed=20261021",
+            "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-before-root/db",
+            "--mode=verify",
+            "--operations=192"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.26907916699999923
+        },
+        {
+          "test": "single-after-root-prepare",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/crash_worker",
+            "--num_keys=64",
+            "--key_size=32",
+            "--value_size=256",
+            "--mem_limit_bytes=4294967296",
+            "--seed=20261021",
+            "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-after-root/db",
+            "--mode=prepare",
+            "--operations=64"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.05298025000000095
+        },
+        {
+          "test": "single-after-root",
+          "status": "PASS",
+          "acknowledged": 191,
+          "serve_returncode": -9,
+          "environment": {
+            "F2_SYNC_FAULT": "after-root",
+            "F2_SYNC_FAULT_MIN_SERIAL": "65",
+            "F2_SYNC_RECLAIM_BYTES": "65536"
+          },
+          "seconds": 0.8627028330000002,
+          "recovered": 192
+        },
+        {
+          "test": "single-after-root-verify1",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/crash_worker",
+            "--num_keys=64",
+            "--key_size=32",
+            "--value_size=256",
+            "--mem_limit_bytes=4294967296",
+            "--seed=20261021",
+            "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-after-root/db",
+            "--mode=verify",
+            "--operations=191",
+            "--possible_operation=192"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.26786783400000047
+        },
+        {
+          "test": "single-after-root-verify2",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/crash_worker",
+            "--num_keys=64",
+            "--key_size=32",
+            "--value_size=256",
+            "--mem_limit_bytes=4294967296",
+            "--seed=20261021",
+            "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-after-root/db",
+            "--mode=verify",
+            "--operations=192"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.28921829200000104
+        },
+        {
+          "test": "concurrent-before-data-flush",
+          "status": "PASS",
+          "acknowledged": [
+            5,
+            0,
+            17,
+            0,
+            0,
+            1,
+            0,
+            3,
+            0,
+            0,
+            8,
+            2,
+            0,
+            0,
+            25,
+            3
+          ],
+          "serve_returncode": -9,
+          "environment": {
+            "F2_SYNC_FAULT": "before-data-flush",
+            "F2_SYNC_FAULT_MIN_SERIAL": "65",
+            "F2_SYNC_RECLAIM_BYTES": "4096"
+          },
+          "seconds": 0.8542909590000001,
+          "recovered": [
+            5,
+            0,
+            17,
+            0,
+            0,
+            1,
+            0,
+            3,
+            1,
+            0,
+            8,
+            2,
+            0,
+            0,
+            25,
+            3
+          ]
+        },
+        {
+          "test": "concurrent-before-data-flush-verify1",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "group-verify",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/concurrent-before-data-flush/db",
+            "5,0,17,0,0,1,0,3,0,0,8,2,0,0,25,3",
+            "allow-next"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.2879374169999984
+        },
+        {
+          "test": "concurrent-before-data-flush-verify2",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "group-verify",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/concurrent-before-data-flush/db",
+            "5,0,17,0,0,1,0,3,1,0,8,2,0,0,25,3"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.28904799999999753
+        },
+        {
+          "test": "concurrent-before-data-sync",
+          "status": "PASS",
+          "acknowledged": [
+            2,
+            3,
+            12,
+            1,
+            2,
+            0,
+            1,
+            0,
+            4,
+            1,
+            9,
+            0,
+            1,
+            5,
+            0,
+            23
+          ],
+          "serve_returncode": -9,
+          "environment": {
+            "F2_SYNC_FAULT": "before-data-sync",
+            "F2_SYNC_FAULT_MIN_SERIAL": "65",
+            "F2_SYNC_RECLAIM_BYTES": "4096"
+          },
+          "seconds": 0.9060776669999981,
+          "recovered": [
+            2,
+            3,
+            12,
+            1,
+            3,
+            0,
+            1,
+            0,
+            4,
+            1,
+            9,
+            0,
+            1,
+            5,
+            0,
+            23
+          ]
+        },
+        {
+          "test": "concurrent-before-data-sync-verify1",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "group-verify",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/concurrent-before-data-sync/db",
+            "2,3,12,1,2,0,1,0,4,1,9,0,1,5,0,23",
+            "allow-next"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.296783542
+        },
+        {
+          "test": "concurrent-before-data-sync-verify2",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "group-verify",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/concurrent-before-data-sync/db",
+            "2,3,12,1,3,0,1,0,4,1,9,0,1,5,0,23"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.2928342079999986
+        },
+        {
+          "test": "concurrent-after-data-sync",
+          "status": "PASS",
+          "acknowledged": [
+            7,
+            3,
+            2,
+            0,
+            8,
+            2,
+            3,
+            0,
+            10,
+            3,
+            20,
+            0,
+            2,
+            0,
+            2,
+            3
+          ],
+          "serve_returncode": -9,
+          "environment": {
+            "F2_SYNC_FAULT": "after-data-sync",
+            "F2_SYNC_FAULT_MIN_SERIAL": "65",
+            "F2_SYNC_RECLAIM_BYTES": "4096"
+          },
+          "seconds": 0.8485323750000013,
+          "recovered": [
+            7,
+            3,
+            2,
+            0,
+            8,
+            2,
+            3,
+            0,
+            10,
+            4,
+            20,
+            0,
+            2,
+            0,
+            2,
+            3
+          ]
+        },
+        {
+          "test": "concurrent-after-data-sync-verify1",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "group-verify",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/concurrent-after-data-sync/db",
+            "7,3,2,0,8,2,3,0,10,3,20,0,2,0,2,3",
+            "allow-next"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.29078104100000246
+        },
+        {
+          "test": "concurrent-after-data-sync-verify2",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "group-verify",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/concurrent-after-data-sync/db",
+            "7,3,2,0,8,2,3,0,10,4,20,0,2,0,2,3"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.28174708399999915
+        },
+        {
+          "test": "concurrent-after-wal",
+          "status": "PASS",
+          "acknowledged": [
+            3,
+            0,
+            3,
+            1,
+            1,
+            0,
+            12,
+            4,
+            1,
+            2,
+            1,
+            0,
+            1,
+            25,
+            0,
+            11
+          ],
+          "serve_returncode": -9,
+          "environment": {
+            "F2_SYNC_FAULT": "after-wal",
+            "F2_SYNC_FAULT_MIN_SERIAL": "65",
+            "F2_SYNC_RECLAIM_BYTES": "4096"
+          },
+          "seconds": 0.882424125,
+          "recovered": [
+            3,
+            0,
+            3,
+            1,
+            1,
+            0,
+            12,
+            4,
+            1,
+            2,
+            1,
+            0,
+            1,
+            25,
+            0,
+            11
+          ]
+        },
+        {
+          "test": "concurrent-after-wal-verify1",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "group-verify",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/concurrent-after-wal/db",
+            "3,0,3,1,1,0,12,4,1,2,1,0,1,25,0,11",
+            "allow-next"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.2789391660000007
+        },
+        {
+          "test": "concurrent-after-wal-verify2",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "group-verify",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/concurrent-after-wal/db",
+            "3,0,3,1,1,0,12,4,1,2,1,0,1,25,0,11"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.2988194170000007
+        },
+        {
+          "test": "concurrent-before-ack",
+          "status": "PASS",
+          "acknowledged": [
+            7,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            14,
+            1,
+            0,
+            0,
+            6,
+            15,
+            12,
+            6,
+            2
+          ],
+          "serve_returncode": -9,
+          "environment": {
+            "F2_SYNC_FAULT": "before-ack",
+            "F2_SYNC_FAULT_MIN_SERIAL": "65",
+            "F2_SYNC_RECLAIM_BYTES": "4096"
+          },
+          "seconds": 0.8718494579999998,
+          "recovered": [
+            7,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            14,
+            1,
+            0,
+            0,
+            7,
+            15,
+            12,
+            6,
+            2
+          ]
+        },
+        {
+          "test": "concurrent-before-ack-verify1",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "group-verify",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/concurrent-before-ack/db",
+            "7,0,0,0,1,0,1,14,1,0,0,6,15,12,6,2",
+            "allow-next"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.28993220899999983
+        },
+        {
+          "test": "concurrent-before-ack-verify2",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "group-verify",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/concurrent-before-ack/db",
+            "7,0,0,0,1,0,1,14,1,0,0,7,15,12,6,2"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.30156945799999946
+        },
+        {
+          "test": "concurrent-before-root",
+          "status": "PASS",
+          "acknowledged": [
+            3,
+            5,
+            4,
+            4,
+            2,
+            2,
+            16,
+            3,
+            12,
+            1,
+            11,
+            0,
+            2,
+            1,
+            3,
+            2
+          ],
+          "serve_returncode": -9,
+          "environment": {
+            "F2_SYNC_FAULT": "before-root",
+            "F2_SYNC_FAULT_MIN_SERIAL": "65",
+            "F2_SYNC_RECLAIM_BYTES": "4096"
+          },
+          "seconds": 0.941124459000001,
+          "recovered": [
+            3,
+            5,
+            4,
+            4,
+            2,
+            2,
+            16,
+            3,
+            12,
+            1,
+            12,
+            0,
+            2,
+            1,
+            3,
+            2
+          ]
+        },
+        {
+          "test": "concurrent-before-root-verify1",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "group-verify",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/concurrent-before-root/db",
+            "3,5,4,4,2,2,16,3,12,1,11,0,2,1,3,2",
+            "allow-next"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.2962435420000027
+        },
+        {
+          "test": "concurrent-before-root-verify2",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "group-verify",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/concurrent-before-root/db",
+            "3,5,4,4,2,2,16,3,12,1,12,0,2,1,3,2"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.3057389999999991
+        },
+        {
+          "test": "concurrent-after-root",
+          "status": "PASS",
+          "acknowledged": [
+            1,
+            3,
+            0,
+            11,
+            1,
+            6,
+            0,
+            1,
+            32,
+            1,
+            0,
+            0,
+            2,
+            1,
+            1,
+            11
+          ],
+          "serve_returncode": -9,
+          "environment": {
+            "F2_SYNC_FAULT": "after-root",
+            "F2_SYNC_FAULT_MIN_SERIAL": "65",
+            "F2_SYNC_RECLAIM_BYTES": "4096"
+          },
+          "seconds": 0.9834492089999998,
+          "recovered": [
+            1,
+            4,
+            0,
+            11,
+            1,
+            6,
+            0,
+            1,
+            32,
+            1,
+            0,
+            0,
+            2,
+            1,
+            1,
+            11
+          ]
+        },
+        {
+          "test": "concurrent-after-root-verify1",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "group-verify",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/concurrent-after-root/db",
+            "1,3,0,11,1,6,0,1,32,1,0,0,2,1,1,11",
+            "allow-next"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.30727154199999873
+        },
+        {
+          "test": "concurrent-after-root-verify2",
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+            "group-verify",
+            "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/concurrent-after-root/db",
+            "1,4,0,11,1,6,0,1,32,1,0,0,2,1,1,11"
+          ],
+          "expected_returncode": 0,
+          "status": "PASS",
+          "returncode": 0,
+          "seconds": 0.3148146660000002
+        }
+      ],
+      "finished_at": "2026-11-14T10:39:56.389064+00:00"
+    },
+    "fsync_boundaries": {
+      "scope": "Actual macOS fsync interposition, process crash; not physical power cut",
+      "rows": [
+        {
+          "engine": "f2",
+          "mode": "hold",
+          "status": "PASS",
+          "no_ack_while_fsync_held": true,
+          "ack_after_sync": true,
+          "recovered_prefix": 65
+        },
+        {
+          "engine": "f2",
+          "mode": "fail",
+          "status": "PASS",
+          "no_ack_while_fsync_held": true,
+          "sync_error_not_acknowledged": true
+        },
+        {
+          "engine": "f2",
+          "mode": "kill-before-sync",
+          "status": "PASS",
+          "no_ack_while_fsync_held": true,
+          "recovered_prefix": 65
+        },
+        {
+          "engine": "rocksdb",
+          "mode": "hold",
+          "status": "PASS",
+          "no_ack_while_fsync_held": true,
+          "ack_after_sync": true,
+          "recovered_prefix": 65
+        },
+        {
+          "engine": "rocksdb",
+          "mode": "fail",
+          "status": "PASS",
+          "no_ack_while_fsync_held": true,
+          "sync_error_not_acknowledged": true
+        },
+        {
+          "engine": "rocksdb",
+          "mode": "kill-before-sync",
+          "status": "PASS",
+          "no_ack_while_fsync_held": true,
+          "recovered_prefix": 65
+        }
+      ]
+    },
+    "public_f2": [
+      {
+        "test": "basic",
+        "parameters": {
+          "num_keys": 100000,
+          "key_size": 64,
+          "value_size": 128,
+          "rounds": 10,
+          "mem_limit_bytes": 4294967296,
+          "seed": 20261021
+        },
+        "rss_limit_bytes": 4724464025,
+        "harness_allowance_bytes": 0,
+        "validation_scope": "macOS native development",
+        "log": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/public-enabled/basic-psj6leay/output.log",
+        "status": "PASS",
+        "elapsed_seconds": 0.138177875,
+        "rss_peak_bytes": 28704768
+      },
+      {
+        "test": "recovery",
+        "parameters": {
+          "num_keys": 100000,
+          "key_size": 64,
+          "value_size": 128,
+          "rounds": 10,
+          "mem_limit_bytes": 4294967296,
+          "seed": 20261021
+        },
+        "rss_limit_bytes": 4724464025,
+        "harness_allowance_bytes": 0,
+        "validation_scope": "macOS native development",
+        "log": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/public-enabled/recovery-ph8p6tu0/output.log",
+        "status": "PASS",
+        "elapsed_seconds": 29.405996167,
+        "rss_peak_bytes": 231784448
+      },
+      {
+        "test": "concurrent",
+        "parameters": {
+          "num_keys": 10000,
+          "key_size": 64,
+          "value_size": 128,
+          "rounds": 10,
+          "mem_limit_bytes": 4294967296,
+          "seed": 20261021
+        },
+        "rss_limit_bytes": 4724464025,
+        "harness_allowance_bytes": 0,
+        "validation_scope": "macOS native development",
+        "log": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/public-enabled/concurrent-e0nn7cpr/output.log",
+        "status": "PASS",
+        "elapsed_seconds": 15.837758249999997,
+        "rss_peak_bytes": 115245056
+      },
+      {
+        "test": "compaction",
+        "parameters": {
+          "num_keys": 100000,
+          "key_size": 16,
+          "value_size": 4096,
+          "rounds": 10,
+          "mem_limit_bytes": 4294967296,
+          "seed": 20261021
+        },
+        "rss_limit_bytes": 4724464025,
+        "harness_allowance_bytes": 0,
+        "validation_scope": "macOS native development",
+        "log": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/public-enabled/compaction-op8mnx_r/output.log",
+        "status": "PASS",
+        "elapsed_seconds": 145.371758125,
+        "rss_peak_bytes": 1452900352
+      },
+      {
+        "test": "crash_recovery",
+        "parameters": {
+          "num_keys": 100000,
+          "key_size": 16,
+          "value_size": 128,
+          "rounds": 10,
+          "mem_limit_bytes": 4294967296,
+          "seed": 20261021
+        },
+        "rss_limit_bytes": 4724464025,
+        "harness_allowance_bytes": 0,
+        "validation_scope": "macOS native development",
+        "log": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/public-enabled/crash_recovery-6tgesc6b/output.log",
+        "status": "PASS",
+        "elapsed_seconds": 78.37904908400003,
+        "rss_peak_bytes": 161595392
+      }
+    ],
+    "public_rocksdb": [
+      {
+        "test": "basic",
+        "parameters": {
+          "num_keys": 100000,
+          "key_size": 64,
+          "value_size": 128,
+          "rounds": 10,
+          "mem_limit_bytes": 4294967296,
+          "seed": 20261021
+        },
+        "rss_limit_bytes": 4724464025,
+        "harness_allowance_bytes": 0,
+        "validation_scope": "macOS native development",
+        "log": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/rocks-correctness/basic-wdd98mp_/output.log",
+        "status": "PASS",
+        "elapsed_seconds": 0.683996208,
+        "rss_peak_bytes": 8355840
+      },
+      {
+        "test": "recovery",
+        "parameters": {
+          "num_keys": 100000,
+          "key_size": 64,
+          "value_size": 128,
+          "rounds": 10,
+          "mem_limit_bytes": 4294967296,
+          "seed": 20261021
+        },
+        "rss_limit_bytes": 4724464025,
+        "harness_allowance_bytes": 0,
+        "validation_scope": "macOS native development",
+        "log": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/rocks-correctness/recovery-2arh6r07/output.log",
+        "status": "PASS",
+        "elapsed_seconds": 8.031854417,
+        "rss_peak_bytes": 89817088
+      },
+      {
+        "test": "concurrent",
+        "parameters": {
+          "num_keys": 10000,
+          "key_size": 64,
+          "value_size": 128,
+          "rounds": 10,
+          "mem_limit_bytes": 4294967296,
+          "seed": 20261021
+        },
+        "rss_limit_bytes": 4724464025,
+        "harness_allowance_bytes": 0,
+        "validation_scope": "macOS native development",
+        "log": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/rocks-correctness/concurrent-pk72vu51/output.log",
+        "status": "PASS",
+        "elapsed_seconds": 3.8504325,
+        "rss_peak_bytes": 50692096
+      },
+      {
+        "test": "crash_recovery",
+        "parameters": {
+          "num_keys": 100000,
+          "key_size": 16,
+          "value_size": 128,
+          "rounds": 10,
+          "mem_limit_bytes": 4294967296,
+          "seed": 20261021
+        },
+        "rss_limit_bytes": 4724464025,
+        "harness_allowance_bytes": 0,
+        "validation_scope": "macOS native development",
+        "log": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/rocks-correctness/crash_recovery-5w1qocx6/output.log",
+        "status": "PASS",
+        "elapsed_seconds": 21.376048500000003,
+        "rss_peak_bytes": 45678592
+      }
+    ],
+    "same_page_loss": {
+      "scope": "Identical pending fsync page-image fault, not physical power cut",
+      "engines": [
+        {
+          "engine": "f2",
+          "last_ack": 74,
+          "stable_file_end": 38400,
+          "log": "hot/log.log0",
+          "pending_bytes": 102912,
+          "cases": [
+            {
+              "case": "all-lost",
+              "status": "PASS",
+              "checks": [
+                {
+                  "returncode": 0,
+                  "stdout": "VERIFIED pending=0\n"
+                },
+                {
+                  "returncode": 0,
+                  "stdout": "VERIFIED pending=0\n"
+                }
+              ]
+            },
+            {
+              "case": "all-survives",
+              "status": "PASS",
+              "checks": [
+                {
+                  "returncode": 0,
+                  "stdout": "VERIFIED pending=1\n"
+                },
+                {
+                  "returncode": 0,
+                  "stdout": "VERIFIED pending=1\n"
+                }
+              ]
+            },
+            {
+              "case": "earlier-page-lost",
+              "status": "PASS",
+              "checks": [
+                {
+                  "returncode": 0,
+                  "stdout": "VERIFIED pending=0\n"
+                },
+                {
+                  "returncode": 0,
+                  "stdout": "VERIFIED pending=0\n"
+                }
+              ]
+            },
+            {
+              "case": "tail-page-lost",
+              "status": "PASS",
+              "checks": [
+                {
+                  "returncode": 0,
+                  "stdout": "VERIFIED pending=0\n"
+                },
+                {
+                  "returncode": 0,
+                  "stdout": "VERIFIED pending=0\n"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "engine": "rocksdb",
+          "last_ack": 74,
+          "stable_file_end": 20434,
+          "log": "000004.log",
+          "pending_bytes": 102476,
+          "cases": [
+            {
+              "case": "all-lost",
+              "status": "PASS",
+              "checks": [
+                {
+                  "returncode": 0,
+                  "stdout": "VERIFIED pending=0\n"
+                },
+                {
+                  "returncode": 0,
+                  "stdout": "VERIFIED pending=0\n"
+                }
+              ]
+            },
+            {
+              "case": "all-survives",
+              "status": "PASS",
+              "checks": [
+                {
+                  "returncode": 0,
+                  "stdout": "VERIFIED pending=1\n"
+                },
+                {
+                  "returncode": 0,
+                  "stdout": "VERIFIED pending=1\n"
+                }
+              ]
+            },
+            {
+              "case": "earlier-page-lost",
+              "status": "PASS",
+              "checks": [
+                {
+                  "returncode": 0,
+                  "stdout": "VERIFIED pending=0\n"
+                },
+                {
+                  "returncode": 0,
+                  "stdout": "VERIFIED pending=0\n"
+                }
+              ]
+            },
+            {
+              "case": "tail-page-lost",
+              "status": "PASS",
+              "checks": [
+                {
+                  "returncode": 0,
+                  "stdout": "VERIFIED pending=0\n"
+                },
+                {
+                  "returncode": 0,
+                  "stdout": "VERIFIED pending=0\n"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "gc_phases": {
+      "status": "PASS",
+      "parameters": {
+        "num_keys": 100000,
+        "rounds": 10,
+        "key_size": 32,
+        "value_size": 256,
+        "mem_limit_bytes": 4294967296
+      },
+      "worker_sha256": "87bc793d033716c21a222b77cc273262dbafc72eeb9064defb649bfdef559ee7",
+      "phases": [
+        {
+          "phase": "concurrent-copy",
+          "status": "PASS",
+          "confirmed": 1000528,
+          "recovered": 1000528,
+          "reopens": 2,
+          "evidence": [
+            {
+              "pid": 29300,
+              "event": "phase",
+              "phase": "before-copy",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29300,
+              "event": "native_compaction",
+              "store": "hot",
+              "cycle": 1,
+              "serial": 1000016,
+              "begin": 343932928,
+              "until": 511705088,
+              "tail_after": 135610752,
+              "success": true
+            },
+            {
+              "pid": 29300,
+              "event": "phase",
+              "phase": "copy-hold",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29300,
+              "event": "native_compaction",
+              "store": "cold",
+              "cycle": 1,
+              "serial": 1000016,
+              "begin": 73400320,
+              "until": 135266304,
+              "tail_after": 166473728,
+              "success": true
+            },
+            {
+              "pid": 29300,
+              "event": "native_compaction",
+              "store": "cold-index",
+              "cycle": 1,
+              "serial": 1000016,
+              "begin": 33554432,
+              "until": 56623104,
+              "tail_after": 68271744,
+              "success": true
+            },
+            {
+              "pid": 29300,
+              "event": "phase",
+              "phase": "after-copy",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29300,
+              "event": "copy_overlap",
+              "cycle": 1,
+              "reads": 0,
+              "writes": 512
+            },
+            {
+              "pid": 29300,
+              "event": "phase",
+              "phase": "after-logical-gc",
+              "serial": 1000528,
+              "cycle": 1
+            },
+            {
+              "pid": 29300,
+              "event": "phase",
+              "phase": "after-checkpoint-before-root",
+              "serial": 1000528,
+              "cycle": 1
+            },
+            {
+              "pid": 29300,
+              "event": "phase",
+              "phase": "after-root-before-truncate",
+              "serial": 1000528,
+              "cycle": 1
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/hot/log.log41",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/hot/log.log42",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/hot/log.log43",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/hot/log.log44",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/hot/log.log45",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/hot/log.log46",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/hot/log.log47",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/hot/log.log48",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/hot/log.log49",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/hot/log.log50",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/hot/log.log51",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/hot/log.log52",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/hot/log.log53",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/hot/log.log54",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/hot/log.log55",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/hot/log.log56",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/hot/log.log57",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/hot/log.log58",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/hot/log.log59",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/hot/log.log60",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "phase",
+              "phase": "after-hot-truncate",
+              "serial": 1000528,
+              "cycle": 1
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/cold/log.log8",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/cold/log.log9",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/cold/log.log10",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/cold/log.log11",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/cold/log.log12",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/cold/log.log13",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/cold/log.log14",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/cold/log.log15",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "phase",
+              "phase": "after-cold-truncate",
+              "serial": 1000528,
+              "cycle": 1
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/cold/cold-index/log.log4",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db/cold/cold-index/log.log5",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29300,
+              "event": "phase",
+              "phase": "after-index-truncate",
+              "serial": 1000528,
+              "cycle": 1
+            },
+            {
+              "pid": 29300,
+              "event": "phase",
+              "phase": "complete",
+              "serial": 1000528,
+              "cycle": 1
+            }
+          ],
+          "original_root_sha256": "c2771818aaf14e2ebae2356eb1e263d6bc38ab9cfcb9aac9335039576abe5e72",
+          "elapsed_seconds": 5.9774024170000075
+        },
+        {
+          "phase": "after-copy",
+          "status": "PASS",
+          "confirmed": 1000016,
+          "recovered": 1000016,
+          "reopens": 2,
+          "evidence": [
+            {
+              "pid": 29329,
+              "event": "phase",
+              "phase": "before-copy",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29329,
+              "event": "native_compaction",
+              "store": "hot",
+              "cycle": 1,
+              "serial": 1000016,
+              "begin": 343932928,
+              "until": 511705088,
+              "tail_after": 135610752,
+              "success": true
+            },
+            {
+              "pid": 29329,
+              "event": "native_compaction",
+              "store": "cold",
+              "cycle": 1,
+              "serial": 1000016,
+              "begin": 73400320,
+              "until": 135266304,
+              "tail_after": 166473728,
+              "success": true
+            },
+            {
+              "pid": 29329,
+              "event": "native_compaction",
+              "store": "cold-index",
+              "cycle": 1,
+              "serial": 1000016,
+              "begin": 33554432,
+              "until": 56623104,
+              "tail_after": 68271744,
+              "success": true
+            },
+            {
+              "pid": 29329,
+              "event": "phase",
+              "phase": "after-copy",
+              "serial": 1000016,
+              "cycle": 1
+            }
+          ],
+          "original_root_sha256": "6986cc0f59bf9551a7b7f3e2c313a458791a918e19eda6219c73b6882a438386",
+          "elapsed_seconds": 8.803620082999998
+        },
+        {
+          "phase": "after-logical-gc",
+          "status": "PASS",
+          "confirmed": 1000016,
+          "recovered": 1000016,
+          "reopens": 2,
+          "evidence": [
+            {
+              "pid": 29423,
+              "event": "phase",
+              "phase": "before-copy",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29423,
+              "event": "native_compaction",
+              "store": "hot",
+              "cycle": 1,
+              "serial": 1000016,
+              "begin": 343932928,
+              "until": 511705088,
+              "tail_after": 135610752,
+              "success": true
+            },
+            {
+              "pid": 29423,
+              "event": "native_compaction",
+              "store": "cold",
+              "cycle": 1,
+              "serial": 1000016,
+              "begin": 73400320,
+              "until": 135266304,
+              "tail_after": 166473728,
+              "success": true
+            },
+            {
+              "pid": 29423,
+              "event": "native_compaction",
+              "store": "cold-index",
+              "cycle": 1,
+              "serial": 1000016,
+              "begin": 33554432,
+              "until": 56623104,
+              "tail_after": 68271744,
+              "success": true
+            },
+            {
+              "pid": 29423,
+              "event": "phase",
+              "phase": "after-copy",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29423,
+              "event": "copy_overlap",
+              "cycle": 1,
+              "reads": 0,
+              "writes": 0
+            },
+            {
+              "pid": 29423,
+              "event": "phase",
+              "phase": "after-logical-gc",
+              "serial": 1000016,
+              "cycle": 1
+            }
+          ],
+          "original_root_sha256": "729bad0bcfb2cdb94449d3dde6ae2249f3bc045afc0e7cec7e92eb61b768e675",
+          "elapsed_seconds": 8.929120790999988
+        },
+        {
+          "phase": "after-checkpoint-before-root",
+          "status": "PASS",
+          "confirmed": 1000016,
+          "recovered": 1000016,
+          "reopens": 2,
+          "evidence": [
+            {
+              "pid": 29556,
+              "event": "phase",
+              "phase": "before-copy",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29556,
+              "event": "native_compaction",
+              "store": "hot",
+              "cycle": 1,
+              "serial": 1000016,
+              "begin": 343932928,
+              "until": 511705088,
+              "tail_after": 135610752,
+              "success": true
+            },
+            {
+              "pid": 29556,
+              "event": "native_compaction",
+              "store": "cold",
+              "cycle": 1,
+              "serial": 1000016,
+              "begin": 73400320,
+              "until": 135266304,
+              "tail_after": 166473728,
+              "success": true
+            },
+            {
+              "pid": 29556,
+              "event": "native_compaction",
+              "store": "cold-index",
+              "cycle": 1,
+              "serial": 1000016,
+              "begin": 33554432,
+              "until": 56623104,
+              "tail_after": 68271744,
+              "success": true
+            },
+            {
+              "pid": 29556,
+              "event": "phase",
+              "phase": "after-copy",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29556,
+              "event": "copy_overlap",
+              "cycle": 1,
+              "reads": 0,
+              "writes": 0
+            },
+            {
+              "pid": 29556,
+              "event": "phase",
+              "phase": "after-logical-gc",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29556,
+              "event": "phase",
+              "phase": "after-checkpoint-before-root",
+              "serial": 1000016,
+              "cycle": 1
+            }
+          ],
+          "original_root_sha256": "1f07d0d921f64dfb718342316e1d7d1d19e293c9fe45696546dfd62be8cdf4ed",
+          "elapsed_seconds": 8.921749167000002
+        },
+        {
+          "phase": "after-root-before-truncate",
+          "status": "PASS",
+          "confirmed": 1000016,
+          "recovered": 1000016,
+          "reopens": 2,
+          "evidence": [
+            {
+              "pid": 29640,
+              "event": "phase",
+              "phase": "before-copy",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29640,
+              "event": "native_compaction",
+              "store": "hot",
+              "cycle": 1,
+              "serial": 1000016,
+              "begin": 343932928,
+              "until": 511705088,
+              "tail_after": 135610752,
+              "success": true
+            },
+            {
+              "pid": 29640,
+              "event": "native_compaction",
+              "store": "cold",
+              "cycle": 1,
+              "serial": 1000016,
+              "begin": 73400320,
+              "until": 135266304,
+              "tail_after": 166473728,
+              "success": true
+            },
+            {
+              "pid": 29640,
+              "event": "native_compaction",
+              "store": "cold-index",
+              "cycle": 1,
+              "serial": 1000016,
+              "begin": 33554432,
+              "until": 56623104,
+              "tail_after": 68271744,
+              "success": true
+            },
+            {
+              "pid": 29640,
+              "event": "phase",
+              "phase": "after-copy",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29640,
+              "event": "copy_overlap",
+              "cycle": 1,
+              "reads": 0,
+              "writes": 0
+            },
+            {
+              "pid": 29640,
+              "event": "phase",
+              "phase": "after-logical-gc",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29640,
+              "event": "phase",
+              "phase": "after-checkpoint-before-root",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29640,
+              "event": "phase",
+              "phase": "after-root-before-truncate",
+              "serial": 1000016,
+              "cycle": 1
+            }
+          ],
+          "original_root_sha256": "ae70329307184c031b9a812135d427122d97809aaa096dabcee156ca8fb09656",
+          "elapsed_seconds": 5.243155832999989
+        },
+        {
+          "phase": "after-hot-truncate",
+          "status": "PASS",
+          "confirmed": 1000016,
+          "recovered": 1000016,
+          "reopens": 2,
+          "evidence": [
+            {
+              "pid": 29670,
+              "event": "phase",
+              "phase": "before-copy",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29670,
+              "event": "native_compaction",
+              "store": "hot",
+              "cycle": 1,
+              "serial": 1000016,
+              "begin": 343932928,
+              "until": 511705088,
+              "tail_after": 135610752,
+              "success": true
+            },
+            {
+              "pid": 29670,
+              "event": "native_compaction",
+              "store": "cold",
+              "cycle": 1,
+              "serial": 1000016,
+              "begin": 73400320,
+              "until": 135266304,
+              "tail_after": 166473728,
+              "success": true
+            },
+            {
+              "pid": 29670,
+              "event": "native_compaction",
+              "store": "cold-index",
+              "cycle": 1,
+              "serial": 1000016,
+              "begin": 33554432,
+              "until": 56623104,
+              "tail_after": 68271744,
+              "success": true
+            },
+            {
+              "pid": 29670,
+              "event": "phase",
+              "phase": "after-copy",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29670,
+              "event": "copy_overlap",
+              "cycle": 1,
+              "reads": 0,
+              "writes": 0
+            },
+            {
+              "pid": 29670,
+              "event": "phase",
+              "phase": "after-logical-gc",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29670,
+              "event": "phase",
+              "phase": "after-checkpoint-before-root",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29670,
+              "event": "phase",
+              "phase": "after-root-before-truncate",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29670,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-hot-truncate/db/hot/log.log41",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29670,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-hot-truncate/db/hot/log.log42",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29670,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-hot-truncate/db/hot/log.log43",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29670,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-hot-truncate/db/hot/log.log44",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29670,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-hot-truncate/db/hot/log.log45",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29670,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-hot-truncate/db/hot/log.log46",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29670,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-hot-truncate/db/hot/log.log47",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29670,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-hot-truncate/db/hot/log.log48",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29670,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-hot-truncate/db/hot/log.log49",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29670,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-hot-truncate/db/hot/log.log50",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29670,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-hot-truncate/db/hot/log.log51",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29670,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-hot-truncate/db/hot/log.log52",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29670,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-hot-truncate/db/hot/log.log53",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29670,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-hot-truncate/db/hot/log.log54",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29670,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-hot-truncate/db/hot/log.log55",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29670,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-hot-truncate/db/hot/log.log56",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29670,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-hot-truncate/db/hot/log.log57",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29670,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-hot-truncate/db/hot/log.log58",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29670,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-hot-truncate/db/hot/log.log59",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29670,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-hot-truncate/db/hot/log.log60",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29670,
+              "event": "phase",
+              "phase": "after-hot-truncate",
+              "serial": 1000016,
+              "cycle": 1
+            }
+          ],
+          "original_root_sha256": "5f845fceb12878478e87dec903083af2fc23eca5e9156188ca0859f6e1e82038",
+          "elapsed_seconds": 5.199380083999998
+        },
+        {
+          "phase": "after-cold-truncate",
+          "status": "PASS",
+          "confirmed": 1000016,
+          "recovered": 1000016,
+          "reopens": 2,
+          "evidence": [
+            {
+              "pid": 29852,
+              "event": "phase",
+              "phase": "before-copy",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29852,
+              "event": "native_compaction",
+              "store": "hot",
+              "cycle": 1,
+              "serial": 1000016,
+              "begin": 343932928,
+              "until": 511705088,
+              "tail_after": 135610752,
+              "success": true
+            },
+            {
+              "pid": 29852,
+              "event": "native_compaction",
+              "store": "cold",
+              "cycle": 1,
+              "serial": 1000016,
+              "begin": 73400320,
+              "until": 135266304,
+              "tail_after": 166473728,
+              "success": true
+            },
+            {
+              "pid": 29852,
+              "event": "native_compaction",
+              "store": "cold-index",
+              "cycle": 1,
+              "serial": 1000016,
+              "begin": 33554432,
+              "until": 56623104,
+              "tail_after": 68271744,
+              "success": true
+            },
+            {
+              "pid": 29852,
+              "event": "phase",
+              "phase": "after-copy",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29852,
+              "event": "copy_overlap",
+              "cycle": 1,
+              "reads": 0,
+              "writes": 0
+            },
+            {
+              "pid": 29852,
+              "event": "phase",
+              "phase": "after-logical-gc",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29852,
+              "event": "phase",
+              "phase": "after-checkpoint-before-root",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29852,
+              "event": "phase",
+              "phase": "after-root-before-truncate",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/hot/log.log41",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/hot/log.log42",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/hot/log.log43",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/hot/log.log44",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/hot/log.log45",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/hot/log.log46",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/hot/log.log47",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/hot/log.log48",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/hot/log.log49",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/hot/log.log50",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/hot/log.log51",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/hot/log.log52",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/hot/log.log53",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/hot/log.log54",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/hot/log.log55",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/hot/log.log56",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/hot/log.log57",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/hot/log.log58",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/hot/log.log59",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/hot/log.log60",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "phase",
+              "phase": "after-hot-truncate",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/cold/log.log8",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/cold/log.log9",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/cold/log.log10",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/cold/log.log11",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/cold/log.log12",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/cold/log.log13",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/cold/log.log14",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db/cold/log.log15",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29852,
+              "event": "phase",
+              "phase": "after-cold-truncate",
+              "serial": 1000016,
+              "cycle": 1
+            }
+          ],
+          "original_root_sha256": "e3841bc774962e428686cc69a470d528dac28c93cba450f1461963e3743e5a95",
+          "elapsed_seconds": 5.1597608339999965
+        },
+        {
+          "phase": "after-index-truncate",
+          "status": "PASS",
+          "confirmed": 1000016,
+          "recovered": 1000016,
+          "reopens": 2,
+          "evidence": [
+            {
+              "pid": 29889,
+              "event": "phase",
+              "phase": "before-copy",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29889,
+              "event": "native_compaction",
+              "store": "hot",
+              "cycle": 1,
+              "serial": 1000016,
+              "begin": 343932928,
+              "until": 511705088,
+              "tail_after": 135610752,
+              "success": true
+            },
+            {
+              "pid": 29889,
+              "event": "native_compaction",
+              "store": "cold",
+              "cycle": 1,
+              "serial": 1000016,
+              "begin": 73400320,
+              "until": 135266304,
+              "tail_after": 166473728,
+              "success": true
+            },
+            {
+              "pid": 29889,
+              "event": "native_compaction",
+              "store": "cold-index",
+              "cycle": 1,
+              "serial": 1000016,
+              "begin": 33554432,
+              "until": 56623104,
+              "tail_after": 68271744,
+              "success": true
+            },
+            {
+              "pid": 29889,
+              "event": "phase",
+              "phase": "after-copy",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29889,
+              "event": "copy_overlap",
+              "cycle": 1,
+              "reads": 0,
+              "writes": 0
+            },
+            {
+              "pid": 29889,
+              "event": "phase",
+              "phase": "after-logical-gc",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29889,
+              "event": "phase",
+              "phase": "after-checkpoint-before-root",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29889,
+              "event": "phase",
+              "phase": "after-root-before-truncate",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/hot/log.log41",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/hot/log.log42",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/hot/log.log43",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/hot/log.log44",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/hot/log.log45",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/hot/log.log46",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/hot/log.log47",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/hot/log.log48",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/hot/log.log49",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/hot/log.log50",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/hot/log.log51",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/hot/log.log52",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/hot/log.log53",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/hot/log.log54",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/hot/log.log55",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/hot/log.log56",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/hot/log.log57",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/hot/log.log58",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/hot/log.log59",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/hot/log.log60",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "phase",
+              "phase": "after-hot-truncate",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/cold/log.log8",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/cold/log.log9",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/cold/log.log10",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/cold/log.log11",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/cold/log.log12",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/cold/log.log13",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/cold/log.log14",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/cold/log.log15",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "phase",
+              "phase": "after-cold-truncate",
+              "serial": 1000016,
+              "cycle": 1
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/cold/cold-index/log.log4",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "segment_deleted",
+              "path": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db/cold/cold-index/log.log5",
+              "bytes": 8388608
+            },
+            {
+              "pid": 29889,
+              "event": "phase",
+              "phase": "after-index-truncate",
+              "serial": 1000016,
+              "cycle": 1
+            }
+          ],
+          "original_root_sha256": "3a207afc160d7e14a0916dfae40631a2b2d41001315efa4a8c96f9546fbfbcd2",
+          "elapsed_seconds": 5.110437458000007
+        }
+      ],
+      "negative_control": null
+    }
+  },
+  "performance": {
+    "status": "PASS",
+    "scope": "Native macOS ARM64; per-call durable fsync; closed-loop threads; not physical power cut or formal score",
+    "parameters": {
+      "num_keys": 1000000,
+      "key_size": 32,
+      "value_size": 256,
+      "mem_limit_bytes": 4294967296,
+      "seed": 20261021
+    },
+    "binary_sha256": {
+      "f2": "85ade21b793d285878e3c8abe453528f48df8a7e966d9fce3c278a9bfa22b608",
+      "rocksdb": "6e7aad5da6c203ba6b9dd432fe901862ade63cfa5b0ec4bd163def75c7bb0711"
+    },
+    "driver_sha256": "536b0200135773157f57c05d89ead934087cbb77a1a15377c7334ccc7c27ac49",
+    "runs": [
+      {
+        "cell": "f2-t1-default-audit",
+        "engine": "f2",
+        "threads": 1,
+        "group_limited": false,
+        "syscall_audit": true,
+        "status": "PASS",
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/f2-t1-default-audit/db",
+          "--workload=load",
+          "--threads=1",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--seed=20261021"
+        ],
+        "process": {
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/taycan_kv_bench",
+            "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/f2-t1-default-audit/db",
+            "--workload=load",
+            "--threads=1",
+            "--duration-seconds=10",
+            "--warmup-seconds=2",
+            "--sample-every=100",
+            "--num-keys=1000000",
+            "--key-size=32",
+            "--value-size=256",
+            "--mem-limit-bytes=4294967296",
+            "--seed=20261021"
+          ],
+          "pid": 17679,
+          "status": "PASS",
+          "reason": null,
+          "returncode": 0,
+          "rss_peak_bytes": 1313374208,
+          "rss_limit_bytes": 4724464025,
+          "samples": 7622,
+          "rss_source": "macOS libproc",
+          "sample_interval_seconds": 0.01,
+          "max_sample_gap_seconds": 0.016942583000002287,
+          "elapsed_seconds": 84.031594042
+        },
+        "prefix": {
+          "commits": 1000000,
+          "data_syncs": 1000000,
+          "directory_syncs": 62,
+          "write_calls": 1000001,
+          "write_bytes": 512000512,
+          "stable_tail": 512000512,
+          "base_tail": 480880640,
+          "recovered_commits": 0
+        },
+        "syscalls": {
+          "fsync_calls": 1000580,
+          "fsync_ns": 25909426247,
+          "wal_calls": 0,
+          "wal_ns": 0,
+          "hot_calls": 1000001,
+          "hot_ns": 25907724289,
+          "failures": 0
+        },
+        "measurement": {
+          "type": "result",
+          "status": "PASS",
+          "error": "",
+          "operations": 1000000,
+          "gets": 0,
+          "puts": 1000000,
+          "deletes": 0,
+          "read_misses": 0,
+          "ops_per_second": 11977.7235783,
+          "open_seconds": 0.038287042,
+          "setup_seconds": 0,
+          "warmup_seconds": 0,
+          "measured_seconds": 83.488318416,
+          "close_seconds": 0.000964791,
+          "data_bytes_before_measure": 8922209,
+          "data_bytes_after_measure": 423417455,
+          "data_bytes_after_close": 423417455,
+          "measure_read_bytes": null,
+          "measure_write_bytes": null,
+          "latency": {
+            "samples": 10169,
+            "p50_us": 69.631,
+            "p95_us": 147.455,
+            "p99_us": 237.567,
+            "p999_us": 794.623,
+            "max_us": 5917.792
+          },
+          "get_latency": {
+            "samples": 0,
+            "p50_us": null,
+            "p95_us": null,
+            "p99_us": null,
+            "p999_us": null,
+            "max_us": null
+          },
+          "put_latency": {
+            "samples": 10169,
+            "p50_us": 69.631,
+            "p95_us": 147.455,
+            "p99_us": 237.567,
+            "p999_us": 794.623,
+            "max_us": 5917.792
+          },
+          "delete_latency": {
+            "samples": 0,
+            "p50_us": null,
+            "p95_us": null,
+            "p99_us": null,
+            "p999_us": null,
+            "max_us": null
+          }
+        },
+        "operations_per_data_sync": 0.999999000001,
+        "data_syncs_per_second": 11977.735555976371,
+        "files": [
+          {
+            "path": "LOCK",
+            "bytes": 0
+          },
+          {
+            "path": "F2-SYNC-CURRENT",
+            "bytes": 175
+          },
+          {
+            "path": "cold/log.log93",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log94",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log69",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log95",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log92",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log88",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log75",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log81",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log86",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log72",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log73",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log87",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log80",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log74",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log89",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log97",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log90",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log99",
+            "bytes": 4763136
+          },
+          {
+            "path": "cold/log.log98",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log91",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log96",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log78",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log85",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log71",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log76",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log82",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log83",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log77",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log70",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log84",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log79",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/cpr-checkpoints/EA9370B3-40E1-43D9-8F8C-96F122E2FF8A/info.dat",
+            "bytes": 2336
+          },
+          {
+            "path": "cold/cpr-checkpoints/EA9370B3-40E1-43D9-8F8C-96F122E2FF8A/3F3F971D-F600-4C78-B70E-CD9E0F7619AE.dat",
+            "bytes": 32
+          },
+          {
+            "path": "cold/cold-index/log.log34",
+            "bytes": 6521856
+          },
+          {
+            "path": "cold/cold-index/log.log33",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/cold-index/log.log32",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/cold-index/log.log28",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/cold-index/log.log29",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/cold-index/log.log30",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/cold-index/log.log31",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/cold-index/cpr-checkpoints/EA9370B3-40E1-43D9-8F8C-96F122E2FF8A/info.dat",
+            "bytes": 2336
+          },
+          {
+            "path": "cold/cold-index/cpr-checkpoints/EA9370B3-40E1-43D9-8F8C-96F122E2FF8A/3DBAF68A-F1AC-4542-9324-9EFE7D09B03D.dat",
+            "bytes": 32
+          },
+          {
+            "path": "cold/cold-index/index-checkpoints/EA9370B3-40E1-43D9-8F8C-96F122E2FF8A/ofb.dat",
+            "bytes": 262144
+          },
+          {
+            "path": "cold/cold-index/index-checkpoints/EA9370B3-40E1-43D9-8F8C-96F122E2FF8A/info.dat",
+            "bytes": 512
+          },
+          {
+            "path": "cold/cold-index/index-checkpoints/EA9370B3-40E1-43D9-8F8C-96F122E2FF8A/ht.dat",
+            "bytes": 4194304
+          },
+          {
+            "path": "cold/index-checkpoints/EA9370B3-40E1-43D9-8F8C-96F122E2FF8A/info.dat",
+            "bytes": 512
+          },
+          {
+            "path": "hot/log.log58",
+            "bytes": 8388608
+          },
+          {
+            "path": "hot/log.log60",
+            "bytes": 8388608
+          },
+          {
+            "path": "hot/log.log56",
+            "bytes": 8388608
+          },
+          {
+            "path": "hot/log.log51",
+            "bytes": 8388608
+          },
+          {
+            "path": "hot/log.log50",
+            "bytes": 8388608
+          },
+          {
+            "path": "hot/log.log57",
+            "bytes": 8388608
+          },
+          {
+            "path": "hot/log.log61",
+            "bytes": 295424
+          },
+          {
+            "path": "hot/log.log59",
+            "bytes": 8388608
+          },
+          {
+            "path": "hot/log.log52",
+            "bytes": 8388608
+          },
+          {
+            "path": "hot/log.log55",
+            "bytes": 8388608
+          },
+          {
+            "path": "hot/log.log54",
+            "bytes": 8388608
+          },
+          {
+            "path": "hot/log.log53",
+            "bytes": 8388608
+          },
+          {
+            "path": "hot/log.log49",
+            "bytes": 8388608
+          },
+          {
+            "path": "hot/cpr-checkpoints/EA9370B3-40E1-43D9-8F8C-96F122E2FF8A/info.dat",
+            "bytes": 2336
+          },
+          {
+            "path": "hot/cpr-checkpoints/EA9370B3-40E1-43D9-8F8C-96F122E2FF8A/3F3F971D-F600-4C78-B70E-CD9E0F7619AE.dat",
+            "bytes": 32
+          },
+          {
+            "path": "hot/index-checkpoints/EA9370B3-40E1-43D9-8F8C-96F122E2FF8A/ofb.dat",
+            "bytes": 524288
+          },
+          {
+            "path": "hot/index-checkpoints/EA9370B3-40E1-43D9-8F8C-96F122E2FF8A/info.dat",
+            "bytes": 512
+          },
+          {
+            "path": "hot/index-checkpoints/EA9370B3-40E1-43D9-8F8C-96F122E2FF8A/ht.dat",
+            "bytes": 4194304
+          }
+        ],
+        "wall_seconds": 84.08319508299999
+      },
+      {
+        "cell": "rocksdb-t1-default-audit",
+        "engine": "rocksdb",
+        "threads": 1,
+        "group_limited": false,
+        "syscall_audit": true,
+        "status": "PASS",
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/rocks-recovery-sync-audit-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/rocksdb-t1-default-audit/db",
+          "--workload=load",
+          "--threads=1",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--seed=20261021"
+        ],
+        "process": {
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/rocks-recovery-sync-audit-20261114/taycan_kv_bench",
+            "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/rocksdb-t1-default-audit/db",
+            "--workload=load",
+            "--threads=1",
+            "--duration-seconds=10",
+            "--warmup-seconds=2",
+            "--sample-every=100",
+            "--num-keys=1000000",
+            "--key-size=32",
+            "--value-size=256",
+            "--mem-limit-bytes=4294967296",
+            "--seed=20261021"
+          ],
+          "pid": 18872,
+          "status": "PASS",
+          "reason": null,
+          "returncode": 0,
+          "rss_peak_bytes": 294567936,
+          "rss_limit_bytes": 4724464025,
+          "samples": 2117,
+          "rss_source": "macOS libproc",
+          "sample_interval_seconds": 0.01,
+          "max_sample_gap_seconds": 0.015048584000012966,
+          "elapsed_seconds": 25.905419459
+        },
+        "syscalls": {
+          "fsync_calls": 1000015,
+          "fsync_ns": 19346241521,
+          "wal_calls": 1000000,
+          "wal_ns": 19345715351,
+          "hot_calls": 0,
+          "hot_ns": 0,
+          "failures": 0
+        },
+        "measurement": {
+          "type": "result",
+          "status": "PASS",
+          "error": "",
+          "operations": 1000000,
+          "gets": 0,
+          "puts": 1000000,
+          "deletes": 0,
+          "read_misses": 0,
+          "ops_per_second": 39493.5259398,
+          "open_seconds": 0.0075465,
+          "setup_seconds": 0,
+          "warmup_seconds": 0,
+          "measured_seconds": 25.32060575,
+          "close_seconds": 0.000516791,
+          "data_bytes_before_measure": 28018,
+          "data_bytes_after_measure": 299431566,
+          "data_bytes_after_close": 299431756,
+          "measure_read_bytes": null,
+          "measure_write_bytes": null,
+          "latency": {
+            "samples": 10169,
+            "p50_us": 24.575,
+            "p95_us": 34.303,
+            "p99_us": 45.055,
+            "p999_us": 90.111,
+            "max_us": 401.375
+          },
+          "get_latency": {
+            "samples": 0,
+            "p50_us": null,
+            "p95_us": null,
+            "p99_us": null,
+            "p999_us": null,
+            "max_us": null
+          },
+          "put_latency": {
+            "samples": 10169,
+            "p50_us": 24.575,
+            "p95_us": 34.303,
+            "p99_us": 45.055,
+            "p999_us": 90.111,
+            "max_us": 401.375
+          },
+          "delete_latency": {
+            "samples": 0,
+            "p50_us": null,
+            "p95_us": null,
+            "p99_us": null,
+            "p999_us": null,
+            "max_us": null
+          }
+        },
+        "operations_per_data_sync": 1.0,
+        "data_syncs_per_second": 39493.525939836574,
+        "files": [
+          {
+            "path": "OPTIONS-000007",
+            "bytes": 7268
+          },
+          {
+            "path": "IDENTITY",
+            "bytes": 36
+          },
+          {
+            "path": "LOCK",
+            "bytes": 0
+          },
+          {
+            "path": "CURRENT",
+            "bytes": 16
+          },
+          {
+            "path": "LOG",
+            "bytes": 28183
+          },
+          {
+            "path": "000009.sst",
+            "bytes": 253398954
+          },
+          {
+            "path": "MANIFEST-000005",
+            "bytes": 250
+          },
+          {
+            "path": "000008.log",
+            "bytes": 45997049
+          }
+        ],
+        "wall_seconds": 25.918229209000003
+      },
+      {
+        "cell": "rocksdb-t1-group1-audit",
+        "engine": "rocksdb",
+        "threads": 1,
+        "group_limited": true,
+        "syscall_audit": true,
+        "status": "PASS",
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/rocks-recovery-sync-audit-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/rocksdb-t1-group1-audit/db",
+          "--workload=load",
+          "--threads=1",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--seed=20261021"
+        ],
+        "process": {
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/rocks-recovery-sync-audit-20261114/taycan_kv_bench",
+            "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/rocksdb-t1-group1-audit/db",
+            "--workload=load",
+            "--threads=1",
+            "--duration-seconds=10",
+            "--warmup-seconds=2",
+            "--sample-every=100",
+            "--num-keys=1000000",
+            "--key-size=32",
+            "--value-size=256",
+            "--mem-limit-bytes=4294967296",
+            "--seed=20261021"
+          ],
+          "pid": 19117,
+          "status": "PASS",
+          "reason": null,
+          "returncode": 0,
+          "rss_peak_bytes": 293404672,
+          "rss_limit_bytes": 4724464025,
+          "samples": 2042,
+          "rss_source": "macOS libproc",
+          "sample_interval_seconds": 0.01,
+          "max_sample_gap_seconds": 0.014899999999983038,
+          "elapsed_seconds": 25.13319566700001
+        },
+        "syscalls": {
+          "fsync_calls": 1000015,
+          "fsync_ns": 18287339669,
+          "wal_calls": 1000000,
+          "wal_ns": 18286902835,
+          "hot_calls": 0,
+          "hot_ns": 0,
+          "failures": 0
+        },
+        "measurement": {
+          "type": "result",
+          "status": "PASS",
+          "error": "",
+          "operations": 1000000,
+          "gets": 0,
+          "puts": 1000000,
+          "deletes": 0,
+          "read_misses": 0,
+          "ops_per_second": 39832.4988994,
+          "open_seconds": 0.012125833,
+          "setup_seconds": 0,
+          "warmup_seconds": 0,
+          "measured_seconds": 25.105128416,
+          "close_seconds": 0.000354125,
+          "data_bytes_before_measure": 28002,
+          "data_bytes_after_measure": 299431769,
+          "data_bytes_after_close": 299431959,
+          "measure_read_bytes": null,
+          "measure_write_bytes": null,
+          "latency": {
+            "samples": 10169,
+            "p50_us": 24.319,
+            "p95_us": 33.791,
+            "p99_us": 40.959,
+            "p999_us": 103.423,
+            "max_us": 2432.042
+          },
+          "get_latency": {
+            "samples": 0,
+            "p50_us": null,
+            "p95_us": null,
+            "p99_us": null,
+            "p999_us": null,
+            "max_us": null
+          },
+          "put_latency": {
+            "samples": 10169,
+            "p50_us": 24.319,
+            "p95_us": 33.791,
+            "p99_us": 40.959,
+            "p999_us": 103.423,
+            "max_us": 2432.042
+          },
+          "delete_latency": {
+            "samples": 0,
+            "p50_us": null,
+            "p95_us": null,
+            "p99_us": null,
+            "p999_us": null,
+            "max_us": null
+          }
+        },
+        "operations_per_data_sync": 1.0,
+        "data_syncs_per_second": 39832.49889941531,
+        "files": [
+          {
+            "path": "OPTIONS-000007",
+            "bytes": 7262
+          },
+          {
+            "path": "IDENTITY",
+            "bytes": 36
+          },
+          {
+            "path": "LOCK",
+            "bytes": 0
+          },
+          {
+            "path": "CURRENT",
+            "bytes": 16
+          },
+          {
+            "path": "LOG",
+            "bytes": 28172
+          },
+          {
+            "path": "000009.sst",
+            "bytes": 253393576
+          },
+          {
+            "path": "MANIFEST-000005",
+            "bytes": 250
+          },
+          {
+            "path": "000008.log",
+            "bytes": 46002647
+          }
+        ],
+        "wall_seconds": 25.142749374999994
+      },
+      {
+        "cell": "f2-t32-default-audit",
+        "engine": "f2",
+        "threads": 32,
+        "group_limited": false,
+        "syscall_audit": true,
+        "status": "PASS",
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/f2-t32-default-audit/db",
+          "--workload=load",
+          "--threads=32",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--seed=20261021"
+        ],
+        "process": {
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/taycan_kv_bench",
+            "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/f2-t32-default-audit/db",
+            "--workload=load",
+            "--threads=32",
+            "--duration-seconds=10",
+            "--warmup-seconds=2",
+            "--sample-every=100",
+            "--num-keys=1000000",
+            "--key-size=32",
+            "--value-size=256",
+            "--mem-limit-bytes=4294967296",
+            "--seed=20261021"
+          ],
+          "pid": 19390,
+          "status": "PASS",
+          "reason": null,
+          "returncode": 0,
+          "rss_peak_bytes": 1382891520,
+          "rss_limit_bytes": 4724464025,
+          "samples": 7668,
+          "rss_source": "macOS libproc",
+          "sample_interval_seconds": 0.01,
+          "max_sample_gap_seconds": 0.015423291999979938,
+          "elapsed_seconds": 84.628711125
+        },
+        "prefix": {
+          "commits": 1000000,
+          "data_syncs": 1000000,
+          "directory_syncs": 62,
+          "write_calls": 1000001,
+          "write_bytes": 512000512,
+          "stable_tail": 512000512,
+          "base_tail": 462568448,
+          "recovered_commits": 0
+        },
+        "syscalls": {
+          "fsync_calls": 1000698,
+          "fsync_ns": 25504914268,
+          "wal_calls": 0,
+          "wal_ns": 0,
+          "hot_calls": 1000001,
+          "hot_ns": 25503134517,
+          "failures": 0
+        },
+        "measurement": {
+          "type": "result",
+          "status": "PASS",
+          "error": "",
+          "operations": 1000000,
+          "gets": 0,
+          "puts": 1000000,
+          "deletes": 0,
+          "read_misses": 0,
+          "ops_per_second": 11826.5927727,
+          "open_seconds": 0.0291005,
+          "setup_seconds": 0,
+          "warmup_seconds": 0,
+          "measured_seconds": 84.555207,
+          "close_seconds": 0.000942291,
+          "data_bytes_before_measure": 8922213,
+          "data_bytes_after_measure": 406579824,
+          "data_bytes_after_close": 406579824,
+          "measure_read_bytes": null,
+          "measure_write_bytes": null,
+          "latency": {
+            "samples": 9964,
+            "p50_us": 69.631,
+            "p95_us": 169.983,
+            "p99_us": 63438.847,
+            "p999_us": 637534.207,
+            "max_us": 1205161.458
+          },
+          "get_latency": {
+            "samples": 0,
+            "p50_us": null,
+            "p95_us": null,
+            "p99_us": null,
+            "p999_us": null,
+            "max_us": null
+          },
+          "put_latency": {
+            "samples": 9964,
+            "p50_us": 69.631,
+            "p95_us": 169.983,
+            "p99_us": 63438.847,
+            "p999_us": 637534.207,
+            "max_us": 1205161.458
+          },
+          "delete_latency": {
+            "samples": 0,
+            "p50_us": null,
+            "p95_us": null,
+            "p99_us": null,
+            "p999_us": null,
+            "max_us": null
+          }
+        },
+        "operations_per_data_sync": 0.999999000001,
+        "data_syncs_per_second": 11826.604599288605,
+        "files": [
+          {
+            "path": "LOCK",
+            "bytes": 0
+          },
+          {
+            "path": "F2-SYNC-CURRENT",
+            "bytes": 176
+          },
+          {
+            "path": "cold/log.log120",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log118",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log127",
+            "bytes": 199680
+          },
+          {
+            "path": "cold/log.log111",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log116",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log117",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log110",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log119",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log126",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log121",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log93",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log94",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log95",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log103",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log104",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log105",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log102",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log124",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log123",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log115",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log112",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log113",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log114",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log122",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log125",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log97",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log99",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log98",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log96",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log107",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log100",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log109",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log108",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log101",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log106",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/cpr-checkpoints/D9177F87-0ADE-4111-A87D-182C202326B2/info.dat",
+            "bytes": 2336
+          },
+          {
+            "path": "cold/cpr-checkpoints/D9177F87-0ADE-4111-A87D-182C202326B2/FA209D53-8D27-4534-9B47-620F92CF4CEA.dat",
+            "bytes": 32
+          },
+          {
+            "path": "cold/cold-index/log.log44",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/cold-index/log.log43",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/cold-index/log.log42",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/cold-index/log.log45",
+            "bytes": 2636288
+          },
+          {
+            "path": "cold/cold-index/log.log39",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/cold-index/log.log38",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/cold-index/log.log40",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/cold-index/log.log41",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/cold-index/cpr-checkpoints/D9177F87-0ADE-4111-A87D-182C202326B2/info.dat",
+            "bytes": 2336
+          },
+          {
+            "path": "cold/cold-index/cpr-checkpoints/D9177F87-0ADE-4111-A87D-182C202326B2/15CAD0DE-BD01-4ABA-89CC-CCFC7D42727B.dat",
+            "bytes": 32
+          },
+          {
+            "path": "cold/cold-index/index-checkpoints/D9177F87-0ADE-4111-A87D-182C202326B2/ofb.dat",
+            "bytes": 262144
+          },
+          {
+            "path": "cold/cold-index/index-checkpoints/D9177F87-0ADE-4111-A87D-182C202326B2/info.dat",
+            "bytes": 512
+          },
+          {
+            "path": "cold/cold-index/index-checkpoints/D9177F87-0ADE-4111-A87D-182C202326B2/ht.dat",
+            "bytes": 4194304
+          },
+          {
+            "path": "cold/index-checkpoints/D9177F87-0ADE-4111-A87D-182C202326B2/info.dat",
+            "bytes": 512
+          },
+          {
+            "path": "hot/log.log58",
+            "bytes": 8388608
+          },
+          {
+            "path": "hot/log.log60",
+            "bytes": 8388608
+          },
+          {
+            "path": "hot/log.log56",
+            "bytes": 8388608
+          },
+          {
+            "path": "hot/log.log57",
+            "bytes": 8388608
+          },
+          {
+            "path": "hot/log.log61",
+            "bytes": 295424
+          },
+          {
+            "path": "hot/log.log59",
+            "bytes": 8388608
+          },
+          {
+            "path": "hot/log.log55",
+            "bytes": 8388608
+          },
+          {
+            "path": "hot/cpr-checkpoints/D9177F87-0ADE-4111-A87D-182C202326B2/info.dat",
+            "bytes": 2336
+          },
+          {
+            "path": "hot/cpr-checkpoints/D9177F87-0ADE-4111-A87D-182C202326B2/FA209D53-8D27-4534-9B47-620F92CF4CEA.dat",
+            "bytes": 32
+          },
+          {
+            "path": "hot/index-checkpoints/D9177F87-0ADE-4111-A87D-182C202326B2/ofb.dat",
+            "bytes": 524288
+          },
+          {
+            "path": "hot/index-checkpoints/D9177F87-0ADE-4111-A87D-182C202326B2/info.dat",
+            "bytes": 512
+          },
+          {
+            "path": "hot/index-checkpoints/D9177F87-0ADE-4111-A87D-182C202326B2/ht.dat",
+            "bytes": 4194304
+          }
+        ],
+        "wall_seconds": 84.6585595
+      },
+      {
+        "cell": "rocksdb-t32-default-audit",
+        "engine": "rocksdb",
+        "threads": 32,
+        "group_limited": false,
+        "syscall_audit": true,
+        "status": "PASS",
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/rocks-recovery-sync-audit-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/rocksdb-t32-default-audit/db",
+          "--workload=load",
+          "--threads=32",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--seed=20261021"
+        ],
+        "process": {
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/rocks-recovery-sync-audit-20261114/taycan_kv_bench",
+            "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/rocksdb-t32-default-audit/db",
+            "--workload=load",
+            "--threads=32",
+            "--duration-seconds=10",
+            "--warmup-seconds=2",
+            "--sample-every=100",
+            "--num-keys=1000000",
+            "--key-size=32",
+            "--value-size=256",
+            "--mem-limit-bytes=4294967296",
+            "--seed=20261021"
+          ],
+          "pid": 20605,
+          "status": "PASS",
+          "reason": null,
+          "returncode": 0,
+          "rss_peak_bytes": 306577408,
+          "rss_limit_bytes": 4724464025,
+          "samples": 396,
+          "rss_source": "macOS libproc",
+          "sample_interval_seconds": 0.01,
+          "max_sample_gap_seconds": 0.012679125000005342,
+          "elapsed_seconds": 4.77542837499999
+        },
+        "syscalls": {
+          "fsync_calls": 62440,
+          "fsync_ns": 1785002181,
+          "wal_calls": 62425,
+          "wal_ns": 1784662640,
+          "hot_calls": 0,
+          "hot_ns": 0,
+          "failures": 0
+        },
+        "measurement": {
+          "type": "result",
+          "status": "PASS",
+          "error": "",
+          "operations": 1000000,
+          "gets": 0,
+          "puts": 1000000,
+          "deletes": 0,
+          "read_misses": 0,
+          "ops_per_second": 210395.796558,
+          "open_seconds": 0.006838375,
+          "setup_seconds": 0,
+          "warmup_seconds": 0,
+          "measured_seconds": 4.752946667,
+          "close_seconds": 0.000353417,
+          "data_bytes_before_measure": 28022,
+          "data_bytes_after_measure": 296784991,
+          "data_bytes_after_close": 296785181,
+          "measure_read_bytes": null,
+          "measure_write_bytes": null,
+          "latency": {
+            "samples": 9964,
+            "p50_us": 149.503,
+            "p95_us": 200.703,
+            "p99_us": 243.711,
+            "p999_us": 606.207,
+            "max_us": 1871.417
+          },
+          "get_latency": {
+            "samples": 0,
+            "p50_us": null,
+            "p95_us": null,
+            "p99_us": null,
+            "p999_us": null,
+            "max_us": null
+          },
+          "put_latency": {
+            "samples": 9964,
+            "p50_us": 149.503,
+            "p95_us": 200.703,
+            "p99_us": 243.711,
+            "p999_us": 606.207,
+            "max_us": 1871.417
+          },
+          "delete_latency": {
+            "samples": 0,
+            "p50_us": null,
+            "p95_us": null,
+            "p99_us": null,
+            "p999_us": null,
+            "max_us": null
+          }
+        },
+        "operations_per_data_sync": 16.019223067681217,
+        "data_syncs_per_second": 13133.957600117965,
+        "files": [
+          {
+            "path": "OPTIONS-000007",
+            "bytes": 7268
+          },
+          {
+            "path": "IDENTITY",
+            "bytes": 36
+          },
+          {
+            "path": "LOCK",
+            "bytes": 0
+          },
+          {
+            "path": "CURRENT",
+            "bytes": 16
+          },
+          {
+            "path": "LOG",
+            "bytes": 28188
+          },
+          {
+            "path": "000009.sst",
+            "bytes": 252520510
+          },
+          {
+            "path": "MANIFEST-000005",
+            "bytes": 250
+          },
+          {
+            "path": "000008.log",
+            "bytes": 44228913
+          }
+        ],
+        "wall_seconds": 4.7941944160000105
+      },
+      {
+        "cell": "rocksdb-t32-group1-audit",
+        "engine": "rocksdb",
+        "threads": 32,
+        "group_limited": true,
+        "syscall_audit": true,
+        "status": "PASS",
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/rocks-recovery-sync-audit-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/rocksdb-t32-group1-audit/db",
+          "--workload=load",
+          "--threads=32",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--seed=20261021"
+        ],
+        "process": {
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/rocks-recovery-sync-audit-20261114/taycan_kv_bench",
+            "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/rocksdb-t32-group1-audit/db",
+            "--workload=load",
+            "--threads=32",
+            "--duration-seconds=10",
+            "--warmup-seconds=2",
+            "--sample-every=100",
+            "--num-keys=1000000",
+            "--key-size=32",
+            "--value-size=256",
+            "--mem-limit-bytes=4294967296",
+            "--seed=20261021"
+          ],
+          "pid": 20629,
+          "status": "PASS",
+          "reason": null,
+          "returncode": 0,
+          "rss_peak_bytes": 296337408,
+          "rss_limit_bytes": 4724464025,
+          "samples": 2403,
+          "rss_source": "macOS libproc",
+          "sample_interval_seconds": 0.01,
+          "max_sample_gap_seconds": 0.01495733300001234,
+          "elapsed_seconds": 29.299728458000004
+        },
+        "syscalls": {
+          "fsync_calls": 1000015,
+          "fsync_ns": 19560507932,
+          "wal_calls": 1000000,
+          "wal_ns": 19559279556,
+          "hot_calls": 0,
+          "hot_ns": 0,
+          "failures": 0
+        },
+        "measurement": {
+          "type": "result",
+          "status": "PASS",
+          "error": "",
+          "operations": 1000000,
+          "gets": 0,
+          "puts": 1000000,
+          "deletes": 0,
+          "read_misses": 0,
+          "ops_per_second": 34162.675945,
+          "open_seconds": 0.012065417,
+          "setup_seconds": 0,
+          "warmup_seconds": 0,
+          "measured_seconds": 29.271711666,
+          "close_seconds": 0.00049675,
+          "data_bytes_before_measure": 28006,
+          "data_bytes_after_measure": 299431554,
+          "data_bytes_after_close": 299431744,
+          "measure_read_bytes": null,
+          "measure_write_bytes": null,
+          "latency": {
+            "samples": 9964,
+            "p50_us": 901.119,
+            "p95_us": 1196.031,
+            "p99_us": 1572.863,
+            "p999_us": 3145.727,
+            "max_us": 7417.667
+          },
+          "get_latency": {
+            "samples": 0,
+            "p50_us": null,
+            "p95_us": null,
+            "p99_us": null,
+            "p999_us": null,
+            "max_us": null
+          },
+          "put_latency": {
+            "samples": 9964,
+            "p50_us": 901.119,
+            "p95_us": 1196.031,
+            "p99_us": 1572.863,
+            "p999_us": 3145.727,
+            "max_us": 7417.667
+          },
+          "delete_latency": {
+            "samples": 0,
+            "p50_us": null,
+            "p95_us": null,
+            "p99_us": null,
+            "p999_us": null,
+            "max_us": null
+          }
+        },
+        "operations_per_data_sync": 1.0,
+        "data_syncs_per_second": 34162.67594496467,
+        "files": [
+          {
+            "path": "OPTIONS-000007",
+            "bytes": 7262
+          },
+          {
+            "path": "IDENTITY",
+            "bytes": 36
+          },
+          {
+            "path": "LOCK",
+            "bytes": 0
+          },
+          {
+            "path": "CURRENT",
+            "bytes": 16
+          },
+          {
+            "path": "LOG",
+            "bytes": 28177
+          },
+          {
+            "path": "000009.sst",
+            "bytes": 253398954
+          },
+          {
+            "path": "MANIFEST-000005",
+            "bytes": 250
+          },
+          {
+            "path": "000008.log",
+            "bytes": 45997049
+          }
+        ],
+        "wall_seconds": 29.31022224999998
+      },
+      {
+        "cell": "f2-t32-default-plain",
+        "engine": "f2",
+        "threads": 32,
+        "group_limited": false,
+        "syscall_audit": false,
+        "status": "PASS",
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/f2-t32-default-plain/db",
+          "--workload=load",
+          "--threads=32",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--seed=20261021"
+        ],
+        "process": {
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/taycan_kv_bench",
+            "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/f2-t32-default-plain/db",
+            "--workload=load",
+            "--threads=32",
+            "--duration-seconds=10",
+            "--warmup-seconds=2",
+            "--sample-every=100",
+            "--num-keys=1000000",
+            "--key-size=32",
+            "--value-size=256",
+            "--mem-limit-bytes=4294967296",
+            "--seed=20261021"
+          ],
+          "pid": 21024,
+          "status": "PASS",
+          "reason": null,
+          "returncode": 0,
+          "rss_peak_bytes": 1430552576,
+          "rss_limit_bytes": 4724464025,
+          "samples": 7247,
+          "rss_source": "macOS libproc",
+          "sample_interval_seconds": 0.01,
+          "max_sample_gap_seconds": 0.0182375829999728,
+          "elapsed_seconds": 78.61855341700002
+        },
+        "prefix": {
+          "commits": 1000000,
+          "data_syncs": 1000000,
+          "directory_syncs": 62,
+          "write_calls": 1000001,
+          "write_bytes": 512000512,
+          "stable_tail": 512000512,
+          "base_tail": 454988800,
+          "recovered_commits": 0
+        },
+        "measurement": {
+          "type": "result",
+          "status": "PASS",
+          "error": "",
+          "operations": 1000000,
+          "gets": 0,
+          "puts": 1000000,
+          "deletes": 0,
+          "read_misses": 0,
+          "ops_per_second": 12733.9336559,
+          "open_seconds": 0.03610275,
+          "setup_seconds": 0,
+          "warmup_seconds": 0,
+          "measured_seconds": 78.530329042,
+          "close_seconds": 0.001047208,
+          "data_bytes_before_measure": 8922213,
+          "data_bytes_after_measure": 403630704,
+          "data_bytes_after_close": 403630704,
+          "measure_read_bytes": null,
+          "measure_write_bytes": null,
+          "latency": {
+            "samples": 9964,
+            "p50_us": 65.535,
+            "p95_us": 153.599,
+            "p99_us": 4718.591,
+            "p999_us": 457179.135,
+            "max_us": 1139562.667
+          },
+          "get_latency": {
+            "samples": 0,
+            "p50_us": null,
+            "p95_us": null,
+            "p99_us": null,
+            "p999_us": null,
+            "max_us": null
+          },
+          "put_latency": {
+            "samples": 9964,
+            "p50_us": 65.535,
+            "p95_us": 153.599,
+            "p99_us": 4718.591,
+            "p999_us": 457179.135,
+            "max_us": 1139562.667
+          },
+          "delete_latency": {
+            "samples": 0,
+            "p50_us": null,
+            "p95_us": null,
+            "p99_us": null,
+            "p999_us": null,
+            "max_us": null
+          }
+        },
+        "files": [
+          {
+            "path": "LOCK",
+            "bytes": 0
+          },
+          {
+            "path": "F2-SYNC-CURRENT",
+            "bytes": 176
+          },
+          {
+            "path": "cold/log.log142",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log145",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log120",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log118",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log127",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log129",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log116",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log144",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log143",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log128",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log117",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log119",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log126",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log121",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log132",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log135",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log134",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log133",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log124",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log123",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log146",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log141",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log148",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log122",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log125",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log149",
+            "bytes": 968704
+          },
+          {
+            "path": "cold/log.log140",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log147",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log138",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log136",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log131",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log130",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log137",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/log.log139",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/cpr-checkpoints/8D141F7C-AA13-45EF-AD27-C3F8D7F06A3E/C76C292A-D84E-4176-85D7-F84679C4FF83.dat",
+            "bytes": 32
+          },
+          {
+            "path": "cold/cpr-checkpoints/8D141F7C-AA13-45EF-AD27-C3F8D7F06A3E/info.dat",
+            "bytes": 2336
+          },
+          {
+            "path": "cold/cold-index/log.log51",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/cold-index/log.log50",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/cold-index/log.log52",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/cold-index/log.log55",
+            "bytes": 7568896
+          },
+          {
+            "path": "cold/cold-index/log.log54",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/cold-index/log.log53",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/cold-index/log.log49",
+            "bytes": 8388608
+          },
+          {
+            "path": "cold/cold-index/cpr-checkpoints/8D141F7C-AA13-45EF-AD27-C3F8D7F06A3E/info.dat",
+            "bytes": 2336
+          },
+          {
+            "path": "cold/cold-index/cpr-checkpoints/8D141F7C-AA13-45EF-AD27-C3F8D7F06A3E/0D56F085-EBBD-422E-8929-EBE720AB2628.dat",
+            "bytes": 32
+          },
+          {
+            "path": "cold/cold-index/index-checkpoints/8D141F7C-AA13-45EF-AD27-C3F8D7F06A3E/ofb.dat",
+            "bytes": 262144
+          },
+          {
+            "path": "cold/cold-index/index-checkpoints/8D141F7C-AA13-45EF-AD27-C3F8D7F06A3E/info.dat",
+            "bytes": 512
+          },
+          {
+            "path": "cold/cold-index/index-checkpoints/8D141F7C-AA13-45EF-AD27-C3F8D7F06A3E/ht.dat",
+            "bytes": 4194304
+          },
+          {
+            "path": "cold/index-checkpoints/8D141F7C-AA13-45EF-AD27-C3F8D7F06A3E/info.dat",
+            "bytes": 512
+          },
+          {
+            "path": "hot/log.log58",
+            "bytes": 8388608
+          },
+          {
+            "path": "hot/log.log60",
+            "bytes": 8388608
+          },
+          {
+            "path": "hot/log.log56",
+            "bytes": 8388608
+          },
+          {
+            "path": "hot/log.log57",
+            "bytes": 8388608
+          },
+          {
+            "path": "hot/log.log61",
+            "bytes": 295424
+          },
+          {
+            "path": "hot/log.log59",
+            "bytes": 8388608
+          },
+          {
+            "path": "hot/log.log55",
+            "bytes": 8388608
+          },
+          {
+            "path": "hot/log.log54",
+            "bytes": 8388608
+          },
+          {
+            "path": "hot/cpr-checkpoints/8D141F7C-AA13-45EF-AD27-C3F8D7F06A3E/C76C292A-D84E-4176-85D7-F84679C4FF83.dat",
+            "bytes": 32
+          },
+          {
+            "path": "hot/cpr-checkpoints/8D141F7C-AA13-45EF-AD27-C3F8D7F06A3E/info.dat",
+            "bytes": 2336
+          },
+          {
+            "path": "hot/index-checkpoints/8D141F7C-AA13-45EF-AD27-C3F8D7F06A3E/ofb.dat",
+            "bytes": 262144
+          },
+          {
+            "path": "hot/index-checkpoints/8D141F7C-AA13-45EF-AD27-C3F8D7F06A3E/info.dat",
+            "bytes": 512
+          },
+          {
+            "path": "hot/index-checkpoints/8D141F7C-AA13-45EF-AD27-C3F8D7F06A3E/ht.dat",
+            "bytes": 4194304
+          }
+        ],
+        "wall_seconds": 78.69232370899996
+      },
+      {
+        "cell": "rocksdb-t32-default-plain",
+        "engine": "rocksdb",
+        "threads": 32,
+        "group_limited": false,
+        "syscall_audit": false,
+        "status": "PASS",
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/rocks-recovery-sync-audit-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/rocksdb-t32-default-plain/db",
+          "--workload=load",
+          "--threads=32",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--seed=20261021"
+        ],
+        "process": {
+          "command": [
+            "/Users/rosy/devspace/code/taycan-challenge/build/rocks-recovery-sync-audit-20261114/taycan_kv_bench",
+            "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/rocksdb-t32-default-plain/db",
+            "--workload=load",
+            "--threads=32",
+            "--duration-seconds=10",
+            "--warmup-seconds=2",
+            "--sample-every=100",
+            "--num-keys=1000000",
+            "--key-size=32",
+            "--value-size=256",
+            "--mem-limit-bytes=4294967296",
+            "--seed=20261021"
+          ],
+          "pid": 21755,
+          "status": "PASS",
+          "reason": null,
+          "returncode": 0,
+          "rss_peak_bytes": 301776896,
+          "rss_limit_bytes": 4724464025,
+          "samples": 596,
+          "rss_source": "macOS libproc",
+          "sample_interval_seconds": 0.01,
+          "max_sample_gap_seconds": 0.01570108399999981,
+          "elapsed_seconds": 7.1548604590000195
+        },
+        "measurement": {
+          "type": "result",
+          "status": "PASS",
+          "error": "",
+          "operations": 1000000,
+          "gets": 0,
+          "puts": 1000000,
+          "deletes": 0,
+          "read_misses": 0,
+          "ops_per_second": 141337.889266,
+          "open_seconds": 0.03390125,
+          "setup_seconds": 0,
+          "warmup_seconds": 0,
+          "measured_seconds": 7.075243625,
+          "close_seconds": 0.000731375,
+          "data_bytes_before_measure": 28022,
+          "data_bytes_after_measure": 296803135,
+          "data_bytes_after_close": 296803325,
+          "measure_read_bytes": null,
+          "measure_write_bytes": null,
+          "latency": {
+            "samples": 9964,
+            "p50_us": 176.127,
+            "p95_us": 434.175,
+            "p99_us": 1081.343,
+            "p999_us": 4980.735,
+            "max_us": 12632.375
+          },
+          "get_latency": {
+            "samples": 0,
+            "p50_us": null,
+            "p95_us": null,
+            "p99_us": null,
+            "p999_us": null,
+            "max_us": null
+          },
+          "put_latency": {
+            "samples": 9964,
+            "p50_us": 176.127,
+            "p95_us": 434.175,
+            "p99_us": 1081.343,
+            "p999_us": 4980.735,
+            "max_us": 12632.375
+          },
+          "delete_latency": {
+            "samples": 0,
+            "p50_us": null,
+            "p95_us": null,
+            "p99_us": null,
+            "p999_us": null,
+            "max_us": null
+          }
+        },
+        "files": [
+          {
+            "path": "OPTIONS-000007",
+            "bytes": 7268
+          },
+          {
+            "path": "IDENTITY",
+            "bytes": 36
+          },
+          {
+            "path": "LOCK",
+            "bytes": 0
+          },
+          {
+            "path": "CURRENT",
+            "bytes": 16
+          },
+          {
+            "path": "LOG",
+            "bytes": 28188
+          },
+          {
+            "path": "000009.sst",
+            "bytes": 252514614
+          },
+          {
+            "path": "MANIFEST-000005",
+            "bytes": 250
+          },
+          {
+            "path": "000008.log",
+            "bytes": 44252953
+          }
+        ],
+        "wall_seconds": 7.1738525000000095
+      }
+    ]
+  }
+}

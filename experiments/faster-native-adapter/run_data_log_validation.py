@@ -28,6 +28,11 @@ def main():
     parser.add_argument('--results', type=Path, required=True)
     args = parser.parse_args()
     build, out = args.build_dir.resolve(), args.results.resolve()
+    cache = (build / 'CMakeCache.txt').read_text()
+    segment_bits = next((int(line.split('=', 1)[1]) for line in cache.splitlines()
+                         if line.startswith('TAYCAN_F2_DATA_SEGMENT_BITS:')), 30)
+    gc_enabled = 'TAYCAN_F2_DURABLE_COMPACTION:BOOL=ON' in cache
+    segment_bytes = 1 << (segment_bits if gc_enabled else 30)
     out.mkdir(parents=True, exist_ok=False)
     probe = build / 'engine/f2_sync_api_probe'
     report = dict(status='RUNNING', started_at=datetime.now(timezone.utc).isoformat(),
@@ -178,15 +183,17 @@ def main():
         for case in ('partial-tail', 'data-corrupt', 'footer-corrupt', 'missing-data', 'root-corrupt'):
             db = out / (case + '-db')
             shutil.copytree(span, db)
-            log = db / 'hot/log.log0'
+            logs = sorted((db / 'hot').glob('log.log*'), key=lambda p: int(p.name[7:]))
+            log = logs[-1] if case in ('partial-tail', 'footer-corrupt') else db / ('hot/log.log' + str(base // segment_bytes))
             if case == 'partial-tail':
                 with log.open('ab') as f:
                     f.write(b'abc')
             elif case in ('data-corrupt', 'footer-corrupt'):
                 data = bytearray(log.read_bytes())
-                if len(data) < base + 128:
+                offset = base % segment_bytes
+                if case == 'data-corrupt' and len(data) < offset + 128:
                     raise RuntimeError('no committed suffix to corrupt')
-                data[base + 24 if case == 'data-corrupt' else len(data) - 16] ^= 1
+                data[offset + 24 if case == 'data-corrupt' else len(data) - 16] ^= 1
                 log.write_bytes(data)
             elif case == 'missing-data':
                 log.rename(log.with_suffix('.preserved'))

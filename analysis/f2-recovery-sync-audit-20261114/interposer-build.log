@@ -1,0 +1,7 @@
+analysis/f2-recovery-sync-audit-20261114/sync_audit.cc:15:38: warning: 'syscall' is deprecated: first deprecated in macOS 10.12 - syscall(2) is unsupported; please switch to a supported interface. For SYS_kdebug_trace use kdebug_signpost(). [-Wdeprecated-declarations]
+   15 | int kernel_sync(int fd){return int(::syscall(SYS_fsync,fd));}
+      |                                      ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h:744:6: note: 'syscall' has been explicitly marked deprecated here
+  744 | int      syscall(int, ...);
+      |          ^
+1 warning generated.

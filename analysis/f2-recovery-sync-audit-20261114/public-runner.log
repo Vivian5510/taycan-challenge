@@ -1,0 +1,6 @@
+Results: /Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/public-enabled
+PASS basic peak=28704768 bytes 0.14s
+PASS recovery peak=231784448 bytes 29.41s
+PASS concurrent peak=115245056 bytes 15.84s
+PASS compaction peak=1452900352 bytes 145.37s
+PASS crash_recovery peak=161595392 bytes 78.38s

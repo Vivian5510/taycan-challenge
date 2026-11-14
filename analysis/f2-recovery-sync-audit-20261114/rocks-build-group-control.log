@@ -1,0 +1,10 @@
+[ 25%] Building CXX object engine/CMakeFiles/contestant_engine.dir/rocksdb_engine.cc.o
+[ 50%] Linking CXX static library libcontestant_engine.a
+[ 50%] Built target contestant_engine
+[ 75%] Linking CXX executable taycan_kv_bench
+[100%] Built target taycan_kv_bench
+[ 18%] Built target gtest
+[ 36%] Built target contestant_engine
+[ 72%] Built target gflags_nothreads_static
+[ 81%] Linking CXX executable crash_worker
+[100%] Built target crash_worker

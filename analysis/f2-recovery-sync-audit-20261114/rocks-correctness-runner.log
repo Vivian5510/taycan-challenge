@@ -1,0 +1,5 @@
+Results: /Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/rocks-correctness
+PASS basic peak=8355840 bytes 0.68s
+PASS recovery peak=89817088 bytes 8.03s
+PASS concurrent peak=50692096 bytes 3.85s
+PASS crash_recovery peak=45678592 bytes 21.38s

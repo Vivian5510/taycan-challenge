@@ -1,0 +1,5 @@
+seed=20261021 num_keys=100000 key_mode=random key_size=32 value_size=256 reader_threads=4 mem_limit_bytes=4294967296
+F2_COMMIT_COUNTS single_operations=1000000 full_index=9
+F2_DATA_PREFIX commits=1000000 data_syncs=1000000 directory_syncs=62 write_calls=1000001 write_bytes=512000512 stable_tail=512000512 base_tail=478470144 recovered_commits=0
+F2_PREFIX_INDEX cross_key_links=0
+F2_SYNC_IO sync_calls=1000417 write_calls=1004813 write_bytes=742026786

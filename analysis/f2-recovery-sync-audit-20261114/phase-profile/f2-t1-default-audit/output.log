@@ -1,0 +1,98 @@
+{"type":"stage","stage":"open"}
+{"type":"stage","stage":"measure"}
+{"type":"progress","stage":"measure","completed":12604,"elapsed_seconds":1.002796125,"interval_seconds":1.002796125,"ops_per_second":12568.8559078,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":25595,"elapsed_seconds":2.004838791,"interval_seconds":1.002042666,"ops_per_second":12964.5178202,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":38363,"elapsed_seconds":3.006225375,"interval_seconds":1.001386584,"ops_per_second":12750.3206094,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":51124,"elapsed_seconds":4.011232833,"interval_seconds":1.005007458,"ops_per_second":12697.4182116,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":63902,"elapsed_seconds":5.014572083,"interval_seconds":1.00333925,"ops_per_second":12735.4730715,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":76338,"elapsed_seconds":6.014830541,"interval_seconds":1.000258458,"ops_per_second":12432.7866468,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":88705,"elapsed_seconds":7.015077333,"interval_seconds":1.000246792,"ops_per_second":12363.9486764,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":100984,"elapsed_seconds":8.015181,"interval_seconds":1.000103667,"ops_per_second":12277.7272049,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":112996,"elapsed_seconds":9.01640375,"interval_seconds":1.00122275,"ops_per_second":11997.3302644,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":125169,"elapsed_seconds":10.020492041,"interval_seconds":1.004088291,"ops_per_second":12123.4358663,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":136197,"elapsed_seconds":11.020535,"interval_seconds":1.000042959,"ops_per_second":11027.5262685,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":149868,"elapsed_seconds":12.023516,"interval_seconds":1.002981,"ops_per_second":13630.3678734,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":163457,"elapsed_seconds":13.023603208,"interval_seconds":1.000087208,"ops_per_second":13587.8150338,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":176110,"elapsed_seconds":14.02361375,"interval_seconds":1.000010542,"ops_per_second":12652.8666135,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":188705,"elapsed_seconds":15.025190875,"interval_seconds":1.001577125,"ops_per_second":12575.1673891,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":201733,"elapsed_seconds":16.029946583,"interval_seconds":1.004755708,"ops_per_second":12966.3358927,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":214662,"elapsed_seconds":17.030209125,"interval_seconds":1.000262542,"ops_per_second":12925.6064854,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":225864,"elapsed_seconds":18.03065625,"interval_seconds":1.000447125,"ops_per_second":11196.9935443,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":239907,"elapsed_seconds":19.031792875,"interval_seconds":1.001136625,"ops_per_second":14027.0564969,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":253263,"elapsed_seconds":20.034147416,"interval_seconds":1.002354541,"ops_per_second":13324.6266203,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":267171,"elapsed_seconds":21.038025083,"interval_seconds":1.003877667,"ops_per_second":13854.2777245,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":281262,"elapsed_seconds":22.042314125,"interval_seconds":1.004289042,"ops_per_second":14030.8212185,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":295204,"elapsed_seconds":23.043653958,"interval_seconds":1.001339833,"ops_per_second":13923.3450428,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":307844,"elapsed_seconds":24.046129083,"interval_seconds":1.002475125,"ops_per_second":12608.7916645,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":320797,"elapsed_seconds":25.048637333,"interval_seconds":1.00250825,"ops_per_second":12920.5919253,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":334346,"elapsed_seconds":26.048773125,"interval_seconds":1.000135792,"ops_per_second":13547.160404,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":347232,"elapsed_seconds":27.050850291,"interval_seconds":1.002077166,"ops_per_second":12859.2891219,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":359654,"elapsed_seconds":28.053692791,"interval_seconds":1.0028425,"ops_per_second":12386.7905479,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":372500,"elapsed_seconds":29.056842916,"interval_seconds":1.003150125,"ops_per_second":12805.6605685,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":382734,"elapsed_seconds":30.056880708,"interval_seconds":1.000037792,"ops_per_second":10233.6132513,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":396164,"elapsed_seconds":31.056951208,"interval_seconds":1.0000705,"ops_per_second":13429.0532517,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":409293,"elapsed_seconds":32.057108291,"interval_seconds":1.000157083,"ops_per_second":13126.9379812,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":423431,"elapsed_seconds":33.057723375,"interval_seconds":1.000615084,"ops_per_second":14129.3092879,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":436818,"elapsed_seconds":34.058368125,"interval_seconds":1.00064475,"ops_per_second":13378.3742932,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":450148,"elapsed_seconds":35.059043166,"interval_seconds":1.000675041,"ops_per_second":13321.0077736,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":462930,"elapsed_seconds":36.059075625,"interval_seconds":1.000032459,"ops_per_second":12781.5851225,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":477251,"elapsed_seconds":37.059215541,"interval_seconds":1.000139916,"ops_per_second":14318.9965433,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":490642,"elapsed_seconds":38.059229291,"interval_seconds":1.00001375,"ops_per_second":13390.8158763,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":503499,"elapsed_seconds":39.06027325,"interval_seconds":1.001043959,"ops_per_second":12843.5918167,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":516740,"elapsed_seconds":40.061337541,"interval_seconds":1.001064291,"ops_per_second":13226.9227052,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":530580,"elapsed_seconds":41.062102208,"interval_seconds":1.000764667,"ops_per_second":13829.425095,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":542696,"elapsed_seconds":42.062309,"interval_seconds":1.000206792,"ops_per_second":12113.4950261,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":556529,"elapsed_seconds":43.065706958,"interval_seconds":1.003397958,"ops_per_second":13786.1552236,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":570354,"elapsed_seconds":44.066252958,"interval_seconds":1.000546,"ops_per_second":13817.4556692,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":583548,"elapsed_seconds":45.071259791,"interval_seconds":1.005006833,"ops_per_second":13128.2689498,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":596930,"elapsed_seconds":46.072515416,"interval_seconds":1.001255625,"ops_per_second":13365.2182978,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":610150,"elapsed_seconds":47.074508958,"interval_seconds":1.001993542,"ops_per_second":13193.6978093,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":623340,"elapsed_seconds":48.07462975,"interval_seconds":1.000120792,"ops_per_second":13188.4069459,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":636923,"elapsed_seconds":49.076392333,"interval_seconds":1.001762583,"ops_per_second":13559.1009592,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":645472,"elapsed_seconds":50.076823541,"interval_seconds":1.000431208,"ops_per_second":8545.31519173,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":658439,"elapsed_seconds":51.077893958,"interval_seconds":1.001070417,"ops_per_second":12953.1347444,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":671987,"elapsed_seconds":52.082904583,"interval_seconds":1.005010625,"ops_per_second":13480.4544977,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":685795,"elapsed_seconds":53.082992833,"interval_seconds":1.00008825,"ops_per_second":13806.7815515,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":697811,"elapsed_seconds":54.08406175,"interval_seconds":1.001068917,"ops_per_second":12003.169608,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":708039,"elapsed_seconds":55.087654125,"interval_seconds":1.003592375,"ops_per_second":10191.38871,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":720120,"elapsed_seconds":56.088130291,"interval_seconds":1.000476166,"ops_per_second":12075.2501764,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":733406,"elapsed_seconds":57.088944958,"interval_seconds":1.000814667,"ops_per_second":13275.1851447,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":745276,"elapsed_seconds":58.090872666,"interval_seconds":1.001927708,"ops_per_second":11847.1621308,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":755987,"elapsed_seconds":59.092337708,"interval_seconds":1.001465042,"ops_per_second":10695.330891,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":769406,"elapsed_seconds":60.095668083,"interval_seconds":1.003330375,"ops_per_second":13374.4580393,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":782413,"elapsed_seconds":61.09671925,"interval_seconds":1.001051167,"ops_per_second":12993.3418279,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":795543,"elapsed_seconds":62.097230458,"interval_seconds":1.000511208,"ops_per_second":13123.2912685,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":807934,"elapsed_seconds":63.102239666,"interval_seconds":1.005009208,"ops_per_second":12329.240271,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":817488,"elapsed_seconds":64.102354583,"interval_seconds":1.000114917,"ops_per_second":9552.90220914,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":831118,"elapsed_seconds":65.105477916,"interval_seconds":1.003123333,"ops_per_second":13587.5615207,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":844129,"elapsed_seconds":66.105779708,"interval_seconds":1.000301792,"ops_per_second":13007.074569,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":857834,"elapsed_seconds":67.105945083,"interval_seconds":1.000165375,"ops_per_second":13702.7339104,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":870608,"elapsed_seconds":68.105965416,"interval_seconds":1.000020333,"ops_per_second":12773.7402715,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":883397,"elapsed_seconds":69.107285125,"interval_seconds":1.001319709,"ops_per_second":12772.144486,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":896674,"elapsed_seconds":70.107338458,"interval_seconds":1.000053333,"ops_per_second":13276.2919355,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":910517,"elapsed_seconds":71.108077458,"interval_seconds":1.000739,"ops_per_second":13832.7775774,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":924316,"elapsed_seconds":72.108279875,"interval_seconds":1.000202417,"ops_per_second":13796.2074131,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":938227,"elapsed_seconds":73.108312416,"interval_seconds":1.000032541,"ops_per_second":13910.5473369,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":950757,"elapsed_seconds":74.109731791,"interval_seconds":1.001419375,"ops_per_second":12512.2404387,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":963799,"elapsed_seconds":75.110609541,"interval_seconds":1.00087775,"ops_per_second":13030.5624238,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":976829,"elapsed_seconds":76.110643708,"interval_seconds":1.000034167,"ops_per_second":13029.5548192,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":984549,"elapsed_seconds":77.110907625,"interval_seconds":1.000263917,"ops_per_second":7717.96309833,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":998184,"elapsed_seconds":78.111616833,"interval_seconds":1.000709208,"ops_per_second":13625.3368021,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":1000000,"elapsed_seconds":78.242489375,"interval_seconds":0.130872542,"ops_per_second":13876.096332,"final":true,"total":1000000}
+{"type":"stage","stage":"close"}
+F2_PHASE phase=queue calls=1000000 ns=20226574
+F2_PHASE phase=gate calls=1000000 ns=397515631
+F2_PHASE phase=session calls=1000000 ns=859249949
+F2_PHASE phase=apply calls=1000000 ns=515931428
+F2_PHASE phase=seal calls=1000000 ns=131677302
+F2_PHASE phase=flush calls=1000000 ns=44984018477
+F2_PHASE phase=sync calls=1000000 ns=30231916193
+F2_PHASE phase=publish calls=1000000 ns=446978843
+F2_PHASE phase=checkpoint calls=11 ns=423986291
+F2_PHASE phase=total calls=1000000 ns=78056360857
+F2_COMMIT_COUNTS single_operations=1000000 full_index=11
+F2_DATA_PREFIX commits=1000000 data_syncs=1000000 directory_syncs=62 write_calls=1000001 write_bytes=512000512 stable_tail=512000512 base_tail=500560384 recovered_commits=0
+F2_PREFIX_INDEX cross_key_links=0
+F2_SYNC_IO sync_calls=1000687 write_calls=1007315 write_bytes=2279844739
+{"type":"result","status":"PASS","error":"","operations":1000000,"gets":0,"puts":1000000,"deletes":0,"read_misses":0,"ops_per_second":12780.7794459,"open_seconds":0.043124792,"setup_seconds":0,"warmup_seconds":0,"measured_seconds":78.242489375,"close_seconds":0.000533541,"data_bytes_before_measure":8922213,"data_bytes_after_measure":394486896,"data_bytes_after_close":394486896,"measure_read_bytes":null,"measure_write_bytes":null,"latency":{"samples":10169,"p50_us":65.023,"p95_us":143.359,"p99_us":217.087,"p999_us":983.039,"max_us":3198.25},"get_latency":{"samples":0,"p50_us":null,"p95_us":null,"p99_us":null,"p999_us":null,"max_us":null},"put_latency":{"samples":10169,"p50_us":65.023,"p95_us":143.359,"p99_us":217.087,"p999_us":983.039,"max_us":3198.25},"delete_latency":{"samples":0,"p50_us":null,"p95_us":null,"p99_us":null,"p999_us":null,"max_us":null}}
+SYNC_AUDIT fsync_calls=1000687 fsync_ns=23877268614 wal_calls=0 wal_ns=0 hot_calls=1000001 hot_ns=23875694158 failures=0

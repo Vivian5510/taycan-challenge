@@ -114,6 +114,7 @@
     const auto end=PrefixFileEnd();if(end<base_tail)throw std::runtime_error("native base log truncated");
     uint64_t stable=base_tail,serial=base_serial,record_at=base_tail;uint32_t crc=0;
     bool malformed_record=false;
+    const char* incomplete_tail=nullptr;
     const uint64_t page_size=hot_store.hlog.kPageSize;
     std::vector<uint8_t> buffer(page_size);
     auto read_absolute=[&](uint64_t address,uint8_t* destination,size_t bytes) {
@@ -175,23 +176,41 @@
         auto* marker=buffer.data()+offset+experimental::kPrefixBlock-PrefixMarkerSize();
         experimental::PrefixFooter footer;std::memcpy(&footer,marker+PrefixFooterOffset(),sizeof(footer));
         auto* record=reinterpret_cast<prefix_record_t*>(marker);
+        // A footer may reach disk before some earlier pages of its own write.
+        // Only a complete, checksummed prefix is a recovery boundary. Once an
+        // incomplete tail is found, never resume playback past it. A later
+        // valid seal proves this was interior corruption, rather than a crash
+        // interrupting the last in-flight commit, and must fail recovery.
+        const bool valid_seal=record->key().length==0 && record->header.invalid &&
+          record->value().length==sizeof(footer) && record->value().reserved==experimental::kPrefixTag &&
+          footer.magic==experimental::kPrefixMagic && footer.end_magic==experimental::kPrefixEndMagic &&
+          footer.footer_crc==experimental::PrefixFooterCRC(footer) && footer.end==sector_end &&
+          footer.from<sector_end && footer.from%experimental::kPrefixBlock==0 &&
+          footer.first>0 && footer.last>=footer.first && footer.operations==footer.last-footer.first+1;
+        if(incomplete_tail) {
+          if(valid_seal && footer.first>serial)
+            throw std::runtime_error(std::string("interior native log corruption: ")+incomplete_tail);
+          continue;
+        }
         const bool framed=record_at==marker_at && record->key().length==0 && record->header.invalid &&
           record->value().length==sizeof(footer) && record->value().reserved==experimental::kPrefixTag;
         const bool recognized=framed || (malformed_record && footer.magic==experimental::kPrefixMagic &&
           footer.end_magic==experimental::kPrefixEndMagic && footer.footer_crc==experimental::PrefixFooterCRC(footer));
         if(!recognized) {crc=rocksdb::crc32c::Extend(crc,reinterpret_cast<const char*>(buffer.data()+offset),experimental::kPrefixBlock);continue;}
-        if(malformed_record)throw std::runtime_error("malformed data record inside committed prefix: record="+std::to_string(record_at)+
-          " page="+std::to_string(page_at)+" bytes="+std::to_string(done)+" marker="+std::to_string(marker_at));
+        if(malformed_record) {incomplete_tail="incomplete data record";continue;}
         if(footer.magic!=experimental::kPrefixMagic||footer.end_magic!=experimental::kPrefixEndMagic||
            footer.footer_crc!=experimental::PrefixFooterCRC(footer)||footer.from!=stable||footer.end!=sector_end||
            footer.first!=serial+1||footer.last<footer.first||footer.operations!=footer.last-footer.first+1||
            record->key().length!=0||!record->header.invalid||record->value().length!=sizeof(footer)||record->value().reserved!=experimental::kPrefixTag)
           throw std::runtime_error("corrupt native commit footer/chain");
         crc=rocksdb::crc32c::Extend(crc,reinterpret_cast<const char*>(buffer.data()+offset),experimental::kPrefixBlock-PrefixMarkerSize());
-        if(crc!=footer.data_crc)throw std::runtime_error("native committed data checksum mismatch");
+        if(crc!=footer.data_crc) {incomplete_tail="incomplete data checksum";continue;}
         stable=sector_end;serial=footer.last;record_at=sector_end;crc=0;++s.prefix.recovered_commits;
       }
     }
+    if(incomplete_tail)
+      std::fprintf(stderr,"F2_RECOVERY_DISCARD_TAIL from=%llu bytes=%llu reason=%s\n",
+        (unsigned long long)stable,(unsigned long long)(end-stable),incomplete_tail);
     s.prefix.base_tail=base_tail;s.prefix.stable_tail=stable;s.serial=serial;
     s.prefix.prepared_tail=stable;
   }

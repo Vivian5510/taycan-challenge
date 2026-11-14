@@ -1,0 +1,12 @@
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from Concurrent
+[ RUN      ] Concurrent.DisjointKeys
+[       OK ] Concurrent.DisjointKeys (87 ms)
+[ RUN      ] Concurrent.SingleWriterVersionBounds
+[       OK ] Concurrent.SingleWriterVersionBounds (404 ms)
+[----------] 2 tests from Concurrent (491 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (491 ms total)
+[  PASSED  ] 2 tests.

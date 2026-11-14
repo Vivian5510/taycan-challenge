@@ -1,0 +1,12 @@
+{"type":"stage","stage":"open"}
+{"type":"stage","stage":"measure"}
+{"type":"progress","stage":"measure","completed":183278,"elapsed_seconds":1.005010917,"interval_seconds":1.005010917,"ops_per_second":182364.188189,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":396880,"elapsed_seconds":2.010018292,"interval_seconds":1.005007375,"ops_per_second":212537.743815,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":561768,"elapsed_seconds":3.012878375,"interval_seconds":1.002860083,"ops_per_second":164417.751584,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":693679,"elapsed_seconds":4.015871167,"interval_seconds":1.002992792,"ops_per_second":131517.39579,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":793797,"elapsed_seconds":5.018468167,"interval_seconds":1.002597,"ops_per_second":99858.6670417,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":868905,"elapsed_seconds":6.023509458,"interval_seconds":1.005041291,"ops_per_second":74731.2579817,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":998143,"elapsed_seconds":7.024461958,"interval_seconds":1.0009525,"ops_per_second":129115.017945,"final":false,"total":1000000}
+{"type":"progress","stage":"measure","completed":1000000,"elapsed_seconds":7.075243625,"interval_seconds":0.050781667,"ops_per_second":36568.3150969,"final":true,"total":1000000}
+{"type":"stage","stage":"close"}
+{"type":"result","status":"PASS","error":"","operations":1000000,"gets":0,"puts":1000000,"deletes":0,"read_misses":0,"ops_per_second":141337.889266,"open_seconds":0.03390125,"setup_seconds":0,"warmup_seconds":0,"measured_seconds":7.075243625,"close_seconds":0.000731375,"data_bytes_before_measure":28022,"data_bytes_after_measure":296803135,"data_bytes_after_close":296803325,"measure_read_bytes":null,"measure_write_bytes":null,"latency":{"samples":9964,"p50_us":176.127,"p95_us":434.175,"p99_us":1081.343,"p999_us":4980.735,"max_us":12632.375},"get_latency":{"samples":0,"p50_us":null,"p95_us":null,"p99_us":null,"p999_us":null,"max_us":null},"put_latency":{"samples":9964,"p50_us":176.127,"p95_us":434.175,"p99_us":1081.343,"p999_us":4980.735,"max_us":12632.375},"delete_latency":{"samples":0,"p50_us":null,"p95_us":null,"p99_us":null,"p999_us":null,"max_us":null}}

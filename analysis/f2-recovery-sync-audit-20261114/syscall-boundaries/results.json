@@ -1,0 +1,49 @@
+{
+  "scope": "Actual macOS fsync interposition, process crash; not physical power cut",
+  "rows": [
+    {
+      "engine": "f2",
+      "mode": "hold",
+      "status": "PASS",
+      "no_ack_while_fsync_held": true,
+      "ack_after_sync": true,
+      "recovered_prefix": 65
+    },
+    {
+      "engine": "f2",
+      "mode": "fail",
+      "status": "PASS",
+      "no_ack_while_fsync_held": true,
+      "sync_error_not_acknowledged": true
+    },
+    {
+      "engine": "f2",
+      "mode": "kill-before-sync",
+      "status": "PASS",
+      "no_ack_while_fsync_held": true,
+      "recovered_prefix": 65
+    },
+    {
+      "engine": "rocksdb",
+      "mode": "hold",
+      "status": "PASS",
+      "no_ack_while_fsync_held": true,
+      "ack_after_sync": true,
+      "recovered_prefix": 65
+    },
+    {
+      "engine": "rocksdb",
+      "mode": "fail",
+      "status": "PASS",
+      "no_ack_while_fsync_held": true,
+      "sync_error_not_acknowledged": true
+    },
+    {
+      "engine": "rocksdb",
+      "mode": "kill-before-sync",
+      "status": "PASS",
+      "no_ack_while_fsync_held": true,
+      "recovered_prefix": 65
+    }
+  ]
+}

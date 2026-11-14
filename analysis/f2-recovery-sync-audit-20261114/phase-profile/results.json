@@ -1,0 +1,396 @@
+{
+  "status": "PASS",
+  "scope": "Native macOS ARM64; per-call durable fsync; closed-loop threads; not physical power cut or formal score",
+  "parameters": {
+    "num_keys": 1000000,
+    "key_size": 32,
+    "value_size": 256,
+    "mem_limit_bytes": 4294967296,
+    "seed": 20261021
+  },
+  "binary_sha256": {
+    "f2": "d215d6bcec9a33a8b8298ccd98a75bbbac3e8a7176277a2c984388c4f9b22ef5",
+    "rocksdb": "6e7aad5da6c203ba6b9dd432fe901862ade63cfa5b0ec4bd163def75c7bb0711"
+  },
+  "driver_sha256": "536b0200135773157f57c05d89ead934087cbb77a1a15377c7334ccc7c27ac49",
+  "runs": [
+    {
+      "cell": "f2-t1-default-audit",
+      "engine": "f2",
+      "threads": 1,
+      "group_limited": false,
+      "syscall_audit": true,
+      "status": "PASS",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-phase-profile-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/phase-profile/f2-t1-default-audit/db",
+        "--workload=load",
+        "--threads=1",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--num-keys=1000000",
+        "--key-size=32",
+        "--value-size=256",
+        "--mem-limit-bytes=4294967296",
+        "--seed=20261021"
+      ],
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/f2-phase-profile-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/phase-profile/f2-t1-default-audit/db",
+          "--workload=load",
+          "--threads=1",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--seed=20261021"
+        ],
+        "pid": 27073,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 1500004352,
+        "rss_limit_bytes": 4724464025,
+        "samples": 7234,
+        "rss_source": "macOS libproc",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.012961709000002486,
+        "elapsed_seconds": 78.81648220800001
+      },
+      "prefix": {
+        "commits": 1000000,
+        "data_syncs": 1000000,
+        "directory_syncs": 62,
+        "write_calls": 1000001,
+        "write_bytes": 512000512,
+        "stable_tail": 512000512,
+        "base_tail": 500560384,
+        "recovered_commits": 0
+      },
+      "syscalls": {
+        "fsync_calls": 1000687,
+        "fsync_ns": 23877268614,
+        "wal_calls": 0,
+        "wal_ns": 0,
+        "hot_calls": 1000001,
+        "hot_ns": 23875694158,
+        "failures": 0
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 1000000,
+        "gets": 0,
+        "puts": 1000000,
+        "deletes": 0,
+        "read_misses": 0,
+        "ops_per_second": 12780.7794459,
+        "open_seconds": 0.043124792,
+        "setup_seconds": 0,
+        "warmup_seconds": 0,
+        "measured_seconds": 78.242489375,
+        "close_seconds": 0.000533541,
+        "data_bytes_before_measure": 8922213,
+        "data_bytes_after_measure": 394486896,
+        "data_bytes_after_close": 394486896,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 10169,
+          "p50_us": 65.023,
+          "p95_us": 143.359,
+          "p99_us": 217.087,
+          "p999_us": 983.039,
+          "max_us": 3198.25
+        },
+        "get_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        },
+        "put_latency": {
+          "samples": 10169,
+          "p50_us": 65.023,
+          "p95_us": 143.359,
+          "p99_us": 217.087,
+          "p999_us": 983.039,
+          "max_us": 3198.25
+        },
+        "delete_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        }
+      },
+      "operations_per_data_sync": 0.999999000001,
+      "data_syncs_per_second": 12780.792226678817,
+      "files": [
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "F2-SYNC-CURRENT",
+          "bytes": 176
+        },
+        {
+          "path": "cold/log.log142",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log145",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log120",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log118",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log127",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log129",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log116",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log144",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log143",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log128",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log117",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log119",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log126",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log121",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log132",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log135",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log134",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log133",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log124",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log123",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log115",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log112",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log146",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log141",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log148",
+          "bytes": 2236928
+        },
+        {
+          "path": "cold/log.log113",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log114",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log122",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log125",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log140",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log147",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log138",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log136",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log131",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log130",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log137",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log139",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cpr-checkpoints/CEC540ED-C39C-4066-B848-BB43560371CC/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cpr-checkpoints/CEC540ED-C39C-4066-B848-BB43560371CC/55F91E1E-8589-4359-931B-397C4182CE72.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cold-index/log.log50",
+          "bytes": 5283328
+        },
+        {
+          "path": "cold/cold-index/log.log44",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log43",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log45",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log47",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log49",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log48",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log46",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/CEC540ED-C39C-4066-B848-BB43560371CC/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/CEC540ED-C39C-4066-B848-BB43560371CC/AF8C86E1-C619-4181-BAE2-1383F9F3890D.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/CEC540ED-C39C-4066-B848-BB43560371CC/ofb.dat",
+          "bytes": 262144
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/CEC540ED-C39C-4066-B848-BB43560371CC/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/CEC540ED-C39C-4066-B848-BB43560371CC/ht.dat",
+          "bytes": 4194304
+        },
+        {
+          "path": "cold/index-checkpoints/CEC540ED-C39C-4066-B848-BB43560371CC/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/log.log60",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log61",
+          "bytes": 295424
+        },
+        {
+          "path": "hot/log.log59",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/cpr-checkpoints/CEC540ED-C39C-4066-B848-BB43560371CC/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "hot/cpr-checkpoints/CEC540ED-C39C-4066-B848-BB43560371CC/55F91E1E-8589-4359-931B-397C4182CE72.dat",
+          "bytes": 32
+        },
+        {
+          "path": "hot/index-checkpoints/CEC540ED-C39C-4066-B848-BB43560371CC/ofb.dat",
+          "bytes": 524288
+        },
+        {
+          "path": "hot/index-checkpoints/CEC540ED-C39C-4066-B848-BB43560371CC/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/index-checkpoints/CEC540ED-C39C-4066-B848-BB43560371CC/ht.dat",
+          "bytes": 4194304
+        }
+      ],
+      "wall_seconds": 78.840117792
+    }
+  ]
+}

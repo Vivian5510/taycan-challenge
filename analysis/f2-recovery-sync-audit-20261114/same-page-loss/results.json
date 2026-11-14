@@ -1,0 +1,135 @@
+{
+  "scope": "Identical pending fsync page-image fault, not physical power cut",
+  "engines": [
+    {
+      "engine": "f2",
+      "last_ack": 74,
+      "stable_file_end": 38400,
+      "log": "hot/log.log0",
+      "pending_bytes": 102912,
+      "cases": [
+        {
+          "case": "all-lost",
+          "status": "PASS",
+          "checks": [
+            {
+              "returncode": 0,
+              "stdout": "VERIFIED pending=0\n"
+            },
+            {
+              "returncode": 0,
+              "stdout": "VERIFIED pending=0\n"
+            }
+          ]
+        },
+        {
+          "case": "all-survives",
+          "status": "PASS",
+          "checks": [
+            {
+              "returncode": 0,
+              "stdout": "VERIFIED pending=1\n"
+            },
+            {
+              "returncode": 0,
+              "stdout": "VERIFIED pending=1\n"
+            }
+          ]
+        },
+        {
+          "case": "earlier-page-lost",
+          "status": "PASS",
+          "checks": [
+            {
+              "returncode": 0,
+              "stdout": "VERIFIED pending=0\n"
+            },
+            {
+              "returncode": 0,
+              "stdout": "VERIFIED pending=0\n"
+            }
+          ]
+        },
+        {
+          "case": "tail-page-lost",
+          "status": "PASS",
+          "checks": [
+            {
+              "returncode": 0,
+              "stdout": "VERIFIED pending=0\n"
+            },
+            {
+              "returncode": 0,
+              "stdout": "VERIFIED pending=0\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "engine": "rocksdb",
+      "last_ack": 74,
+      "stable_file_end": 20434,
+      "log": "000004.log",
+      "pending_bytes": 102476,
+      "cases": [
+        {
+          "case": "all-lost",
+          "status": "PASS",
+          "checks": [
+            {
+              "returncode": 0,
+              "stdout": "VERIFIED pending=0\n"
+            },
+            {
+              "returncode": 0,
+              "stdout": "VERIFIED pending=0\n"
+            }
+          ]
+        },
+        {
+          "case": "all-survives",
+          "status": "PASS",
+          "checks": [
+            {
+              "returncode": 0,
+              "stdout": "VERIFIED pending=1\n"
+            },
+            {
+              "returncode": 0,
+              "stdout": "VERIFIED pending=1\n"
+            }
+          ]
+        },
+        {
+          "case": "earlier-page-lost",
+          "status": "PASS",
+          "checks": [
+            {
+              "returncode": 0,
+              "stdout": "VERIFIED pending=0\n"
+            },
+            {
+              "returncode": 0,
+              "stdout": "VERIFIED pending=0\n"
+            }
+          ]
+        },
+        {
+          "case": "tail-page-lost",
+          "status": "PASS",
+          "checks": [
+            {
+              "returncode": 0,
+              "stdout": "VERIFIED pending=0\n"
+            },
+            {
+              "returncode": 0,
+              "stdout": "VERIFIED pending=0\n"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

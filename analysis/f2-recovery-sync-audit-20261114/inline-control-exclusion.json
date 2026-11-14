@@ -1,0 +1,6 @@
+{
+  "excluded_cells": [
+    "f2-t32-default-audit"
+  ],
+  "reason": "Diagnostic profile build overlapped this extra inline backend control. Keep raw result but exclude it from throughput attribution; main eight-cell sync matrix had no compilation overlap. First inline t1 cell completed before build."
+}

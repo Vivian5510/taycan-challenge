@@ -1,0 +1,70 @@
+{
+  "db/db_impl/db_impl_write.cc": [
+    {
+      "line": 1394,
+      "text": "  io_s = WriteToWAL(*merged_batch, log_writer, log_used, &log_size,"
+    },
+    {
+      "line": 1402,
+      "text": "  if (io_s.ok() && need_log_sync) {"
+    },
+    {
+      "line": 1424,
+      "text": "      io_s = log.writer->file()->Sync(immutable_db_options_.use_fsync);"
+    },
+    {
+      "line": 1499,
+      "text": "  io_s = WriteToWAL(*merged_batch, log_writer, log_used, &log_size,"
+    }
+  ],
+  "db/write_thread.cc": [
+    {
+      "line": 451,
+      "text": "    max_size = size + min_batch_size_bytes;"
+    },
+    {
+      "line": 474,
+      "text": "    if (w->sync && !leader->sync) {"
+    },
+    {
+      "line": 513,
+      "text": "    if (size + batch_size > max_size) {"
+    },
+    {
+      "line": 542,
+      "text": "    max_size = size + min_batch_size_bytes;"
+    },
+    {
+      "line": 569,
+      "text": "        if (size + batch_size > max_size) {"
+    }
+  ],
+  "env/io_posix.cc": [
+    {
+      "line": 1191,
+      "text": "  if (fdatasync(fd_) < 0) {"
+    },
+    {
+      "line": 1402,
+      "text": "IOStatus PosixWritableFile::Sync(const IOOptions& /*opts*/,"
+    },
+    {
+      "line": 1409,
+      "text": "  if (fdatasync(fd_) < 0) {"
+    },
+    {
+      "line": 1604,
+      "text": "  if (fdatasync(fd_) < 0) {"
+    }
+  ],
+  "port/port_posix.h": [
+    {
+      "line": 77,
+      "text": "#define fdatasync fsync"
+    },
+    {
+      "line": 83,
+      "text": "#define fdatasync fsync"
+    }
+  ]
+}

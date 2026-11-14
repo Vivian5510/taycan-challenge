@@ -11,6 +11,7 @@
 #include <algorithm>
 #include <filesystem>
 #include <memory>
+#include <cstdlib>
 
 namespace {
 Status Convert(const rocksdb::Status& status) {
@@ -73,6 +74,16 @@ Status KVEngine::Open(const std::string& directory, uint64_t budget, KVEngine** 
     options.create_if_missing = true;
     options.compression = rocksdb::kNoCompression;
     options.bottommost_compression = rocksdb::kNoCompression;
+    // Diagnostic control only: a one-byte group budget leaves the leader's
+    // single-key request intact but prevents followers joining its WAL group.
+    // The production/reference default is unchanged.
+    if (const char* size = std::getenv("TAYCAN_ROCKSDB_MAX_GROUP_BYTES")) {
+      const std::string text(size);
+      if (text.empty() || text.find_first_not_of("0123456789") != std::string::npos ||
+          std::stoull(text) == 0)
+        return Status::IOError("invalid RocksDB diagnostic group budget");
+      options.max_write_batch_group_size_bytes = std::stoull(text);
+    }
     options.allow_mmap_reads = false;
     options.allow_mmap_writes = false;
     options.max_open_files = 128;

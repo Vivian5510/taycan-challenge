@@ -1,0 +1,165 @@
+{
+  "status": "FAIL",
+  "started_at": "2026-11-14T10:37:15.046941+00:00",
+  "classification": "macOS ARM64 development probes, not contest/power-cut acceptance",
+  "binary_sha256": {
+    "engine/f2_sync_api_probe": "cd534d224c0be3e246226cbd12e75cdeae6ca3881e9c81dc8083c35d2fb307d6",
+    "basic_test": "07b2dc4bfae31fca91283869eff7b36a52777f56413539b79a24d9b81fd895b1",
+    "recovery_test": "74dd1a8b54bb362bbc0fb038a8ab1ee2b10acf87d5b5fc917881b1bea5fc9e4b",
+    "concurrent_test": "47c7621f245152812c0542109c8a459b455e45b5a71c713b0dbfdef2f0c6e7b0",
+    "crash_worker": "87bc793d033716c21a222b77cc273262dbafc72eeb9064defb649bfdef559ee7"
+  },
+  "tests": [
+    {
+      "test": "basic",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/basic_test",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--gtest_color=no",
+        "--data_dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation/basic-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.540308625
+    },
+    {
+      "test": "recovery",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/recovery_test",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--gtest_color=no",
+        "--data_dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation/recovery-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 1.172557959
+    },
+    {
+      "test": "concurrent",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/concurrent_test",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--gtest_color=no",
+        "--data_dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation/concurrent-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.8979779169999997
+    },
+    {
+      "test": "sync-error",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+        "sync-error",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation/sync-error-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.05728062499999975
+    },
+    {
+      "test": "io-error",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+        "io-error",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation/io-error-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.042614791999999735
+    },
+    {
+      "test": "apply-error",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+        "apply-error",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation/apply-error-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.0426497079999999
+    },
+    {
+      "test": "same-key-write",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+        "write-kill",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation/same-key-db"
+      ],
+      "expected_returncode": -9,
+      "status": "PASS",
+      "returncode": -9,
+      "seconds": 0.1351532080000002
+    },
+    {
+      "test": "same-key-recover-1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+        "verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation/same-key-db",
+        "42424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.6647246249999998
+    },
+    {
+      "test": "same-key-recover-2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+        "verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation/same-key-db",
+        "42424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.38437895899999974
+    },
+    {
+      "test": "span-write",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+        "span-write-kill",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation/span-db"
+      ],
+      "expected_returncode": -9,
+      "status": "PASS",
+      "returncode": -9,
+      "seconds": 0.33418766600000005
+    },
+    {
+      "test": "partial-tail",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/engine/f2_sync_api_probe",
+        "span-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/validation/partial-tail-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.4719252909999998
+    }
+  ],
+  "reason": "no committed suffix to corrupt",
+  "finished_at": "2026-11-14T10:37:19.896829+00:00"
+}

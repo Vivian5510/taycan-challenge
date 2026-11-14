@@ -1,0 +1,9 @@
+{
+  "fs_contract": "Both actual kernel fsync; page cache loss and SIGKILL; physical drive power-loss not tested",
+  "interposer_initial_failure": "dlsym RTLD_NEXT recursed and signal11 in diagnostic interposer; raw syscall-smoke retained, not RocksDB bug; kernel syscall version passed",
+  "validation_initial_failure": "Validation script assumed log.log0 despite8MiB segments; failed diagnostic preserved,segment-aware copy passed71records",
+  "profile_only_generated": true,
+  "excluded_extra_inline_cell": "32thread inline overlapped diagnostic build; excluded; first inline single-thread was clean",
+  "full_evaluation": "prior2GiB-constrained200M/20M/16M scope not rerun or declaredPASS",
+  "group_commit_on_main": false
+}

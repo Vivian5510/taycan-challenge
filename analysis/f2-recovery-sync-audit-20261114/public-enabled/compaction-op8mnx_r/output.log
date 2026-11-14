@@ -1,0 +1,20 @@
+seed=20261021 num_keys=100000 key_mode=random key_size=16 value_size=4096 reader_threads=4 mem_limit_bytes=4294967296
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Compaction
+[ RUN      ] Compaction.ConcurrentUpdatesAndSpaceReclamation
+F2_COMMIT_COUNTS single_operations=1000000 full_index=70
+F2_DATA_PREFIX commits=1000000 data_syncs=1000492 directory_syncs=502 write_calls=1003961 write_bytes=4208587264 stable_tail=4208587264 base_tail=4147390464 recovered_commits=0
+F2_PREFIX_INDEX cross_key_links=0
+F2_SYNC_IO sync_calls=1004922 write_calls=1050319 write_bytes=15346628655
+F2_COMMIT_COUNTS single_operations=0 full_index=1
+F2_DATA_PREFIX commits=0 data_syncs=0 directory_syncs=0 write_calls=1003961 write_bytes=4208587264 stable_tail=4208587264 base_tail=4208587264 recovered_commits=18823
+F2_PREFIX_INDEX cross_key_links=0
+F2_SYNC_IO sync_calls=1004961 write_calls=1050839 write_bytes=15357640417
+directory_bytes=395373168 live_bytes=274130592
+[       OK ] Compaction.ConcurrentUpdatesAndSpaceReclamation (144921 ms)
+[----------] 1 test from Compaction (144921 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (144921 ms total)
+[  PASSED  ] 1 test.

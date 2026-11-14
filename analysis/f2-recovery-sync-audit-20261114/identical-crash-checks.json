@@ -1,0 +1,16 @@
+{
+  "success": true,
+  "acknowledged_operations_per_engine": 74,
+  "engines": {
+    "f2": {
+      "cases": 4,
+      "all_pass": true,
+      "reopens_per_case": 2
+    },
+    "rocksdb": {
+      "cases": 4,
+      "all_pass": true,
+      "reopens_per_case": 2
+    }
+  }
+}

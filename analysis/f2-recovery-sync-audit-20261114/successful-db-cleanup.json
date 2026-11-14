@@ -1,0 +1,1946 @@
+[
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-cold-truncate/db",
+    "bytes": 77382768,
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 176
+      },
+      {
+        "path": "cold/log.log19",
+        "bytes": 7340032
+      },
+      {
+        "path": "cold/log.log17",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log16",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log18",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cpr-checkpoints/AAD1B9C9-2D7B-4FA2-8042-9F9148364D9D/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/AAD1B9C9-2D7B-4FA2-8042-9F9148364D9D/D47021D7-95B3-403C-976E-93364EB7D6C6.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log7",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cold-index/log.log8",
+        "bytes": 2097152
+      },
+      {
+        "path": "cold/cold-index/log.log6",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cold-index/log.log4",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cold-index/log.log5",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/AAD1B9C9-2D7B-4FA2-8042-9F9148364D9D/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/AAD1B9C9-2D7B-4FA2-8042-9F9148364D9D/D8736D2A-9D89-4423-93BE-66324AFDE87C.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/AAD1B9C9-2D7B-4FA2-8042-9F9148364D9D/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/AAD1B9C9-2D7B-4FA2-8042-9F9148364D9D/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/AAD1B9C9-2D7B-4FA2-8042-9F9148364D9D/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/AAD1B9C9-2D7B-4FA2-8042-9F9148364D9D/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log61",
+        "bytes": 303616
+      },
+      {
+        "path": "hot/cpr-checkpoints/AAD1B9C9-2D7B-4FA2-8042-9F9148364D9D/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/AAD1B9C9-2D7B-4FA2-8042-9F9148364D9D/D47021D7-95B3-403C-976E-93364EB7D6C6.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/AAD1B9C9-2D7B-4FA2-8042-9F9148364D9D/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/AAD1B9C9-2D7B-4FA2-8042-9F9148364D9D/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/AAD1B9C9-2D7B-4FA2-8042-9F9148364D9D/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/concurrent-copy/db",
+    "bytes": 60867697,
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 177
+      },
+      {
+        "path": "cold/log.log19",
+        "bytes": 7340032
+      },
+      {
+        "path": "cold/log.log17",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log16",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log18",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cpr-checkpoints/E922D9C1-28C1-465D-B729-1D686CC6E4DB/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/E922D9C1-28C1-465D-B729-1D686CC6E4DB/D09E3AB5-DECF-49D9-A5E8-A27010AFB428.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log7",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cold-index/log.log8",
+        "bytes": 2097152
+      },
+      {
+        "path": "cold/cold-index/log.log6",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/E922D9C1-28C1-465D-B729-1D686CC6E4DB/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/E922D9C1-28C1-465D-B729-1D686CC6E4DB/DFAF498F-278F-4453-BF86-6542C63B2388.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/E922D9C1-28C1-465D-B729-1D686CC6E4DB/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/E922D9C1-28C1-465D-B729-1D686CC6E4DB/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/E922D9C1-28C1-465D-B729-1D686CC6E4DB/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/E922D9C1-28C1-465D-B729-1D686CC6E4DB/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log61",
+        "bytes": 565760
+      },
+      {
+        "path": "hot/cpr-checkpoints/E922D9C1-28C1-465D-B729-1D686CC6E4DB/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/E922D9C1-28C1-465D-B729-1D686CC6E4DB/D09E3AB5-DECF-49D9-A5E8-A27010AFB428.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/E922D9C1-28C1-465D-B729-1D686CC6E4DB/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/E922D9C1-28C1-465D-B729-1D686CC6E4DB/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/E922D9C1-28C1-465D-B729-1D686CC6E4DB/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-copy/db",
+    "bytes": 296764017,
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 177
+      },
+      {
+        "path": "cold/log.log19",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/log.log17",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log9",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log10",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log8",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log11",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log16",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log18",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log13",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log14",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log15",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log12",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cpr-checkpoints/0BF89DC4-2A67-4612-9005-A3B9A62904CB/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/0BF89DC4-2A67-4612-9005-A3B9A62904CB/23A1BA8F-C5F8-4D37-92E7-BE39AF8BA55E.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log6",
+        "bytes": 6520320
+      },
+      {
+        "path": "cold/cold-index/log.log4",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cold-index/log.log5",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/0BF89DC4-2A67-4612-9005-A3B9A62904CB/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/0BF89DC4-2A67-4612-9005-A3B9A62904CB/AEE40247-5844-415F-9C2C-418B9379FF37.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/0BF89DC4-2A67-4612-9005-A3B9A62904CB/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/0BF89DC4-2A67-4612-9005-A3B9A62904CB/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/0BF89DC4-2A67-4612-9005-A3B9A62904CB/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/0BF89DC4-2A67-4612-9005-A3B9A62904CB/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log58",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log60",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log56",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log51",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log50",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log57",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log61",
+        "bytes": 303616
+      },
+      {
+        "path": "hot/log.log59",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log44",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log43",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log42",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log45",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log52",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log55",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log54",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log53",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log47",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log49",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log48",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log46",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log41",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/cpr-checkpoints/0BF89DC4-2A67-4612-9005-A3B9A62904CB/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/0BF89DC4-2A67-4612-9005-A3B9A62904CB/23A1BA8F-C5F8-4D37-92E7-BE39AF8BA55E.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/0BF89DC4-2A67-4612-9005-A3B9A62904CB/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/0BF89DC4-2A67-4612-9005-A3B9A62904CB/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/0BF89DC4-2A67-4612-9005-A3B9A62904CB/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/seed-db",
+    "bytes": 226117743,
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 175
+      },
+      {
+        "path": "cold/log.log9",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log10",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log8",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log11",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log12",
+        "bytes": 3924992
+      },
+      {
+        "path": "cold/cpr-checkpoints/D5BC278D-C7F7-4AE5-AA9D-54B20D451191/4A659816-A323-4546-B966-DDFCFD3C5B87.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cpr-checkpoints/D5BC278D-C7F7-4AE5-AA9D-54B20D451191/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/log.log4",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cold-index/log.log5",
+        "bytes": 3260416
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/D5BC278D-C7F7-4AE5-AA9D-54B20D451191/01ADF111-F630-464B-A4D9-18D43EDD5AD4.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/D5BC278D-C7F7-4AE5-AA9D-54B20D451191/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/D5BC278D-C7F7-4AE5-AA9D-54B20D451191/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/D5BC278D-C7F7-4AE5-AA9D-54B20D451191/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/D5BC278D-C7F7-4AE5-AA9D-54B20D451191/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/D5BC278D-C7F7-4AE5-AA9D-54B20D451191/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log58",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log60",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log56",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log51",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log50",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log57",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log61",
+        "bytes": 295424
+      },
+      {
+        "path": "hot/log.log59",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log44",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log43",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log42",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log45",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log52",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log55",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log54",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log53",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log47",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log49",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log48",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log46",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log41",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/cpr-checkpoints/D5BC278D-C7F7-4AE5-AA9D-54B20D451191/4A659816-A323-4546-B966-DDFCFD3C5B87.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/cpr-checkpoints/D5BC278D-C7F7-4AE5-AA9D-54B20D451191/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/index-checkpoints/D5BC278D-C7F7-4AE5-AA9D-54B20D451191/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/D5BC278D-C7F7-4AE5-AA9D-54B20D451191/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/D5BC278D-C7F7-4AE5-AA9D-54B20D451191/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-root-before-truncate/db",
+    "bytes": 312263793,
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 177
+      },
+      {
+        "path": "cold/log.log19",
+        "bytes": 7340032
+      },
+      {
+        "path": "cold/log.log17",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log9",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log10",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log8",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log11",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log16",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log18",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log13",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log14",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log15",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log12",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cpr-checkpoints/B1FBB6F1-B4EE-4C0E-AC18-BBFB334FDC7E/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/B1FBB6F1-B4EE-4C0E-AC18-BBFB334FDC7E/5807CF75-759B-4F61-9905-5076CD772FFD.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log7",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cold-index/log.log8",
+        "bytes": 2097152
+      },
+      {
+        "path": "cold/cold-index/log.log6",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cold-index/log.log4",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cold-index/log.log5",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/B1FBB6F1-B4EE-4C0E-AC18-BBFB334FDC7E/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/B1FBB6F1-B4EE-4C0E-AC18-BBFB334FDC7E/B94372F1-8A2E-42F9-B706-6CE29F34210C.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/B1FBB6F1-B4EE-4C0E-AC18-BBFB334FDC7E/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/B1FBB6F1-B4EE-4C0E-AC18-BBFB334FDC7E/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/B1FBB6F1-B4EE-4C0E-AC18-BBFB334FDC7E/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/B1FBB6F1-B4EE-4C0E-AC18-BBFB334FDC7E/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log58",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log60",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log56",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log51",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log50",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log57",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log61",
+        "bytes": 303616
+      },
+      {
+        "path": "hot/log.log59",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log44",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log43",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log42",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log45",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log52",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log55",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log54",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log53",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log47",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log49",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log48",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log46",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log41",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/cpr-checkpoints/B1FBB6F1-B4EE-4C0E-AC18-BBFB334FDC7E/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/B1FBB6F1-B4EE-4C0E-AC18-BBFB334FDC7E/5807CF75-759B-4F61-9905-5076CD772FFD.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/B1FBB6F1-B4EE-4C0E-AC18-BBFB334FDC7E/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/B1FBB6F1-B4EE-4C0E-AC18-BBFB334FDC7E/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/B1FBB6F1-B4EE-4C0E-AC18-BBFB334FDC7E/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-checkpoint-before-root/db",
+    "bytes": 311080049,
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 177
+      },
+      {
+        "path": "cold/log.log19",
+        "bytes": 7090176
+      },
+      {
+        "path": "cold/log.log17",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log9",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log10",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log8",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log11",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log16",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log18",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log13",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log14",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log15",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log12",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cpr-checkpoints/19FCCBBB-D317-4354-A74A-8C291D671BB8/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/19FCCBBB-D317-4354-A74A-8C291D671BB8/E20C890B-1A83-4CB3-A6A0-BF9B5E45F66F.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log7",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cold-index/log.log8",
+        "bytes": 1163264
+      },
+      {
+        "path": "cold/cold-index/log.log6",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cold-index/log.log4",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cold-index/log.log5",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/19FCCBBB-D317-4354-A74A-8C291D671BB8/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/19FCCBBB-D317-4354-A74A-8C291D671BB8/4B44365D-B955-427B-9C75-C9C7D2F087D3.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/19FCCBBB-D317-4354-A74A-8C291D671BB8/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/19FCCBBB-D317-4354-A74A-8C291D671BB8/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/19FCCBBB-D317-4354-A74A-8C291D671BB8/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/19FCCBBB-D317-4354-A74A-8C291D671BB8/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log58",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log60",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log56",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log51",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log50",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log57",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log61",
+        "bytes": 303616
+      },
+      {
+        "path": "hot/log.log59",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log44",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log43",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log42",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log45",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log52",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log55",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log54",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log53",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log47",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log49",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log48",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log46",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log41",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/cpr-checkpoints/19FCCBBB-D317-4354-A74A-8C291D671BB8/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/19FCCBBB-D317-4354-A74A-8C291D671BB8/E20C890B-1A83-4CB3-A6A0-BF9B5E45F66F.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/19FCCBBB-D317-4354-A74A-8C291D671BB8/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/19FCCBBB-D317-4354-A74A-8C291D671BB8/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/19FCCBBB-D317-4354-A74A-8C291D671BB8/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-hot-truncate/db",
+    "bytes": 144491633,
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 177
+      },
+      {
+        "path": "cold/log.log19",
+        "bytes": 7340032
+      },
+      {
+        "path": "cold/log.log17",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log9",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log10",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log8",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log11",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log16",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log18",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log13",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log14",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log15",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log12",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cpr-checkpoints/7C9B08D0-42B8-4A1D-8A2B-83897FEEB19B/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/7C9B08D0-42B8-4A1D-8A2B-83897FEEB19B/F38271E2-AC85-4C6E-9AD8-A1D6767A4A43.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log7",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cold-index/log.log8",
+        "bytes": 2097152
+      },
+      {
+        "path": "cold/cold-index/log.log6",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cold-index/log.log4",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cold-index/log.log5",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/7C9B08D0-42B8-4A1D-8A2B-83897FEEB19B/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/7C9B08D0-42B8-4A1D-8A2B-83897FEEB19B/62FE4AE8-CB14-464F-A40E-8966172E6B76.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/7C9B08D0-42B8-4A1D-8A2B-83897FEEB19B/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/7C9B08D0-42B8-4A1D-8A2B-83897FEEB19B/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/7C9B08D0-42B8-4A1D-8A2B-83897FEEB19B/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/7C9B08D0-42B8-4A1D-8A2B-83897FEEB19B/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log61",
+        "bytes": 303616
+      },
+      {
+        "path": "hot/cpr-checkpoints/7C9B08D0-42B8-4A1D-8A2B-83897FEEB19B/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/7C9B08D0-42B8-4A1D-8A2B-83897FEEB19B/F38271E2-AC85-4C6E-9AD8-A1D6767A4A43.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/7C9B08D0-42B8-4A1D-8A2B-83897FEEB19B/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/7C9B08D0-42B8-4A1D-8A2B-83897FEEB19B/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/7C9B08D0-42B8-4A1D-8A2B-83897FEEB19B/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-index-truncate/db",
+    "bytes": 60605553,
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 177
+      },
+      {
+        "path": "cold/log.log19",
+        "bytes": 7340032
+      },
+      {
+        "path": "cold/log.log17",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log16",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log18",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cpr-checkpoints/CC5A5683-BEBC-4F62-B822-654E67BB4F5E/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/CC5A5683-BEBC-4F62-B822-654E67BB4F5E/7AF4011C-65CD-429E-B869-66F9B7F76F8C.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log7",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cold-index/log.log8",
+        "bytes": 2097152
+      },
+      {
+        "path": "cold/cold-index/log.log6",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/CC5A5683-BEBC-4F62-B822-654E67BB4F5E/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/CC5A5683-BEBC-4F62-B822-654E67BB4F5E/FD5555A5-7C5E-405A-9538-F355EE342DEA.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/CC5A5683-BEBC-4F62-B822-654E67BB4F5E/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/CC5A5683-BEBC-4F62-B822-654E67BB4F5E/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/CC5A5683-BEBC-4F62-B822-654E67BB4F5E/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/CC5A5683-BEBC-4F62-B822-654E67BB4F5E/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log61",
+        "bytes": 303616
+      },
+      {
+        "path": "hot/cpr-checkpoints/CC5A5683-BEBC-4F62-B822-654E67BB4F5E/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/CC5A5683-BEBC-4F62-B822-654E67BB4F5E/7AF4011C-65CD-429E-B869-66F9B7F76F8C.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/CC5A5683-BEBC-4F62-B822-654E67BB4F5E/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/CC5A5683-BEBC-4F62-B822-654E67BB4F5E/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/CC5A5683-BEBC-4F62-B822-654E67BB4F5E/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/gc-crash-phases/after-logical-gc/db",
+    "bytes": 296764017,
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 177
+      },
+      {
+        "path": "cold/log.log19",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/log.log17",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log9",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log10",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log8",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log11",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log16",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log18",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log13",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log14",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log15",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/log.log12",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cpr-checkpoints/D603F3DE-2DF7-48E3-B49E-561A5C955BD4/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/D603F3DE-2DF7-48E3-B49E-561A5C955BD4/5AEBB793-B841-4DF8-9C43-BF3878CE1D26.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log6",
+        "bytes": 6520320
+      },
+      {
+        "path": "cold/cold-index/log.log4",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cold-index/log.log5",
+        "bytes": 8388608
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/D603F3DE-2DF7-48E3-B49E-561A5C955BD4/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/D603F3DE-2DF7-48E3-B49E-561A5C955BD4/4ADFECF3-30EA-41BE-B888-B3608226B821.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/D603F3DE-2DF7-48E3-B49E-561A5C955BD4/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/D603F3DE-2DF7-48E3-B49E-561A5C955BD4/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/D603F3DE-2DF7-48E3-B49E-561A5C955BD4/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/D603F3DE-2DF7-48E3-B49E-561A5C955BD4/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log58",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log60",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log56",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log51",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log50",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log57",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log61",
+        "bytes": 303616
+      },
+      {
+        "path": "hot/log.log59",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log44",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log43",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log42",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log45",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log52",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log55",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log54",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log53",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log47",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log49",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log48",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log46",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log41",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/cpr-checkpoints/D603F3DE-2DF7-48E3-B49E-561A5C955BD4/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/D603F3DE-2DF7-48E3-B49E-561A5C955BD4/5AEBB793-B841-4DF8-9C43-BF3878CE1D26.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/D603F3DE-2DF7-48E3-B49E-561A5C955BD4/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/D603F3DE-2DF7-48E3-B49E-561A5C955BD4/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/D603F3DE-2DF7-48E3-B49E-561A5C955BD4/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/pending-page-loss/source-db",
+    "bytes": 11156583,
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 167
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/529EC01F-EDA0-4450-9070-C96A3A866F66/EE93A1F7-8E6F-424D-BE34-1503A7901A43.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cpr-checkpoints/529EC01F-EDA0-4450-9070-C96A3A866F66/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/529EC01F-EDA0-4450-9070-C96A3A866F66/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/529EC01F-EDA0-4450-9070-C96A3A866F66/01C99CC0-B895-4B1E-8E22-BB58A3B667F3.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/529EC01F-EDA0-4450-9070-C96A3A866F66/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/529EC01F-EDA0-4450-9070-C96A3A866F66/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/529EC01F-EDA0-4450-9070-C96A3A866F66/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/529EC01F-EDA0-4450-9070-C96A3A866F66/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 137728
+      },
+      {
+        "path": "hot/cpr-checkpoints/529EC01F-EDA0-4450-9070-C96A3A866F66/EE93A1F7-8E6F-424D-BE34-1503A7901A43.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/cpr-checkpoints/529EC01F-EDA0-4450-9070-C96A3A866F66/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/index-checkpoints/529EC01F-EDA0-4450-9070-C96A3A866F66/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/529EC01F-EDA0-4450-9070-C96A3A866F66/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/529EC01F-EDA0-4450-9070-C96A3A866F66/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/extended-recovery/interior-footer-corrupt",
+    "bytes": 8956516,
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 164
+      },
+      {
+        "path": "cold/cpr-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/5D8A5A4E-A497-47A8-88B7-E5FD65051D42.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/E1871C6E-2830-48C7-BA42-7757E32DF90C.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 34816
+      },
+      {
+        "path": "hot/cpr-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/5D8A5A4E-A497-47A8-88B7-E5FD65051D42.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/extended-recovery/interior-page-lost",
+    "bytes": 8956516,
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 164
+      },
+      {
+        "path": "cold/cpr-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/5D8A5A4E-A497-47A8-88B7-E5FD65051D42.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/E1871C6E-2830-48C7-BA42-7757E32DF90C.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 34816
+      },
+      {
+        "path": "hot/cpr-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/5D8A5A4E-A497-47A8-88B7-E5FD65051D42.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/extended-recovery/source",
+    "bytes": 8956516,
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 164
+      },
+      {
+        "path": "cold/cpr-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/5D8A5A4E-A497-47A8-88B7-E5FD65051D42.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/E1871C6E-2830-48C7-BA42-7757E32DF90C.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 34816
+      },
+      {
+        "path": "hot/cpr-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/5D8A5A4E-A497-47A8-88B7-E5FD65051D42.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/extended-recovery/interior-data-corrupt",
+    "bytes": 8956516,
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 164
+      },
+      {
+        "path": "cold/cpr-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/5D8A5A4E-A497-47A8-88B7-E5FD65051D42.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/E1871C6E-2830-48C7-BA42-7757E32DF90C.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 34816
+      },
+      {
+        "path": "hot/cpr-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/5D8A5A4E-A497-47A8-88B7-E5FD65051D42.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/F8F2C3EF-A212-482F-9B69-104BE3505687/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/extended-recovery/tail-truncated",
+    "bytes": 11053160,
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/F71EDD60-F7E6-432D-B9A0-B0496FBA2947/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/F71EDD60-F7E6-432D-B9A0-B0496FBA2947/39BFFEE2-0D2E-44EC-BFDC-B55FDD290DB4.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/F71EDD60-F7E6-432D-B9A0-B0496FBA2947/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/F71EDD60-F7E6-432D-B9A0-B0496FBA2947/08CEEAD6-FEFA-491B-B472-E6F9B68755BB.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/F71EDD60-F7E6-432D-B9A0-B0496FBA2947/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/F71EDD60-F7E6-432D-B9A0-B0496FBA2947/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/F71EDD60-F7E6-432D-B9A0-B0496FBA2947/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/F71EDD60-F7E6-432D-B9A0-B0496FBA2947/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 34304
+      },
+      {
+        "path": "hot/cpr-checkpoints/F71EDD60-F7E6-432D-B9A0-B0496FBA2947/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/F71EDD60-F7E6-432D-B9A0-B0496FBA2947/39BFFEE2-0D2E-44EC-BFDC-B55FDD290DB4.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/F71EDD60-F7E6-432D-B9A0-B0496FBA2947/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/F71EDD60-F7E6-432D-B9A0-B0496FBA2947/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/F71EDD60-F7E6-432D-B9A0-B0496FBA2947/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/syscall-smoke-kernel/db",
+    "bytes": 342392,
+    "files": [
+      {
+        "path": "OPTIONS-000007",
+        "bytes": 7268
+      },
+      {
+        "path": "000004.log",
+        "bytes": 311063
+      },
+      {
+        "path": "IDENTITY",
+        "bytes": 36
+      },
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "CURRENT",
+        "bytes": 16
+      },
+      {
+        "path": "LOG",
+        "bytes": 23939
+      },
+      {
+        "path": "MANIFEST-000005",
+        "bytes": 70
+      }
+    ]
+  }
+]

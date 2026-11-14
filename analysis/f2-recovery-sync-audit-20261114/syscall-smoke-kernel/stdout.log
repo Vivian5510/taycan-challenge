@@ -1,0 +1,5 @@
+{"type":"stage","stage":"open"}
+{"type":"stage","stage":"measure"}
+{"type":"progress","stage":"measure","completed":1000,"elapsed_seconds":0.023653375,"interval_seconds":0.023653375,"ops_per_second":42277.2648723,"final":true,"total":1000}
+{"type":"stage","stage":"close"}
+{"type":"result","status":"PASS","error":"","operations":1000,"gets":0,"puts":1000,"deletes":0,"read_misses":0,"ops_per_second":42277.2648723,"open_seconds":0.010396959,"setup_seconds":0,"warmup_seconds":0,"measured_seconds":0.023653375,"close_seconds":0.000310291,"data_bytes_before_measure":27934,"data_bytes_after_measure":338997,"data_bytes_after_close":342392,"measure_read_bytes":null,"measure_write_bytes":null,"latency":{"samples":0,"p50_us":null,"p95_us":null,"p99_us":null,"p999_us":null,"max_us":null},"get_latency":{"samples":0,"p50_us":null,"p95_us":null,"p99_us":null,"p999_us":null,"max_us":null},"put_latency":{"samples":0,"p50_us":null,"p95_us":null,"p99_us":null,"p999_us":null,"max_us":null},"delete_latency":{"samples":0,"p50_us":null,"p95_us":null,"p99_us":null,"p999_us":null,"max_us":null}}

@@ -1,0 +1,17 @@
+basic PASS
+recovery PASS
+concurrent PASS
+sync-error PASS
+io-error PASS
+apply-error PASS
+same-key-write PASS
+same-key-recover-1 PASS
+same-key-recover-2 PASS
+span-write PASS
+partial-tail PASS
+Traceback (most recent call last):
+  File "/Users/rosy/devspace/code/taycan-challenge/experiments/faster-native-adapter/run_data_log_validation.py", line 239, in <module>
+    main()
+  File "/Users/rosy/devspace/code/taycan-challenge/experiments/faster-native-adapter/run_data_log_validation.py", line 188, in main
+    raise RuntimeError('no committed suffix to corrupt')
+RuntimeError: no committed suffix to corrupt

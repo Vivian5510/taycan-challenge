@@ -1,0 +1,106 @@
+[
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-after-root/db",
+    "logical_bytes": 11117673
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/concurrent-after-data-sync/db",
+    "logical_bytes": 11053160
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/span-db",
+    "logical_bytes": 39008362
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/footer-corrupt-db",
+    "logical_bytes": 36911210
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/sync-error-db",
+    "logical_bytes": 8922725
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-before-data-flush/db",
+    "logical_bytes": 11052136
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-before-ack/db",
+    "logical_bytes": 11052648
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/missing-data-db",
+    "logical_bytes": 36911210
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-before-root/db",
+    "logical_bytes": 11117673
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/concurrent-before-ack/db",
+    "logical_bytes": 11053160
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-after-data-sync/db",
+    "logical_bytes": 11052648
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/concurrent-before-data-sync/db",
+    "logical_bytes": 11052647
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/embedded-marker-db",
+    "logical_bytes": 11122280
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/same-key-db",
+    "logical_bytes": 11053672
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/apply-error-db",
+    "logical_bytes": 8922213
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/concurrent-after-root/db",
+    "logical_bytes": 11056232
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-after-wal/db",
+    "logical_bytes": 11052646
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/concurrent-after-wal/db",
+    "logical_bytes": 11052648
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/io-error-db",
+    "logical_bytes": 8922213
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/data-corrupt-db",
+    "logical_bytes": 36911210
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/single-before-data-sync/db",
+    "logical_bytes": 11052648
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/partial-tail-db",
+    "logical_bytes": 39008362
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/concurrent-before-data-flush/db",
+    "logical_bytes": 11052648
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/collision-db",
+    "logical_bytes": 3417191
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/root-corrupt-db",
+    "logical_bytes": 36911210
+  },
+  {
+    "path": "analysis/f2-recovery-sync-audit-20261114/validation-segment-aware/concurrent-before-root/db",
+    "logical_bytes": 11056232
+  }
+]

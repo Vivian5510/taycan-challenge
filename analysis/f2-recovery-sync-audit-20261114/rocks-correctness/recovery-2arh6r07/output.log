@@ -1,0 +1,11 @@
+seed=20261021 num_keys=100000 key_mode=random key_size=64 value_size=128 reader_threads=4 mem_limit_bytes=4294967296
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Recovery
+[ RUN      ] Recovery.ReopenTwice
+[       OK ] Recovery.ReopenTwice (7598 ms)
+[----------] 1 test from Recovery (7598 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (7598 ms total)
+[  PASSED  ] 1 test.

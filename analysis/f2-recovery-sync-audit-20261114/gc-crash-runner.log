@@ -1,0 +1,9 @@
+SEED native hot/cold compaction and data segment deletion observed
+PASS concurrent-copy acknowledged=1000528 reopen=2
+PASS after-copy acknowledged=1000016 reopen=2
+PASS after-logical-gc acknowledged=1000016 reopen=2
+PASS after-checkpoint-before-root acknowledged=1000016 reopen=2
+PASS after-root-before-truncate acknowledged=1000016 reopen=2
+PASS after-hot-truncate acknowledged=1000016 reopen=2
+PASS after-cold-truncate acknowledged=1000016 reopen=2
+PASS after-index-truncate acknowledged=1000016 reopen=2

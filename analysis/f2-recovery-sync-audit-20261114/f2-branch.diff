@@ -1,0 +1,135 @@
+diff --git a/experiments/faster-native-adapter/README.md b/experiments/faster-native-adapter/README.md
+index ea51540..b7904d3 100644
+--- a/experiments/faster-native-adapter/README.md
++++ b/experiments/faster-native-adapter/README.md
+@@ -1,5 +1,7 @@
+ # FASTER/F2 调用线程执行基线
+ 
++恢复尾部部分页丢失的修复与实际fsync性能审计见[修复记录](../../docs/f2-recovery-sync-audit-20261114.md)。
++
+ 2026-11-14 按用户要求拆分：`main` 移除接入 F2 同步路径的 group commit；
+ 完整合批实现保留在 `experiment/f2-group-commit-preserved-20261114`（`c529214`）。
+ [拆分范围、构建与验证](../../docs/main-without-group-commit-20261114.md)。
+diff --git a/experiments/faster-native-adapter/f2_prefix_members.inc b/experiments/faster-native-adapter/f2_prefix_members.inc
+index 0a32c35..33ac451 100644
+--- a/experiments/faster-native-adapter/f2_prefix_members.inc
++++ b/experiments/faster-native-adapter/f2_prefix_members.inc
+@@ -114,6 +114,7 @@
+     const auto end=PrefixFileEnd();if(end<base_tail)throw std::runtime_error("native base log truncated");
+     uint64_t stable=base_tail,serial=base_serial,record_at=base_tail;uint32_t crc=0;
+     bool malformed_record=false;
++    const char* incomplete_tail=nullptr;
+     const uint64_t page_size=hot_store.hlog.kPageSize;
+     std::vector<uint8_t> buffer(page_size);
+     auto read_absolute=[&](uint64_t address,uint8_t* destination,size_t bytes) {
+@@ -175,23 +176,41 @@
+         auto* marker=buffer.data()+offset+experimental::kPrefixBlock-PrefixMarkerSize();
+         experimental::PrefixFooter footer;std::memcpy(&footer,marker+PrefixFooterOffset(),sizeof(footer));
+         auto* record=reinterpret_cast<prefix_record_t*>(marker);
++        // A footer may reach disk before some earlier pages of its own write.
++        // Only a complete, checksummed prefix is a recovery boundary. Once an
++        // incomplete tail is found, never resume playback past it. A later
++        // valid seal proves this was interior corruption, rather than a crash
++        // interrupting the last in-flight commit, and must fail recovery.
++        const bool valid_seal=record->key().length==0 && record->header.invalid &&
++          record->value().length==sizeof(footer) && record->value().reserved==experimental::kPrefixTag &&
++          footer.magic==experimental::kPrefixMagic && footer.end_magic==experimental::kPrefixEndMagic &&
++          footer.footer_crc==experimental::PrefixFooterCRC(footer) && footer.end==sector_end &&
++          footer.from<sector_end && footer.from%experimental::kPrefixBlock==0 &&
++          footer.first>0 && footer.last>=footer.first && footer.operations==footer.last-footer.first+1;
++        if(incomplete_tail) {
++          if(valid_seal && footer.first>serial)
++            throw std::runtime_error(std::string("interior native log corruption: ")+incomplete_tail);
++          continue;
++        }
+         const bool framed=record_at==marker_at && record->key().length==0 && record->header.invalid &&
+           record->value().length==sizeof(footer) && record->value().reserved==experimental::kPrefixTag;
+         const bool recognized=framed || (malformed_record && footer.magic==experimental::kPrefixMagic &&
+           footer.end_magic==experimental::kPrefixEndMagic && footer.footer_crc==experimental::PrefixFooterCRC(footer));
+         if(!recognized) {crc=rocksdb::crc32c::Extend(crc,reinterpret_cast<const char*>(buffer.data()+offset),experimental::kPrefixBlock);continue;}
+-        if(malformed_record)throw std::runtime_error("malformed data record inside committed prefix: record="+std::to_string(record_at)+
+-          " page="+std::to_string(page_at)+" bytes="+std::to_string(done)+" marker="+std::to_string(marker_at));
++        if(malformed_record) {incomplete_tail="incomplete data record";continue;}
+         if(footer.magic!=experimental::kPrefixMagic||footer.end_magic!=experimental::kPrefixEndMagic||
+            footer.footer_crc!=experimental::PrefixFooterCRC(footer)||footer.from!=stable||footer.end!=sector_end||
+            footer.first!=serial+1||footer.last<footer.first||footer.operations!=footer.last-footer.first+1||
+            record->key().length!=0||!record->header.invalid||record->value().length!=sizeof(footer)||record->value().reserved!=experimental::kPrefixTag)
+           throw std::runtime_error("corrupt native commit footer/chain");
+         crc=rocksdb::crc32c::Extend(crc,reinterpret_cast<const char*>(buffer.data()+offset),experimental::kPrefixBlock-PrefixMarkerSize());
+-        if(crc!=footer.data_crc)throw std::runtime_error("native committed data checksum mismatch");
++        if(crc!=footer.data_crc) {incomplete_tail="incomplete data checksum";continue;}
+         stable=sector_end;serial=footer.last;record_at=sector_end;crc=0;++s.prefix.recovered_commits;
+       }
+     }
++    if(incomplete_tail)
++      std::fprintf(stderr,"F2_RECOVERY_DISCARD_TAIL from=%llu bytes=%llu reason=%s\n",
++        (unsigned long long)stable,(unsigned long long)(end-stable),incomplete_tail);
+     s.prefix.base_tail=base_tail;s.prefix.stable_tail=stable;s.serial=serial;
+     s.prefix.prepared_tail=stable;
+   }
+diff --git a/experiments/faster-native-adapter/run_data_log_validation.py b/experiments/faster-native-adapter/run_data_log_validation.py
+index e9a35ae..4a14ab5 100644
+--- a/experiments/faster-native-adapter/run_data_log_validation.py
++++ b/experiments/faster-native-adapter/run_data_log_validation.py
+@@ -28,6 +28,11 @@ def main():
+     parser.add_argument('--results', type=Path, required=True)
+     args = parser.parse_args()
+     build, out = args.build_dir.resolve(), args.results.resolve()
++    cache = (build / 'CMakeCache.txt').read_text()
++    segment_bits = next((int(line.split('=', 1)[1]) for line in cache.splitlines()
++                         if line.startswith('TAYCAN_F2_DATA_SEGMENT_BITS:')), 30)
++    gc_enabled = 'TAYCAN_F2_DURABLE_COMPACTION:BOOL=ON' in cache
++    segment_bytes = 1 << (segment_bits if gc_enabled else 30)
+     out.mkdir(parents=True, exist_ok=False)
+     probe = build / 'engine/f2_sync_api_probe'
+     report = dict(status='RUNNING', started_at=datetime.now(timezone.utc).isoformat(),
+@@ -178,15 +183,17 @@ def main():
+         for case in ('partial-tail', 'data-corrupt', 'footer-corrupt', 'missing-data', 'root-corrupt'):
+             db = out / (case + '-db')
+             shutil.copytree(span, db)
+-            log = db / 'hot/log.log0'
++            logs = sorted((db / 'hot').glob('log.log*'), key=lambda p: int(p.name[7:]))
++            log = logs[-1] if case in ('partial-tail', 'footer-corrupt') else db / ('hot/log.log' + str(base // segment_bytes))
+             if case == 'partial-tail':
+                 with log.open('ab') as f:
+                     f.write(b'abc')
+             elif case in ('data-corrupt', 'footer-corrupt'):
+                 data = bytearray(log.read_bytes())
+-                if len(data) < base + 128:
++                offset = base % segment_bytes
++                if case == 'data-corrupt' and len(data) < offset + 128:
+                     raise RuntimeError('no committed suffix to corrupt')
+-                data[base + 24 if case == 'data-corrupt' else len(data) - 16] ^= 1
++                data[offset + 24 if case == 'data-corrupt' else len(data) - 16] ^= 1
+                 log.write_bytes(data)
+             elif case == 'missing-data':
+                 log.rename(log.with_suffix('.preserved'))
+diff --git a/taycan_participant_sdk/benchmarks/baselines/rocksdb/rocksdb_engine.cc b/taycan_participant_sdk/benchmarks/baselines/rocksdb/rocksdb_engine.cc
+index 5e6a626..eb1b888 100644
+--- a/taycan_participant_sdk/benchmarks/baselines/rocksdb/rocksdb_engine.cc
++++ b/taycan_participant_sdk/benchmarks/baselines/rocksdb/rocksdb_engine.cc
+@@ -11,6 +11,7 @@
+ #include <algorithm>
+ #include <filesystem>
+ #include <memory>
++#include <cstdlib>
+ 
+ namespace {
+ Status Convert(const rocksdb::Status& status) {
+@@ -73,6 +74,16 @@ Status KVEngine::Open(const std::string& directory, uint64_t budget, KVEngine**
+     options.create_if_missing = true;
+     options.compression = rocksdb::kNoCompression;
+     options.bottommost_compression = rocksdb::kNoCompression;
++    // Diagnostic control only: a one-byte group budget leaves the leader's
++    // single-key request intact but prevents followers joining its WAL group.
++    // The production/reference default is unchanged.
++    if (const char* size = std::getenv("TAYCAN_ROCKSDB_MAX_GROUP_BYTES")) {
++      const std::string text(size);
++      if (text.empty() || text.find_first_not_of("0123456789") != std::string::npos ||
++          std::stoull(text) == 0)
++        return Status::IOError("invalid RocksDB diagnostic group budget");
++      options.max_write_batch_group_size_bytes = std::stoull(text);
++    }
+     options.allow_mmap_reads = false;
+     options.allow_mmap_writes = false;
+     options.max_open_files = 128;

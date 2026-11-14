@@ -1,0 +1,1894 @@
+{
+  "status": "PASS",
+  "scope": "Native macOS ARM64; per-call durable fsync; closed-loop threads; not physical power cut or formal score",
+  "parameters": {
+    "num_keys": 1000000,
+    "key_size": 32,
+    "value_size": 256,
+    "mem_limit_bytes": 4294967296,
+    "seed": 20261021
+  },
+  "binary_sha256": {
+    "f2": "85ade21b793d285878e3c8abe453528f48df8a7e966d9fce3c278a9bfa22b608",
+    "rocksdb": "6e7aad5da6c203ba6b9dd432fe901862ade63cfa5b0ec4bd163def75c7bb0711"
+  },
+  "driver_sha256": "536b0200135773157f57c05d89ead934087cbb77a1a15377c7334ccc7c27ac49",
+  "runs": [
+    {
+      "cell": "f2-t1-default-audit",
+      "engine": "f2",
+      "threads": 1,
+      "group_limited": false,
+      "syscall_audit": true,
+      "status": "PASS",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/f2-t1-default-audit/db",
+        "--workload=load",
+        "--threads=1",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--num-keys=1000000",
+        "--key-size=32",
+        "--value-size=256",
+        "--mem-limit-bytes=4294967296",
+        "--seed=20261021"
+      ],
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/f2-t1-default-audit/db",
+          "--workload=load",
+          "--threads=1",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--seed=20261021"
+        ],
+        "pid": 17679,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 1313374208,
+        "rss_limit_bytes": 4724464025,
+        "samples": 7622,
+        "rss_source": "macOS libproc",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.016942583000002287,
+        "elapsed_seconds": 84.031594042
+      },
+      "prefix": {
+        "commits": 1000000,
+        "data_syncs": 1000000,
+        "directory_syncs": 62,
+        "write_calls": 1000001,
+        "write_bytes": 512000512,
+        "stable_tail": 512000512,
+        "base_tail": 480880640,
+        "recovered_commits": 0
+      },
+      "syscalls": {
+        "fsync_calls": 1000580,
+        "fsync_ns": 25909426247,
+        "wal_calls": 0,
+        "wal_ns": 0,
+        "hot_calls": 1000001,
+        "hot_ns": 25907724289,
+        "failures": 0
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 1000000,
+        "gets": 0,
+        "puts": 1000000,
+        "deletes": 0,
+        "read_misses": 0,
+        "ops_per_second": 11977.7235783,
+        "open_seconds": 0.038287042,
+        "setup_seconds": 0,
+        "warmup_seconds": 0,
+        "measured_seconds": 83.488318416,
+        "close_seconds": 0.000964791,
+        "data_bytes_before_measure": 8922209,
+        "data_bytes_after_measure": 423417455,
+        "data_bytes_after_close": 423417455,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 10169,
+          "p50_us": 69.631,
+          "p95_us": 147.455,
+          "p99_us": 237.567,
+          "p999_us": 794.623,
+          "max_us": 5917.792
+        },
+        "get_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        },
+        "put_latency": {
+          "samples": 10169,
+          "p50_us": 69.631,
+          "p95_us": 147.455,
+          "p99_us": 237.567,
+          "p999_us": 794.623,
+          "max_us": 5917.792
+        },
+        "delete_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        }
+      },
+      "operations_per_data_sync": 0.999999000001,
+      "data_syncs_per_second": 11977.735555976371,
+      "files": [
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "F2-SYNC-CURRENT",
+          "bytes": 175
+        },
+        {
+          "path": "cold/log.log93",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log94",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log69",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log95",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log92",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log88",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log75",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log81",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log86",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log72",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log73",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log87",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log80",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log74",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log89",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log97",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log90",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log99",
+          "bytes": 4763136
+        },
+        {
+          "path": "cold/log.log98",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log91",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log96",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log78",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log85",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log71",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log76",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log82",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log83",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log77",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log70",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log84",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log79",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cpr-checkpoints/EA9370B3-40E1-43D9-8F8C-96F122E2FF8A/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cpr-checkpoints/EA9370B3-40E1-43D9-8F8C-96F122E2FF8A/3F3F971D-F600-4C78-B70E-CD9E0F7619AE.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cold-index/log.log34",
+          "bytes": 6521856
+        },
+        {
+          "path": "cold/cold-index/log.log33",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log32",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log28",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log29",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log30",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log31",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/EA9370B3-40E1-43D9-8F8C-96F122E2FF8A/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/EA9370B3-40E1-43D9-8F8C-96F122E2FF8A/3DBAF68A-F1AC-4542-9324-9EFE7D09B03D.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/EA9370B3-40E1-43D9-8F8C-96F122E2FF8A/ofb.dat",
+          "bytes": 262144
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/EA9370B3-40E1-43D9-8F8C-96F122E2FF8A/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/EA9370B3-40E1-43D9-8F8C-96F122E2FF8A/ht.dat",
+          "bytes": 4194304
+        },
+        {
+          "path": "cold/index-checkpoints/EA9370B3-40E1-43D9-8F8C-96F122E2FF8A/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/log.log58",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log60",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log56",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log51",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log50",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log57",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log61",
+          "bytes": 295424
+        },
+        {
+          "path": "hot/log.log59",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log52",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log55",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log54",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log53",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log49",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/cpr-checkpoints/EA9370B3-40E1-43D9-8F8C-96F122E2FF8A/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "hot/cpr-checkpoints/EA9370B3-40E1-43D9-8F8C-96F122E2FF8A/3F3F971D-F600-4C78-B70E-CD9E0F7619AE.dat",
+          "bytes": 32
+        },
+        {
+          "path": "hot/index-checkpoints/EA9370B3-40E1-43D9-8F8C-96F122E2FF8A/ofb.dat",
+          "bytes": 524288
+        },
+        {
+          "path": "hot/index-checkpoints/EA9370B3-40E1-43D9-8F8C-96F122E2FF8A/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/index-checkpoints/EA9370B3-40E1-43D9-8F8C-96F122E2FF8A/ht.dat",
+          "bytes": 4194304
+        }
+      ],
+      "wall_seconds": 84.08319508299999
+    },
+    {
+      "cell": "rocksdb-t1-default-audit",
+      "engine": "rocksdb",
+      "threads": 1,
+      "group_limited": false,
+      "syscall_audit": true,
+      "status": "PASS",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/rocks-recovery-sync-audit-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/rocksdb-t1-default-audit/db",
+        "--workload=load",
+        "--threads=1",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--num-keys=1000000",
+        "--key-size=32",
+        "--value-size=256",
+        "--mem-limit-bytes=4294967296",
+        "--seed=20261021"
+      ],
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/rocks-recovery-sync-audit-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/rocksdb-t1-default-audit/db",
+          "--workload=load",
+          "--threads=1",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--seed=20261021"
+        ],
+        "pid": 18872,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 294567936,
+        "rss_limit_bytes": 4724464025,
+        "samples": 2117,
+        "rss_source": "macOS libproc",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.015048584000012966,
+        "elapsed_seconds": 25.905419459
+      },
+      "syscalls": {
+        "fsync_calls": 1000015,
+        "fsync_ns": 19346241521,
+        "wal_calls": 1000000,
+        "wal_ns": 19345715351,
+        "hot_calls": 0,
+        "hot_ns": 0,
+        "failures": 0
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 1000000,
+        "gets": 0,
+        "puts": 1000000,
+        "deletes": 0,
+        "read_misses": 0,
+        "ops_per_second": 39493.5259398,
+        "open_seconds": 0.0075465,
+        "setup_seconds": 0,
+        "warmup_seconds": 0,
+        "measured_seconds": 25.32060575,
+        "close_seconds": 0.000516791,
+        "data_bytes_before_measure": 28018,
+        "data_bytes_after_measure": 299431566,
+        "data_bytes_after_close": 299431756,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 10169,
+          "p50_us": 24.575,
+          "p95_us": 34.303,
+          "p99_us": 45.055,
+          "p999_us": 90.111,
+          "max_us": 401.375
+        },
+        "get_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        },
+        "put_latency": {
+          "samples": 10169,
+          "p50_us": 24.575,
+          "p95_us": 34.303,
+          "p99_us": 45.055,
+          "p999_us": 90.111,
+          "max_us": 401.375
+        },
+        "delete_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        }
+      },
+      "operations_per_data_sync": 1.0,
+      "data_syncs_per_second": 39493.525939836574,
+      "files": [
+        {
+          "path": "OPTIONS-000007",
+          "bytes": 7268
+        },
+        {
+          "path": "IDENTITY",
+          "bytes": 36
+        },
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "CURRENT",
+          "bytes": 16
+        },
+        {
+          "path": "LOG",
+          "bytes": 28183
+        },
+        {
+          "path": "000009.sst",
+          "bytes": 253398954
+        },
+        {
+          "path": "MANIFEST-000005",
+          "bytes": 250
+        },
+        {
+          "path": "000008.log",
+          "bytes": 45997049
+        }
+      ],
+      "wall_seconds": 25.918229209000003
+    },
+    {
+      "cell": "rocksdb-t1-group1-audit",
+      "engine": "rocksdb",
+      "threads": 1,
+      "group_limited": true,
+      "syscall_audit": true,
+      "status": "PASS",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/rocks-recovery-sync-audit-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/rocksdb-t1-group1-audit/db",
+        "--workload=load",
+        "--threads=1",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--num-keys=1000000",
+        "--key-size=32",
+        "--value-size=256",
+        "--mem-limit-bytes=4294967296",
+        "--seed=20261021"
+      ],
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/rocks-recovery-sync-audit-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/rocksdb-t1-group1-audit/db",
+          "--workload=load",
+          "--threads=1",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--seed=20261021"
+        ],
+        "pid": 19117,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 293404672,
+        "rss_limit_bytes": 4724464025,
+        "samples": 2042,
+        "rss_source": "macOS libproc",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.014899999999983038,
+        "elapsed_seconds": 25.13319566700001
+      },
+      "syscalls": {
+        "fsync_calls": 1000015,
+        "fsync_ns": 18287339669,
+        "wal_calls": 1000000,
+        "wal_ns": 18286902835,
+        "hot_calls": 0,
+        "hot_ns": 0,
+        "failures": 0
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 1000000,
+        "gets": 0,
+        "puts": 1000000,
+        "deletes": 0,
+        "read_misses": 0,
+        "ops_per_second": 39832.4988994,
+        "open_seconds": 0.012125833,
+        "setup_seconds": 0,
+        "warmup_seconds": 0,
+        "measured_seconds": 25.105128416,
+        "close_seconds": 0.000354125,
+        "data_bytes_before_measure": 28002,
+        "data_bytes_after_measure": 299431769,
+        "data_bytes_after_close": 299431959,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 10169,
+          "p50_us": 24.319,
+          "p95_us": 33.791,
+          "p99_us": 40.959,
+          "p999_us": 103.423,
+          "max_us": 2432.042
+        },
+        "get_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        },
+        "put_latency": {
+          "samples": 10169,
+          "p50_us": 24.319,
+          "p95_us": 33.791,
+          "p99_us": 40.959,
+          "p999_us": 103.423,
+          "max_us": 2432.042
+        },
+        "delete_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        }
+      },
+      "operations_per_data_sync": 1.0,
+      "data_syncs_per_second": 39832.49889941531,
+      "files": [
+        {
+          "path": "OPTIONS-000007",
+          "bytes": 7262
+        },
+        {
+          "path": "IDENTITY",
+          "bytes": 36
+        },
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "CURRENT",
+          "bytes": 16
+        },
+        {
+          "path": "LOG",
+          "bytes": 28172
+        },
+        {
+          "path": "000009.sst",
+          "bytes": 253393576
+        },
+        {
+          "path": "MANIFEST-000005",
+          "bytes": 250
+        },
+        {
+          "path": "000008.log",
+          "bytes": 46002647
+        }
+      ],
+      "wall_seconds": 25.142749374999994
+    },
+    {
+      "cell": "f2-t32-default-audit",
+      "engine": "f2",
+      "threads": 32,
+      "group_limited": false,
+      "syscall_audit": true,
+      "status": "PASS",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/f2-t32-default-audit/db",
+        "--workload=load",
+        "--threads=32",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--num-keys=1000000",
+        "--key-size=32",
+        "--value-size=256",
+        "--mem-limit-bytes=4294967296",
+        "--seed=20261021"
+      ],
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/f2-t32-default-audit/db",
+          "--workload=load",
+          "--threads=32",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--seed=20261021"
+        ],
+        "pid": 19390,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 1382891520,
+        "rss_limit_bytes": 4724464025,
+        "samples": 7668,
+        "rss_source": "macOS libproc",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.015423291999979938,
+        "elapsed_seconds": 84.628711125
+      },
+      "prefix": {
+        "commits": 1000000,
+        "data_syncs": 1000000,
+        "directory_syncs": 62,
+        "write_calls": 1000001,
+        "write_bytes": 512000512,
+        "stable_tail": 512000512,
+        "base_tail": 462568448,
+        "recovered_commits": 0
+      },
+      "syscalls": {
+        "fsync_calls": 1000698,
+        "fsync_ns": 25504914268,
+        "wal_calls": 0,
+        "wal_ns": 0,
+        "hot_calls": 1000001,
+        "hot_ns": 25503134517,
+        "failures": 0
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 1000000,
+        "gets": 0,
+        "puts": 1000000,
+        "deletes": 0,
+        "read_misses": 0,
+        "ops_per_second": 11826.5927727,
+        "open_seconds": 0.0291005,
+        "setup_seconds": 0,
+        "warmup_seconds": 0,
+        "measured_seconds": 84.555207,
+        "close_seconds": 0.000942291,
+        "data_bytes_before_measure": 8922213,
+        "data_bytes_after_measure": 406579824,
+        "data_bytes_after_close": 406579824,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 9964,
+          "p50_us": 69.631,
+          "p95_us": 169.983,
+          "p99_us": 63438.847,
+          "p999_us": 637534.207,
+          "max_us": 1205161.458
+        },
+        "get_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        },
+        "put_latency": {
+          "samples": 9964,
+          "p50_us": 69.631,
+          "p95_us": 169.983,
+          "p99_us": 63438.847,
+          "p999_us": 637534.207,
+          "max_us": 1205161.458
+        },
+        "delete_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        }
+      },
+      "operations_per_data_sync": 0.999999000001,
+      "data_syncs_per_second": 11826.604599288605,
+      "files": [
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "F2-SYNC-CURRENT",
+          "bytes": 176
+        },
+        {
+          "path": "cold/log.log120",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log118",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log127",
+          "bytes": 199680
+        },
+        {
+          "path": "cold/log.log111",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log116",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log117",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log110",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log119",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log126",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log121",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log93",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log94",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log95",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log103",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log104",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log105",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log102",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log124",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log123",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log115",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log112",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log113",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log114",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log122",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log125",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log97",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log99",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log98",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log96",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log107",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log100",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log109",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log108",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log101",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log106",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cpr-checkpoints/D9177F87-0ADE-4111-A87D-182C202326B2/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cpr-checkpoints/D9177F87-0ADE-4111-A87D-182C202326B2/FA209D53-8D27-4534-9B47-620F92CF4CEA.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cold-index/log.log44",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log43",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log42",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log45",
+          "bytes": 2636288
+        },
+        {
+          "path": "cold/cold-index/log.log39",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log38",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log40",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log41",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/D9177F87-0ADE-4111-A87D-182C202326B2/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/D9177F87-0ADE-4111-A87D-182C202326B2/15CAD0DE-BD01-4ABA-89CC-CCFC7D42727B.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/D9177F87-0ADE-4111-A87D-182C202326B2/ofb.dat",
+          "bytes": 262144
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/D9177F87-0ADE-4111-A87D-182C202326B2/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/D9177F87-0ADE-4111-A87D-182C202326B2/ht.dat",
+          "bytes": 4194304
+        },
+        {
+          "path": "cold/index-checkpoints/D9177F87-0ADE-4111-A87D-182C202326B2/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/log.log58",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log60",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log56",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log57",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log61",
+          "bytes": 295424
+        },
+        {
+          "path": "hot/log.log59",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log55",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/cpr-checkpoints/D9177F87-0ADE-4111-A87D-182C202326B2/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "hot/cpr-checkpoints/D9177F87-0ADE-4111-A87D-182C202326B2/FA209D53-8D27-4534-9B47-620F92CF4CEA.dat",
+          "bytes": 32
+        },
+        {
+          "path": "hot/index-checkpoints/D9177F87-0ADE-4111-A87D-182C202326B2/ofb.dat",
+          "bytes": 524288
+        },
+        {
+          "path": "hot/index-checkpoints/D9177F87-0ADE-4111-A87D-182C202326B2/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/index-checkpoints/D9177F87-0ADE-4111-A87D-182C202326B2/ht.dat",
+          "bytes": 4194304
+        }
+      ],
+      "wall_seconds": 84.6585595
+    },
+    {
+      "cell": "rocksdb-t32-default-audit",
+      "engine": "rocksdb",
+      "threads": 32,
+      "group_limited": false,
+      "syscall_audit": true,
+      "status": "PASS",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/rocks-recovery-sync-audit-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/rocksdb-t32-default-audit/db",
+        "--workload=load",
+        "--threads=32",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--num-keys=1000000",
+        "--key-size=32",
+        "--value-size=256",
+        "--mem-limit-bytes=4294967296",
+        "--seed=20261021"
+      ],
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/rocks-recovery-sync-audit-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/rocksdb-t32-default-audit/db",
+          "--workload=load",
+          "--threads=32",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--seed=20261021"
+        ],
+        "pid": 20605,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 306577408,
+        "rss_limit_bytes": 4724464025,
+        "samples": 396,
+        "rss_source": "macOS libproc",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.012679125000005342,
+        "elapsed_seconds": 4.77542837499999
+      },
+      "syscalls": {
+        "fsync_calls": 62440,
+        "fsync_ns": 1785002181,
+        "wal_calls": 62425,
+        "wal_ns": 1784662640,
+        "hot_calls": 0,
+        "hot_ns": 0,
+        "failures": 0
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 1000000,
+        "gets": 0,
+        "puts": 1000000,
+        "deletes": 0,
+        "read_misses": 0,
+        "ops_per_second": 210395.796558,
+        "open_seconds": 0.006838375,
+        "setup_seconds": 0,
+        "warmup_seconds": 0,
+        "measured_seconds": 4.752946667,
+        "close_seconds": 0.000353417,
+        "data_bytes_before_measure": 28022,
+        "data_bytes_after_measure": 296784991,
+        "data_bytes_after_close": 296785181,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 9964,
+          "p50_us": 149.503,
+          "p95_us": 200.703,
+          "p99_us": 243.711,
+          "p999_us": 606.207,
+          "max_us": 1871.417
+        },
+        "get_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        },
+        "put_latency": {
+          "samples": 9964,
+          "p50_us": 149.503,
+          "p95_us": 200.703,
+          "p99_us": 243.711,
+          "p999_us": 606.207,
+          "max_us": 1871.417
+        },
+        "delete_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        }
+      },
+      "operations_per_data_sync": 16.019223067681217,
+      "data_syncs_per_second": 13133.957600117965,
+      "files": [
+        {
+          "path": "OPTIONS-000007",
+          "bytes": 7268
+        },
+        {
+          "path": "IDENTITY",
+          "bytes": 36
+        },
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "CURRENT",
+          "bytes": 16
+        },
+        {
+          "path": "LOG",
+          "bytes": 28188
+        },
+        {
+          "path": "000009.sst",
+          "bytes": 252520510
+        },
+        {
+          "path": "MANIFEST-000005",
+          "bytes": 250
+        },
+        {
+          "path": "000008.log",
+          "bytes": 44228913
+        }
+      ],
+      "wall_seconds": 4.7941944160000105
+    },
+    {
+      "cell": "rocksdb-t32-group1-audit",
+      "engine": "rocksdb",
+      "threads": 32,
+      "group_limited": true,
+      "syscall_audit": true,
+      "status": "PASS",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/rocks-recovery-sync-audit-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/rocksdb-t32-group1-audit/db",
+        "--workload=load",
+        "--threads=32",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--num-keys=1000000",
+        "--key-size=32",
+        "--value-size=256",
+        "--mem-limit-bytes=4294967296",
+        "--seed=20261021"
+      ],
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/rocks-recovery-sync-audit-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/rocksdb-t32-group1-audit/db",
+          "--workload=load",
+          "--threads=32",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--seed=20261021"
+        ],
+        "pid": 20629,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 296337408,
+        "rss_limit_bytes": 4724464025,
+        "samples": 2403,
+        "rss_source": "macOS libproc",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.01495733300001234,
+        "elapsed_seconds": 29.299728458000004
+      },
+      "syscalls": {
+        "fsync_calls": 1000015,
+        "fsync_ns": 19560507932,
+        "wal_calls": 1000000,
+        "wal_ns": 19559279556,
+        "hot_calls": 0,
+        "hot_ns": 0,
+        "failures": 0
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 1000000,
+        "gets": 0,
+        "puts": 1000000,
+        "deletes": 0,
+        "read_misses": 0,
+        "ops_per_second": 34162.675945,
+        "open_seconds": 0.012065417,
+        "setup_seconds": 0,
+        "warmup_seconds": 0,
+        "measured_seconds": 29.271711666,
+        "close_seconds": 0.00049675,
+        "data_bytes_before_measure": 28006,
+        "data_bytes_after_measure": 299431554,
+        "data_bytes_after_close": 299431744,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 9964,
+          "p50_us": 901.119,
+          "p95_us": 1196.031,
+          "p99_us": 1572.863,
+          "p999_us": 3145.727,
+          "max_us": 7417.667
+        },
+        "get_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        },
+        "put_latency": {
+          "samples": 9964,
+          "p50_us": 901.119,
+          "p95_us": 1196.031,
+          "p99_us": 1572.863,
+          "p999_us": 3145.727,
+          "max_us": 7417.667
+        },
+        "delete_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        }
+      },
+      "operations_per_data_sync": 1.0,
+      "data_syncs_per_second": 34162.67594496467,
+      "files": [
+        {
+          "path": "OPTIONS-000007",
+          "bytes": 7262
+        },
+        {
+          "path": "IDENTITY",
+          "bytes": 36
+        },
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "CURRENT",
+          "bytes": 16
+        },
+        {
+          "path": "LOG",
+          "bytes": 28177
+        },
+        {
+          "path": "000009.sst",
+          "bytes": 253398954
+        },
+        {
+          "path": "MANIFEST-000005",
+          "bytes": 250
+        },
+        {
+          "path": "000008.log",
+          "bytes": 45997049
+        }
+      ],
+      "wall_seconds": 29.31022224999998
+    },
+    {
+      "cell": "f2-t32-default-plain",
+      "engine": "f2",
+      "threads": 32,
+      "group_limited": false,
+      "syscall_audit": false,
+      "status": "PASS",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/f2-t32-default-plain/db",
+        "--workload=load",
+        "--threads=32",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--num-keys=1000000",
+        "--key-size=32",
+        "--value-size=256",
+        "--mem-limit-bytes=4294967296",
+        "--seed=20261021"
+      ],
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/f2-recovery-sync-audit-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/f2-t32-default-plain/db",
+          "--workload=load",
+          "--threads=32",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--seed=20261021"
+        ],
+        "pid": 21024,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 1430552576,
+        "rss_limit_bytes": 4724464025,
+        "samples": 7247,
+        "rss_source": "macOS libproc",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.0182375829999728,
+        "elapsed_seconds": 78.61855341700002
+      },
+      "prefix": {
+        "commits": 1000000,
+        "data_syncs": 1000000,
+        "directory_syncs": 62,
+        "write_calls": 1000001,
+        "write_bytes": 512000512,
+        "stable_tail": 512000512,
+        "base_tail": 454988800,
+        "recovered_commits": 0
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 1000000,
+        "gets": 0,
+        "puts": 1000000,
+        "deletes": 0,
+        "read_misses": 0,
+        "ops_per_second": 12733.9336559,
+        "open_seconds": 0.03610275,
+        "setup_seconds": 0,
+        "warmup_seconds": 0,
+        "measured_seconds": 78.530329042,
+        "close_seconds": 0.001047208,
+        "data_bytes_before_measure": 8922213,
+        "data_bytes_after_measure": 403630704,
+        "data_bytes_after_close": 403630704,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 9964,
+          "p50_us": 65.535,
+          "p95_us": 153.599,
+          "p99_us": 4718.591,
+          "p999_us": 457179.135,
+          "max_us": 1139562.667
+        },
+        "get_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        },
+        "put_latency": {
+          "samples": 9964,
+          "p50_us": 65.535,
+          "p95_us": 153.599,
+          "p99_us": 4718.591,
+          "p999_us": 457179.135,
+          "max_us": 1139562.667
+        },
+        "delete_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        }
+      },
+      "files": [
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "F2-SYNC-CURRENT",
+          "bytes": 176
+        },
+        {
+          "path": "cold/log.log142",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log145",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log120",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log118",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log127",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log129",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log116",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log144",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log143",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log128",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log117",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log119",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log126",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log121",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log132",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log135",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log134",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log133",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log124",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log123",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log146",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log141",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log148",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log122",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log125",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log149",
+          "bytes": 968704
+        },
+        {
+          "path": "cold/log.log140",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log147",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log138",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log136",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log131",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log130",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log137",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log139",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cpr-checkpoints/8D141F7C-AA13-45EF-AD27-C3F8D7F06A3E/C76C292A-D84E-4176-85D7-F84679C4FF83.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cpr-checkpoints/8D141F7C-AA13-45EF-AD27-C3F8D7F06A3E/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cold-index/log.log51",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log50",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log52",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log55",
+          "bytes": 7568896
+        },
+        {
+          "path": "cold/cold-index/log.log54",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log53",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log49",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/8D141F7C-AA13-45EF-AD27-C3F8D7F06A3E/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/8D141F7C-AA13-45EF-AD27-C3F8D7F06A3E/0D56F085-EBBD-422E-8929-EBE720AB2628.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/8D141F7C-AA13-45EF-AD27-C3F8D7F06A3E/ofb.dat",
+          "bytes": 262144
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/8D141F7C-AA13-45EF-AD27-C3F8D7F06A3E/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/8D141F7C-AA13-45EF-AD27-C3F8D7F06A3E/ht.dat",
+          "bytes": 4194304
+        },
+        {
+          "path": "cold/index-checkpoints/8D141F7C-AA13-45EF-AD27-C3F8D7F06A3E/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/log.log58",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log60",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log56",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log57",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log61",
+          "bytes": 295424
+        },
+        {
+          "path": "hot/log.log59",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log55",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log54",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/cpr-checkpoints/8D141F7C-AA13-45EF-AD27-C3F8D7F06A3E/C76C292A-D84E-4176-85D7-F84679C4FF83.dat",
+          "bytes": 32
+        },
+        {
+          "path": "hot/cpr-checkpoints/8D141F7C-AA13-45EF-AD27-C3F8D7F06A3E/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "hot/index-checkpoints/8D141F7C-AA13-45EF-AD27-C3F8D7F06A3E/ofb.dat",
+          "bytes": 262144
+        },
+        {
+          "path": "hot/index-checkpoints/8D141F7C-AA13-45EF-AD27-C3F8D7F06A3E/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/index-checkpoints/8D141F7C-AA13-45EF-AD27-C3F8D7F06A3E/ht.dat",
+          "bytes": 4194304
+        }
+      ],
+      "wall_seconds": 78.69232370899996
+    },
+    {
+      "cell": "rocksdb-t32-default-plain",
+      "engine": "rocksdb",
+      "threads": 32,
+      "group_limited": false,
+      "syscall_audit": false,
+      "status": "PASS",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/rocks-recovery-sync-audit-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/rocksdb-t32-default-plain/db",
+        "--workload=load",
+        "--threads=32",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--num-keys=1000000",
+        "--key-size=32",
+        "--value-size=256",
+        "--mem-limit-bytes=4294967296",
+        "--seed=20261021"
+      ],
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/rocks-recovery-sync-audit-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/sync-performance/rocksdb-t32-default-plain/db",
+          "--workload=load",
+          "--threads=32",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--num-keys=1000000",
+          "--key-size=32",
+          "--value-size=256",
+          "--mem-limit-bytes=4294967296",
+          "--seed=20261021"
+        ],
+        "pid": 21755,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 301776896,
+        "rss_limit_bytes": 4724464025,
+        "samples": 596,
+        "rss_source": "macOS libproc",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.01570108399999981,
+        "elapsed_seconds": 7.1548604590000195
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 1000000,
+        "gets": 0,
+        "puts": 1000000,
+        "deletes": 0,
+        "read_misses": 0,
+        "ops_per_second": 141337.889266,
+        "open_seconds": 0.03390125,
+        "setup_seconds": 0,
+        "warmup_seconds": 0,
+        "measured_seconds": 7.075243625,
+        "close_seconds": 0.000731375,
+        "data_bytes_before_measure": 28022,
+        "data_bytes_after_measure": 296803135,
+        "data_bytes_after_close": 296803325,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 9964,
+          "p50_us": 176.127,
+          "p95_us": 434.175,
+          "p99_us": 1081.343,
+          "p999_us": 4980.735,
+          "max_us": 12632.375
+        },
+        "get_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        },
+        "put_latency": {
+          "samples": 9964,
+          "p50_us": 176.127,
+          "p95_us": 434.175,
+          "p99_us": 1081.343,
+          "p999_us": 4980.735,
+          "max_us": 12632.375
+        },
+        "delete_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        }
+      },
+      "files": [
+        {
+          "path": "OPTIONS-000007",
+          "bytes": 7268
+        },
+        {
+          "path": "IDENTITY",
+          "bytes": 36
+        },
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "CURRENT",
+          "bytes": 16
+        },
+        {
+          "path": "LOG",
+          "bytes": 28188
+        },
+        {
+          "path": "000009.sst",
+          "bytes": 252514614
+        },
+        {
+          "path": "MANIFEST-000005",
+          "bytes": 250
+        },
+        {
+          "path": "000008.log",
+          "bytes": 44252953
+        }
+      ],
+      "wall_seconds": 7.1738525000000095
+    }
+  ]
+}

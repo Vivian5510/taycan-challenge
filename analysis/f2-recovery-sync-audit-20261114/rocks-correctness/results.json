@@ -1,0 +1,74 @@
+[
+  {
+    "test": "basic",
+    "parameters": {
+      "num_keys": 100000,
+      "key_size": 64,
+      "value_size": 128,
+      "rounds": 10,
+      "mem_limit_bytes": 4294967296,
+      "seed": 20261021
+    },
+    "rss_limit_bytes": 4724464025,
+    "harness_allowance_bytes": 0,
+    "validation_scope": "macOS native development",
+    "log": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/rocks-correctness/basic-wdd98mp_/output.log",
+    "status": "PASS",
+    "elapsed_seconds": 0.683996208,
+    "rss_peak_bytes": 8355840
+  },
+  {
+    "test": "recovery",
+    "parameters": {
+      "num_keys": 100000,
+      "key_size": 64,
+      "value_size": 128,
+      "rounds": 10,
+      "mem_limit_bytes": 4294967296,
+      "seed": 20261021
+    },
+    "rss_limit_bytes": 4724464025,
+    "harness_allowance_bytes": 0,
+    "validation_scope": "macOS native development",
+    "log": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/rocks-correctness/recovery-2arh6r07/output.log",
+    "status": "PASS",
+    "elapsed_seconds": 8.031854417,
+    "rss_peak_bytes": 89817088
+  },
+  {
+    "test": "concurrent",
+    "parameters": {
+      "num_keys": 10000,
+      "key_size": 64,
+      "value_size": 128,
+      "rounds": 10,
+      "mem_limit_bytes": 4294967296,
+      "seed": 20261021
+    },
+    "rss_limit_bytes": 4724464025,
+    "harness_allowance_bytes": 0,
+    "validation_scope": "macOS native development",
+    "log": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/rocks-correctness/concurrent-pk72vu51/output.log",
+    "status": "PASS",
+    "elapsed_seconds": 3.8504325,
+    "rss_peak_bytes": 50692096
+  },
+  {
+    "test": "crash_recovery",
+    "parameters": {
+      "num_keys": 100000,
+      "key_size": 16,
+      "value_size": 128,
+      "rounds": 10,
+      "mem_limit_bytes": 4294967296,
+      "seed": 20261021
+    },
+    "rss_limit_bytes": 4724464025,
+    "harness_allowance_bytes": 0,
+    "validation_scope": "macOS native development",
+    "log": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/rocks-correctness/crash_recovery-5w1qocx6/output.log",
+    "status": "PASS",
+    "elapsed_seconds": 21.376048500000003,
+    "rss_peak_bytes": 45678592
+  }
+]

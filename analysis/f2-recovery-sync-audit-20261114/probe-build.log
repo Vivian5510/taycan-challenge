@@ -1,0 +1,5 @@
+[ 50%] Built target faster_cpp
+[ 80%] Built target contestant_engine
+[ 90%] Building CXX object engine/CMakeFiles/f2_sync_api_probe.dir/f2_sync_api_probe.cc.o
+[100%] Linking CXX executable f2_sync_api_probe
+[100%] Built target f2_sync_api_probe

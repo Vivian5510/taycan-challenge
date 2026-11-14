@@ -1,0 +1,20 @@
+{
+  "group_factor": 6.158645092577802,
+  "residual_factor": 2.8886321362023777,
+  "full_factor": 17.79006012988531,
+  "group_operations": 16.019223067681217,
+  "sync_calls": {
+    "f2": 1000001,
+    "rocksdb_default": 62425,
+    "rocksdb_group1": 1000000
+  },
+  "sync_time_seconds": {
+    "f2": 25.503134517,
+    "rocksdb_default": 1.78466264,
+    "rocksdb_group1": 19.559279556
+  },
+  "remaining_seconds_after_sync": {
+    "f2": 59.052072482999996,
+    "rocksdb_group1": 9.712432110000002
+  }
+}

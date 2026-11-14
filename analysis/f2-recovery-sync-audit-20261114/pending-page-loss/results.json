@@ -1,0 +1,62 @@
+{
+  "classification": "partial unsynced page disk-image model, not real power cut",
+  "budget": 4294967296,
+  "acknowledged_operations": 67,
+  "stable_tail": 34816,
+  "source_bytes": 137728,
+  "binary_sha256": "cd534d224c0be3e246226cbd12e75cdeae6ca3881e9c81dc8083c35d2fb307d6",
+  "cases": [
+    {
+      "case": "all-pending-lost",
+      "acknowledged_bytes_unchanged": true,
+      "checks": [
+        {
+          "returncode": 0
+        },
+        {
+          "returncode": 0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "case": "all-pending-survives",
+      "acknowledged_bytes_unchanged": true,
+      "checks": [
+        {
+          "returncode": 0
+        },
+        {
+          "returncode": 0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "case": "earlier-pending-page-lost",
+      "acknowledged_bytes_unchanged": true,
+      "checks": [
+        {
+          "returncode": 0
+        },
+        {
+          "returncode": 0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "case": "last-pending-page-lost",
+      "acknowledged_bytes_unchanged": true,
+      "checks": [
+        {
+          "returncode": 0
+        },
+        {
+          "returncode": 0
+        }
+      ],
+      "status": "PASS"
+    }
+  ]
+}

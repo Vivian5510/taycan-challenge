@@ -1,0 +1,92 @@
+[
+  {
+    "test": "basic",
+    "parameters": {
+      "num_keys": 100000,
+      "key_size": 64,
+      "value_size": 128,
+      "rounds": 10,
+      "mem_limit_bytes": 4294967296,
+      "seed": 20261021
+    },
+    "rss_limit_bytes": 4724464025,
+    "harness_allowance_bytes": 0,
+    "validation_scope": "macOS native development",
+    "log": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/public-enabled/basic-psj6leay/output.log",
+    "status": "PASS",
+    "elapsed_seconds": 0.138177875,
+    "rss_peak_bytes": 28704768
+  },
+  {
+    "test": "recovery",
+    "parameters": {
+      "num_keys": 100000,
+      "key_size": 64,
+      "value_size": 128,
+      "rounds": 10,
+      "mem_limit_bytes": 4294967296,
+      "seed": 20261021
+    },
+    "rss_limit_bytes": 4724464025,
+    "harness_allowance_bytes": 0,
+    "validation_scope": "macOS native development",
+    "log": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/public-enabled/recovery-ph8p6tu0/output.log",
+    "status": "PASS",
+    "elapsed_seconds": 29.405996167,
+    "rss_peak_bytes": 231784448
+  },
+  {
+    "test": "concurrent",
+    "parameters": {
+      "num_keys": 10000,
+      "key_size": 64,
+      "value_size": 128,
+      "rounds": 10,
+      "mem_limit_bytes": 4294967296,
+      "seed": 20261021
+    },
+    "rss_limit_bytes": 4724464025,
+    "harness_allowance_bytes": 0,
+    "validation_scope": "macOS native development",
+    "log": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/public-enabled/concurrent-e0nn7cpr/output.log",
+    "status": "PASS",
+    "elapsed_seconds": 15.837758249999997,
+    "rss_peak_bytes": 115245056
+  },
+  {
+    "test": "compaction",
+    "parameters": {
+      "num_keys": 100000,
+      "key_size": 16,
+      "value_size": 4096,
+      "rounds": 10,
+      "mem_limit_bytes": 4294967296,
+      "seed": 20261021
+    },
+    "rss_limit_bytes": 4724464025,
+    "harness_allowance_bytes": 0,
+    "validation_scope": "macOS native development",
+    "log": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/public-enabled/compaction-op8mnx_r/output.log",
+    "status": "PASS",
+    "elapsed_seconds": 145.371758125,
+    "rss_peak_bytes": 1452900352
+  },
+  {
+    "test": "crash_recovery",
+    "parameters": {
+      "num_keys": 100000,
+      "key_size": 16,
+      "value_size": 128,
+      "rounds": 10,
+      "mem_limit_bytes": 4294967296,
+      "seed": 20261021
+    },
+    "rss_limit_bytes": 4724464025,
+    "harness_allowance_bytes": 0,
+    "validation_scope": "macOS native development",
+    "log": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-recovery-sync-audit-20261114/public-enabled/crash_recovery-6tgesc6b/output.log",
+    "status": "PASS",
+    "elapsed_seconds": 78.37904908400003,
+    "rss_peak_bytes": 161595392
+  }
+]

@@ -1,5 +1,7 @@
 # FASTER/F2 调用线程执行基线
 
+恢复尾部部分页丢失的修复与实际fsync性能审计见[修复记录](../../docs/f2-recovery-sync-audit-20261114.md)。
+
 2026-11-14 按用户要求拆分：`main` 移除接入 F2 同步路径的 group commit；
 完整合批实现保留在 `experiment/f2-group-commit-preserved-20261114`（`c529214`）。
 [拆分范围、构建与验证](../../docs/main-without-group-commit-20261114.md)。

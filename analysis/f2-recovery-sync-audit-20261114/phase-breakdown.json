@@ -1,0 +1,62 @@
+[
+  {
+    "phase": "queue",
+    "calls": 1000000,
+    "seconds": 0.020226574,
+    "us_per_write": 0.020226574
+  },
+  {
+    "phase": "gate",
+    "calls": 1000000,
+    "seconds": 0.397515631,
+    "us_per_write": 0.397515631
+  },
+  {
+    "phase": "session",
+    "calls": 1000000,
+    "seconds": 0.859249949,
+    "us_per_write": 0.859249949
+  },
+  {
+    "phase": "apply",
+    "calls": 1000000,
+    "seconds": 0.515931428,
+    "us_per_write": 0.515931428
+  },
+  {
+    "phase": "seal",
+    "calls": 1000000,
+    "seconds": 0.131677302,
+    "us_per_write": 0.131677302
+  },
+  {
+    "phase": "flush",
+    "calls": 1000000,
+    "seconds": 44.984018477,
+    "us_per_write": 44.984018477
+  },
+  {
+    "phase": "sync",
+    "calls": 1000000,
+    "seconds": 30.231916193,
+    "us_per_write": 30.231916193
+  },
+  {
+    "phase": "publish",
+    "calls": 1000000,
+    "seconds": 0.446978843,
+    "us_per_write": 0.446978843
+  },
+  {
+    "phase": "checkpoint",
+    "calls": 11,
+    "seconds": 0.423986291,
+    "us_per_write": 0.423986291
+  },
+  {
+    "phase": "total",
+    "calls": 1000000,
+    "seconds": 78.056360857,
+    "us_per_write": 78.056360857
+  }
+]

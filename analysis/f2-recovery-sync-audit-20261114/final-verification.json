@@ -1,0 +1,16 @@
+{
+  "recovery_bug_fixed": true,
+  "original_bug_reproduced": true,
+  "pending_page_cases": 4,
+  "single_page_holes": 26,
+  "shared_f2_rocksdb_page_cases": 8,
+  "real_fsync_boundary_checks": 6,
+  "extended_gc_cases": 8,
+  "recovery_boundary_records": 71,
+  "public_f2_pass": 5,
+  "public_rocksdb_pass": 4,
+  "source_and_binaries_match": true,
+  "formal_full_suite_complete": false,
+  "physical_power_cut_tested": false,
+  "group_commit_reintroduced": false
+}
