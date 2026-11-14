@@ -1,0 +1,8 @@
+F2_RECOVERY_DISCARD_TAIL from=38400 bytes=102912 reason=incomplete data record
+F2_COMMIT_COUNTS single_operations=0 full_index=1
+F2_DATA_PREFIX commits=0 data_syncs=0 directory_syncs=0 write_calls=0 write_bytes=0 stable_tail=38400 base_tail=38400 recovered_commits=74
+F2_PREFIX_INDEX cross_key_links=0
+F2_AIO_BATCH limit=2 polls=3696 callbacks=519 multi_polls=165
+F2_AIO_BATCH limit=2 polls=1665 callbacks=5 multi_polls=0
+F2_AIO_BATCH limit=2 polls=2457 callbacks=518 multi_polls=225
+F2_SYNC_IO sync_calls=40 write_calls=520 write_bytes=11011752

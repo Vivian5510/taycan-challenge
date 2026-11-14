@@ -1,0 +1,9 @@
+seed=20261021 num_keys=100000 key_mode=random key_size=16 value_size=128 reader_threads=4 mem_limit_bytes=4294967296
+seed=20261021 key_id=491 confirmed=171592 possible=171593 unexpected recovery state: NotFound
+F2_COMMIT_COUNTS single_operations=0 full_index=1
+F2_DATA_PREFIX commits=0 data_syncs=0 directory_syncs=0 write_calls=0 write_bytes=0 stable_tail=87855616 base_tail=87855616 recovered_commits=16602
+F2_PREFIX_INDEX cross_key_links=0
+F2_AIO_BATCH limit=4 polls=6798 callbacks=530 multi_polls=90
+F2_AIO_BATCH limit=4 polls=2716 callbacks=17 multi_polls=3
+F2_AIO_BATCH limit=4 polls=5469 callbacks=534 multi_polls=110
+F2_SYNC_IO sync_calls=39 write_calls=520 write_bytes=11011758

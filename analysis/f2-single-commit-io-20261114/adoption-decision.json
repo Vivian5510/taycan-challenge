@@ -1,0 +1,10 @@
+{
+  "decision": "DO_NOT_ADOPT_COMPLETION_BATCH2",
+  "main": "26e4466",
+  "performance": "load neutral; update slower; mix no stable improvement in fixed2roundmatrix",
+  "component_failure": "completion batch hides sibling finished I/O from reentrant poller; baseline passes,limit2 times out",
+  "full_gc_kill_matrix": "NOT_RUN for rejected batch2 candidate; no claim of PASS",
+  "current_work": "COMPLETE: hot-inline full Compaction timed out at600s during finalGet/GC publication; no candidate adopted",
+  "group_commit": false,
+  "hot_inline": "do not adopt; fixed-deadline incomplete, preserves state/stacks"
+}

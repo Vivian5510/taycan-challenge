@@ -1,0 +1,17 @@
+{
+  "main": "26e4466: recovery fix merged, group commit absent",
+  "experiment_branch": "experiment/f2-single-commit-io-20261114",
+  "discarded_from_adoption": {
+    "aio-buffered": "observed GC publication wait; incomplete Compaction, preserve image",
+    "hot-inline-nocache": "original interruption not a failure; full fixed600s rerun timed out during finalGet/GC publication",
+    "hot-inline-buffered": "screened only; no full acceptance, no adoption",
+    "aio-batch4": "Compaction returned IOError and SIGKILL recovery lost acknowledged key",
+    "aio-batch2": "no performance gain, deterministic callback reentry failure"
+  },
+  "current_candidate": "none accepted",
+  "candidate_conditions": "original sync-before-ACK, F_NOCACHE, GC on, completion drain upper bound2; no group commit",
+  "adoption_gate": "complete fixed comparison plus all prescribed recovery/GC checks; positive screening alone is insufficient",
+  "automatic_merge_to_main": false,
+  "default_completion_batch": 1,
+  "failure_preservation": "keep FAIL/INTERRUPTED state and DB; archive metrics and clean successful test DBs only"
+}

@@ -26,7 +26,11 @@ Status File::Open(FileCreateDisposition disposition, const FileOptions& options,
   else if (disposition == FileCreateDisposition::OpenOrCreate) flags |= O_CREAT;
   fd_ = ::open(filename_.c_str(), flags, 0600);
   if (fd_ < 0) return Status::IOError;
-  if (options.unbuffered && ::fcntl(fd_, F_NOCACHE, 1) != 0) {
+  bool unbuffered=options.unbuffered;
+#ifdef F2_BUFFERED_HOT_LOG
+  if(filename_.find("/hot/log.log")!=std::string::npos)unbuffered=false;
+#endif
+  if (unbuffered && ::fcntl(fd_, F_NOCACHE, 1) != 0) {
     Close();
     return Status::IOError;
   }

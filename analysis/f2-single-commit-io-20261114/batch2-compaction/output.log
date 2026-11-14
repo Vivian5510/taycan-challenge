@@ -1,0 +1,26 @@
+seed=20261021 num_keys=100000 key_mode=random key_size=16 value_size=4096 reader_threads=4 mem_limit_bytes=4294967296
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Compaction
+[ RUN      ] Compaction.ConcurrentUpdatesAndSpaceReclamation
+F2_COMMIT_COUNTS single_operations=1000000 full_index=72
+F2_DATA_PREFIX commits=1000000 data_syncs=1000495 directory_syncs=502 write_calls=1003981 write_bytes=4208631296 stable_tail=4208631296 base_tail=4199266304 recovered_commits=0
+F2_PREFIX_INDEX cross_key_links=0
+F2_AIO_BATCH limit=2 polls=101014880 callbacks=18970 multi_polls=3338
+F2_AIO_BATCH limit=2 polls=99532631 callbacks=10468 multi_polls=359
+F2_AIO_BATCH limit=2 polls=102422435 callbacks=1022713 multi_polls=3587
+F2_SYNC_IO sync_calls=1004956 write_calls=1051071 write_bytes=15049129358
+F2_COMMIT_COUNTS single_operations=0 full_index=1
+F2_DATA_PREFIX commits=0 data_syncs=0 directory_syncs=0 write_calls=1003981 write_bytes=4208631296 stable_tail=4208631296 base_tail=4208631296 recovered_commits=2881
+F2_PREFIX_INDEX cross_key_links=0
+F2_AIO_BATCH limit=2 polls=204619 callbacks=530 multi_polls=149
+F2_AIO_BATCH limit=2 polls=202052 callbacks=301 multi_polls=148
+F2_AIO_BATCH limit=2 polls=204737 callbacks=603 multi_polls=199
+F2_SYNC_IO sync_calls=1004995 write_calls=1051591 write_bytes=15060141120
+directory_bytes=423979121 live_bytes=274130592
+[       OK ] Compaction.ConcurrentUpdatesAndSpaceReclamation (140841 ms)
+[----------] 1 test from Compaction (140841 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (140841 ms total)
+[  PASSED  ] 1 test.

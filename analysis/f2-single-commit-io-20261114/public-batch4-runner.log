@@ -1,0 +1,6 @@
+Results: /Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/public-batch4
+PASS basic peak=21741568 bytes 0.57s
+PASS recovery peak=230719488 bytes 24.89s
+PASS concurrent peak=109658112 bytes 15.91s
+FAIL compaction peak=745684992 bytes 12.75s: unexpected_exit: 1
+FAIL crash_recovery peak=196329472 bytes 42.64s: unexpected_exit: 1

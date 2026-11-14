@@ -1,0 +1,21 @@
+F2_COMMIT_COUNTS single_operations=512 full_index=1
+F2_DATA_PREFIX commits=512 data_syncs=512 directory_syncs=1 write_calls=513 write_bytes=262656 stable_tail=262656 base_tail=512 recovered_commits=0
+F2_PREFIX_INDEX cross_key_links=0
+F2_AIO_BATCH limit=2 polls=17476 callbacks=258 multi_polls=128
+F2_AIO_BATCH limit=2 polls=17254 callbacks=1 multi_polls=0
+F2_AIO_BATCH limit=2 polls=17532 callbacks=771 multi_polls=128
+F2_SYNC_IO sync_calls=545 write_calls=1031 write_bytes=1312930
+F2_COMMIT_COUNTS single_operations=0 full_index=1
+F2_DATA_PREFIX commits=0 data_syncs=0 directory_syncs=0 write_calls=513 write_bytes=262656 stable_tail=262656 base_tail=262656 recovered_commits=512
+F2_PREFIX_INDEX cross_key_links=0
+F2_AIO_BATCH limit=2 polls=6407 callbacks=519 multi_polls=156
+F2_AIO_BATCH limit=2 polls=4573 callbacks=5 multi_polls=0
+F2_AIO_BATCH limit=2 polls=4523 callbacks=518 multi_polls=256
+F2_SYNC_IO sync_calls=584 write_calls=1551 write_bytes=4460362
+F2_COMMIT_COUNTS single_operations=0 full_index=1
+F2_DATA_PREFIX commits=0 data_syncs=0 directory_syncs=0 write_calls=513 write_bytes=262656 stable_tail=262656 base_tail=262656 recovered_commits=0
+F2_PREFIX_INDEX cross_key_links=0
+F2_AIO_BATCH limit=2 polls=13140 callbacks=519 multi_polls=170
+F2_AIO_BATCH limit=2 polls=11891 callbacks=5 multi_polls=0
+F2_AIO_BATCH limit=2 polls=13105 callbacks=518 multi_polls=174
+F2_SYNC_IO sync_calls=623 write_calls=2071 write_bytes=7607794

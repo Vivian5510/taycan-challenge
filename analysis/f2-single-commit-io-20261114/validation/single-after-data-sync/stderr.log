@@ -1,0 +1,2 @@
+seed=20261021 num_keys=64 key_mode=random key_size=32 value_size=256 reader_threads=4 mem_limit_bytes=4294967296
+F2_SYNC_FAULT after-data-sync

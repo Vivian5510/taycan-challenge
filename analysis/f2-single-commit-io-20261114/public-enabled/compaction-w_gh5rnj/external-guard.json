@@ -1,0 +1,6 @@
+{
+  "reason": "candidate aio-buffered compaction stalled after GC copy; writers blocked at maintenance gate; stopped for safety, not a correctness PASS",
+  "pid": 48241,
+  "command": "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-buffered-20261114/compaction_test --num_keys=100000 --key_size=16 --value_size=4096 --rounds=10 --mem_limit_bytes=4294967296 --seed=20261021 --data_dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/public-enabled/compaction-w_gh5rnj",
+  "stopped_at": 1794655509.475509
+}

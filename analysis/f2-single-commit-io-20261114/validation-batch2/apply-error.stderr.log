@@ -1,0 +1,7 @@
+F2_COMMIT_COUNTS single_operations=0 full_index=1
+F2_DATA_PREFIX commits=0 data_syncs=0 directory_syncs=0 write_calls=1 write_bytes=512 stable_tail=512 base_tail=512 recovered_commits=0
+F2_PREFIX_INDEX cross_key_links=0
+F2_AIO_BATCH limit=2 polls=7379 callbacks=258 multi_polls=43
+F2_AIO_BATCH limit=2 polls=5763 callbacks=1 multi_polls=0
+F2_AIO_BATCH limit=2 polls=7766 callbacks=259 multi_polls=31
+F2_SYNC_IO sync_calls=32 write_calls=519 write_bytes=8915108

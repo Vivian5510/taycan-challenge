@@ -3,7 +3,7 @@ void QueueIoHandler::SubmitQueuedLocked() {
   for(auto& pointer:aio_jobs_) {
     auto& job=*pointer;
     if(aio_inflight_>=8)break;
-    if(job.submitted || job.error)continue;
+    if(job.submitted || job.inline_completed || job.error)continue;
     job.control={};job.control.aio_fildes=job.fd;
     job.control.aio_offset=off_t(job.offset+job.done);
     job.control.aio_buf=job.buffer+job.done;
@@ -26,6 +26,21 @@ core::Status QueueIoHandler::Schedule(bool read,int fd,uint64_t offset,uint32_t 
 #ifdef F2_BATCHED_FILE_SYNC
   if(!read && std::getenv("F2_SYNC_FAIL_WRITE"))job->error=EIO;
 #endif
+#ifdef F2_NATIVE_INLINE_HOT_WRITES
+  // The caller immediately waits for these small commit writes. Complete the
+  // pwrite here instead of submitting to another OS worker, but keep the F2
+  // callback deferred to TryComplete: Schedule must not re-enter the allocator.
+  // Large flushes, reads, cold data and disk-index I/O keep the AIO path.
+  if(!read && !job->error && length<=4096 && path.find("/hot/log.log")!=std::string::npos) {
+    while(job->done<length) {
+      const ssize_t bytes=::pwrite(job->fd,buffer+job->done,length-job->done,off_t(offset+job->done));
+      if(bytes<0 && errno==EINTR)continue;
+      if(bytes<=0){job->error=bytes<0?errno:EIO;break;}
+      job->done+=uint32_t(bytes);
+    }
+    job->inline_completed=true;
+  }
+#endif
   std::lock_guard<std::mutex> lock(mutex_);
   aio_jobs_.push_back(std::move(job));SubmitQueuedLocked();return Status::Ok;
 }
@@ -39,7 +54,7 @@ bool QueueIoHandler::TryComplete() {
     SubmitQueuedLocked();
     for(auto it=aio_jobs_.begin();it!=aio_jobs_.end();++it) {
       auto& job=**it;
-      if(!job.error && !job.submitted)continue;
+      if(!job.error && !job.submitted && !job.inline_completed)continue;
       if(job.submitted) {
         const int error=::aio_error(&job.control);if(error==EINPROGRESS)continue;
         const ssize_t bytes=::aio_return(&job.control);

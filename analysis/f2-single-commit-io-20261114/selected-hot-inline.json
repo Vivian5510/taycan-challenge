@@ -1,0 +1,11 @@
+{
+  "variant": "hot-inline-nocache",
+  "reason": "hot-inline-buffered candidate has compaction maintenance-gate stall; choose safe inline-only candidate despite lower screen load",
+  "screen_ops_per_second": 13352.1814284,
+  "baseline_ops_per_second": 11997.0499735,
+  "rejected": {
+    "variant": "hot-inline-buffered",
+    "ops_per_second": 14748.620149,
+    "reason": "compaction stalled after copy and was stopped"
+  }
+}

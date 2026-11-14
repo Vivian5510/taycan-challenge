@@ -1,0 +1,8 @@
+START aio-nocache-load-r1
+PASS aio-nocache-load-r1 11997.0499735 
+START aio-buffered-load-r1
+PASS aio-buffered-load-r1 16854.2673735 
+START hot-inline-nocache-load-r1
+PASS hot-inline-nocache-load-r1 13352.1814284 
+START hot-inline-buffered-load-r1
+PASS hot-inline-buffered-load-r1 14748.620149 

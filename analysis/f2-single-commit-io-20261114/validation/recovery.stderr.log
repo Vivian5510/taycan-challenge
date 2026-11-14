@@ -1,0 +1,13 @@
+seed=20261021 num_keys=64 key_mode=random key_size=32 value_size=256 reader_threads=4 mem_limit_bytes=4294967296
+F2_COMMIT_COUNTS single_operations=128 full_index=1
+F2_DATA_PREFIX commits=128 data_syncs=128 directory_syncs=1 write_calls=129 write_bytes=66048 stable_tail=66048 base_tail=512 recovered_commits=0
+F2_PREFIX_INDEX cross_key_links=0
+F2_SYNC_IO sync_calls=161 write_calls=647 write_bytes=8980644
+F2_COMMIT_COUNTS single_operations=64 full_index=1
+F2_DATA_PREFIX commits=64 data_syncs=64 directory_syncs=0 write_calls=193 write_bytes=98816 stable_tail=98816 base_tail=66048 recovered_commits=128
+F2_PREFIX_INDEX cross_key_links=0
+F2_SYNC_IO sync_calls=264 write_calls=1231 write_bytes=20025165
+F2_COMMIT_COUNTS single_operations=0 full_index=1
+F2_DATA_PREFIX commits=0 data_syncs=0 directory_syncs=0 write_calls=193 write_bytes=98816 stable_tail=98816 base_tail=98816 recovered_commits=64
+F2_PREFIX_INDEX cross_key_links=0
+F2_SYNC_IO sync_calls=303 write_calls=1751 write_bytes=31036917

@@ -1,0 +1,24 @@
+START aio-nocache-load-r1
+PASS aio-nocache-load-r1 11005.5465001 
+START aio-batch2-load-r1
+PASS aio-batch2-load-r1 11348.8909946 
+START aio-nocache-update-r1
+PASS aio-nocache-update-r1 10668.6253675 
+START aio-batch2-update-r1
+PASS aio-batch2-update-r1 9619.60266341 
+START aio-nocache-contest_mix-r1
+PASS aio-nocache-contest_mix-r1 24439.3000226 
+START aio-batch2-contest_mix-r1
+PASS aio-batch2-contest_mix-r1 20387.2173471 
+START aio-batch2-load-r2
+PASS aio-batch2-load-r2 9564.73279484 
+START aio-nocache-load-r2
+PASS aio-nocache-load-r2 9953.36917876 
+START aio-batch2-update-r2
+PASS aio-batch2-update-r2 7822.34411237 
+START aio-nocache-update-r2
+PASS aio-nocache-update-r2 10041.7064053 
+START aio-batch2-contest_mix-r2
+PASS aio-batch2-contest_mix-r2 25534.917652 
+START aio-nocache-contest_mix-r2
+PASS aio-nocache-contest_mix-r2 22522.4608113 

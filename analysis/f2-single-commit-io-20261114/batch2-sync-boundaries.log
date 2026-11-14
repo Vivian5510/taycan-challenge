@@ -1,0 +1,3 @@
+f2 hold PASS
+f2 fail PASS
+f2 kill-before-sync PASS

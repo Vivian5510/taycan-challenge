@@ -1,0 +1,12 @@
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from Basic
+[ RUN      ] Basic.BinaryKeysAndValues
+[       OK ] Basic.BinaryKeysAndValues (42 ms)
+[ RUN      ] Basic.SimilarKeysRemainIndependent
+[       OK ] Basic.SimilarKeysRemainIndependent (40 ms)
+[----------] 2 tests from Basic (83 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (83 ms total)
+[  PASSED  ] 2 tests.

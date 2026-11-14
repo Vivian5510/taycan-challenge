@@ -49,7 +49,7 @@ class QueueIoHandler {
 #ifdef F2_NATIVE_POSIX_AIO
   struct AioJob {
     struct aiocb control{};
-    bool read=false,submitted=false;
+    bool read=false,submitted=false,inline_completed=false;
     int fd=-1,error=0;
     uint64_t offset=0;
     uint32_t length=0,done=0;

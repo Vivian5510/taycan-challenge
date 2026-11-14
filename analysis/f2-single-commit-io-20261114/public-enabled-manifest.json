@@ -1,0 +1,37 @@
+{
+  "started_at": "2026-11-14T11:17:10.866368+00:00",
+  "revision": "26e4466b224caee016b762722cbb8844724eb242",
+  "argv": [
+    "--native-development",
+    "--strict-rss-limit",
+    "--build-dir",
+    "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-buffered-20261114",
+    "--results-dir",
+    "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/public-enabled",
+    "--tests",
+    "basic,recovery,concurrent,compaction,crash_recovery",
+    "--timeout",
+    "600",
+    "--mem-limit-bytes",
+    "4294967296"
+  ],
+  "scope": "Original public assertions and scenario key counts, user-chosen 4GiB, macOS libproc; explicit local deadline and 2GiB per-database guard, not official timeout",
+  "config": {
+    "durable_compaction": true,
+    "cold_migration": true,
+    "data_segment_bits": 23,
+    "sync_strategy": "data-log",
+    "io": "posix-aio",
+    "sync": "fsync",
+    "prefix_block_bytes": 512,
+    "group_commit": false
+  },
+  "binary_sha256": {
+    "basic_test": "48236a5620e8202a1aee828f784aa9fad574a016fcf52cd7aa16d84fd4cae3a9",
+    "recovery_test": "fbb60ff7cd0606476cd78503d041021425951b4d0faeb00611f614ad3e16e80b",
+    "concurrent_test": "7bc8ed6c81d952e3660f93a775480ba7d51f44aa91935f855bd47eef752c1640",
+    "compaction_test": "8279d1afc32177abe2b9274f2d2817ac1f6916e8a430ca2cd828b400221e124b",
+    "crash_worker": "67c5f23dc9d6da6abf5969b5870e4cba6af19c3f9ff78aacb0dc4f5b926a1e33"
+  },
+  "finished_at": "2026-11-14T11:26:12.519576+00:00"
+}

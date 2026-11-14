@@ -1,0 +1,1283 @@
+{
+  "status": "PASS",
+  "started_at": "2026-11-14T12:15:50.024013+00:00",
+  "classification": "macOS ARM64 development probes, not contest/power-cut acceptance",
+  "binary_sha256": {
+    "engine/f2_sync_api_probe": "50e16b55cd91f023c2d4ae376af865d2c871f48b7172334af2e850cbcc8a08bc",
+    "basic_test": "d97df41195f707baa12b2a1e360685520286c4af2b3ecea5ec427eb5ba82ba04",
+    "recovery_test": "cde7f01bd990bae382292b2b06e12ac61974ea359e8734218ad1a2d52b1faa3a",
+    "concurrent_test": "6aa0b3f624022fc754240c8e1df306213c2815909833efcace020395a794c652",
+    "crash_worker": "e771c6b23e3199787b897625924a550bc9c2354349cf6f489865367901b5355d"
+  },
+  "tests": [
+    {
+      "test": "basic",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/basic_test",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--gtest_color=no",
+        "--data_dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/basic-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.841141667
+    },
+    {
+      "test": "recovery",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/recovery_test",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--gtest_color=no",
+        "--data_dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/recovery-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 1.2875435420000003
+    },
+    {
+      "test": "concurrent",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/concurrent_test",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--gtest_color=no",
+        "--data_dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 1.2427597499999998
+    },
+    {
+      "test": "sync-error",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "sync-error",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/sync-error-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.6637974579999999
+    },
+    {
+      "test": "io-error",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "io-error",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/io-error-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.04612824999999976
+    },
+    {
+      "test": "apply-error",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "apply-error",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/apply-error-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.05875133300000002
+    },
+    {
+      "test": "same-key-write",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "write-kill",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/same-key-db"
+      ],
+      "expected_returncode": -9,
+      "status": "PASS",
+      "returncode": -9,
+      "seconds": 0.05112237499999939
+    },
+    {
+      "test": "same-key-recover-1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/same-key-db",
+        "42424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.4945735830000002
+    },
+    {
+      "test": "same-key-recover-2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/same-key-db",
+        "42424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.3488711670000004
+    },
+    {
+      "test": "span-write",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "span-write-kill",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/span-db"
+      ],
+      "expected_returncode": -9,
+      "status": "PASS",
+      "returncode": -9,
+      "seconds": 0.2697952910000003
+    },
+    {
+      "test": "partial-tail",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "span-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/partial-tail-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.7207396660000001
+    },
+    {
+      "test": "data-corrupt",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "span-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/data-corrupt-db"
+      ],
+      "expected_returncode": 1,
+      "status": "PASS",
+      "returncode": 1,
+      "seconds": 0.030317874999999717
+    },
+    {
+      "test": "footer-corrupt",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "span-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/footer-corrupt-db"
+      ],
+      "expected_returncode": 1,
+      "status": "PASS",
+      "returncode": 1,
+      "seconds": 0.02055037500000001
+    },
+    {
+      "test": "missing-data",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "span-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/missing-data-db"
+      ],
+      "expected_returncode": 1,
+      "status": "PASS",
+      "returncode": 1,
+      "seconds": 0.01215641699999992
+    },
+    {
+      "test": "root-corrupt",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "span-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/root-corrupt-db"
+      ],
+      "expected_returncode": 1,
+      "status": "PASS",
+      "returncode": 1,
+      "seconds": 0.011392000000000735
+    },
+    {
+      "test": "span-recover-1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "span-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/span-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.41780020800000006
+    },
+    {
+      "test": "span-recover-2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "span-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/span-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.48104545799999965
+    },
+    {
+      "test": "embedded-marker-write",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "embedded-marker-write-kill",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/embedded-marker-db"
+      ],
+      "expected_returncode": -9,
+      "status": "PASS",
+      "returncode": -9,
+      "seconds": 0.061051040999999806
+    },
+    {
+      "test": "embedded-marker-recover-1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "embedded-marker-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/embedded-marker-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.32541654100000006
+    },
+    {
+      "test": "embedded-marker-recover-2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "embedded-marker-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/embedded-marker-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.35066704200000043
+    },
+    {
+      "test": "real-hash-collision",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "hash-collision",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/collision-db"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 1.069696917
+    },
+    {
+      "test": "original-sdk-crash",
+      "trials": 5,
+      "status": "PASS"
+    },
+    {
+      "test": "single-before-data-flush-prepare",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/single-before-data-flush/db",
+        "--mode=prepare",
+        "--operations=64"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.06141824999999912
+    },
+    {
+      "test": "single-before-data-flush",
+      "status": "PASS",
+      "acknowledged": 64,
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "before-data-flush",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "65536"
+      },
+      "seconds": 1.2621485829999983,
+      "recovered": 64
+    },
+    {
+      "test": "single-before-data-flush-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/single-before-data-flush/db",
+        "--mode=verify",
+        "--operations=64",
+        "--possible_operation=65"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.5493207909999995
+    },
+    {
+      "test": "single-before-data-flush-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/single-before-data-flush/db",
+        "--mode=verify",
+        "--operations=64"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.3598620839999995
+    },
+    {
+      "test": "single-before-data-sync-prepare",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/single-before-data-sync/db",
+        "--mode=prepare",
+        "--operations=64"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.05242924999999943
+    },
+    {
+      "test": "single-before-data-sync",
+      "status": "PASS",
+      "acknowledged": 64,
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "before-data-sync",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "65536"
+      },
+      "seconds": 1.311559667000001,
+      "recovered": 65
+    },
+    {
+      "test": "single-before-data-sync-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/single-before-data-sync/db",
+        "--mode=verify",
+        "--operations=64",
+        "--possible_operation=65"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.5082938749999997
+    },
+    {
+      "test": "single-before-data-sync-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/single-before-data-sync/db",
+        "--mode=verify",
+        "--operations=65"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.44711841699999866
+    },
+    {
+      "test": "single-after-data-sync-prepare",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/single-after-data-sync/db",
+        "--mode=prepare",
+        "--operations=64"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.1234696669999984
+    },
+    {
+      "test": "single-after-data-sync",
+      "status": "PASS",
+      "acknowledged": 64,
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "after-data-sync",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "65536"
+      },
+      "seconds": 1.595319,
+      "recovered": 65
+    },
+    {
+      "test": "single-after-data-sync-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/single-after-data-sync/db",
+        "--mode=verify",
+        "--operations=64",
+        "--possible_operation=65"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.39237687500000007
+    },
+    {
+      "test": "single-after-data-sync-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/single-after-data-sync/db",
+        "--mode=verify",
+        "--operations=65"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.7572934169999996
+    },
+    {
+      "test": "single-after-wal-prepare",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/single-after-wal/db",
+        "--mode=prepare",
+        "--operations=64"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.06560445799999925
+    },
+    {
+      "test": "single-after-wal",
+      "status": "PASS",
+      "acknowledged": 64,
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "after-wal",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "65536"
+      },
+      "seconds": 1.4096200000000003,
+      "recovered": 65
+    },
+    {
+      "test": "single-after-wal-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/single-after-wal/db",
+        "--mode=verify",
+        "--operations=64",
+        "--possible_operation=65"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.3399961660000024
+    },
+    {
+      "test": "single-after-wal-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/single-after-wal/db",
+        "--mode=verify",
+        "--operations=65"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.7485247910000012
+    },
+    {
+      "test": "single-before-ack-prepare",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/single-before-ack/db",
+        "--mode=prepare",
+        "--operations=64"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.5421707910000002
+    },
+    {
+      "test": "single-before-ack",
+      "status": "PASS",
+      "acknowledged": 64,
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "before-ack",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "65536"
+      },
+      "seconds": 1.564210667000001,
+      "recovered": 65
+    },
+    {
+      "test": "single-before-ack-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/single-before-ack/db",
+        "--mode=verify",
+        "--operations=64",
+        "--possible_operation=65"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.6251212919999993
+    },
+    {
+      "test": "single-before-ack-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/single-before-ack/db",
+        "--mode=verify",
+        "--operations=65"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.5714396669999999
+    },
+    {
+      "test": "single-before-root-prepare",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/single-before-root/db",
+        "--mode=prepare",
+        "--operations=64"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.08048841700000153
+    },
+    {
+      "test": "single-before-root",
+      "status": "PASS",
+      "acknowledged": 191,
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "before-root",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "65536"
+      },
+      "seconds": 1.5189995419999995,
+      "recovered": 192
+    },
+    {
+      "test": "single-before-root-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/single-before-root/db",
+        "--mode=verify",
+        "--operations=191",
+        "--possible_operation=192"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.34717958299999907
+    },
+    {
+      "test": "single-before-root-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/single-before-root/db",
+        "--mode=verify",
+        "--operations=192"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.7489541669999973
+    },
+    {
+      "test": "single-after-root-prepare",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/single-after-root/db",
+        "--mode=prepare",
+        "--operations=64"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.05804833399999865
+    },
+    {
+      "test": "single-after-root",
+      "status": "PASS",
+      "acknowledged": 191,
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "after-root",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "65536"
+      },
+      "seconds": 1.3329938749999997,
+      "recovered": 192
+    },
+    {
+      "test": "single-after-root-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/single-after-root/db",
+        "--mode=verify",
+        "--operations=191",
+        "--possible_operation=192"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.510980625000002
+    },
+    {
+      "test": "single-after-root-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/crash_worker",
+        "--num_keys=64",
+        "--key_size=32",
+        "--value_size=256",
+        "--mem_limit_bytes=4294967296",
+        "--seed=20261021",
+        "--db_path=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/single-after-root/db",
+        "--mode=verify",
+        "--operations=192"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.35181966599999726
+    },
+    {
+      "test": "concurrent-before-data-flush",
+      "status": "PASS",
+      "acknowledged": [
+        4,
+        2,
+        6,
+        30,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        12,
+        0,
+        0,
+        10,
+        0
+      ],
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "before-data-flush",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "4096"
+      },
+      "seconds": 1.363153833000002,
+      "recovered": [
+        5,
+        2,
+        6,
+        30,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        12,
+        0,
+        0,
+        10,
+        0
+      ]
+    },
+    {
+      "test": "concurrent-before-data-flush-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-data-flush/db",
+        "4,2,6,30,0,0,0,0,0,0,0,12,0,0,10,0",
+        "allow-next"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.34580129200000087
+    },
+    {
+      "test": "concurrent-before-data-flush-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-data-flush/db",
+        "5,2,6,30,0,0,0,0,0,0,0,12,0,0,10,0"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.7045199170000025
+    },
+    {
+      "test": "concurrent-before-data-sync",
+      "status": "PASS",
+      "acknowledged": [
+        8,
+        2,
+        3,
+        4,
+        7,
+        2,
+        4,
+        5,
+        7,
+        3,
+        5,
+        1,
+        4,
+        2,
+        6,
+        1
+      ],
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "before-data-sync",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "4096"
+      },
+      "seconds": 1.2868337089999997,
+      "recovered": [
+        8,
+        2,
+        3,
+        4,
+        7,
+        2,
+        4,
+        5,
+        7,
+        3,
+        5,
+        1,
+        5,
+        2,
+        6,
+        1
+      ]
+    },
+    {
+      "test": "concurrent-before-data-sync-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-data-sync/db",
+        "8,2,3,4,7,2,4,5,7,3,5,1,4,2,6,1",
+        "allow-next"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.3518860420000003
+    },
+    {
+      "test": "concurrent-before-data-sync-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-data-sync/db",
+        "8,2,3,4,7,2,4,5,7,3,5,1,5,2,6,1"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.45274045800000096
+    },
+    {
+      "test": "concurrent-after-data-sync",
+      "status": "PASS",
+      "acknowledged": [
+        4,
+        4,
+        1,
+        0,
+        13,
+        7,
+        3,
+        2,
+        6,
+        3,
+        1,
+        4,
+        7,
+        0,
+        4,
+        6
+      ],
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "after-data-sync",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "4096"
+      },
+      "seconds": 1.7742883750000011,
+      "recovered": [
+        4,
+        4,
+        1,
+        0,
+        14,
+        7,
+        3,
+        2,
+        6,
+        3,
+        1,
+        4,
+        7,
+        0,
+        4,
+        6
+      ]
+    },
+    {
+      "test": "concurrent-after-data-sync-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-after-data-sync/db",
+        "4,4,1,0,13,7,3,2,6,3,1,4,7,0,4,6",
+        "allow-next"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.7400267499999984
+    },
+    {
+      "test": "concurrent-after-data-sync-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-after-data-sync/db",
+        "4,4,1,0,14,7,3,2,6,3,1,4,7,0,4,6"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.49790058299999984
+    },
+    {
+      "test": "concurrent-after-wal",
+      "status": "PASS",
+      "acknowledged": [
+        2,
+        3,
+        5,
+        7,
+        7,
+        7,
+        3,
+        5,
+        0,
+        2,
+        3,
+        1,
+        6,
+        2,
+        6,
+        6
+      ],
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "after-wal",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "4096"
+      },
+      "seconds": 1.656745707999999,
+      "recovered": [
+        2,
+        4,
+        5,
+        7,
+        7,
+        7,
+        3,
+        5,
+        0,
+        2,
+        3,
+        1,
+        6,
+        2,
+        6,
+        6
+      ]
+    },
+    {
+      "test": "concurrent-after-wal-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-after-wal/db",
+        "2,3,5,7,7,7,3,5,0,2,3,1,6,2,6,6",
+        "allow-next"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.34874945800000035
+    },
+    {
+      "test": "concurrent-after-wal-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-after-wal/db",
+        "2,4,5,7,7,7,3,5,0,2,3,1,6,2,6,6"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.6694596250000018
+    },
+    {
+      "test": "concurrent-before-ack",
+      "status": "PASS",
+      "acknowledged": [
+        8,
+        2,
+        6,
+        0,
+        4,
+        2,
+        8,
+        8,
+        0,
+        0,
+        5,
+        13,
+        1,
+        1,
+        1,
+        6
+      ],
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "before-ack",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "4096"
+      },
+      "seconds": 1.0398749169999988,
+      "recovered": [
+        8,
+        2,
+        6,
+        0,
+        4,
+        2,
+        8,
+        8,
+        0,
+        0,
+        5,
+        14,
+        1,
+        1,
+        1,
+        6
+      ]
+    },
+    {
+      "test": "concurrent-before-ack-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-ack/db",
+        "8,2,6,0,4,2,8,8,0,0,5,13,1,1,1,6",
+        "allow-next"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.3388075000000015
+    },
+    {
+      "test": "concurrent-before-ack-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-ack/db",
+        "8,2,6,0,4,2,8,8,0,0,5,14,1,1,1,6"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.35415824999999757
+    },
+    {
+      "test": "concurrent-before-root",
+      "status": "PASS",
+      "acknowledged": [
+        2,
+        0,
+        2,
+        3,
+        0,
+        0,
+        12,
+        0,
+        0,
+        1,
+        0,
+        0,
+        8,
+        0,
+        22,
+        21
+      ],
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "before-root",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "4096"
+      },
+      "seconds": 1.0211376250000015,
+      "recovered": [
+        2,
+        0,
+        2,
+        3,
+        0,
+        0,
+        12,
+        1,
+        0,
+        1,
+        0,
+        0,
+        8,
+        0,
+        22,
+        21
+      ]
+    },
+    {
+      "test": "concurrent-before-root-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-root/db",
+        "2,0,2,3,0,0,12,0,0,1,0,0,8,0,22,21",
+        "allow-next"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.34583529199999674
+    },
+    {
+      "test": "concurrent-before-root-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-root/db",
+        "2,0,2,3,0,0,12,1,0,1,0,0,8,0,22,21"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.34312316700000167
+    },
+    {
+      "test": "concurrent-after-root",
+      "status": "PASS",
+      "acknowledged": [
+        5,
+        15,
+        3,
+        1,
+        10,
+        0,
+        5,
+        9,
+        1,
+        1,
+        1,
+        4,
+        5,
+        2,
+        3,
+        6
+      ],
+      "serve_returncode": -9,
+      "environment": {
+        "F2_SYNC_FAULT": "after-root",
+        "F2_SYNC_FAULT_MIN_SERIAL": "65",
+        "F2_SYNC_RECLAIM_BYTES": "4096"
+      },
+      "seconds": 1.5555937919999963,
+      "recovered": [
+        6,
+        15,
+        3,
+        1,
+        10,
+        0,
+        5,
+        9,
+        1,
+        1,
+        1,
+        4,
+        5,
+        2,
+        3,
+        6
+      ]
+    },
+    {
+      "test": "concurrent-after-root-verify1",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-after-root/db",
+        "5,15,3,1,10,0,5,9,1,1,1,4,5,2,3,6",
+        "allow-next"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.6068412079999987
+    },
+    {
+      "test": "concurrent-after-root-verify2",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe",
+        "group-verify",
+        "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-after-root/db",
+        "6,15,3,1,10,0,5,9,1,1,1,4,5,2,3,6"
+      ],
+      "expected_returncode": 0,
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.5532528749999983
+    }
+  ],
+  "finished_at": "2026-11-14T12:16:26.900179+00:00"
+}

@@ -1,0 +1,10 @@
+{
+  "cells": 4,
+  "all_completed": true,
+  "keys_per_cell": 1000000,
+  "commits_per_cell": 1000000,
+  "group_commit": false,
+  "real_fsync_boundaries_pass": true,
+  "page_loss_pass": true,
+  "recovery_records_pass": 71
+}

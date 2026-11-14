@@ -1,0 +1,12 @@
+{"elapsed": 0.5040710000000104, "directory_bytes": 12316260, "rss_peak_bytes": 28114944, "free_bytes": 80654098432}
+{"elapsed": 5.5348394580000075, "directory_bytes": 54246500, "rss_peak_bytes": 70336512, "free_bytes": 80609579008}
+{"elapsed": 10.559842333000006, "directory_bytes": 95727215, "rss_peak_bytes": 228737024, "free_bytes": 80567980032}
+{"elapsed": 15.591019833000004, "directory_bytes": 140687471, "rss_peak_bytes": 273989632, "free_bytes": 80521408512}
+{"elapsed": 20.626450415999997, "directory_bytes": 177080943, "rss_peak_bytes": 513097728, "free_bytes": 80483004416}
+{"elapsed": 25.654865208000004, "directory_bytes": 223613040, "rss_peak_bytes": 556974080, "free_bytes": 80436391936}
+{"elapsed": 30.68558237500001, "directory_bytes": 233828463, "rss_peak_bytes": 861388800, "free_bytes": 80426246144}
+{"elapsed": 35.716833166, "directory_bytes": 278839408, "rss_peak_bytes": 892125184, "free_bytes": 80379731968}
+{"elapsed": 40.750462083, "directory_bytes": 288553072, "rss_peak_bytes": 1154531328, "free_bytes": 80371617792}
+{"elapsed": 45.788259083000014, "directory_bytes": 334874736, "rss_peak_bytes": 1200881664, "free_bytes": 80325029888}
+{"elapsed": 50.824692458000015, "directory_bytes": 357901424, "rss_peak_bytes": 1317797888, "free_bytes": 80300703744}
+{"elapsed": 55.864649291000006, "directory_bytes": 372547696, "rss_peak_bytes": 1350336512, "free_bytes": 80287395840}

@@ -1,5 +1,9 @@
 # FASTER/F2 调用线程执行基线
 
+`26e4466` 的尾部恢复修复已合入 main。本轮单请求 I/O 调优结果见
+[实验记录](../../docs/f2-single-commit-io-20261114.md)：候选未采用，main 默认保持不变。
+hot-inline、热日志 buffered 等构建项仅为该实验分支的显式控制，不代表已通过验收。
+
 恢复尾部部分页丢失的修复与实际fsync性能审计见[修复记录](../../docs/f2-recovery-sync-audit-20261114.md)。
 
 2026-11-14 按用户要求拆分：`main` 移除接入 F2 同步路径的 group commit；

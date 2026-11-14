@@ -1,0 +1,9 @@
+[ 11%] Built target gtest
+[ 61%] Built target gflags_nothreads_static
+[ 61%] Built target faster_cpp
+[ 77%] Built target contestant_engine
+[ 94%] Building CXX object CMakeFiles/compaction_test.dir/tests/test_options.cc.o
+[ 94%] Building CXX object CMakeFiles/compaction_test.dir/tests/test_main.cc.o
+[ 94%] Building CXX object CMakeFiles/compaction_test.dir/tests/compaction_test.cc.o
+[100%] Linking CXX executable compaction_test
+[100%] Built target compaction_test

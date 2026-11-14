@@ -1,0 +1,6 @@
+PASS trial=0 seed=20261021 confirmed=171592 pending=171593 recovered=171592 kill_delay=0.000000
+PASS trial=1 seed=20261021 confirmed=150446 pending=150447 recovered=150447 kill_delay=0.000000
+PASS trial=2 seed=20261021 confirmed=176067 pending=0 recovered=176067 kill_delay=0.008518
+PASS trial=3 seed=20261021 confirmed=101420 pending=0 recovered=101420 kill_delay=0.009800
+PASS trial=4 seed=20261021 confirmed=153005 pending=0 recovered=153005 kill_delay=0.003141
+Completed crash logs: /Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/public-enabled/crash_recovery-zgu5p6pu/taycan-crash-q3vx38_5

@@ -1,0 +1,6 @@
+PASS trial=0 seed=20261021 confirmed=114 pending=115 recovered=114 kill_delay=0.000000
+PASS trial=1 seed=20261021 confirmed=66 pending=67 recovered=67 kill_delay=0.000000
+PASS trial=2 seed=20261021 confirmed=114 pending=0 recovered=114 kill_delay=0.004044
+PASS trial=3 seed=20261021 confirmed=95 pending=0 recovered=95 kill_delay=0.004819
+PASS trial=4 seed=20261021 confirmed=116 pending=117 recovered=117 kill_delay=0.000001
+Completed crash logs: /Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/validation-batch2/original-sdk-crash/taycan-crash-rrghyo9s

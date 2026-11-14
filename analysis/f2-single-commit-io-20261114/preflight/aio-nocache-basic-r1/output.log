@@ -1,0 +1,21 @@
+seed=20261021 num_keys=1000 key_mode=random key_size=32 value_size=256 reader_threads=4 mem_limit_bytes=4294967296
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from Basic
+[ RUN      ] Basic.BinaryKeysAndValues
+F2_COMMIT_COUNTS single_operations=24 full_index=1
+F2_DATA_PREFIX commits=24 data_syncs=24 directory_syncs=1 write_calls=25 write_bytes=328192 stable_tail=328192 base_tail=512 recovered_commits=0
+F2_PREFIX_INDEX cross_key_links=0
+F2_SYNC_IO sync_calls=57 write_calls=543 write_bytes=9242789
+[       OK ] Basic.BinaryKeysAndValues (53 ms)
+[ RUN      ] Basic.SimilarKeysRemainIndependent
+F2_COMMIT_COUNTS single_operations=16 full_index=1
+F2_DATA_PREFIX commits=16 data_syncs=16 directory_syncs=1 write_calls=42 write_bytes=336896 stable_tail=8704 base_tail=512 recovered_commits=0
+F2_PREFIX_INDEX cross_key_links=0
+F2_SYNC_IO sync_calls=106 write_calls=1078 write_bytes=18166090
+[       OK ] Basic.SimilarKeysRemainIndependent (40 ms)
+[----------] 2 tests from Basic (93 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (94 ms total)
+[  PASSED  ] 2 tests.

@@ -1,0 +1,4317 @@
+[
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-after-root/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 169
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/EC5744B5-2F97-49C2-BDB4-D0B6AD9BE0E9/E49E83B4-0063-441C-B29D-D563F89B408C.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cpr-checkpoints/EC5744B5-2F97-49C2-BDB4-D0B6AD9BE0E9/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/EC5744B5-2F97-49C2-BDB4-D0B6AD9BE0E9/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/EC5744B5-2F97-49C2-BDB4-D0B6AD9BE0E9/6D28C858-CD3D-4270-9CD3-7F4D85A06532.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/EC5744B5-2F97-49C2-BDB4-D0B6AD9BE0E9/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/EC5744B5-2F97-49C2-BDB4-D0B6AD9BE0E9/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/EC5744B5-2F97-49C2-BDB4-D0B6AD9BE0E9/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/EC5744B5-2F97-49C2-BDB4-D0B6AD9BE0E9/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 98816
+      },
+      {
+        "path": "hot/cpr-checkpoints/EC5744B5-2F97-49C2-BDB4-D0B6AD9BE0E9/E49E83B4-0063-441C-B29D-D563F89B408C.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/cpr-checkpoints/EC5744B5-2F97-49C2-BDB4-D0B6AD9BE0E9/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/index-checkpoints/EC5744B5-2F97-49C2-BDB4-D0B6AD9BE0E9/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/EC5744B5-2F97-49C2-BDB4-D0B6AD9BE0E9/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/EC5744B5-2F97-49C2-BDB4-D0B6AD9BE0E9/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-after-data-sync/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/7C2B60A2-3E3B-415B-B613-4328BDB5CA87/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/7C2B60A2-3E3B-415B-B613-4328BDB5CA87/421FAF96-6347-4D27-BA63-1A2EC6DB2565.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/7C2B60A2-3E3B-415B-B613-4328BDB5CA87/E7F3E8C9-7C6D-4FAE-8D7D-CC66EB78FCEA.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/7C2B60A2-3E3B-415B-B613-4328BDB5CA87/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/7C2B60A2-3E3B-415B-B613-4328BDB5CA87/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/7C2B60A2-3E3B-415B-B613-4328BDB5CA87/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/7C2B60A2-3E3B-415B-B613-4328BDB5CA87/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/7C2B60A2-3E3B-415B-B613-4328BDB5CA87/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 34304
+      },
+      {
+        "path": "hot/cpr-checkpoints/7C2B60A2-3E3B-415B-B613-4328BDB5CA87/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/7C2B60A2-3E3B-415B-B613-4328BDB5CA87/421FAF96-6347-4D27-BA63-1A2EC6DB2565.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/7C2B60A2-3E3B-415B-B613-4328BDB5CA87/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/7C2B60A2-3E3B-415B-B613-4328BDB5CA87/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/7C2B60A2-3E3B-415B-B613-4328BDB5CA87/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/span-db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 169
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/96BA9827-DDB8-447A-A4AD-C9C2082BED4B/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/96BA9827-DDB8-447A-A4AD-C9C2082BED4B/8E3584CA-C96B-4470-9532-1E7404075B63.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/96BA9827-DDB8-447A-A4AD-C9C2082BED4B/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/96BA9827-DDB8-447A-A4AD-C9C2082BED4B/E7695097-B9F3-4C65-BE4B-730CE8D02656.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/96BA9827-DDB8-447A-A4AD-C9C2082BED4B/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/96BA9827-DDB8-447A-A4AD-C9C2082BED4B/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/96BA9827-DDB8-447A-A4AD-C9C2082BED4B/ht.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/index-checkpoints/96BA9827-DDB8-447A-A4AD-C9C2082BED4B/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log1",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log4",
+        "bytes": 2299392
+      },
+      {
+        "path": "hot/log.log3",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log2",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/cpr-checkpoints/96BA9827-DDB8-447A-A4AD-C9C2082BED4B/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/96BA9827-DDB8-447A-A4AD-C9C2082BED4B/8E3584CA-C96B-4470-9532-1E7404075B63.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/96BA9827-DDB8-447A-A4AD-C9C2082BED4B/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/96BA9827-DDB8-447A-A4AD-C9C2082BED4B/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/96BA9827-DDB8-447A-A4AD-C9C2082BED4B/ht.dat",
+        "bytes": 262144
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/footer-corrupt-db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/cpr-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/83C8B820-E0CA-4663-A91D-AD4CB914514D.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/FFD0F80A-5AA4-4C67-9750-196A58AE5834.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/ht.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log1",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log4",
+        "bytes": 2299392
+      },
+      {
+        "path": "hot/log.log3",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log2",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/cpr-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/83C8B820-E0CA-4663-A91D-AD4CB914514D.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/ht.dat",
+        "bytes": 262144
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/sync-error-db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 165
+      },
+      {
+        "path": "cold/cpr-checkpoints/62DDB111-69BB-452B-B1F8-CE24C8864D14/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/62DDB111-69BB-452B-B1F8-CE24C8864D14/9B193401-BCA0-49D3-B6E3-8F7E674DA24B.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/62DDB111-69BB-452B-B1F8-CE24C8864D14/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/62DDB111-69BB-452B-B1F8-CE24C8864D14/0B54C773-195D-469A-9725-CC33A4638851.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/62DDB111-69BB-452B-B1F8-CE24C8864D14/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/62DDB111-69BB-452B-B1F8-CE24C8864D14/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/62DDB111-69BB-452B-B1F8-CE24C8864D14/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/62DDB111-69BB-452B-B1F8-CE24C8864D14/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 1024
+      },
+      {
+        "path": "hot/cpr-checkpoints/62DDB111-69BB-452B-B1F8-CE24C8864D14/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/62DDB111-69BB-452B-B1F8-CE24C8864D14/9B193401-BCA0-49D3-B6E3-8F7E674DA24B.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/62DDB111-69BB-452B-B1F8-CE24C8864D14/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/62DDB111-69BB-452B-B1F8-CE24C8864D14/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/62DDB111-69BB-452B-B1F8-CE24C8864D14/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-data-flush/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/AA216D0D-7412-4911-994D-37E4028BD3BD/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/AA216D0D-7412-4911-994D-37E4028BD3BD/26F5C7CD-0E0F-48A7-9DE2-97D2A1D54435.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/AA216D0D-7412-4911-994D-37E4028BD3BD/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/AA216D0D-7412-4911-994D-37E4028BD3BD/6D4380A4-D566-4F85-B73A-E8B05CCEBBDC.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/AA216D0D-7412-4911-994D-37E4028BD3BD/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/AA216D0D-7412-4911-994D-37E4028BD3BD/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/AA216D0D-7412-4911-994D-37E4028BD3BD/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/AA216D0D-7412-4911-994D-37E4028BD3BD/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 33280
+      },
+      {
+        "path": "hot/cpr-checkpoints/AA216D0D-7412-4911-994D-37E4028BD3BD/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/AA216D0D-7412-4911-994D-37E4028BD3BD/26F5C7CD-0E0F-48A7-9DE2-97D2A1D54435.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/AA216D0D-7412-4911-994D-37E4028BD3BD/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/AA216D0D-7412-4911-994D-37E4028BD3BD/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/AA216D0D-7412-4911-994D-37E4028BD3BD/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-ack/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/0EF229DE-AA96-45CE-8AAC-54D08799EE23/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/0EF229DE-AA96-45CE-8AAC-54D08799EE23/4A052448-29EE-4953-99B4-29CF7937FC94.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/0EF229DE-AA96-45CE-8AAC-54D08799EE23/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/0EF229DE-AA96-45CE-8AAC-54D08799EE23/799FC15B-D77F-4358-A5CD-9C6DE0E8573B.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/0EF229DE-AA96-45CE-8AAC-54D08799EE23/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/0EF229DE-AA96-45CE-8AAC-54D08799EE23/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/0EF229DE-AA96-45CE-8AAC-54D08799EE23/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/0EF229DE-AA96-45CE-8AAC-54D08799EE23/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 33792
+      },
+      {
+        "path": "hot/cpr-checkpoints/0EF229DE-AA96-45CE-8AAC-54D08799EE23/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/0EF229DE-AA96-45CE-8AAC-54D08799EE23/4A052448-29EE-4953-99B4-29CF7937FC94.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/0EF229DE-AA96-45CE-8AAC-54D08799EE23/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/0EF229DE-AA96-45CE-8AAC-54D08799EE23/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/0EF229DE-AA96-45CE-8AAC-54D08799EE23/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/missing-data-db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/cpr-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/83C8B820-E0CA-4663-A91D-AD4CB914514D.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/FFD0F80A-5AA4-4C67-9750-196A58AE5834.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/ht.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log1",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.preserved",
+        "bytes": 2299392
+      },
+      {
+        "path": "hot/log.log3",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log2",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/cpr-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/83C8B820-E0CA-4663-A91D-AD4CB914514D.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/ht.dat",
+        "bytes": 262144
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-root/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 169
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/5F3C21C0-9430-466B-A5D3-FDB3C7352802/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/5F3C21C0-9430-466B-A5D3-FDB3C7352802/FF784DBB-2B06-4CA0-BC01-924C17C9DBA0.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/5F3C21C0-9430-466B-A5D3-FDB3C7352802/EA8C69B6-2896-4D6F-A2E5-89AE477350C3.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/5F3C21C0-9430-466B-A5D3-FDB3C7352802/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/5F3C21C0-9430-466B-A5D3-FDB3C7352802/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/5F3C21C0-9430-466B-A5D3-FDB3C7352802/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/5F3C21C0-9430-466B-A5D3-FDB3C7352802/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/5F3C21C0-9430-466B-A5D3-FDB3C7352802/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 98816
+      },
+      {
+        "path": "hot/cpr-checkpoints/5F3C21C0-9430-466B-A5D3-FDB3C7352802/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/5F3C21C0-9430-466B-A5D3-FDB3C7352802/FF784DBB-2B06-4CA0-BC01-924C17C9DBA0.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/5F3C21C0-9430-466B-A5D3-FDB3C7352802/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/5F3C21C0-9430-466B-A5D3-FDB3C7352802/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/5F3C21C0-9430-466B-A5D3-FDB3C7352802/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-ack/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 167
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/5CDE8A25-A325-4EA0-A0BC-E18D78D46943/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/5CDE8A25-A325-4EA0-A0BC-E18D78D46943/FD00691B-154F-4F2C-9AA5-29ED0CB5E7E1.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/5CDE8A25-A325-4EA0-A0BC-E18D78D46943/173129EF-B3FD-45CE-88C5-C4E99AB04704.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/5CDE8A25-A325-4EA0-A0BC-E18D78D46943/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/5CDE8A25-A325-4EA0-A0BC-E18D78D46943/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/5CDE8A25-A325-4EA0-A0BC-E18D78D46943/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/5CDE8A25-A325-4EA0-A0BC-E18D78D46943/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/5CDE8A25-A325-4EA0-A0BC-E18D78D46943/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 34304
+      },
+      {
+        "path": "hot/cpr-checkpoints/5CDE8A25-A325-4EA0-A0BC-E18D78D46943/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/5CDE8A25-A325-4EA0-A0BC-E18D78D46943/FD00691B-154F-4F2C-9AA5-29ED0CB5E7E1.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/5CDE8A25-A325-4EA0-A0BC-E18D78D46943/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/5CDE8A25-A325-4EA0-A0BC-E18D78D46943/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/5CDE8A25-A325-4EA0-A0BC-E18D78D46943/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-after-data-sync/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/D5511C9B-E830-4F89-B0C2-230028CDFE20/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/D5511C9B-E830-4F89-B0C2-230028CDFE20/67A96BB6-0602-4175-893B-F7F1532C0C6D.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/D5511C9B-E830-4F89-B0C2-230028CDFE20/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/D5511C9B-E830-4F89-B0C2-230028CDFE20/E01AB785-59C6-4539-90D2-26636FDE7EBA.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/D5511C9B-E830-4F89-B0C2-230028CDFE20/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/D5511C9B-E830-4F89-B0C2-230028CDFE20/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/D5511C9B-E830-4F89-B0C2-230028CDFE20/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/D5511C9B-E830-4F89-B0C2-230028CDFE20/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 33792
+      },
+      {
+        "path": "hot/cpr-checkpoints/D5511C9B-E830-4F89-B0C2-230028CDFE20/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/D5511C9B-E830-4F89-B0C2-230028CDFE20/67A96BB6-0602-4175-893B-F7F1532C0C6D.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/D5511C9B-E830-4F89-B0C2-230028CDFE20/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/D5511C9B-E830-4F89-B0C2-230028CDFE20/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/D5511C9B-E830-4F89-B0C2-230028CDFE20/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-data-sync/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/886A2D31-6985-404E-AC9A-8124C7D6DDC5/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/886A2D31-6985-404E-AC9A-8124C7D6DDC5/DB7AC89B-6E14-44E5-9D7E-5235280D3840.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/886A2D31-6985-404E-AC9A-8124C7D6DDC5/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/886A2D31-6985-404E-AC9A-8124C7D6DDC5/1825A70C-A4D8-4B2E-A09D-E0256A7E232C.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/886A2D31-6985-404E-AC9A-8124C7D6DDC5/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/886A2D31-6985-404E-AC9A-8124C7D6DDC5/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/886A2D31-6985-404E-AC9A-8124C7D6DDC5/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/886A2D31-6985-404E-AC9A-8124C7D6DDC5/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 33792
+      },
+      {
+        "path": "hot/cpr-checkpoints/886A2D31-6985-404E-AC9A-8124C7D6DDC5/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/886A2D31-6985-404E-AC9A-8124C7D6DDC5/DB7AC89B-6E14-44E5-9D7E-5235280D3840.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/886A2D31-6985-404E-AC9A-8124C7D6DDC5/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/886A2D31-6985-404E-AC9A-8124C7D6DDC5/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/886A2D31-6985-404E-AC9A-8124C7D6DDC5/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/embedded-marker-db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/EFE185DE-35C6-40F2-9102-53F9227A2643/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/EFE185DE-35C6-40F2-9102-53F9227A2643/E7E5BB09-0DC5-4706-B2A2-3F37CCFDC6AE.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/EFE185DE-35C6-40F2-9102-53F9227A2643/D75BD366-3982-49D8-B67D-8E6A402D1B9A.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/EFE185DE-35C6-40F2-9102-53F9227A2643/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/EFE185DE-35C6-40F2-9102-53F9227A2643/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/EFE185DE-35C6-40F2-9102-53F9227A2643/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/EFE185DE-35C6-40F2-9102-53F9227A2643/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/EFE185DE-35C6-40F2-9102-53F9227A2643/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 103424
+      },
+      {
+        "path": "hot/cpr-checkpoints/EFE185DE-35C6-40F2-9102-53F9227A2643/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/EFE185DE-35C6-40F2-9102-53F9227A2643/E7E5BB09-0DC5-4706-B2A2-3F37CCFDC6AE.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/EFE185DE-35C6-40F2-9102-53F9227A2643/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/EFE185DE-35C6-40F2-9102-53F9227A2643/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/EFE185DE-35C6-40F2-9102-53F9227A2643/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/same-key-db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/F25351BB-3730-42FF-B28C-567541E4A098/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/F25351BB-3730-42FF-B28C-567541E4A098/DAF1E5E1-E780-40E5-BBA8-2EF98A147E44.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/F25351BB-3730-42FF-B28C-567541E4A098/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/F25351BB-3730-42FF-B28C-567541E4A098/53C4AFA3-873F-4F8E-9AB4-AEE0C968FB26.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/F25351BB-3730-42FF-B28C-567541E4A098/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/F25351BB-3730-42FF-B28C-567541E4A098/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/F25351BB-3730-42FF-B28C-567541E4A098/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/F25351BB-3730-42FF-B28C-567541E4A098/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 34816
+      },
+      {
+        "path": "hot/cpr-checkpoints/F25351BB-3730-42FF-B28C-567541E4A098/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/F25351BB-3730-42FF-B28C-567541E4A098/DAF1E5E1-E780-40E5-BBA8-2EF98A147E44.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/F25351BB-3730-42FF-B28C-567541E4A098/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/F25351BB-3730-42FF-B28C-567541E4A098/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/F25351BB-3730-42FF-B28C-567541E4A098/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/apply-error-db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 165
+      },
+      {
+        "path": "cold/cpr-checkpoints/E4305E31-8551-4AF6-A52F-9884C61CFB41/FD74DB6C-2927-40BF-996A-CD876DD2757C.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cpr-checkpoints/E4305E31-8551-4AF6-A52F-9884C61CFB41/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/E4305E31-8551-4AF6-A52F-9884C61CFB41/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/E4305E31-8551-4AF6-A52F-9884C61CFB41/127F0558-3621-4484-9E3F-2FE76B7DCE82.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/E4305E31-8551-4AF6-A52F-9884C61CFB41/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/E4305E31-8551-4AF6-A52F-9884C61CFB41/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/E4305E31-8551-4AF6-A52F-9884C61CFB41/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/E4305E31-8551-4AF6-A52F-9884C61CFB41/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 512
+      },
+      {
+        "path": "hot/cpr-checkpoints/E4305E31-8551-4AF6-A52F-9884C61CFB41/FD74DB6C-2927-40BF-996A-CD876DD2757C.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/cpr-checkpoints/E4305E31-8551-4AF6-A52F-9884C61CFB41/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/index-checkpoints/E4305E31-8551-4AF6-A52F-9884C61CFB41/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/E4305E31-8551-4AF6-A52F-9884C61CFB41/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/E4305E31-8551-4AF6-A52F-9884C61CFB41/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-after-root/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/0904D82B-6B98-4322-B33E-DB38C1B82680/063C4A1F-3E8D-4B86-A236-847148D1F467.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cpr-checkpoints/0904D82B-6B98-4322-B33E-DB38C1B82680/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/0904D82B-6B98-4322-B33E-DB38C1B82680/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/0904D82B-6B98-4322-B33E-DB38C1B82680/6B7AEF1B-0F1B-4659-B49A-463BA4EDD3FA.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/0904D82B-6B98-4322-B33E-DB38C1B82680/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/0904D82B-6B98-4322-B33E-DB38C1B82680/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/0904D82B-6B98-4322-B33E-DB38C1B82680/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/0904D82B-6B98-4322-B33E-DB38C1B82680/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 37376
+      },
+      {
+        "path": "hot/cpr-checkpoints/0904D82B-6B98-4322-B33E-DB38C1B82680/063C4A1F-3E8D-4B86-A236-847148D1F467.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/cpr-checkpoints/0904D82B-6B98-4322-B33E-DB38C1B82680/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/index-checkpoints/0904D82B-6B98-4322-B33E-DB38C1B82680/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/0904D82B-6B98-4322-B33E-DB38C1B82680/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/0904D82B-6B98-4322-B33E-DB38C1B82680/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-after-wal/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/53D288C9-5EB1-40B3-88B3-53F5BFA7710C/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/53D288C9-5EB1-40B3-88B3-53F5BFA7710C/081AF08E-E155-42CD-8298-56983B6B9443.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/53D288C9-5EB1-40B3-88B3-53F5BFA7710C/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/53D288C9-5EB1-40B3-88B3-53F5BFA7710C/2D8C64CE-FAB1-4268-A7A4-EF4D809E04A7.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/53D288C9-5EB1-40B3-88B3-53F5BFA7710C/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/53D288C9-5EB1-40B3-88B3-53F5BFA7710C/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/53D288C9-5EB1-40B3-88B3-53F5BFA7710C/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/53D288C9-5EB1-40B3-88B3-53F5BFA7710C/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 33792
+      },
+      {
+        "path": "hot/cpr-checkpoints/53D288C9-5EB1-40B3-88B3-53F5BFA7710C/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/53D288C9-5EB1-40B3-88B3-53F5BFA7710C/081AF08E-E155-42CD-8298-56983B6B9443.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/53D288C9-5EB1-40B3-88B3-53F5BFA7710C/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/53D288C9-5EB1-40B3-88B3-53F5BFA7710C/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/53D288C9-5EB1-40B3-88B3-53F5BFA7710C/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-after-wal/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 167
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/18F459C1-0CEE-4756-A604-2E5594BB449A/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/18F459C1-0CEE-4756-A604-2E5594BB449A/CD9BC9A6-0FF1-4DBD-85A9-1A0040A0E59C.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/18F459C1-0CEE-4756-A604-2E5594BB449A/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/18F459C1-0CEE-4756-A604-2E5594BB449A/784EF754-12E3-4E4A-ACB7-D8F43EBBA180.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/18F459C1-0CEE-4756-A604-2E5594BB449A/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/18F459C1-0CEE-4756-A604-2E5594BB449A/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/18F459C1-0CEE-4756-A604-2E5594BB449A/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/18F459C1-0CEE-4756-A604-2E5594BB449A/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 33792
+      },
+      {
+        "path": "hot/cpr-checkpoints/18F459C1-0CEE-4756-A604-2E5594BB449A/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/18F459C1-0CEE-4756-A604-2E5594BB449A/CD9BC9A6-0FF1-4DBD-85A9-1A0040A0E59C.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/18F459C1-0CEE-4756-A604-2E5594BB449A/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/18F459C1-0CEE-4756-A604-2E5594BB449A/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/18F459C1-0CEE-4756-A604-2E5594BB449A/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/io-error-db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 165
+      },
+      {
+        "path": "cold/cpr-checkpoints/14D5D793-9183-4241-A677-5DD2E4166A66/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/14D5D793-9183-4241-A677-5DD2E4166A66/0848DB59-D759-4C0E-95D5-DEBCC57119FB.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/14D5D793-9183-4241-A677-5DD2E4166A66/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/14D5D793-9183-4241-A677-5DD2E4166A66/50B38C2F-D31E-4D1C-8DA0-A134A26BBF68.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/14D5D793-9183-4241-A677-5DD2E4166A66/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/14D5D793-9183-4241-A677-5DD2E4166A66/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/14D5D793-9183-4241-A677-5DD2E4166A66/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/14D5D793-9183-4241-A677-5DD2E4166A66/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 512
+      },
+      {
+        "path": "hot/cpr-checkpoints/14D5D793-9183-4241-A677-5DD2E4166A66/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/14D5D793-9183-4241-A677-5DD2E4166A66/0848DB59-D759-4C0E-95D5-DEBCC57119FB.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/14D5D793-9183-4241-A677-5DD2E4166A66/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/14D5D793-9183-4241-A677-5DD2E4166A66/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/14D5D793-9183-4241-A677-5DD2E4166A66/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/data-corrupt-db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/cpr-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/83C8B820-E0CA-4663-A91D-AD4CB914514D.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/FFD0F80A-5AA4-4C67-9750-196A58AE5834.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/ht.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log1",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log4",
+        "bytes": 2299392
+      },
+      {
+        "path": "hot/log.log3",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log2",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/cpr-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/83C8B820-E0CA-4663-A91D-AD4CB914514D.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/ht.dat",
+        "bytes": 262144
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-data-sync/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/8B1086C4-0EFE-45DF-BEED-180D10ED377D/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/8B1086C4-0EFE-45DF-BEED-180D10ED377D/7C4669F9-60F8-4828-A7F8-757A66A0F87A.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/8B1086C4-0EFE-45DF-BEED-180D10ED377D/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/8B1086C4-0EFE-45DF-BEED-180D10ED377D/0A2A0E2F-B65A-464F-8510-DE7BE5EBBCB1.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/8B1086C4-0EFE-45DF-BEED-180D10ED377D/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/8B1086C4-0EFE-45DF-BEED-180D10ED377D/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/8B1086C4-0EFE-45DF-BEED-180D10ED377D/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/8B1086C4-0EFE-45DF-BEED-180D10ED377D/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 33792
+      },
+      {
+        "path": "hot/cpr-checkpoints/8B1086C4-0EFE-45DF-BEED-180D10ED377D/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/8B1086C4-0EFE-45DF-BEED-180D10ED377D/7C4669F9-60F8-4828-A7F8-757A66A0F87A.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/8B1086C4-0EFE-45DF-BEED-180D10ED377D/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/8B1086C4-0EFE-45DF-BEED-180D10ED377D/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/8B1086C4-0EFE-45DF-BEED-180D10ED377D/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/partial-tail-db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 170
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/4E6FD654-A67D-4825-B52C-D72934E5A89D/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/4E6FD654-A67D-4825-B52C-D72934E5A89D/A739B447-B8A2-42CF-813E-7EB994CF14BE.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/4E6FD654-A67D-4825-B52C-D72934E5A89D/FBD44CE9-1BFC-47E9-BF1C-36E167893E17.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/4E6FD654-A67D-4825-B52C-D72934E5A89D/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/4E6FD654-A67D-4825-B52C-D72934E5A89D/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/4E6FD654-A67D-4825-B52C-D72934E5A89D/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/4E6FD654-A67D-4825-B52C-D72934E5A89D/ht.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/index-checkpoints/4E6FD654-A67D-4825-B52C-D72934E5A89D/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log1",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log4",
+        "bytes": 2299392
+      },
+      {
+        "path": "hot/log.log3",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log2",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/cpr-checkpoints/4E6FD654-A67D-4825-B52C-D72934E5A89D/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/4E6FD654-A67D-4825-B52C-D72934E5A89D/A739B447-B8A2-42CF-813E-7EB994CF14BE.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/4E6FD654-A67D-4825-B52C-D72934E5A89D/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/4E6FD654-A67D-4825-B52C-D72934E5A89D/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/4E6FD654-A67D-4825-B52C-D72934E5A89D/ht.dat",
+        "bytes": 262144
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-data-flush/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 167
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/AD732C4C-81EA-4B69-A833-33B2A62313F4/68750110-208D-43CC-8ADD-22B069A749CB.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cpr-checkpoints/AD732C4C-81EA-4B69-A833-33B2A62313F4/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/AD732C4C-81EA-4B69-A833-33B2A62313F4/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/AD732C4C-81EA-4B69-A833-33B2A62313F4/C226FF46-C587-4D85-AD36-D72C401F30BD.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/AD732C4C-81EA-4B69-A833-33B2A62313F4/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/AD732C4C-81EA-4B69-A833-33B2A62313F4/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/AD732C4C-81EA-4B69-A833-33B2A62313F4/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/AD732C4C-81EA-4B69-A833-33B2A62313F4/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 33792
+      },
+      {
+        "path": "hot/cpr-checkpoints/AD732C4C-81EA-4B69-A833-33B2A62313F4/68750110-208D-43CC-8ADD-22B069A749CB.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/cpr-checkpoints/AD732C4C-81EA-4B69-A833-33B2A62313F4/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/index-checkpoints/AD732C4C-81EA-4B69-A833-33B2A62313F4/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/AD732C4C-81EA-4B69-A833-33B2A62313F4/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/AD732C4C-81EA-4B69-A833-33B2A62313F4/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/collision-db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/794EC975-4C6D-4FE8-ABAC-50FAA0E0D759/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/794EC975-4C6D-4FE8-ABAC-50FAA0E0D759/65573F6A-763D-4A30-A5FE-FCE261BD2C6C.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/794EC975-4C6D-4FE8-ABAC-50FAA0E0D759/B0827ECF-5877-446F-9295-6D145FB0FCB7.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/794EC975-4C6D-4FE8-ABAC-50FAA0E0D759/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/794EC975-4C6D-4FE8-ABAC-50FAA0E0D759/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/794EC975-4C6D-4FE8-ABAC-50FAA0E0D759/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/794EC975-4C6D-4FE8-ABAC-50FAA0E0D759/ht.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/index-checkpoints/794EC975-4C6D-4FE8-ABAC-50FAA0E0D759/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 262656
+      },
+      {
+        "path": "hot/cpr-checkpoints/794EC975-4C6D-4FE8-ABAC-50FAA0E0D759/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/794EC975-4C6D-4FE8-ABAC-50FAA0E0D759/65573F6A-763D-4A30-A5FE-FCE261BD2C6C.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/794EC975-4C6D-4FE8-ABAC-50FAA0E0D759/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/794EC975-4C6D-4FE8-ABAC-50FAA0E0D759/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/794EC975-4C6D-4FE8-ABAC-50FAA0E0D759/ht.dat",
+        "bytes": 262144
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/root-corrupt-db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/cpr-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/83C8B820-E0CA-4663-A91D-AD4CB914514D.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/FFD0F80A-5AA4-4C67-9750-196A58AE5834.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/ht.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log1",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log4",
+        "bytes": 2299392
+      },
+      {
+        "path": "hot/log.log3",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log2",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/cpr-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/83C8B820-E0CA-4663-A91D-AD4CB914514D.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/DFA47EB8-B9BF-4DEE-8E66-72B7DFA28E6F/ht.dat",
+        "bytes": 262144
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-root/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 167
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/3C37380A-7357-45F3-9C1E-CBC2FD2F1542/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/3C37380A-7357-45F3-9C1E-CBC2FD2F1542/758627C4-3041-4719-93AD-2CFE6E348650.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/3C37380A-7357-45F3-9C1E-CBC2FD2F1542/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/3C37380A-7357-45F3-9C1E-CBC2FD2F1542/092B79EC-9E01-4ADC-A0CF-A57EF24E424B.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/3C37380A-7357-45F3-9C1E-CBC2FD2F1542/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/3C37380A-7357-45F3-9C1E-CBC2FD2F1542/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/3C37380A-7357-45F3-9C1E-CBC2FD2F1542/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/3C37380A-7357-45F3-9C1E-CBC2FD2F1542/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 37376
+      },
+      {
+        "path": "hot/cpr-checkpoints/3C37380A-7357-45F3-9C1E-CBC2FD2F1542/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/3C37380A-7357-45F3-9C1E-CBC2FD2F1542/758627C4-3041-4719-93AD-2CFE6E348650.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/3C37380A-7357-45F3-9C1E-CBC2FD2F1542/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/3C37380A-7357-45F3-9C1E-CBC2FD2F1542/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/3C37380A-7357-45F3-9C1E-CBC2FD2F1542/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-after-root/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 169
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/17B0C989-960C-4BE8-8BBD-E84BDDB1B6AE/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/17B0C989-960C-4BE8-8BBD-E84BDDB1B6AE/E5658BB1-3489-464C-8F25-F392CDC54EBA.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/17B0C989-960C-4BE8-8BBD-E84BDDB1B6AE/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/17B0C989-960C-4BE8-8BBD-E84BDDB1B6AE/6B744AD7-0598-46C3-880D-C02AFED573B3.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/17B0C989-960C-4BE8-8BBD-E84BDDB1B6AE/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/17B0C989-960C-4BE8-8BBD-E84BDDB1B6AE/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/17B0C989-960C-4BE8-8BBD-E84BDDB1B6AE/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/17B0C989-960C-4BE8-8BBD-E84BDDB1B6AE/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 98816
+      },
+      {
+        "path": "hot/cpr-checkpoints/17B0C989-960C-4BE8-8BBD-E84BDDB1B6AE/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/17B0C989-960C-4BE8-8BBD-E84BDDB1B6AE/E5658BB1-3489-464C-8F25-F392CDC54EBA.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/17B0C989-960C-4BE8-8BBD-E84BDDB1B6AE/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/17B0C989-960C-4BE8-8BBD-E84BDDB1B6AE/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/17B0C989-960C-4BE8-8BBD-E84BDDB1B6AE/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-after-data-sync/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/521D43CD-3070-4E0D-8165-AF99699385B4/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/521D43CD-3070-4E0D-8165-AF99699385B4/015CB0E4-5A2F-49E7-90F8-F9E4F90D4D8E.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/521D43CD-3070-4E0D-8165-AF99699385B4/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/521D43CD-3070-4E0D-8165-AF99699385B4/92EDFFCE-A4E5-42C1-9E0B-AFBC6D1BBA78.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/521D43CD-3070-4E0D-8165-AF99699385B4/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/521D43CD-3070-4E0D-8165-AF99699385B4/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/521D43CD-3070-4E0D-8165-AF99699385B4/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/521D43CD-3070-4E0D-8165-AF99699385B4/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 34304
+      },
+      {
+        "path": "hot/cpr-checkpoints/521D43CD-3070-4E0D-8165-AF99699385B4/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/521D43CD-3070-4E0D-8165-AF99699385B4/015CB0E4-5A2F-49E7-90F8-F9E4F90D4D8E.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/521D43CD-3070-4E0D-8165-AF99699385B4/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/521D43CD-3070-4E0D-8165-AF99699385B4/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/521D43CD-3070-4E0D-8165-AF99699385B4/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/span-db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 170
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/0C709724-4F74-406D-BBF3-2F3F502E3F28/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/0C709724-4F74-406D-BBF3-2F3F502E3F28/9E2EF7FB-3CD6-4E4F-BFC2-5CD3C50419FD.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/0C709724-4F74-406D-BBF3-2F3F502E3F28/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/0C709724-4F74-406D-BBF3-2F3F502E3F28/E41F6D4B-438B-4F42-AC72-6C59C2B1FFD7.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/0C709724-4F74-406D-BBF3-2F3F502E3F28/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/0C709724-4F74-406D-BBF3-2F3F502E3F28/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/0C709724-4F74-406D-BBF3-2F3F502E3F28/ht.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/index-checkpoints/0C709724-4F74-406D-BBF3-2F3F502E3F28/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log1",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log4",
+        "bytes": 2299392
+      },
+      {
+        "path": "hot/log.log3",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log2",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/cpr-checkpoints/0C709724-4F74-406D-BBF3-2F3F502E3F28/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/0C709724-4F74-406D-BBF3-2F3F502E3F28/9E2EF7FB-3CD6-4E4F-BFC2-5CD3C50419FD.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/0C709724-4F74-406D-BBF3-2F3F502E3F28/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/0C709724-4F74-406D-BBF3-2F3F502E3F28/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/0C709724-4F74-406D-BBF3-2F3F502E3F28/ht.dat",
+        "bytes": 262144
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/footer-corrupt-db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 170
+      },
+      {
+        "path": "cold/cpr-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/CCFCD858-B9C4-429F-A76C-16303C3A9972.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/299556C3-8DF6-4C06-BB4D-4ADE34B7C9F7.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/ht.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log1",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log4",
+        "bytes": 2299392
+      },
+      {
+        "path": "hot/log.log3",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log2",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/cpr-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/CCFCD858-B9C4-429F-A76C-16303C3A9972.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/ht.dat",
+        "bytes": 262144
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/sync-error-db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 165
+      },
+      {
+        "path": "cold/cpr-checkpoints/CFF31990-298A-4E4A-B39F-E3784C12CF87/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/CFF31990-298A-4E4A-B39F-E3784C12CF87/213F2F95-2EAA-4D8F-A6BE-4BA783D09DA9.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/CFF31990-298A-4E4A-B39F-E3784C12CF87/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/CFF31990-298A-4E4A-B39F-E3784C12CF87/DA512C1F-DB99-4121-84D2-D08F93E28F2F.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/CFF31990-298A-4E4A-B39F-E3784C12CF87/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/CFF31990-298A-4E4A-B39F-E3784C12CF87/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/CFF31990-298A-4E4A-B39F-E3784C12CF87/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/CFF31990-298A-4E4A-B39F-E3784C12CF87/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 1024
+      },
+      {
+        "path": "hot/cpr-checkpoints/CFF31990-298A-4E4A-B39F-E3784C12CF87/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/CFF31990-298A-4E4A-B39F-E3784C12CF87/213F2F95-2EAA-4D8F-A6BE-4BA783D09DA9.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/CFF31990-298A-4E4A-B39F-E3784C12CF87/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/CFF31990-298A-4E4A-B39F-E3784C12CF87/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/CFF31990-298A-4E4A-B39F-E3784C12CF87/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-data-flush/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 167
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/0CED8DF3-24FF-40D5-894D-6DC64340813B/ACDC3BCD-2B2E-4502-ADF7-541A76A9FC80.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cpr-checkpoints/0CED8DF3-24FF-40D5-894D-6DC64340813B/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/0CED8DF3-24FF-40D5-894D-6DC64340813B/1032150E-9110-4A2B-A135-47DB57582439.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/0CED8DF3-24FF-40D5-894D-6DC64340813B/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/0CED8DF3-24FF-40D5-894D-6DC64340813B/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/0CED8DF3-24FF-40D5-894D-6DC64340813B/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/0CED8DF3-24FF-40D5-894D-6DC64340813B/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/0CED8DF3-24FF-40D5-894D-6DC64340813B/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 33280
+      },
+      {
+        "path": "hot/cpr-checkpoints/0CED8DF3-24FF-40D5-894D-6DC64340813B/ACDC3BCD-2B2E-4502-ADF7-541A76A9FC80.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/cpr-checkpoints/0CED8DF3-24FF-40D5-894D-6DC64340813B/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/index-checkpoints/0CED8DF3-24FF-40D5-894D-6DC64340813B/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/0CED8DF3-24FF-40D5-894D-6DC64340813B/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/0CED8DF3-24FF-40D5-894D-6DC64340813B/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-ack/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/72643967-624C-4BE2-B236-20B2E4C13A24/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/72643967-624C-4BE2-B236-20B2E4C13A24/C381A173-3CD4-4F32-B448-4316D9BA915E.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/72643967-624C-4BE2-B236-20B2E4C13A24/152D68A5-53CC-4A4C-9860-8EA54FAE6FB5.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/72643967-624C-4BE2-B236-20B2E4C13A24/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/72643967-624C-4BE2-B236-20B2E4C13A24/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/72643967-624C-4BE2-B236-20B2E4C13A24/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/72643967-624C-4BE2-B236-20B2E4C13A24/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/72643967-624C-4BE2-B236-20B2E4C13A24/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 33792
+      },
+      {
+        "path": "hot/cpr-checkpoints/72643967-624C-4BE2-B236-20B2E4C13A24/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/72643967-624C-4BE2-B236-20B2E4C13A24/C381A173-3CD4-4F32-B448-4316D9BA915E.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/72643967-624C-4BE2-B236-20B2E4C13A24/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/72643967-624C-4BE2-B236-20B2E4C13A24/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/72643967-624C-4BE2-B236-20B2E4C13A24/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/missing-data-db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 170
+      },
+      {
+        "path": "cold/cpr-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/CCFCD858-B9C4-429F-A76C-16303C3A9972.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/299556C3-8DF6-4C06-BB4D-4ADE34B7C9F7.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/ht.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log1",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.preserved",
+        "bytes": 2299392
+      },
+      {
+        "path": "hot/log.log3",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log2",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/cpr-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/CCFCD858-B9C4-429F-A76C-16303C3A9972.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/ht.dat",
+        "bytes": 262144
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-root/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 169
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/2A367664-746D-4C0B-A489-F6D79CABF25F/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/2A367664-746D-4C0B-A489-F6D79CABF25F/C7B429B7-3A77-4DE4-9521-079FAF6428A5.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/2A367664-746D-4C0B-A489-F6D79CABF25F/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/2A367664-746D-4C0B-A489-F6D79CABF25F/7A6B1B9E-7AD3-4025-96A6-238ECC570EE6.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/2A367664-746D-4C0B-A489-F6D79CABF25F/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/2A367664-746D-4C0B-A489-F6D79CABF25F/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/2A367664-746D-4C0B-A489-F6D79CABF25F/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/2A367664-746D-4C0B-A489-F6D79CABF25F/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 98816
+      },
+      {
+        "path": "hot/cpr-checkpoints/2A367664-746D-4C0B-A489-F6D79CABF25F/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/2A367664-746D-4C0B-A489-F6D79CABF25F/C7B429B7-3A77-4DE4-9521-079FAF6428A5.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/2A367664-746D-4C0B-A489-F6D79CABF25F/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/2A367664-746D-4C0B-A489-F6D79CABF25F/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/2A367664-746D-4C0B-A489-F6D79CABF25F/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-ack/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 167
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/DA66FEF4-58FE-4195-B6B2-2D6E5C86CF02/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/DA66FEF4-58FE-4195-B6B2-2D6E5C86CF02/8B334EF4-2CAA-495F-A7D1-26655CD56063.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/DA66FEF4-58FE-4195-B6B2-2D6E5C86CF02/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/DA66FEF4-58FE-4195-B6B2-2D6E5C86CF02/32161186-2097-47CB-BE03-B03A33CA4B15.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/DA66FEF4-58FE-4195-B6B2-2D6E5C86CF02/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/DA66FEF4-58FE-4195-B6B2-2D6E5C86CF02/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/DA66FEF4-58FE-4195-B6B2-2D6E5C86CF02/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/DA66FEF4-58FE-4195-B6B2-2D6E5C86CF02/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 34304
+      },
+      {
+        "path": "hot/cpr-checkpoints/DA66FEF4-58FE-4195-B6B2-2D6E5C86CF02/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/DA66FEF4-58FE-4195-B6B2-2D6E5C86CF02/8B334EF4-2CAA-495F-A7D1-26655CD56063.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/DA66FEF4-58FE-4195-B6B2-2D6E5C86CF02/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/DA66FEF4-58FE-4195-B6B2-2D6E5C86CF02/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/DA66FEF4-58FE-4195-B6B2-2D6E5C86CF02/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-after-data-sync/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/82CAC726-AF77-4143-9C6C-5DE4D19354A5/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/82CAC726-AF77-4143-9C6C-5DE4D19354A5/0F7C644F-FEBD-40C2-8355-385AF60C0311.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/82CAC726-AF77-4143-9C6C-5DE4D19354A5/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/82CAC726-AF77-4143-9C6C-5DE4D19354A5/398BDF72-3159-4563-9264-8CDC8751F2D8.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/82CAC726-AF77-4143-9C6C-5DE4D19354A5/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/82CAC726-AF77-4143-9C6C-5DE4D19354A5/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/82CAC726-AF77-4143-9C6C-5DE4D19354A5/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/82CAC726-AF77-4143-9C6C-5DE4D19354A5/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 33792
+      },
+      {
+        "path": "hot/cpr-checkpoints/82CAC726-AF77-4143-9C6C-5DE4D19354A5/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/82CAC726-AF77-4143-9C6C-5DE4D19354A5/0F7C644F-FEBD-40C2-8355-385AF60C0311.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/82CAC726-AF77-4143-9C6C-5DE4D19354A5/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/82CAC726-AF77-4143-9C6C-5DE4D19354A5/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/82CAC726-AF77-4143-9C6C-5DE4D19354A5/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-data-sync/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/3421CE65-D923-45AB-8D8B-9AC3DF54CA70/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/3421CE65-D923-45AB-8D8B-9AC3DF54CA70/B8180807-9919-4022-BB52-6186351AE48C.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/3421CE65-D923-45AB-8D8B-9AC3DF54CA70/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/3421CE65-D923-45AB-8D8B-9AC3DF54CA70/7F8A01A0-2E3C-42DB-98AA-4D98F65CF796.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/3421CE65-D923-45AB-8D8B-9AC3DF54CA70/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/3421CE65-D923-45AB-8D8B-9AC3DF54CA70/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/3421CE65-D923-45AB-8D8B-9AC3DF54CA70/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/3421CE65-D923-45AB-8D8B-9AC3DF54CA70/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 33792
+      },
+      {
+        "path": "hot/cpr-checkpoints/3421CE65-D923-45AB-8D8B-9AC3DF54CA70/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/3421CE65-D923-45AB-8D8B-9AC3DF54CA70/B8180807-9919-4022-BB52-6186351AE48C.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/3421CE65-D923-45AB-8D8B-9AC3DF54CA70/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/3421CE65-D923-45AB-8D8B-9AC3DF54CA70/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/3421CE65-D923-45AB-8D8B-9AC3DF54CA70/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/embedded-marker-db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/98D4F5FE-54E0-44A5-9031-D53FAA2EECF5/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/98D4F5FE-54E0-44A5-9031-D53FAA2EECF5/907B13ED-AC17-4AE1-940D-8ACED87AB8CA.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/98D4F5FE-54E0-44A5-9031-D53FAA2EECF5/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/98D4F5FE-54E0-44A5-9031-D53FAA2EECF5/04003B1A-7817-415D-9C30-BA496E58CBB9.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/98D4F5FE-54E0-44A5-9031-D53FAA2EECF5/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/98D4F5FE-54E0-44A5-9031-D53FAA2EECF5/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/98D4F5FE-54E0-44A5-9031-D53FAA2EECF5/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/98D4F5FE-54E0-44A5-9031-D53FAA2EECF5/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 103424
+      },
+      {
+        "path": "hot/cpr-checkpoints/98D4F5FE-54E0-44A5-9031-D53FAA2EECF5/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/98D4F5FE-54E0-44A5-9031-D53FAA2EECF5/907B13ED-AC17-4AE1-940D-8ACED87AB8CA.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/98D4F5FE-54E0-44A5-9031-D53FAA2EECF5/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/98D4F5FE-54E0-44A5-9031-D53FAA2EECF5/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/98D4F5FE-54E0-44A5-9031-D53FAA2EECF5/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/same-key-db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/DE4DEF82-5176-44A2-A2F9-A9D44D29934E/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/DE4DEF82-5176-44A2-A2F9-A9D44D29934E/9663F417-9CD9-4121-93DA-9409DCCB8842.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/DE4DEF82-5176-44A2-A2F9-A9D44D29934E/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/DE4DEF82-5176-44A2-A2F9-A9D44D29934E/0F59A9EF-CB8F-4F05-94B5-CCCEE99EBA5A.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/DE4DEF82-5176-44A2-A2F9-A9D44D29934E/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/DE4DEF82-5176-44A2-A2F9-A9D44D29934E/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/DE4DEF82-5176-44A2-A2F9-A9D44D29934E/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/DE4DEF82-5176-44A2-A2F9-A9D44D29934E/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 34816
+      },
+      {
+        "path": "hot/cpr-checkpoints/DE4DEF82-5176-44A2-A2F9-A9D44D29934E/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/DE4DEF82-5176-44A2-A2F9-A9D44D29934E/9663F417-9CD9-4121-93DA-9409DCCB8842.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/DE4DEF82-5176-44A2-A2F9-A9D44D29934E/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/DE4DEF82-5176-44A2-A2F9-A9D44D29934E/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/DE4DEF82-5176-44A2-A2F9-A9D44D29934E/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/apply-error-db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 164
+      },
+      {
+        "path": "cold/cpr-checkpoints/BBC192EA-56A6-4532-876C-F3382F84EA9E/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/BBC192EA-56A6-4532-876C-F3382F84EA9E/D96384DC-219E-4913-A997-2672F456A404.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/BBC192EA-56A6-4532-876C-F3382F84EA9E/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/BBC192EA-56A6-4532-876C-F3382F84EA9E/11262D74-ABE9-4E56-B4F0-652AC6677860.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/BBC192EA-56A6-4532-876C-F3382F84EA9E/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/BBC192EA-56A6-4532-876C-F3382F84EA9E/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/BBC192EA-56A6-4532-876C-F3382F84EA9E/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/BBC192EA-56A6-4532-876C-F3382F84EA9E/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 512
+      },
+      {
+        "path": "hot/cpr-checkpoints/BBC192EA-56A6-4532-876C-F3382F84EA9E/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/BBC192EA-56A6-4532-876C-F3382F84EA9E/D96384DC-219E-4913-A997-2672F456A404.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/BBC192EA-56A6-4532-876C-F3382F84EA9E/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/BBC192EA-56A6-4532-876C-F3382F84EA9E/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/BBC192EA-56A6-4532-876C-F3382F84EA9E/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-after-root/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/AB860CD3-3828-411F-A217-C68B5822983F/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/AB860CD3-3828-411F-A217-C68B5822983F/24F1D28F-2D8F-40B2-A5FC-F4B7D3C6B32A.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/AB860CD3-3828-411F-A217-C68B5822983F/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/AB860CD3-3828-411F-A217-C68B5822983F/AE143D09-8EBC-4682-A5B8-1DC508612C25.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/AB860CD3-3828-411F-A217-C68B5822983F/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/AB860CD3-3828-411F-A217-C68B5822983F/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/AB860CD3-3828-411F-A217-C68B5822983F/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/AB860CD3-3828-411F-A217-C68B5822983F/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 37376
+      },
+      {
+        "path": "hot/cpr-checkpoints/AB860CD3-3828-411F-A217-C68B5822983F/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/AB860CD3-3828-411F-A217-C68B5822983F/24F1D28F-2D8F-40B2-A5FC-F4B7D3C6B32A.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/AB860CD3-3828-411F-A217-C68B5822983F/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/AB860CD3-3828-411F-A217-C68B5822983F/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/AB860CD3-3828-411F-A217-C68B5822983F/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-after-wal/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/9D8C8360-48F4-4A31-819C-AD329E29B2A5/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/9D8C8360-48F4-4A31-819C-AD329E29B2A5/F045185F-F295-4FE3-981E-1136B3882B91.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/9D8C8360-48F4-4A31-819C-AD329E29B2A5/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/9D8C8360-48F4-4A31-819C-AD329E29B2A5/5EA10B41-0357-417B-9D84-2793B0B7E26F.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/9D8C8360-48F4-4A31-819C-AD329E29B2A5/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/9D8C8360-48F4-4A31-819C-AD329E29B2A5/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/9D8C8360-48F4-4A31-819C-AD329E29B2A5/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/9D8C8360-48F4-4A31-819C-AD329E29B2A5/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 33792
+      },
+      {
+        "path": "hot/cpr-checkpoints/9D8C8360-48F4-4A31-819C-AD329E29B2A5/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/9D8C8360-48F4-4A31-819C-AD329E29B2A5/F045185F-F295-4FE3-981E-1136B3882B91.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/9D8C8360-48F4-4A31-819C-AD329E29B2A5/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/9D8C8360-48F4-4A31-819C-AD329E29B2A5/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/9D8C8360-48F4-4A31-819C-AD329E29B2A5/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-after-wal/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/FF463A28-0D95-4AC6-9766-4589F3669B42/9B83A661-DF34-4C7A-A195-D2817CBC4FA1.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cpr-checkpoints/FF463A28-0D95-4AC6-9766-4589F3669B42/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/FF463A28-0D95-4AC6-9766-4589F3669B42/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/FF463A28-0D95-4AC6-9766-4589F3669B42/BE2D3EEC-0DD0-4247-986F-DF9F88B2C10A.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/FF463A28-0D95-4AC6-9766-4589F3669B42/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/FF463A28-0D95-4AC6-9766-4589F3669B42/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/FF463A28-0D95-4AC6-9766-4589F3669B42/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/FF463A28-0D95-4AC6-9766-4589F3669B42/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 34304
+      },
+      {
+        "path": "hot/cpr-checkpoints/FF463A28-0D95-4AC6-9766-4589F3669B42/9B83A661-DF34-4C7A-A195-D2817CBC4FA1.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/cpr-checkpoints/FF463A28-0D95-4AC6-9766-4589F3669B42/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/index-checkpoints/FF463A28-0D95-4AC6-9766-4589F3669B42/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/FF463A28-0D95-4AC6-9766-4589F3669B42/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/FF463A28-0D95-4AC6-9766-4589F3669B42/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/io-error-db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 165
+      },
+      {
+        "path": "cold/cpr-checkpoints/F4ED7392-E7DE-4508-ACFE-270340CEF1C9/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/F4ED7392-E7DE-4508-ACFE-270340CEF1C9/486CEF54-54B5-4480-AAD6-831A28CFA19B.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/F4ED7392-E7DE-4508-ACFE-270340CEF1C9/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/F4ED7392-E7DE-4508-ACFE-270340CEF1C9/F9B64B68-95A4-4515-A6C7-C1A1AAF972F1.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/F4ED7392-E7DE-4508-ACFE-270340CEF1C9/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/F4ED7392-E7DE-4508-ACFE-270340CEF1C9/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/F4ED7392-E7DE-4508-ACFE-270340CEF1C9/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/F4ED7392-E7DE-4508-ACFE-270340CEF1C9/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 512
+      },
+      {
+        "path": "hot/cpr-checkpoints/F4ED7392-E7DE-4508-ACFE-270340CEF1C9/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/F4ED7392-E7DE-4508-ACFE-270340CEF1C9/486CEF54-54B5-4480-AAD6-831A28CFA19B.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/F4ED7392-E7DE-4508-ACFE-270340CEF1C9/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/F4ED7392-E7DE-4508-ACFE-270340CEF1C9/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/F4ED7392-E7DE-4508-ACFE-270340CEF1C9/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/data-corrupt-db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 170
+      },
+      {
+        "path": "cold/cpr-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/CCFCD858-B9C4-429F-A76C-16303C3A9972.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/299556C3-8DF6-4C06-BB4D-4ADE34B7C9F7.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/ht.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log1",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log4",
+        "bytes": 2299392
+      },
+      {
+        "path": "hot/log.log3",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log2",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/cpr-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/CCFCD858-B9C4-429F-A76C-16303C3A9972.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/ht.dat",
+        "bytes": 262144
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-data-sync/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/38C759D2-6544-40DB-863B-AD89FB796972/9CE645B1-5CB0-475D-B266-351D28CC366B.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cpr-checkpoints/38C759D2-6544-40DB-863B-AD89FB796972/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/38C759D2-6544-40DB-863B-AD89FB796972/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/38C759D2-6544-40DB-863B-AD89FB796972/85FEF6B0-69AE-4A43-A179-6D1142C13D8B.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/38C759D2-6544-40DB-863B-AD89FB796972/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/38C759D2-6544-40DB-863B-AD89FB796972/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/38C759D2-6544-40DB-863B-AD89FB796972/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/38C759D2-6544-40DB-863B-AD89FB796972/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 33792
+      },
+      {
+        "path": "hot/cpr-checkpoints/38C759D2-6544-40DB-863B-AD89FB796972/9CE645B1-5CB0-475D-B266-351D28CC366B.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/cpr-checkpoints/38C759D2-6544-40DB-863B-AD89FB796972/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/index-checkpoints/38C759D2-6544-40DB-863B-AD89FB796972/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/38C759D2-6544-40DB-863B-AD89FB796972/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/38C759D2-6544-40DB-863B-AD89FB796972/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/partial-tail-db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 169
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/6EBC9445-5E6C-4C53-8494-A431B8F65FAB/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/6EBC9445-5E6C-4C53-8494-A431B8F65FAB/D5E7A6F0-B329-4308-B36D-9E5F3A8B3B15.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/6EBC9445-5E6C-4C53-8494-A431B8F65FAB/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/6EBC9445-5E6C-4C53-8494-A431B8F65FAB/CCB4C6B2-801C-4AA9-9C01-CC93E72A5B57.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/6EBC9445-5E6C-4C53-8494-A431B8F65FAB/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/6EBC9445-5E6C-4C53-8494-A431B8F65FAB/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/6EBC9445-5E6C-4C53-8494-A431B8F65FAB/ht.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/index-checkpoints/6EBC9445-5E6C-4C53-8494-A431B8F65FAB/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log1",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log4",
+        "bytes": 2299392
+      },
+      {
+        "path": "hot/log.log3",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log2",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/cpr-checkpoints/6EBC9445-5E6C-4C53-8494-A431B8F65FAB/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/6EBC9445-5E6C-4C53-8494-A431B8F65FAB/D5E7A6F0-B329-4308-B36D-9E5F3A8B3B15.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/6EBC9445-5E6C-4C53-8494-A431B8F65FAB/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/6EBC9445-5E6C-4C53-8494-A431B8F65FAB/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/6EBC9445-5E6C-4C53-8494-A431B8F65FAB/ht.dat",
+        "bytes": 262144
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-data-flush/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 167
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/C4304347-B9A4-423B-96DB-5C13876576DB/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/C4304347-B9A4-423B-96DB-5C13876576DB/D331FF1D-DA33-495D-A218-00ABF78B4656.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/C4304347-B9A4-423B-96DB-5C13876576DB/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/C4304347-B9A4-423B-96DB-5C13876576DB/6C305BC0-DBC1-4A73-A44A-FDC82222B235.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/C4304347-B9A4-423B-96DB-5C13876576DB/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/C4304347-B9A4-423B-96DB-5C13876576DB/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/C4304347-B9A4-423B-96DB-5C13876576DB/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/C4304347-B9A4-423B-96DB-5C13876576DB/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 33792
+      },
+      {
+        "path": "hot/cpr-checkpoints/C4304347-B9A4-423B-96DB-5C13876576DB/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/C4304347-B9A4-423B-96DB-5C13876576DB/D331FF1D-DA33-495D-A218-00ABF78B4656.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/C4304347-B9A4-423B-96DB-5C13876576DB/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/C4304347-B9A4-423B-96DB-5C13876576DB/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/C4304347-B9A4-423B-96DB-5C13876576DB/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/collision-db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/58D7C9D7-4692-4C99-9D85-DC4EAABB07F5/B42CE842-AF13-4633-9961-901DDE566EF8.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cpr-checkpoints/58D7C9D7-4692-4C99-9D85-DC4EAABB07F5/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/58D7C9D7-4692-4C99-9D85-DC4EAABB07F5/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/58D7C9D7-4692-4C99-9D85-DC4EAABB07F5/4341B4ED-DDEB-4998-A895-9FF727989573.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/58D7C9D7-4692-4C99-9D85-DC4EAABB07F5/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/58D7C9D7-4692-4C99-9D85-DC4EAABB07F5/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/58D7C9D7-4692-4C99-9D85-DC4EAABB07F5/ht.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/index-checkpoints/58D7C9D7-4692-4C99-9D85-DC4EAABB07F5/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 262656
+      },
+      {
+        "path": "hot/cpr-checkpoints/58D7C9D7-4692-4C99-9D85-DC4EAABB07F5/B42CE842-AF13-4633-9961-901DDE566EF8.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/cpr-checkpoints/58D7C9D7-4692-4C99-9D85-DC4EAABB07F5/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/index-checkpoints/58D7C9D7-4692-4C99-9D85-DC4EAABB07F5/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/58D7C9D7-4692-4C99-9D85-DC4EAABB07F5/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/58D7C9D7-4692-4C99-9D85-DC4EAABB07F5/ht.dat",
+        "bytes": 262144
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/root-corrupt-db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 170
+      },
+      {
+        "path": "cold/cpr-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/CCFCD858-B9C4-429F-A76C-16303C3A9972.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/299556C3-8DF6-4C06-BB4D-4ADE34B7C9F7.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/ht.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log1",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log4",
+        "bytes": 2299392
+      },
+      {
+        "path": "hot/log.log3",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/log.log2",
+        "bytes": 8388608
+      },
+      {
+        "path": "hot/cpr-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/CCFCD858-B9C4-429F-A76C-16303C3A9972.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/80A891D0-8B14-408A-BE51-5C3571D9E018/ht.dat",
+        "bytes": 262144
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-root/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 167
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/47CB07CF-5788-41E1-ADA7-2F544613D554/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/47CB07CF-5788-41E1-ADA7-2F544613D554/0C28FE49-503C-4699-B868-D7EE73CAC6FB.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/47CB07CF-5788-41E1-ADA7-2F544613D554/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/47CB07CF-5788-41E1-ADA7-2F544613D554/EE9467CE-C37D-4314-A6AE-A691F516D97C.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/47CB07CF-5788-41E1-ADA7-2F544613D554/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/47CB07CF-5788-41E1-ADA7-2F544613D554/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/47CB07CF-5788-41E1-ADA7-2F544613D554/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/47CB07CF-5788-41E1-ADA7-2F544613D554/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 37376
+      },
+      {
+        "path": "hot/cpr-checkpoints/47CB07CF-5788-41E1-ADA7-2F544613D554/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/47CB07CF-5788-41E1-ADA7-2F544613D554/0C28FE49-503C-4699-B868-D7EE73CAC6FB.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/47CB07CF-5788-41E1-ADA7-2F544613D554/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/47CB07CF-5788-41E1-ADA7-2F544613D554/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/47CB07CF-5788-41E1-ADA7-2F544613D554/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries/f2-fail/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/6D94C365-ADEE-4DFE-8039-6F7DF2092529/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/6D94C365-ADEE-4DFE-8039-6F7DF2092529/AF0812C9-EC30-463A-94C7-854CB795071E.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/6D94C365-ADEE-4DFE-8039-6F7DF2092529/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/6D94C365-ADEE-4DFE-8039-6F7DF2092529/4E2C7D52-0D92-4DE0-9215-B8F318FC0C48.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/6D94C365-ADEE-4DFE-8039-6F7DF2092529/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/6D94C365-ADEE-4DFE-8039-6F7DF2092529/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/6D94C365-ADEE-4DFE-8039-6F7DF2092529/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/6D94C365-ADEE-4DFE-8039-6F7DF2092529/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 33792
+      },
+      {
+        "path": "hot/cpr-checkpoints/6D94C365-ADEE-4DFE-8039-6F7DF2092529/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/6D94C365-ADEE-4DFE-8039-6F7DF2092529/AF0812C9-EC30-463A-94C7-854CB795071E.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/6D94C365-ADEE-4DFE-8039-6F7DF2092529/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/6D94C365-ADEE-4DFE-8039-6F7DF2092529/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/6D94C365-ADEE-4DFE-8039-6F7DF2092529/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-hot-inline/f2-fail/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 166
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/07E046DE-C7CD-4D9A-BF82-DC14380E09E8/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/07E046DE-C7CD-4D9A-BF82-DC14380E09E8/0CC0248B-0C75-4C9D-BF9E-BA3582327EC3.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/07E046DE-C7CD-4D9A-BF82-DC14380E09E8/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/07E046DE-C7CD-4D9A-BF82-DC14380E09E8/154EA519-1AC6-4CCE-8BD6-31F5C01042C2.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/07E046DE-C7CD-4D9A-BF82-DC14380E09E8/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/07E046DE-C7CD-4D9A-BF82-DC14380E09E8/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/07E046DE-C7CD-4D9A-BF82-DC14380E09E8/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/07E046DE-C7CD-4D9A-BF82-DC14380E09E8/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 33792
+      },
+      {
+        "path": "hot/cpr-checkpoints/07E046DE-C7CD-4D9A-BF82-DC14380E09E8/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/07E046DE-C7CD-4D9A-BF82-DC14380E09E8/0CC0248B-0C75-4C9D-BF9E-BA3582327EC3.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/07E046DE-C7CD-4D9A-BF82-DC14380E09E8/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/07E046DE-C7CD-4D9A-BF82-DC14380E09E8/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/07E046DE-C7CD-4D9A-BF82-DC14380E09E8/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-batch2/f2-fail/db",
+    "files": [
+      {
+        "path": "LOCK",
+        "bytes": 0
+      },
+      {
+        "path": "F2-SYNC-CURRENT",
+        "bytes": 168
+      },
+      {
+        "path": "cold/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cpr-checkpoints/AA526C7B-250B-473E-892C-1C1BCD934927/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cpr-checkpoints/AA526C7B-250B-473E-892C-1C1BCD934927/B68485C5-655E-4892-866E-D97CF810B69C.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/log.log0",
+        "bytes": 1048576
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/AA526C7B-250B-473E-892C-1C1BCD934927/8E1AEF9E-52D4-4A53-B995-23D9C5595D2D.dat",
+        "bytes": 32
+      },
+      {
+        "path": "cold/cold-index/cpr-checkpoints/AA526C7B-250B-473E-892C-1C1BCD934927/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/AA526C7B-250B-473E-892C-1C1BCD934927/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/AA526C7B-250B-473E-892C-1C1BCD934927/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "cold/cold-index/index-checkpoints/AA526C7B-250B-473E-892C-1C1BCD934927/ht.dat",
+        "bytes": 4194304
+      },
+      {
+        "path": "cold/index-checkpoints/AA526C7B-250B-473E-892C-1C1BCD934927/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/log.log0",
+        "bytes": 33792
+      },
+      {
+        "path": "hot/cpr-checkpoints/AA526C7B-250B-473E-892C-1C1BCD934927/info.dat",
+        "bytes": 2336
+      },
+      {
+        "path": "hot/cpr-checkpoints/AA526C7B-250B-473E-892C-1C1BCD934927/B68485C5-655E-4892-866E-D97CF810B69C.dat",
+        "bytes": 32
+      },
+      {
+        "path": "hot/index-checkpoints/AA526C7B-250B-473E-892C-1C1BCD934927/ofb.dat",
+        "bytes": 262144
+      },
+      {
+        "path": "hot/index-checkpoints/AA526C7B-250B-473E-892C-1C1BCD934927/info.dat",
+        "bytes": 512
+      },
+      {
+        "path": "hot/index-checkpoints/AA526C7B-250B-473E-892C-1C1BCD934927/ht.dat",
+        "bytes": 4194304
+      }
+    ]
+  }
+]

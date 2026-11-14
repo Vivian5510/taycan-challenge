@@ -1,0 +1,34 @@
+seed=20261021 num_keys=10000 key_mode=random key_size=64 value_size=128 reader_threads=4 mem_limit_bytes=4294967296
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from Concurrent
+[ RUN      ] Concurrent.DisjointKeys
+F2_COMMIT_COUNTS single_operations=40000 full_index=1
+F2_DATA_PREFIX commits=40000 data_syncs=40000 directory_syncs=3 write_calls=40001 write_bytes=20480512 stable_tail=20480512 base_tail=512 recovered_commits=0
+F2_PREFIX_INDEX cross_key_links=0
+F2_AIO_BATCH limit=4 polls=1921476 callbacks=258 multi_polls=38
+F2_AIO_BATCH limit=4 polls=1919752 callbacks=1 multi_polls=0
+F2_AIO_BATCH limit=4 polls=1920926 callbacks=40259 multi_polls=41
+F2_SYNC_IO sync_calls=40035 write_calls=40519 write_bytes=29395109
+[       OK ] Concurrent.DisjointKeys (3277 ms)
+[ RUN      ] Concurrent.SingleWriterVersionBounds
+F2_COMMIT_COUNTS single_operations=110000 full_index=1
+F2_DATA_PREFIX commits=110000 data_syncs=110000 directory_syncs=7 write_calls=150002 write_bytes=76801024 stable_tail=56320512 base_tail=512 recovered_commits=0
+F2_PREFIX_INDEX cross_key_links=0
+F2_AIO_BATCH limit=4 polls=13167083 callbacks=258 multi_polls=56
+F2_AIO_BATCH limit=4 polls=13165782 callbacks=1 multi_polls=0
+F2_AIO_BATCH limit=4 polls=13166806 callbacks=110259 multi_polls=52
+F2_SYNC_IO sync_calls=150074 write_calls=151038 write_bytes=94630217
+F2_COMMIT_COUNTS single_operations=0 full_index=1
+F2_DATA_PREFIX commits=0 data_syncs=0 directory_syncs=0 write_calls=150002 write_bytes=76801024 stable_tail=56320512 base_tail=56320512 recovered_commits=110000
+F2_PREFIX_INDEX cross_key_links=0
+F2_AIO_BATCH limit=4 polls=27839 callbacks=519 multi_polls=85
+F2_AIO_BATCH limit=4 polls=24858 callbacks=5 multi_polls=0
+F2_AIO_BATCH limit=4 polls=27639 callbacks=624 multi_polls=140
+F2_SYNC_IO sync_calls=150113 write_calls=151558 write_bytes=105641976
+[       OK ] Concurrent.SingleWriterVersionBounds (12230 ms)
+[----------] 2 tests from Concurrent (15508 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (15508 ms total)
+[  PASSED  ] 2 tests.

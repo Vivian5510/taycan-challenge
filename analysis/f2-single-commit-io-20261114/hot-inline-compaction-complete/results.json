@@ -1,0 +1,21 @@
+[
+  {
+    "test": "compaction",
+    "parameters": {
+      "num_keys": 100000,
+      "key_size": 16,
+      "value_size": 4096,
+      "rounds": 10,
+      "mem_limit_bytes": 4294967296,
+      "seed": 20261021
+    },
+    "rss_limit_bytes": 4724464025,
+    "harness_allowance_bytes": 0,
+    "validation_scope": "macOS native development",
+    "log": "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/hot-inline-compaction-complete/compaction-1rk_m466/output.log",
+    "status": "FAIL",
+    "reason": "timeout",
+    "elapsed_seconds": 600.0761022080001,
+    "rss_peak_bytes": 1509408768
+  }
+]

@@ -1,0 +1,4 @@
+F2_AIO_BATCH limit=2 polls=0 callbacks=0 multi_polls=0
+F2_AIO_BATCH limit=2 polls=0 callbacks=0 multi_polls=0
+F2_AIO_BATCH limit=2 polls=0 callbacks=0 multi_polls=0
+FAIL IOError: interior native log corruption: incomplete data checksum

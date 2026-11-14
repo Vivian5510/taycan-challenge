@@ -1,0 +1,23 @@
+seed=20261021 num_keys=1000 key_mode=random key_size=32 value_size=256 reader_threads=4 mem_limit_bytes=4294967296
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Recovery
+[ RUN      ] Recovery.ReopenTwice
+F2_COMMIT_COUNTS single_operations=2000 full_index=1
+F2_DATA_PREFIX commits=2000 data_syncs=2000 directory_syncs=1 write_calls=2001 write_bytes=1024512 stable_tail=1024512 base_tail=512 recovered_commits=0
+F2_PREFIX_INDEX cross_key_links=0
+F2_SYNC_IO sync_calls=2033 write_calls=2519 write_bytes=9939109
+F2_COMMIT_COUNTS single_operations=1000 full_index=1
+F2_DATA_PREFIX commits=1000 data_syncs=1000 directory_syncs=0 write_calls=3001 write_bytes=1536512 stable_tail=1536512 base_tail=1024512 recovered_commits=2000
+F2_PREFIX_INDEX cross_key_links=0
+F2_SYNC_IO sync_calls=3072 write_calls=4039 write_bytes=21462865
+F2_COMMIT_COUNTS single_operations=0 full_index=1
+F2_DATA_PREFIX commits=0 data_syncs=0 directory_syncs=0 write_calls=3001 write_bytes=1536512 stable_tail=1536512 base_tail=1536512 recovered_commits=1000
+F2_PREFIX_INDEX cross_key_links=0
+F2_SYNC_IO sync_calls=3111 write_calls=4559 write_bytes=32474621
+[       OK ] Recovery.ReopenTwice (882 ms)
+[----------] 1 test from Recovery (882 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (882 ms total)
+[  PASSED  ] 1 test.

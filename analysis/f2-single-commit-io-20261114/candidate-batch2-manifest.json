@@ -1,0 +1,23 @@
+{
+  "candidate": "aio-batch2",
+  "note": "Configuration trial on pre-existing AIO completion drain; no successful Put/Delete batching",
+  "binary_sha256": {
+    "build/f2-io-aio-batch2-20261114/taycan_kv_bench": "aa55ebf92fdb663d8960bc03180e3af79669af784f5b13224a74923929b9fdad",
+    "build/f2-io-aio-batch2-20261114/basic_test": "d97df41195f707baa12b2a1e360685520286c4af2b3ecea5ec427eb5ba82ba04",
+    "build/f2-io-aio-batch2-20261114/recovery_test": "cde7f01bd990bae382292b2b06e12ac61974ea359e8734218ad1a2d52b1faa3a",
+    "build/f2-io-aio-batch2-20261114/concurrent_test": "6aa0b3f624022fc754240c8e1df306213c2815909833efcace020395a794c652",
+    "build/f2-io-aio-batch2-20261114/crash_worker": "e771c6b23e3199787b897625924a550bc9c2354349cf6f489865367901b5355d",
+    "build/f2-io-aio-batch2-20261114/compaction_test": "27db53b6bd00f0a969dec1a64f3f9cba200aba3533cc93cd57fd5d8a7a39ba9e",
+    "build/f2-io-aio-batch2-20261114/engine/f2_sync_api_probe": "50e16b55cd91f023c2d4ae376af865d2c871f48b7172334af2e850cbcc8a08bc"
+  },
+  "build_config": {
+    "io": "posix-aio",
+    "buffered_hot_log": false,
+    "aio_completion_batch": 2,
+    "durable_compaction": true,
+    "segment_bits": 23,
+    "prefix_bytes": 512,
+    "mac_sync": "fsync"
+  },
+  "main_preserved_at": "26e4466"
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "variant": "aio-nocache",
+    "returncode": 0,
+    "status": "PASS",
+    "stdout": "REENTRY callbacks=2 sibling=1 timed_out=0 errors=0\n"
+  },
+  {
+    "variant": "aio-batch2",
+    "returncode": 1,
+    "status": "FAIL",
+    "stdout": "REENTRY callbacks=2 sibling=1 timed_out=1 errors=0\n"
+  }
+]

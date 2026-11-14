@@ -10,7 +10,7 @@ bool QueueIoHandler::TryComplete() {
     SubmitQueuedLocked();
     for(auto it=aio_jobs_.begin();it!=aio_jobs_.end() && count<completed.size();) {
       auto& job=**it;
-      if(!job.error && !job.submitted){++it;continue;}
+      if(!job.error && !job.submitted && !job.inline_completed){++it;continue;}
       if(job.submitted) {
         const int error=::aio_error(&job.control);
         if(error==EINPROGRESS){++it;continue;}

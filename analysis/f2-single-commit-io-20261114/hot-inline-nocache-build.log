@@ -1,0 +1,173 @@
+[ 10%] Building CXX object engine/CMakeFiles/faster_cpp.dir/faster-src/core/address.cc.o
+[ 20%] Building CXX object engine/CMakeFiles/faster_cpp.dir/faster-src/core/lss_allocator.cc.o
+[ 30%] Building CXX object engine/CMakeFiles/faster_cpp.dir/faster-src/core/thread.cc.o
+[ 40%] Building CXX object engine/CMakeFiles/faster_cpp.dir/native_file.cc.o
+[ 50%] Linking CXX static library libfaster_cpp.a
+[ 50%] Built target faster_cpp
+[ 60%] Building CXX object engine/CMakeFiles/contestant_engine.dir/faster_engine.cc.o
+[ 70%] Building CXX object engine/CMakeFiles/contestant_engine.dir/faster_backend.cc.o
+In file included from /Users/rosy/devspace/code/taycan-challenge/experiments/faster-native-adapter/faster_backend.cc:4:
+In file included from /Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/f2.h:7:
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/faster.h:1998:12: warning: enumeration values 'Insert' and 'Recovery' not handled in switch [-Wswitch]
+ 1998 |     switch(pending_context.type) {
+      |            ^~~~~~~~~~~~~~~~~~~~
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/faster.h:909:14: note: in instantiation of member function 'FASTER::core::FasterKv<FASTER::index::HashIndexChunkKey<FASTER::core::IndexKeyHash<FASTER::index::ColdLogIndexBucketEntryDef, '\x00', '\x03'>>, FASTER::index::HashIndexChunkEntry<1>, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>>::HandleOperationStatus' requested here
+  909 |     status = HandleOperationStatus(thread_ctx(), pending_context, internal_status, async);
+      |              ^
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/index/cold_index.h:482:27: note: in instantiation of function template specialization 'FASTER::core::FasterKv<FASTER::index::HashIndexChunkKey<FASTER::core::IndexKeyHash<FASTER::index::ColdLogIndexBucketEntryDef, '\x00', '\x03'>>, FASTER::index::HashIndexChunkEntry<1>, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>>::Rmw<FASTER::index::ColdIndexRmwContext<FASTER::index::ColdLogHashIndexDefinition<8>>>' requested here
+  482 |   Status status = store_->Rmw(context, AsyncEntryOperationDiskCallback, ++serial_num_);
+      |                           ^
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/index/cold_index.h:392:19: note: in instantiation of function template specialization 'FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>::RmwIndexEntry<FASTER::core::PendingConditionalInsertContext<FASTER::core::CompactionConditionalInsertContext<(anonymous namespace)::Key, (anonymous namespace)::Value>>>' requested here
+  392 |   Status status = RmwIndexEntry(exec_context, pending_context, Address::kInvalidAddress,
+      |                   ^
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/faster.h:4068:32: note: in instantiation of function template specialization 'FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>::FindOrCreateEntry<FASTER::core::PendingConditionalInsertContext<FASTER::core::CompactionConditionalInsertContext<(anonymous namespace)::Key, (anonymous namespace)::Value>>>' requested here
+ 4068 |     index_status = hash_index_.FindOrCreateEntry(thread_ctx(), pending_context);
+      |                                ^
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/faster.h:4009:37: note: in instantiation of function template specialization 'FASTER::core::FasterKv<(anonymous namespace)::Key, (anonymous namespace)::Value, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>>::InternalConditionalInsert<FASTER::core::PendingConditionalInsertContext<FASTER::core::CompactionConditionalInsertContext<(anonymous namespace)::Key, (anonymous namespace)::Value>>>' requested here
+ 4009 |   OperationStatus internal_status = InternalConditionalInsert(pending_context);
+      |                                     ^
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/faster.h:3927:23: note: (skipping 8 contexts in backtrace; use -ftemplate-backtrace-limit=0 to see all)
+ 3927 |       Status status = ConditionalInsert(ci_context, ci_callback,
+      |                       ^
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/faster.h:4522:20: note: in instantiation of member function 'FASTER::core::FasterKv<(anonymous namespace)::Key, (anonymous namespace)::Value, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>>::CompactWithLookup' requested here
+ 4522 |     bool success = CompactWithLookup(until_address, true, hlog_compaction_config_.num_threads);
+      |                    ^
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/faster.h:174:61: note: in instantiation of member function 'FASTER::core::FasterKv<(anonymous namespace)::Key, (anonymous namespace)::Value, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>>::AutoCompactHlog' requested here
+  174 |       compaction_thread_ = std::move(std::thread(&FasterKv::AutoCompactHlog, this));
+      |                                                             ^
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/f2.h:50:5: note: in instantiation of member function 'FASTER::core::FasterKv<(anonymous namespace)::Key, (anonymous namespace)::Value, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>>::FasterKv' requested here
+   50 |   : hot_store{ hot_index_config, hot_log_mem_size, hot_log_filename, hot_log_mutable_pct, rc_config }  // FasterKv auto-compaction is disabled
+      |     ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/unique_ptr.h:635:30: note: in instantiation of member function 'FASTER::core::F2Kv<(anonymous namespace)::Key, (anonymous namespace)::Value, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>>::F2Kv' requested here
+  635 |   return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...));
+      |                              ^
+/Users/rosy/devspace/code/taycan-challenge/experiments/faster-native-adapter/f2_sync_runtime.inc:80:17: note: in instantiation of function template specialization 'std::make_unique<FASTER::core::F2Kv<(anonymous namespace)::Key, (anonymous namespace)::Value, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>::Config &, unsigned long long &, std::string, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>::Config &, unsigned long long &, std::string, double, int, FASTER::core::ReadCacheConfig &, FASTER::core::F2CompactionConfig &>' requested here
+   80 |     store_=std::make_unique<Store>(hot,memory,(directory_/"hot").string()+"/",cold,memory,(directory_/"cold").string()+"/",1.0/3.0,0,rc,compaction);
+      |                 ^
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/faster.h:1998:12: note: add missing switch cases
+ 1998 |     switch(pending_context.type) {
+      |            ^
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/faster.h:1998:12: warning: enumeration values 'Insert' and 'Recovery' not handled in switch [-Wswitch]
+ 1998 |     switch(pending_context.type) {
+      |            ^~~~~~~~~~~~~~~~~~~~
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/faster.h:4039:14: note: in instantiation of member function 'FASTER::core::FasterKv<(anonymous namespace)::Key, (anonymous namespace)::Value, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>>::HandleOperationStatus' requested here
+ 4039 |     status = HandleOperationStatus(thread_ctx(), pending_context, internal_status, async);
+      |              ^
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/faster.h:3927:23: note: in instantiation of function template specialization 'FASTER::core::FasterKv<(anonymous namespace)::Key, (anonymous namespace)::Value, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>>::ConditionalInsert<FASTER::core::CompactionConditionalInsertContext<(anonymous namespace)::Key, (anonymous namespace)::Value>>' requested here
+ 3927 |       Status status = ConditionalInsert(ci_context, ci_callback,
+      |                       ^
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/faster.h:4297:7: note: in instantiation of function template specialization 'FASTER::core::FasterKv<(anonymous namespace)::Key, (anonymous namespace)::Value, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>>::InternalCompact<FASTER::core::FasterKv<(anonymous namespace)::Key, (anonymous namespace)::Value, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>>>' requested here
+ 4297 |       InternalCompact<faster_t>(-1, std::numeric_limits<uint32_t>::max());
+      |       ^
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/faster.h:1374:5: note: in instantiation of member function 'FASTER::core::FasterKv<(anonymous namespace)::Key, (anonymous namespace)::Value, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>>::CompactRecords' requested here
+ 1374 |     CompactRecords();
+      |     ^
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/faster.h:4219:49: note: in instantiation of function template specialization 'FASTER::core::FasterKv<(anonymous namespace)::Key, (anonymous namespace)::Value, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>>::InternalUpsert<FASTER::core::AsyncPendingUpsertContext<(anonymous namespace)::Key>>' requested here
+ 4219 |       OperationStatus op_status = other_store_->InternalUpsert(*upsert_context);
+      |                                                 ^
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/faster.h:4009:37: note: (skipping 4 contexts in backtrace; use -ftemplate-backtrace-limit=0 to see all)
+ 4009 |   OperationStatus internal_status = InternalConditionalInsert(pending_context);
+      |                                     ^
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/faster.h:4522:20: note: in instantiation of member function 'FASTER::core::FasterKv<(anonymous namespace)::Key, (anonymous namespace)::Value, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>>::CompactWithLookup' requested here
+ 4522 |     bool success = CompactWithLookup(until_address, true, hlog_compaction_config_.num_threads);
+      |                    ^
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/faster.h:174:61: note: in instantiation of member function 'FASTER::core::FasterKv<(anonymous namespace)::Key, (anonymous namespace)::Value, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>>::AutoCompactHlog' requested here
+  174 |       compaction_thread_ = std::move(std::thread(&FasterKv::AutoCompactHlog, this));
+      |                                                             ^
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/f2.h:50:5: note: in instantiation of member function 'FASTER::core::FasterKv<(anonymous namespace)::Key, (anonymous namespace)::Value, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>>::FasterKv' requested here
+   50 |   : hot_store{ hot_index_config, hot_log_mem_size, hot_log_filename, hot_log_mutable_pct, rc_config }  // FasterKv auto-compaction is disabled
+      |     ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/unique_ptr.h:635:30: note: in instantiation of member function 'FASTER::core::F2Kv<(anonymous namespace)::Key, (anonymous namespace)::Value, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>>::F2Kv' requested here
+  635 |   return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...));
+      |                              ^
+/Users/rosy/devspace/code/taycan-challenge/experiments/faster-native-adapter/f2_sync_runtime.inc:80:17: note: in instantiation of function template specialization 'std::make_unique<FASTER::core::F2Kv<(anonymous namespace)::Key, (anonymous namespace)::Value, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>::Config &, unsigned long long &, std::string, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>::Config &, unsigned long long &, std::string, double, int, FASTER::core::ReadCacheConfig &, FASTER::core::F2CompactionConfig &>' requested here
+   80 |     store_=std::make_unique<Store>(hot,memory,(directory_/"hot").string()+"/",cold,memory,(directory_/"cold").string()+"/",1.0/3.0,0,rc,compaction);
+      |                 ^
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/faster.h:1998:12: note: add missing switch cases
+ 1998 |     switch(pending_context.type) {
+      |            ^
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/faster.h:1998:12: warning: enumeration values 'Insert' and 'Recovery' not handled in switch [-Wswitch]
+ 1998 |     switch(pending_context.type) {
+      |            ^~~~~~~~~~~~~~~~~~~~
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/faster.h:4039:14: note: in instantiation of member function 'FASTER::core::FasterKv<(anonymous namespace)::Key, (anonymous namespace)::Value, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>>::HandleOperationStatus' requested here
+ 4039 |     status = HandleOperationStatus(thread_ctx(), pending_context, internal_status, async);
+      |              ^
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/faster.h:3927:23: note: in instantiation of function template specialization 'FASTER::core::FasterKv<(anonymous namespace)::Key, (anonymous namespace)::Value, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>>::ConditionalInsert<FASTER::core::CompactionConditionalInsertContext<(anonymous namespace)::Key, (anonymous namespace)::Value>>' requested here
+ 3927 |       Status status = ConditionalInsert(ci_context, ci_callback,
+      |                       ^
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/faster.h:3649:34: note: in instantiation of function template specialization 'FASTER::core::FasterKv<(anonymous namespace)::Key, (anonymous namespace)::Value, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>>::InternalCompact<FASTER::core::FasterKv<(anonymous namespace)::Key, (anonymous namespace)::Value, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>>>' requested here
+ 3649 |       &FasterKv<K, V, D, H, OH>::InternalCompact<faster_t>, this, idx, std::numeric_limits<uint32_t>::max());
+      |                                  ^
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/faster.h:3618:10: note: in instantiation of member function 'FASTER::core::FasterKv<(anonymous namespace)::Key, (anonymous namespace)::Value, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>>::InternalCompactWithLookup' requested here
+ 3618 |   return InternalCompactWithLookup(until_address, shift_begin_address, n_threads, to_other_store, checkpoint, token);
+      |          ^
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/faster.h:4522:20: note: in instantiation of member function 'FASTER::core::FasterKv<(anonymous namespace)::Key, (anonymous namespace)::Value, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>>::CompactWithLookup' requested here
+ 4522 |     bool success = CompactWithLookup(until_address, true, hlog_compaction_config_.num_threads);
+      |                    ^
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/faster.h:174:61: note: in instantiation of member function 'FASTER::core::FasterKv<(anonymous namespace)::Key, (anonymous namespace)::Value, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>>::AutoCompactHlog' requested here
+  174 |       compaction_thread_ = std::move(std::thread(&FasterKv::AutoCompactHlog, this));
+      |                                                             ^
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/f2.h:50:5: note: in instantiation of member function 'FASTER::core::FasterKv<(anonymous namespace)::Key, (anonymous namespace)::Value, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>>::FasterKv' requested here
+   50 |   : hot_store{ hot_index_config, hot_log_mem_size, hot_log_filename, hot_log_mutable_pct, rc_config }  // FasterKv auto-compaction is disabled
+      |     ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/unique_ptr.h:635:30: note: in instantiation of member function 'FASTER::core::F2Kv<(anonymous namespace)::Key, (anonymous namespace)::Value, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>>::F2Kv' requested here
+  635 |   return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...));
+      |                              ^
+/Users/rosy/devspace/code/taycan-challenge/experiments/faster-native-adapter/f2_sync_runtime.inc:80:17: note: in instantiation of function template specialization 'std::make_unique<FASTER::core::F2Kv<(anonymous namespace)::Key, (anonymous namespace)::Value, FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>>, FASTER::index::MemHashIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>>::Config &, unsigned long long &, std::string, FASTER::index::ColdIndex<FASTER::device::FileSystemDisk<FASTER::environment::QueueIoHandler, 8388608>, FASTER::index::ColdLogHashIndexDefinition<8>>::Config &, unsigned long long &, std::string, double, int, FASTER::core::ReadCacheConfig &, FASTER::core::F2CompactionConfig &>' requested here
+   80 |     store_=std::make_unique<Store>(hot,memory,(directory_/"hot").string()+"/",cold,memory,(directory_/"cold").string()+"/",1.0/3.0,0,rc,compaction);
+      |                 ^
+/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/engine/faster-src/core/faster.h:1998:12: note: add missing switch cases
+ 1998 |     switch(pending_context.type) {
+      |            ^
+3 warnings generated.
+[ 80%] Linking CXX static library libcontestant_engine.a
+[ 80%] Built target contestant_engine
+[ 90%] Building CXX object CMakeFiles/taycan_kv_bench.dir/benchmarks/kv_bench.cc.o
+[100%] Linking CXX executable taycan_kv_bench
+[100%] Built target taycan_kv_bench
+[  5%] Building CXX object gflags/CMakeFiles/gflags_nothreads_static.dir/src/gflags.cc.o
+[ 11%] Building CXX object gflags/CMakeFiles/gflags_nothreads_static.dir/src/gflags_reporting.cc.o
+[ 16%] Building CXX object googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+[ 44%] Built target faster_cpp
+[ 50%] Building CXX object gflags/CMakeFiles/gflags_nothreads_static.dir/src/gflags_completions.cc.o
+[ 66%] Built target contestant_engine
+[ 72%] Linking CXX static library libgflags_nothreads.a
+[ 72%] Built target gflags_nothreads_static
+[ 77%] Linking CXX static library ../../lib/libgtest.a
+[ 77%] Built target gtest
+[ 88%] Building CXX object CMakeFiles/basic_test.dir/tests/basic_test.cc.o
+[ 94%] Building CXX object CMakeFiles/basic_test.dir/tests/test_options.cc.o
+[ 94%] Building CXX object CMakeFiles/basic_test.dir/tests/test_main.cc.o
+[100%] Linking CXX executable basic_test
+[100%] Built target basic_test
+[ 27%] Built target faster_cpp
+[ 38%] Built target gtest
+[ 61%] Built target gflags_nothreads_static
+[ 77%] Built target contestant_engine
+[ 88%] Building CXX object CMakeFiles/recovery_test.dir/tests/recovery_test.cc.o
+[ 94%] Building CXX object CMakeFiles/recovery_test.dir/tests/test_main.cc.o
+[ 94%] Building CXX object CMakeFiles/recovery_test.dir/tests/test_options.cc.o
+[100%] Linking CXX executable recovery_test
+[100%] Built target recovery_test
+[ 27%] Built target faster_cpp
+[ 38%] Built target gtest
+[ 61%] Built target gflags_nothreads_static
+[ 77%] Built target contestant_engine
+[ 88%] Building CXX object CMakeFiles/concurrent_test.dir/tests/test_options.cc.o
+[ 94%] Building CXX object CMakeFiles/concurrent_test.dir/tests/concurrent_test.cc.o
+[ 94%] Building CXX object CMakeFiles/concurrent_test.dir/tests/test_main.cc.o
+[100%] Linking CXX executable concurrent_test
+[100%] Built target concurrent_test
+[ 35%] Built target gflags_nothreads_static
+[ 35%] Built target gtest
+[ 64%] Built target faster_cpp
+[ 82%] Built target contestant_engine
+[ 94%] Building CXX object CMakeFiles/crash_worker.dir/tests/crash_worker.cc.o
+[ 94%] Building CXX object CMakeFiles/crash_worker.dir/tests/test_options.cc.o
+[100%] Linking CXX executable crash_worker
+[100%] Built target crash_worker
+[ 50%] Built target faster_cpp
+[ 80%] Built target contestant_engine
+[ 90%] Building CXX object engine/CMakeFiles/f2_sync_api_probe.dir/f2_sync_api_probe.cc.o
+[100%] Linking CXX executable f2_sync_api_probe
+[100%] Built target f2_sync_api_probe

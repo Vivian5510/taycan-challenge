@@ -1,0 +1,13 @@
+{
+  "main": "26e4466",
+  "recovery_fix_merged": true,
+  "performance_cells": 12,
+  "fixed_parameters_verified": true,
+  "binary_hashes_verified": true,
+  "callback_reentry_failure_reproduced": true,
+  "optimization_adopted": false,
+  "default_completion_batch": 1,
+  "group_commit": false,
+  "clean_successful_databases": 55,
+  "formal_scale_complete": false
+}

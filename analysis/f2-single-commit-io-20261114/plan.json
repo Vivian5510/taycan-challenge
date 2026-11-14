@@ -1,0 +1,62 @@
+{
+  "base_main": "26e4466",
+  "branch": "experiment/f2-single-commit-io-20261114",
+  "variants": [
+    {
+      "name": "aio-nocache",
+      "io": "posix-aio",
+      "buffered": false
+    },
+    {
+      "name": "aio-buffered",
+      "io": "posix-aio",
+      "buffered": true
+    },
+    {
+      "name": "hot-inline-nocache",
+      "io": "hot-inline",
+      "buffered": false
+    },
+    {
+      "name": "hot-inline-buffered",
+      "io": "hot-inline",
+      "buffered": true
+    },
+    {
+      "name": "aio-batch2",
+      "io": "posix-aio",
+      "buffered": false,
+      "completion_batch": 2
+    }
+  ],
+  "screening": {
+    "num_keys": 1000000,
+    "threads": 32,
+    "mem_limit_bytes": 4294967296,
+    "key_size": 32,
+    "value_size": 256,
+    "workload": "load",
+    "seed": 20261021,
+    "repeats": 1
+  },
+  "confirmation": {
+    "num_keys": 1000000,
+    "threads": 32,
+    "mem_limit_bytes": 4294967296,
+    "key_size": 32,
+    "value_size": 256,
+    "workloads": [
+      "load",
+      "update",
+      "contest_mix"
+    ],
+    "repeats": 2,
+    "seconds": 10,
+    "warmup": 2
+  },
+  "sync": "fsync for every successful Put/Delete, no group commit",
+  "guards": {
+    "database_bytes": 2147483648,
+    "min_free": 21474836480
+  }
+}

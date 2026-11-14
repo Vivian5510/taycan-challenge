@@ -1,0 +1,170 @@
+{
+  "status": "PASS",
+  "completed": 12,
+  "cells": [
+    {
+      "cell": "aio-nocache-load-r1",
+      "status": "PASS",
+      "binary_sha256": "284060c1af011b27f9899d23267451c2df7c0ac9a9a257f593c096ad8c96baff",
+      "commits": 1000000,
+      "data_syncs": 1000000,
+      "rss_peak_bytes": 1497333760
+    },
+    {
+      "cell": "aio-batch2-load-r1",
+      "status": "PASS",
+      "binary_sha256": "aa55ebf92fdb663d8960bc03180e3af79669af784f5b13224a74923929b9fdad",
+      "commits": 1000000,
+      "data_syncs": 1000000,
+      "rss_peak_bytes": 1304133632
+    },
+    {
+      "cell": "aio-nocache-update-r1",
+      "status": "PASS",
+      "binary_sha256": "284060c1af011b27f9899d23267451c2df7c0ac9a9a257f593c096ad8c96baff",
+      "commits": 1128545,
+      "data_syncs": 1128545,
+      "rss_peak_bytes": 1527463936
+    },
+    {
+      "cell": "aio-batch2-update-r1",
+      "status": "PASS",
+      "binary_sha256": "aa55ebf92fdb663d8960bc03180e3af79669af784f5b13224a74923929b9fdad",
+      "commits": 1119561,
+      "data_syncs": 1119561,
+      "rss_peak_bytes": 1437663232
+    },
+    {
+      "cell": "aio-nocache-contest_mix-r1",
+      "status": "PASS",
+      "binary_sha256": "284060c1af011b27f9899d23267451c2df7c0ac9a9a257f593c096ad8c96baff",
+      "commits": 1121221,
+      "data_syncs": 1121221,
+      "rss_peak_bytes": 1412644864
+    },
+    {
+      "cell": "aio-batch2-contest_mix-r1",
+      "status": "PASS",
+      "binary_sha256": "aa55ebf92fdb663d8960bc03180e3af79669af784f5b13224a74923929b9fdad",
+      "commits": 1104411,
+      "data_syncs": 1104411,
+      "rss_peak_bytes": 1527595008
+    },
+    {
+      "cell": "aio-batch2-load-r2",
+      "status": "PASS",
+      "binary_sha256": "aa55ebf92fdb663d8960bc03180e3af79669af784f5b13224a74923929b9fdad",
+      "commits": 1000000,
+      "data_syncs": 1000000,
+      "rss_peak_bytes": 1464664064
+    },
+    {
+      "cell": "aio-nocache-load-r2",
+      "status": "PASS",
+      "binary_sha256": "284060c1af011b27f9899d23267451c2df7c0ac9a9a257f593c096ad8c96baff",
+      "commits": 1000000,
+      "data_syncs": 1000000,
+      "rss_peak_bytes": 1247936512
+    },
+    {
+      "cell": "aio-batch2-update-r2",
+      "status": "PASS",
+      "binary_sha256": "aa55ebf92fdb663d8960bc03180e3af79669af784f5b13224a74923929b9fdad",
+      "commits": 1098092,
+      "data_syncs": 1098092,
+      "rss_peak_bytes": 1420902400
+    },
+    {
+      "cell": "aio-nocache-update-r2",
+      "status": "PASS",
+      "binary_sha256": "284060c1af011b27f9899d23267451c2df7c0ac9a9a257f593c096ad8c96baff",
+      "commits": 1125725,
+      "data_syncs": 1125725,
+      "rss_peak_bytes": 1260404736
+    },
+    {
+      "cell": "aio-batch2-contest_mix-r2",
+      "status": "PASS",
+      "binary_sha256": "aa55ebf92fdb663d8960bc03180e3af79669af784f5b13224a74923929b9fdad",
+      "commits": 1117829,
+      "data_syncs": 1117829,
+      "rss_peak_bytes": 1359331328
+    },
+    {
+      "cell": "aio-nocache-contest_mix-r2",
+      "status": "PASS",
+      "binary_sha256": "284060c1af011b27f9899d23267451c2df7c0ac9a9a257f593c096ad8c96baff",
+      "commits": 1109445,
+      "data_syncs": 1109445,
+      "rss_peak_bytes": 1374879744
+    }
+  ],
+  "workloads": [
+    {
+      "workload": "load",
+      "aio-nocache": {
+        "completed": 2,
+        "observations": [
+          11005.5465001,
+          9953.36917876
+        ],
+        "median": 10479.45783943,
+        "rss_peak_bytes": 1497333760
+      },
+      "aio-batch2": {
+        "completed": 2,
+        "observations": [
+          11348.8909946,
+          9564.73279484
+        ],
+        "median": 10456.81189472,
+        "rss_peak_bytes": 1464664064
+      },
+      "ratio": 0.9978390156192248
+    },
+    {
+      "workload": "update",
+      "aio-nocache": {
+        "completed": 2,
+        "observations": [
+          10668.6253675,
+          10041.7064053
+        ],
+        "median": 10355.1658864,
+        "rss_peak_bytes": 1527463936
+      },
+      "aio-batch2": {
+        "completed": 2,
+        "observations": [
+          9619.60266341,
+          7822.34411237
+        ],
+        "median": 8720.97338789,
+        "rss_peak_bytes": 1437663232
+      },
+      "ratio": 0.842185773126409
+    },
+    {
+      "workload": "contest_mix",
+      "aio-nocache": {
+        "completed": 2,
+        "observations": [
+          24439.3000226,
+          22522.4608113
+        ],
+        "median": 23480.88041695,
+        "rss_peak_bytes": 1412644864
+      },
+      "aio-batch2": {
+        "completed": 2,
+        "observations": [
+          20387.2173471,
+          25534.917652
+        ],
+        "median": 22961.06749955,
+        "rss_peak_bytes": 1527595008
+      },
+      "ratio": 0.9778622901624777
+    }
+  ]
+}

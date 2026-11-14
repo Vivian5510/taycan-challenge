@@ -1,0 +1,1600 @@
+{
+  "stage": "screen",
+  "status": "PASS",
+  "started_at": "2026-11-14T11:10:57.709430+00:00",
+  "plan": {
+    "base_main": "26e4466",
+    "branch": "experiment/f2-single-commit-io-20261114",
+    "variants": [
+      {
+        "name": "aio-nocache",
+        "io": "posix-aio",
+        "buffered": false
+      },
+      {
+        "name": "aio-buffered",
+        "io": "posix-aio",
+        "buffered": true
+      },
+      {
+        "name": "hot-inline-nocache",
+        "io": "hot-inline",
+        "buffered": false
+      },
+      {
+        "name": "hot-inline-buffered",
+        "io": "hot-inline",
+        "buffered": true
+      }
+    ],
+    "screening": {
+      "num_keys": 1000000,
+      "threads": 32,
+      "mem_limit_bytes": 4294967296,
+      "key_size": 32,
+      "value_size": 256,
+      "workload": "load",
+      "seed": 20261021,
+      "repeats": 1
+    },
+    "confirmation": {
+      "num_keys": 1000000,
+      "threads": 32,
+      "mem_limit_bytes": 4294967296,
+      "key_size": 32,
+      "value_size": 256,
+      "workloads": [
+        "load",
+        "update",
+        "contest_mix"
+      ],
+      "repeats": 2,
+      "seconds": 10,
+      "warmup": 2
+    },
+    "sync": "fsync for every successful Put/Delete, no group commit",
+    "guards": {
+      "database_bytes": 2147483648,
+      "min_free": 21474836480
+    }
+  },
+  "scope": "macOS ARM64 local development; sync-before-success; not official score",
+  "source_sha256": {
+    "experiments/faster-native-adapter/fix_iterator_lifetime.py": "d02c9f609782b18ba4cfaa890628bb55dde4ff12dcc62fb58fe98f9abbf76faf",
+    "experiments/faster-native-adapter/native_aio_file.inc": "e82f8255a9d0980b76bfb63d6ff599853c7ca361cb9e1389ee1cf29d4c2bad80",
+    "experiments/faster-native-adapter/f2_commit_experiment.h": "0487b95a6b72b08207496e2ccc5049c09c4eb3c87ad1ec985654593083de6a31",
+    "experiments/faster-native-adapter/native_file.h": "e4418e0d219ab75803fef4c1e491f88facc97600b0e1c35a8ba54cdec80d1e3a",
+    "experiments/faster-native-adapter/f2_hybridlog_members.inc": "ee6066e8fc7c9df4ea9f8f0b33bc3733742f422677816729737e1147687691ee",
+    "experiments/faster-native-adapter/native_file.cc": "3da9f0d1bdaa6e1367998c60bc3ec9ebb867ba17611b9946fd95add717abb618",
+    "experiments/faster-native-adapter/CMakeLists.txt": "5399b00d8609cd23fd8c9c5bf5149620ee05b09be740ed37abe9646a47bfb349",
+    "experiments/faster-native-adapter/durability_strategy_probe.cc": "5bbb80d4786b2ccc2ddde294d0d003dec6daf63658f6e8c52899916d57f5853d",
+    "experiments/faster-native-adapter/f2_prefix_index.inc": "37872c5a344da75c1a3337bce50bcf8db57b6ed02543e16e661b365a2dcbf85a",
+    "experiments/faster-native-adapter/native_io_probe.cc": "306e19f6fc89cfb54246de74588569f1212aad057661b59712943990d4a0f3b7",
+    "experiments/faster-native-adapter/recovery_frontier_probe.cc": "35fa2a624b4b4444b248dea4e55214ef469e436ea0a0e51a9c015704d857554f",
+    "experiments/faster-native-adapter/run_data_log_comparison.py": "5bac6f9daea9a9c3aa02c11eb1a89113405c65889460b4bd4e834ccd8395e8ce",
+    "experiments/faster-native-adapter/faster_engine.cc": "ab017d157dcb6f9dedd0e46e8e92487a4c9cd41856125b49386aa3f8a0878951",
+    "experiments/faster-native-adapter/f2_runtime.inc": "40a0148ca19ce4706f19a8cded2f762e8e3be16dc4107b9af587d8640b7f802d",
+    "experiments/faster-native-adapter/faster_backend.h": "ad01efd5a179a14a391f9451adf252c65f27e693a0f984c788dfc95e160874c3",
+    "experiments/faster-native-adapter/run_data_log_validation.py": "a6543a57e8ba832213a1c5e91661ae77ef5ee256daec05eabb251d7c99c68a3d",
+    "experiments/faster-native-adapter/prepare_source.py": "0b03ad90e9928a0af6b0f58b2d9149a3d7b1e73d5a47e1333af39e9d8357cbd9",
+    "experiments/faster-native-adapter/f2_prefix_experiment.h": "905201512347e2add7b82d0aec75a4b95ba775fb32487176fa8111d05913c4b0",
+    "experiments/faster-native-adapter/iterator_lifetime_test.cc": "55c27aa99ed5c3e902cea4d51695c84b540bde9227107208bed27ba037a1e703",
+    "experiments/faster-native-adapter/f2_prefix_members.inc": "f226f0d9e50c834cbd9bf2ac021be03893dc82ce2866f4cf6ab212b650260ccf",
+    "experiments/faster-native-adapter/f2_sync_runtime.inc": "7c7b0058110d3f264b79031bc127b07743cf77b2481b7feb29599e296845f25e",
+    "experiments/faster-native-adapter/run_sync_boundaries.py": "4299befd2c2cfb70b4afad788fba6c27a820c960decdf35ecdcaa04eb1f384fc",
+    "experiments/faster-native-adapter/run_commit_experiment.py": "241da293fee781c554c5c5fe734ff3cdff12778749439e65e84fe5bbce5a5f48",
+    "experiments/faster-native-adapter/prepare_native_source.py": "fc6e0001404d8af389c17640c02525a592c0cc0289de9abfeaa0648decfac7c4",
+    "experiments/faster-native-adapter/run_rocks_comparison.py": "5ef46079a77198f83e1c6fa29eee7cf3b2d9c44c29b6abe2e87b379265aa537f",
+    "experiments/faster-native-adapter/run_wal_optimization.py": "fafa4c2cbb7d856f10bc9c576769137310afb129fb1dc6c15686da907e25ecf6",
+    "experiments/faster-native-adapter/Tsavorite-MIT.txt": "91ff50da5567ef6a89c37008a33dd4aabdd386b584fd4ceaf7b439e9d979fa6b",
+    "experiments/faster-native-adapter/run_prefix_pipeline.py": "102efce35260c8a41c16271947761c0f2909c8a81e2d6bfec35df14d38006b23",
+    "experiments/faster-native-adapter/f2_gc_trace.h": "92f2d3b592f077964651959850f01d22fbcf81ead7275d575f1408a4e0e4b1a9",
+    "experiments/faster-native-adapter/f2_sync_members.inc": "181511daee642e2465ccd1941f4e33cf331d2efa6ac85f9d78a7d8391973a305",
+    "experiments/faster-native-adapter/run_rocks_validation.py": "403e733dd8a593c8dc996a8b4f5e4a6fda4c60c30f805a6176ad1b56065fe317",
+    "experiments/faster-native-adapter/f2_sync_experiment.h": "489801c43b6316b4d5370dab54483382d2b845cfb9b598a136a2cfe29a7bfd56",
+    "experiments/faster-native-adapter/run_io_concurrency.py": "28bc18e515cfb2dd17d168e48cbc86c065411b050da113d1991a43e39524b37c",
+    "experiments/faster-native-adapter/faster_backend.cc": "602a12667788b2b478ee92e71947be846b2e608f65aec78b8b7d067d5929d38a",
+    "experiments/faster-native-adapter/validate_compaction_crash.py": "3e2ee28bcfd1250a0845b3df2c81655466a6206f615b7b668d1eba4fad966e8c",
+    "experiments/faster-native-adapter/f2_sync_api_probe.cc": "bd8742e89ad535f73b94669e98465b418b3c527e29bd782062df29ecb3c59196",
+    "experiments/faster-native-adapter/overflow_memory_probe.cc": "cce494617607f61802a7bcc422b4a91e2485cca348b1a307bb6f5f327f3b89d8",
+    "experiments/faster-native-adapter/run_sync_evaluation.py": "f2d82ad7a81f7d3862ce034e0a83173a624641bcac2379ca666b3630243ece6c",
+    "experiments/faster-native-adapter/f2_gc_members.inc": "9eceddf0bfd5f9843753eef1ee829b0cdb7aa3ea524d66d4cdb05bb456f0f5cf",
+    "experiments/faster-native-adapter/f2_gc_file.inc": "23f0d4271bc15cb9bcb4591c77730a07f19ce0ccb2e6b265df9e925904c8996d",
+    "experiments/faster-native-adapter/f2_commit_members.inc": "6bf474ea813b35554f2b16c6f86a7dbf1392fd1ac54161af8dc6699da492e44a",
+    "experiments/faster-native-adapter/native_aio_batch.inc": "e0faf518341c7c7dba4062660b5c1df309a6d1380c3080f94d38ccd40911634f"
+  },
+  "driver_sha256": "536b0200135773157f57c05d89ead934087cbb77a1a15377c7334ccc7c27ac49",
+  "binaries": {
+    "aio-nocache": {
+      "sha256": "284060c1af011b27f9899d23267451c2df7c0ac9a9a257f593c096ad8c96baff",
+      "identity": {
+        "engine": "f2_sync_data-log",
+        "version": "332ea7da",
+        "policy": "synchronous_F2_internal_data-log_full_payload_direct_F2_single_request_mac_fsync_io_posix-aio_nocache_hot_log_native_compaction_durable_retirement_segmentbits23",
+        "platform_sync": "macOS:_F2_file_sync_policy=fsync"
+      }
+    },
+    "aio-buffered": {
+      "sha256": "926477b66edaab45ab8383053e11b5a8f91cc3a76a992cc9610b761dd2110b1c",
+      "identity": {
+        "engine": "f2_sync_data-log",
+        "version": "332ea7da",
+        "policy": "synchronous_F2_internal_data-log_full_payload_direct_F2_single_request_mac_fsync_io_posix-aio_buffered_hot_log_native_compaction_durable_retirement_segmentbits23",
+        "platform_sync": "macOS:_F2_file_sync_policy=fsync"
+      }
+    },
+    "hot-inline-nocache": {
+      "sha256": "3f6cbdcc2e9bd207918e4ff8e094fc35e9de4311320017b20777aa3779cbbf33",
+      "identity": {
+        "engine": "f2_sync_data-log",
+        "version": "332ea7da",
+        "policy": "synchronous_F2_internal_data-log_full_payload_direct_F2_single_request_mac_fsync_io_hot-inline_nocache_hot_log_native_compaction_durable_retirement_segmentbits23",
+        "platform_sync": "macOS:_F2_file_sync_policy=fsync"
+      }
+    },
+    "hot-inline-buffered": {
+      "sha256": "de75aa5a3448a9bd5aa5e994bac621c8b836efc29d7347b821ad84a4c18bd3fa",
+      "identity": {
+        "engine": "f2_sync_data-log",
+        "version": "332ea7da",
+        "policy": "synchronous_F2_internal_data-log_full_payload_direct_F2_single_request_mac_fsync_io_hot-inline_buffered_hot_log_native_compaction_durable_retirement_segmentbits23",
+        "platform_sync": "macOS:_F2_file_sync_policy=fsync"
+      }
+    }
+  },
+  "runs": [
+    {
+      "cell": "aio-nocache-load-r1",
+      "variant": "aio-nocache",
+      "workload": "load",
+      "repeat": 1,
+      "status": "PASS",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-nocache-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/screen/aio-nocache-load-r1/db",
+        "--workload=load",
+        "--num-keys=1000000",
+        "--threads=32",
+        "--mem-limit-bytes=4294967296",
+        "--key-size=32",
+        "--value-size=256",
+        "--seed=20261021",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--progress-interval-seconds=1"
+      ],
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-nocache-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/screen/aio-nocache-load-r1/db",
+          "--workload=load",
+          "--num-keys=1000000",
+          "--threads=32",
+          "--mem-limit-bytes=4294967296",
+          "--key-size=32",
+          "--value-size=256",
+          "--seed=20261021",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--progress-interval-seconds=1"
+        ],
+        "pid": 41957,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 1430749184,
+        "rss_limit_bytes": 4724464025,
+        "samples": 7604,
+        "rss_source": "macOS libproc",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.014451167000004261,
+        "elapsed_seconds": 83.42553512500001
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 1000000,
+        "gets": 0,
+        "puts": 1000000,
+        "deletes": 0,
+        "read_misses": 0,
+        "ops_per_second": 11997.0499735,
+        "open_seconds": 0.031468708,
+        "setup_seconds": 0,
+        "warmup_seconds": 0,
+        "measured_seconds": 83.353824666,
+        "close_seconds": 0.001193917,
+        "data_bytes_before_measure": 8922213,
+        "data_bytes_after_measure": 394493040,
+        "data_bytes_after_close": 394493040,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 9964,
+          "p50_us": 68.607,
+          "p95_us": 167.935,
+          "p99_us": 44040.191,
+          "p999_us": 578813.951,
+          "max_us": 1313502.541
+        },
+        "get_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        },
+        "put_latency": {
+          "samples": 9964,
+          "p50_us": 68.607,
+          "p95_us": 167.935,
+          "p99_us": 44040.191,
+          "p999_us": 578813.951,
+          "max_us": 1313502.541
+        },
+        "delete_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        }
+      },
+      "database_files": [
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "F2-SYNC-CURRENT",
+          "bytes": 176
+        },
+        {
+          "path": "cold/log.log142",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log145",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log120",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log118",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log127",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log129",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log144",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log143",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log128",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log119",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log126",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log121",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log132",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log135",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log150",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log134",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log133",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log151",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log124",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log123",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log146",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log141",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log148",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log122",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log125",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log149",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log140",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log147",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log153",
+          "bytes": 2086912
+        },
+        {
+          "path": "cold/log.log138",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log136",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log131",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log152",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log130",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log137",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log139",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cpr-checkpoints/D2EC034F-3779-42C2-9213-0953232C5DBA/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cpr-checkpoints/D2EC034F-3779-42C2-9213-0953232C5DBA/771BE49E-13B1-43B0-89A4-404B2A318465.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cold-index/log.log51",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log50",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log52",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log55",
+          "bytes": 5701632
+        },
+        {
+          "path": "cold/cold-index/log.log54",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log53",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log49",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/D2EC034F-3779-42C2-9213-0953232C5DBA/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/D2EC034F-3779-42C2-9213-0953232C5DBA/A829CE1B-5977-498F-9BC6-DF67B55F0D0D.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/D2EC034F-3779-42C2-9213-0953232C5DBA/ofb.dat",
+          "bytes": 262144
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/D2EC034F-3779-42C2-9213-0953232C5DBA/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/D2EC034F-3779-42C2-9213-0953232C5DBA/ht.dat",
+          "bytes": 4194304
+        },
+        {
+          "path": "cold/index-checkpoints/D2EC034F-3779-42C2-9213-0953232C5DBA/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/log.log58",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log60",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log57",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log61",
+          "bytes": 295424
+        },
+        {
+          "path": "hot/log.log59",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/cpr-checkpoints/D2EC034F-3779-42C2-9213-0953232C5DBA/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "hot/cpr-checkpoints/D2EC034F-3779-42C2-9213-0953232C5DBA/771BE49E-13B1-43B0-89A4-404B2A318465.dat",
+          "bytes": 32
+        },
+        {
+          "path": "hot/index-checkpoints/D2EC034F-3779-42C2-9213-0953232C5DBA/ofb.dat",
+          "bytes": 262144
+        },
+        {
+          "path": "hot/index-checkpoints/D2EC034F-3779-42C2-9213-0953232C5DBA/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/index-checkpoints/D2EC034F-3779-42C2-9213-0953232C5DBA/ht.dat",
+          "bytes": 4194304
+        }
+      ],
+      "wall_seconds": 83.45189808299999
+    },
+    {
+      "cell": "aio-buffered-load-r1",
+      "variant": "aio-buffered",
+      "workload": "load",
+      "repeat": 1,
+      "status": "PASS",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-buffered-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/screen/aio-buffered-load-r1/db",
+        "--workload=load",
+        "--num-keys=1000000",
+        "--threads=32",
+        "--mem-limit-bytes=4294967296",
+        "--key-size=32",
+        "--value-size=256",
+        "--seed=20261021",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--progress-interval-seconds=1"
+      ],
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-aio-buffered-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/screen/aio-buffered-load-r1/db",
+          "--workload=load",
+          "--num-keys=1000000",
+          "--threads=32",
+          "--mem-limit-bytes=4294967296",
+          "--key-size=32",
+          "--value-size=256",
+          "--seed=20261021",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--progress-interval-seconds=1"
+        ],
+        "pid": 43077,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 1381908480,
+        "rss_limit_bytes": 4724464025,
+        "samples": 5520,
+        "rss_source": "macOS libproc",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.014501540999987128,
+        "elapsed_seconds": 59.402773874999994
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 1000000,
+        "gets": 0,
+        "puts": 1000000,
+        "deletes": 0,
+        "read_misses": 0,
+        "ops_per_second": 16854.2673735,
+        "open_seconds": 0.027460458,
+        "setup_seconds": 0,
+        "warmup_seconds": 0,
+        "measured_seconds": 59.33215475,
+        "close_seconds": 0.0009975,
+        "data_bytes_before_measure": 8922212,
+        "data_bytes_after_measure": 404059248,
+        "data_bytes_after_close": 404059248,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 9964,
+          "p50_us": 44.543,
+          "p95_us": 139.263,
+          "p99_us": 35127.295,
+          "p999_us": 385875.967,
+          "max_us": 1417144.625
+        },
+        "get_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        },
+        "put_latency": {
+          "samples": 9964,
+          "p50_us": 44.543,
+          "p95_us": 139.263,
+          "p99_us": 35127.295,
+          "p999_us": 385875.967,
+          "max_us": 1417144.625
+        },
+        "delete_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        }
+      },
+      "database_files": [
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "F2-SYNC-CURRENT",
+          "bytes": 176
+        },
+        {
+          "path": "cold/log.log142",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log145",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log120",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log127",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log129",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log144",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log143",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log128",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log119",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log126",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log121",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log132",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log135",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log150",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log134",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log133",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log151",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log124",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log123",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log146",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log141",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log148",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log122",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log125",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log149",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log140",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log147",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log154",
+          "bytes": 529408
+        },
+        {
+          "path": "cold/log.log153",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log138",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log136",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log131",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log152",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log130",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log137",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log139",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cpr-checkpoints/C360A32E-99A2-4CAF-9E22-55ABAF7B55AF/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cpr-checkpoints/C360A32E-99A2-4CAF-9E22-55ABAF7B55AF/E09E9234-73FD-4604-80CE-D308537DC560.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cold-index/log.log56",
+          "bytes": 48128
+        },
+        {
+          "path": "cold/cold-index/log.log51",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log50",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log52",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log55",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log54",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log53",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log49",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/C360A32E-99A2-4CAF-9E22-55ABAF7B55AF/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/C360A32E-99A2-4CAF-9E22-55ABAF7B55AF/F079C83A-D31E-410C-8DA0-506E20C55CCD.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/C360A32E-99A2-4CAF-9E22-55ABAF7B55AF/ofb.dat",
+          "bytes": 262144
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/C360A32E-99A2-4CAF-9E22-55ABAF7B55AF/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/C360A32E-99A2-4CAF-9E22-55ABAF7B55AF/ht.dat",
+          "bytes": 4194304
+        },
+        {
+          "path": "cold/index-checkpoints/C360A32E-99A2-4CAF-9E22-55ABAF7B55AF/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/log.log58",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log60",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log56",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log57",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log61",
+          "bytes": 295424
+        },
+        {
+          "path": "hot/log.log59",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/cpr-checkpoints/C360A32E-99A2-4CAF-9E22-55ABAF7B55AF/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "hot/cpr-checkpoints/C360A32E-99A2-4CAF-9E22-55ABAF7B55AF/E09E9234-73FD-4604-80CE-D308537DC560.dat",
+          "bytes": 32
+        },
+        {
+          "path": "hot/index-checkpoints/C360A32E-99A2-4CAF-9E22-55ABAF7B55AF/ofb.dat",
+          "bytes": 262144
+        },
+        {
+          "path": "hot/index-checkpoints/C360A32E-99A2-4CAF-9E22-55ABAF7B55AF/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/index-checkpoints/C360A32E-99A2-4CAF-9E22-55ABAF7B55AF/ht.dat",
+          "bytes": 4194304
+        }
+      ],
+      "wall_seconds": 59.43881695799999
+    },
+    {
+      "cell": "hot-inline-nocache-load-r1",
+      "variant": "hot-inline-nocache",
+      "workload": "load",
+      "repeat": 1,
+      "status": "PASS",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/screen/hot-inline-nocache-load-r1/db",
+        "--workload=load",
+        "--num-keys=1000000",
+        "--threads=32",
+        "--mem-limit-bytes=4294967296",
+        "--key-size=32",
+        "--value-size=256",
+        "--seed=20261021",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--progress-interval-seconds=1"
+      ],
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/screen/hot-inline-nocache-load-r1/db",
+          "--workload=load",
+          "--num-keys=1000000",
+          "--threads=32",
+          "--mem-limit-bytes=4294967296",
+          "--key-size=32",
+          "--value-size=256",
+          "--seed=20261021",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--progress-interval-seconds=1"
+        ],
+        "pid": 43852,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 1567211520,
+        "rss_limit_bytes": 4724464025,
+        "samples": 6881,
+        "rss_source": "macOS libproc",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.013129875000004176,
+        "elapsed_seconds": 74.95830487500001
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 1000000,
+        "gets": 0,
+        "puts": 1000000,
+        "deletes": 0,
+        "read_misses": 0,
+        "ops_per_second": 13352.1814284,
+        "open_seconds": 0.026231333,
+        "setup_seconds": 0,
+        "warmup_seconds": 0,
+        "measured_seconds": 74.894129125,
+        "close_seconds": 0.000716042,
+        "data_bytes_before_measure": 8922213,
+        "data_bytes_after_measure": 394275952,
+        "data_bytes_after_close": 394275952,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 9964,
+          "p50_us": 59.903,
+          "p95_us": 145.407,
+          "p99_us": 33030.143,
+          "p999_us": 411041.791,
+          "max_us": 777152
+        },
+        "get_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        },
+        "put_latency": {
+          "samples": 9964,
+          "p50_us": 59.903,
+          "p95_us": 145.407,
+          "p99_us": 33030.143,
+          "p999_us": 411041.791,
+          "max_us": 777152
+        },
+        "delete_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        }
+      },
+      "database_files": [
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "F2-SYNC-CURRENT",
+          "bytes": 176
+        },
+        {
+          "path": "cold/log.log142",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log145",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log127",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log129",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log144",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log143",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log128",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log126",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log132",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log135",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log159",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log150",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log157",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log134",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log133",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log156",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log151",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log158",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log160",
+          "bytes": 4513792
+        },
+        {
+          "path": "cold/log.log124",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log146",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log141",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log148",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log125",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log149",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log140",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log147",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log154",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log153",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log138",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log136",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log131",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log152",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log155",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log130",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log137",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log139",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cpr-checkpoints/C732F96E-6A86-447E-BFA8-E383A396BF5C/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cpr-checkpoints/C732F96E-6A86-447E-BFA8-E383A396BF5C/49CE281E-E67E-444E-8FBA-AA1D503A9E15.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cold-index/log.log58",
+          "bytes": 3057664
+        },
+        {
+          "path": "cold/cold-index/log.log56",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log51",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log57",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log52",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log55",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log54",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log53",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/C732F96E-6A86-447E-BFA8-E383A396BF5C/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/C732F96E-6A86-447E-BFA8-E383A396BF5C/CD0B743F-3BF3-4636-BB50-8260644DC1C4.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/C732F96E-6A86-447E-BFA8-E383A396BF5C/ofb.dat",
+          "bytes": 262144
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/C732F96E-6A86-447E-BFA8-E383A396BF5C/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/C732F96E-6A86-447E-BFA8-E383A396BF5C/ht.dat",
+          "bytes": 4194304
+        },
+        {
+          "path": "cold/index-checkpoints/C732F96E-6A86-447E-BFA8-E383A396BF5C/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/log.log60",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log61",
+          "bytes": 295424
+        },
+        {
+          "path": "hot/log.log59",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/cpr-checkpoints/C732F96E-6A86-447E-BFA8-E383A396BF5C/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "hot/cpr-checkpoints/C732F96E-6A86-447E-BFA8-E383A396BF5C/49CE281E-E67E-444E-8FBA-AA1D503A9E15.dat",
+          "bytes": 32
+        },
+        {
+          "path": "hot/index-checkpoints/C732F96E-6A86-447E-BFA8-E383A396BF5C/ofb.dat",
+          "bytes": 262144
+        },
+        {
+          "path": "hot/index-checkpoints/C732F96E-6A86-447E-BFA8-E383A396BF5C/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/index-checkpoints/C732F96E-6A86-447E-BFA8-E383A396BF5C/ht.dat",
+          "bytes": 4194304
+        }
+      ],
+      "wall_seconds": 74.98606995899999
+    },
+    {
+      "cell": "hot-inline-buffered-load-r1",
+      "variant": "hot-inline-buffered",
+      "workload": "load",
+      "repeat": 1,
+      "status": "PASS",
+      "command": [
+        "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-buffered-20261114/taycan_kv_bench",
+        "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/screen/hot-inline-buffered-load-r1/db",
+        "--workload=load",
+        "--num-keys=1000000",
+        "--threads=32",
+        "--mem-limit-bytes=4294967296",
+        "--key-size=32",
+        "--value-size=256",
+        "--seed=20261021",
+        "--duration-seconds=10",
+        "--warmup-seconds=2",
+        "--sample-every=100",
+        "--progress-interval-seconds=1"
+      ],
+      "process": {
+        "command": [
+          "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-buffered-20261114/taycan_kv_bench",
+          "--data-dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/screen/hot-inline-buffered-load-r1/db",
+          "--workload=load",
+          "--num-keys=1000000",
+          "--threads=32",
+          "--mem-limit-bytes=4294967296",
+          "--key-size=32",
+          "--value-size=256",
+          "--seed=20261021",
+          "--duration-seconds=10",
+          "--warmup-seconds=2",
+          "--sample-every=100",
+          "--progress-interval-seconds=1"
+        ],
+        "pid": 45463,
+        "status": "PASS",
+        "reason": null,
+        "returncode": 0,
+        "rss_peak_bytes": 1314406400,
+        "rss_limit_bytes": 4724464025,
+        "samples": 6145,
+        "rss_source": "macOS libproc",
+        "sample_interval_seconds": 0.01,
+        "max_sample_gap_seconds": 0.012754250000000411,
+        "elapsed_seconds": 67.88249937499998
+      },
+      "measurement": {
+        "type": "result",
+        "status": "PASS",
+        "error": "",
+        "operations": 1000000,
+        "gets": 0,
+        "puts": 1000000,
+        "deletes": 0,
+        "read_misses": 0,
+        "ops_per_second": 14748.620149,
+        "open_seconds": 0.033563292,
+        "setup_seconds": 0,
+        "warmup_seconds": 0,
+        "measured_seconds": 67.802953083,
+        "close_seconds": 0.001123875,
+        "data_bytes_before_measure": 8922213,
+        "data_bytes_after_measure": 417662576,
+        "data_bytes_after_close": 417662576,
+        "measure_read_bytes": null,
+        "measure_write_bytes": null,
+        "latency": {
+          "samples": 9964,
+          "p50_us": 39.935,
+          "p95_us": 141.311,
+          "p99_us": 48758.783,
+          "p999_us": 406847.487,
+          "max_us": 1338979.25
+        },
+        "get_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        },
+        "put_latency": {
+          "samples": 9964,
+          "p50_us": 39.935,
+          "p95_us": 141.311,
+          "p99_us": 48758.783,
+          "p999_us": 406847.487,
+          "max_us": 1338979.25
+        },
+        "delete_latency": {
+          "samples": 0,
+          "p50_us": null,
+          "p95_us": null,
+          "p99_us": null,
+          "p999_us": null,
+          "max_us": null
+        }
+      },
+      "database_files": [
+        {
+          "path": "LOCK",
+          "bytes": 0
+        },
+        {
+          "path": "F2-SYNC-CURRENT",
+          "bytes": 176
+        },
+        {
+          "path": "cold/log.log142",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log145",
+          "bytes": 4703744
+        },
+        {
+          "path": "cold/log.log120",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log118",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log127",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log129",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log116",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log144",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log143",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log128",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log117",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log119",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log126",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log121",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log132",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log135",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log134",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log133",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log124",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log123",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log115",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log112",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log141",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log113",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log114",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log122",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log125",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log140",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log138",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log136",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log131",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log130",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log137",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/log.log139",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cpr-checkpoints/587AA073-B2FA-4D2D-9A4F-78EEC10F7269/49959764-996E-43A4-9036-3BBAB2A2A5EE.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cpr-checkpoints/587AA073-B2FA-4D2D-9A4F-78EEC10F7269/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cold-index/log.log51",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log50",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log52",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log55",
+          "bytes": 1088512
+        },
+        {
+          "path": "cold/cold-index/log.log54",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log53",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log49",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/log.log48",
+          "bytes": 8388608
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/587AA073-B2FA-4D2D-9A4F-78EEC10F7269/85415541-2BE9-4445-A399-9B79163DCC79.dat",
+          "bytes": 32
+        },
+        {
+          "path": "cold/cold-index/cpr-checkpoints/587AA073-B2FA-4D2D-9A4F-78EEC10F7269/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/587AA073-B2FA-4D2D-9A4F-78EEC10F7269/ofb.dat",
+          "bytes": 262144
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/587AA073-B2FA-4D2D-9A4F-78EEC10F7269/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "cold/cold-index/index-checkpoints/587AA073-B2FA-4D2D-9A4F-78EEC10F7269/ht.dat",
+          "bytes": 4194304
+        },
+        {
+          "path": "cold/index-checkpoints/587AA073-B2FA-4D2D-9A4F-78EEC10F7269/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/log.log58",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log60",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log56",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log57",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log61",
+          "bytes": 295424
+        },
+        {
+          "path": "hot/log.log59",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log55",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log54",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/log.log53",
+          "bytes": 8388608
+        },
+        {
+          "path": "hot/cpr-checkpoints/587AA073-B2FA-4D2D-9A4F-78EEC10F7269/49959764-996E-43A4-9036-3BBAB2A2A5EE.dat",
+          "bytes": 32
+        },
+        {
+          "path": "hot/cpr-checkpoints/587AA073-B2FA-4D2D-9A4F-78EEC10F7269/info.dat",
+          "bytes": 2336
+        },
+        {
+          "path": "hot/index-checkpoints/587AA073-B2FA-4D2D-9A4F-78EEC10F7269/ofb.dat",
+          "bytes": 262144
+        },
+        {
+          "path": "hot/index-checkpoints/587AA073-B2FA-4D2D-9A4F-78EEC10F7269/info.dat",
+          "bytes": 512
+        },
+        {
+          "path": "hot/index-checkpoints/587AA073-B2FA-4D2D-9A4F-78EEC10F7269/ht.dat",
+          "bytes": 4194304
+        }
+      ],
+      "wall_seconds": 67.931653625
+    }
+  ],
+  "finished_at": "2026-11-14T11:15:43.564635+00:00"
+}

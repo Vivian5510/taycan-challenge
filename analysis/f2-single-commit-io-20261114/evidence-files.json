@@ -1,0 +1,3872 @@
+[
+  {
+    "path": "analysis/f2-single-commit-io-20261114/page-loss-candidate.log",
+    "bytes": 87,
+    "sha256": "32a65c90f0ecf265a02a878c59389519a87847ea99f9da12d149bf669c5b11a0"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/run_sync_boundaries_batch2.py",
+    "bytes": 3884,
+    "sha256": "9db6e34e85a14beeb25a87d920cf868aa61f9dd75071e364755ad12921a8349b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/run_hot_inline_compaction.py",
+    "bytes": 4787,
+    "sha256": "cfbb55bd586f22e186247c5ae99a25bb19c8c3117872d40175e690ce12563a6e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/source-manifest.json",
+    "bytes": 5687,
+    "sha256": "d7dad847fe1bc616dc57e9f1ebc84bad10f2f52d59f32bddffb88d36c42c69d8"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/build_reentry.py",
+    "bytes": 1171,
+    "sha256": "df1a7264b5a156afec9b4d63139e63b2b6be8426157caf7f99de7db342878549"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/summary.json",
+    "bytes": 253012,
+    "sha256": "3465476d7ac2f31a673a40da323c08c0ba1e437f66bdf2e197eab0d2a3e0de3b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/run_page_loss_batch2.py",
+    "bytes": 3196,
+    "sha256": "c010e013cf68a2566d02cc84e95dce248e294ffcb16c2b40c53947af8a746da5"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/aio-buffered-build.log",
+    "bytes": 29868,
+    "sha256": "899454991d8325f4e014bd10f2bdc2c7dd67477038df8924ba53398ace712a79"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/retention-policy.json",
+    "bytes": 1110,
+    "sha256": "d7ef6da1164b9716a62ff7eb8bcbd7e92cb96ed16347fe357e1f97266020f2b8"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/screen-verification.json",
+    "bytes": 221,
+    "sha256": "81d9b56cde7407465551d64155e948d5c57e55d111f16e3141ccd0ec41e6b3e7"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/successful-diagnostic-cleanup.json",
+    "bytes": 125769,
+    "sha256": "df8df6ed0cb65eb2c8ca9ec16d57be90ff046b9f7abd9ebc1a11739097b21b8b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/run_sync_boundaries_candidate.py",
+    "bytes": 3888,
+    "sha256": "c04f0b15be39be33ead297c965ebc98fb1c94cea5aa021cf1cda680114093d89"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/page-loss-runner.log",
+    "bytes": 87,
+    "sha256": "32a65c90f0ecf265a02a878c59389519a87847ea99f9da12d149bf669c5b11a0"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/run_gc_candidate.py",
+    "bytes": 1051,
+    "sha256": "b3aa6de4e67476229edbf0cbb0e015b9da7149311c0e0d522c4e6b6ed936e3fd"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/hot-inline-compaction-complete.log",
+    "bytes": 176,
+    "sha256": "cdbfeb8ef515e266ba71e881ca5aa56b7954f03dde7eccf5fc0d74f29dad20bc"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/sync-boundaries-runner.log",
+    "bytes": 254,
+    "sha256": "7082d8b2ddd6611af74477acc9ba75666e7975022d833b8efef6a4810b6aa58e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-batch4-manifest.json",
+    "bytes": 1490,
+    "sha256": "89aa768470e87655267f59db5daac43a3449c79224a8157381a4391185832c7b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/plan.json",
+    "bytes": 1235,
+    "sha256": "fdd1e0cc41ec7663f77c4ddafd9f5a478b2cea8083b7db4a17e86653d28c4978"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/correctness-plan.json",
+    "bytes": 460,
+    "sha256": "927f877e125ac4e838e6acb0fb2d5cb065825232413cefcc6b28b87f127e3108"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/hot-inline-compaction-build.log",
+    "bytes": 467,
+    "sha256": "2cb505469426aeb9c09bbe2f9f5f4acfe463ea0d2a3f8429be0fa8f37580e8ab"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-crash-runner.log",
+    "bytes": 603,
+    "sha256": "2ce4c1c219287d5be38c9a3e887c1966d3bf94be7f4cb96c7c5ffbed770bd0b2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-configure.log",
+    "bytes": 2355,
+    "sha256": "f8dd3d96dff84238495c01e803adb022ec9bc420ec7ebcfb4bc46607c9947d04"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/run_batch4.py",
+    "bytes": 2459,
+    "sha256": "92f70cdc0652a994f0685801ef840df9323c54e8e753ed295d4eb9b3dfb50d9d"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/group-commit-boundary.md",
+    "bytes": 1478,
+    "sha256": "f1d19b2b87e0217d8194d4de0d7702d0b1fb089c469dfb896d1b3df8593c703f"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-runner.log",
+    "bytes": 343,
+    "sha256": "d91e7b6cba9de9475e6a9d4b581d2c3577ea2bcacb841647b7daee09e22df3a2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/adoption-decision.json",
+    "bytes": 614,
+    "sha256": "3077e6d4707caa2b21f638e6727b81315d1857e8a4f00842b1e9db48ae3141bb"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/archive_manifest.py",
+    "bytes": 1027,
+    "sha256": "2d7f3eef1e2c93f8bb79d8b6f5db4de6d1ec6e88d6c043a94b82d0fc696a9fb8"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/hot-inline-buffered-configure.log",
+    "bytes": 2373,
+    "sha256": "c62dff4702f90509e6034a359cd28b38ba8c44157c19a3e11c428782822681e8"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/reentry-findings.md",
+    "bytes": 1718,
+    "sha256": "e1c82c1271c366c2858918296b0813d4358fd07acdac8a548ec06cdcb1f35de5"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/run_reentry.py",
+    "bytes": 1009,
+    "sha256": "e96d2d5fc9738330c0b64fc60cc96d03b816b6921ab3768f98222c961481d7ba"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/baseline-CMakeCache.txt",
+    "bytes": 24092,
+    "sha256": "094127d35ed6af0de86589187da668dd7c68ed9d6a88a7aecf47bd53386d30b1"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/run_page_loss.py",
+    "bytes": 3189,
+    "sha256": "42cf9495d84fb660682e329807d9ac1cbf387d4faba4214884324a609f1943ff"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/compaction-stacks-2.txt",
+    "bytes": 120303,
+    "sha256": "13283c773c18b17bc28eab7114594fc9def30461a927415ff475179c533f54cc"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight-runner.log",
+    "bytes": 868,
+    "sha256": "0e2874fb782760171e73aef8cd8042fcbfe9f993721b386b7f49413cc1f5b48b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/aio-nocache-build.log",
+    "bytes": 30303,
+    "sha256": "e92b56056ca69555c00d1f498601de29e5e872085564d539da87556c4ee12536"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/compile_ack_probe.py",
+    "bytes": 660,
+    "sha256": "1b5229c75e19b411590dd5f3817192fc39ed1217bd91f95a3844964e8da6b0c5"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-sync-boundaries.log",
+    "bytes": 51,
+    "sha256": "19a46a4bcfe000c19709220d82ce4bea8e51f6485e7f786d857661690fe72a24"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate-resolved-plan.json",
+    "bytes": 1327,
+    "sha256": "1f695bb22eb57a2b80bf566f15e7562e265c8635a8dedeaae1bf881e0d8d278e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-ack-probe-build.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/sync-boundaries-candidate.log",
+    "bytes": 51,
+    "sha256": "19a46a4bcfe000c19709220d82ce4bea8e51f6485e7f786d857661690fe72a24"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/finalize.py",
+    "bytes": 2940,
+    "sha256": "8d75ec7691aaa6d72cd2da777f4b6d0717abf87ed78857bb503837e5bf4a9568"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/screen-runner.log",
+    "bytes": 295,
+    "sha256": "77493d96969b381325d0f4c293e33191e760b2924b51cabe9963a7f27f524f26"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/hot-inline-compaction-complete-resolved-plan.json",
+    "bytes": 387,
+    "sha256": "695d425a2c729b7ac7b28c21ecfc8db05f9cdbe43ad143bfa8035c5fd25ede1e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/chart.py",
+    "bytes": 2311,
+    "sha256": "307f0831398e4a4c6a6d63058e209ec02741f5e2af6a44b09aa1d6239d7f331d"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/selected.json",
+    "bytes": 125,
+    "sha256": "60b9e820d7b397bc0e7abee7dd82f8090b178c1a689d4e6ed8b4bf7067a07ccc"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/run_batch2_crash.py",
+    "bytes": 915,
+    "sha256": "db98fbdc53ddee8f71f09589de9a64ec62dbfe0565db15d2354987d4f1cf97a3"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-batch4-resolved-plan.json",
+    "bytes": 1327,
+    "sha256": "1f695bb22eb57a2b80bf566f15e7562e265c8635a8dedeaae1bf881e0d8d278e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch4-runner.log",
+    "bytes": 80,
+    "sha256": "6011b8acbe29aca35d126ee44297db03f3d9053773f4a777a370321c2717589f"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/reentry-runner.log",
+    "bytes": 129,
+    "sha256": "292524dd4f83d93a17788d7df5b5023d732460576bf8b38257cdff11c9b865d4"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/final-verification.json",
+    "bytes": 361,
+    "sha256": "2f6bd98d633aa1d5471683246e07e2baa7d61731c223de7e0cac1d508ab42e79"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/verify_confirmation.py",
+    "bytes": 3161,
+    "sha256": "94dde99a1cc39a2834118a611e8486d18153e42a8206c9f91e33eb5e4fea67d0"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-batch4-runner.log",
+    "bytes": 359,
+    "sha256": "381e9c6ad951d8da4ea8b581069785faf17e0f47cb109092b3a6e5dd299872f2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/hot-inline-nocache-configure.log",
+    "bytes": 2371,
+    "sha256": "0755603fd3579627c5d0320b832f5db3f707b0e1b23a82b342fd7a5aa5c45d4b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-page-loss.log",
+    "bytes": 87,
+    "sha256": "32a65c90f0ecf265a02a878c59389519a87847ea99f9da12d149bf669c5b11a0"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/comparison.html",
+    "bytes": 2269,
+    "sha256": "f8411e13991b64927e272ceed6ad1ff44e251b5c723f43174dc5a046a45d9cc6"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/README.md",
+    "bytes": 3440,
+    "sha256": "df78f30c0907a803ca2b835a4727bce3c08722c7257b8f574b2b19029070c7bc"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/runner-notes.md",
+    "bytes": 757,
+    "sha256": "b9e9010e49e0fc146b8fb53c8a1d978ad79893819345a024def0532bd0b508cd"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/candidate-batch2-manifest.json",
+    "bytes": 1271,
+    "sha256": "00c0316dea11ab4d276652774ca7df3d8f813b449c3a98a3c73362979c9c9d3d"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/ack-probe-build.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/run_sync_boundaries.py",
+    "bytes": 3877,
+    "sha256": "ba15553635154e222dd42c2961d2cde239784c6adc7e8df2107f5be4ed9b7540"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm-runner.log",
+    "bytes": 851,
+    "sha256": "1cd8e346d394707f3f1da6a23cf25b2d688a2cadcb71cb7b41adfd8650de4643"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/selected-hot-inline.json",
+    "bytes": 425,
+    "sha256": "dbcc3a12f83664db0a40f9eb0ac95cd7cc7d99f08397c4240530b69b617e5de3"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/hot-inline-nocache-build.log",
+    "bytes": 30060,
+    "sha256": "6bff55dd75bda0b234783bff3cb1eecfb87204c3f85ff4d914ab4e67ebb2c089"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/run_page_loss_candidate.py",
+    "bytes": 3200,
+    "sha256": "3981ad1c2e375862d779cad3ca45bc6038d78888e331aa3f196df439fe7c2bbb"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/aio-buffered-configure.log",
+    "bytes": 2359,
+    "sha256": "571ed0388931242983ee4205ff746774217e370110184829980effd78211e1c0"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2-runner.log",
+    "bytes": 2054,
+    "sha256": "b51b5af0b51f188757d8056e9441707d71565e29da8471afe33849ea68b77933"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate-manifest.json",
+    "bytes": 1501,
+    "sha256": "66bfc99895e5f57323e34f0c18ea6b773deaf75960d1130dc9e658e1af132d61"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/check_safety.py",
+    "bytes": 866,
+    "sha256": "3541d82e1c6db068e2caa5ee8ae85e63cb699618f300012cf7ee0599b69b3b92"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-runner.log",
+    "bytes": 80,
+    "sha256": "8a9a0d647cd09005c36e9e5570fb5159875f02c05d419fc0d72a4900c283dfbb"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/candidate-manifest.json",
+    "bytes": 1142,
+    "sha256": "c68cb40eabd6304f97b5928781930ae401a6adb421daec21f512060b52be6722"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/hot-inline-buffered-build.log",
+    "bytes": 30559,
+    "sha256": "c4c8487f0bc06b160c6a8eebe6541b4725b4fec94a9e028d0af1e0f6ec0cb881"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/compaction-stacks.txt",
+    "bytes": 120859,
+    "sha256": "c735fe0ec8a06bddb37303c27decc80be9788ba7c0b3f78404f38702c1c399b1"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/hot-inline-compaction-complete-manifest.json",
+    "bytes": 1208,
+    "sha256": "a09296028b62a34f5f3bff91946f6b330a583a260e3c57a54e18579b62fb46e9"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/diagnostic-db-manifests.json",
+    "bytes": 125769,
+    "sha256": "df8df6ed0cb65eb2c8ca9ec16d57be90ff046b9f7abd9ebc1a11739097b21b8b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/completion_reentry_probe.cc",
+    "bytes": 2945,
+    "sha256": "5245522a0dde545811a2989071926985eb54fb809e5ed043c7e182b13843cab6"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/notes-for-next-experiment.md",
+    "bytes": 1283,
+    "sha256": "651f1fc30aa4d4b2019e73da85f82e4e53ceed555437f6bb4e6871445dd180a5"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-runner.log",
+    "bytes": 2054,
+    "sha256": "b51b5af0b51f188757d8056e9441707d71565e29da8471afe33849ea68b77933"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-tests-build.log",
+    "bytes": 1359,
+    "sha256": "65fc5104ac10e825dc60c80343e03ae62d1a2b10a507040c01998fff40a932f4"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/evidence-corrections.md",
+    "bytes": 1846,
+    "sha256": "71d9fd0fea1a839b0166f1f579c8a5027a51e7d5f89400e4202d1434bd574288"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch4-build.log",
+    "bytes": 30271,
+    "sha256": "0cf8d9f849ebadd20c59b64ba1d7ad34706994e10c9f4ff24d5768ffec3c86da"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled-manifest.json",
+    "bytes": 1493,
+    "sha256": "cdf4c54c1fca7cfcc528c91acb42a3b4883ad4553da13aa20bb83e1e3391f070"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/candidate-batch2-CMakeCache.txt",
+    "bytes": 24082,
+    "sha256": "5caef924cf9af09fe9eba2a16cf6791774543645c7b762d872d45f456fe9fda5"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch4-configure.log",
+    "bytes": 2355,
+    "sha256": "74acb3ee6905055c70b025e75fb83e3b6e248e0f836e4ef2c2dbcae4db370e87"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/aio-nocache-configure.log",
+    "bytes": 2357,
+    "sha256": "e7384a43d7c6e2b74ad064e15e9e4ef1cf4e72986b66232c746f9497007c57b6"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/hot-inline-compaction-stacks.txt",
+    "bytes": 123262,
+    "sha256": "64911e9cfd5f40416f16aaf2500e524f947afbd8b10ed5171a11833c885457db"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled-resolved-plan.json",
+    "bytes": 1327,
+    "sha256": "1f695bb22eb57a2b80bf566f15e7562e265c8635a8dedeaae1bf881e0d8d278e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/run_public.py",
+    "bytes": 4851,
+    "sha256": "7efde8c347f06a2b4d43a1431153330b49b7f3d2b4e2ebcb41552db815613e84"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/report.py",
+    "bytes": 6817,
+    "sha256": "c732d65de381230b76f75a25d180585b9bf5597438050a80ce6cb3b810eb95c9"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/run_batch2.py",
+    "bytes": 2459,
+    "sha256": "1fd72a18bf6a189d5e0e3202a93dbdfee323eed01bfe35e662b23ad44aac6107"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/run_matrix.py",
+    "bytes": 5731,
+    "sha256": "33dd397e6ea8329adad27dcbd84a65e87ed5847d7aa029b70569f3d069714f2c"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirmation-verification.json",
+    "bytes": 4669,
+    "sha256": "8949e5da5f11b34c057137077420d7bbb738b03ddc5f177e077ba9be0a3ba819"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate-runner.log",
+    "bytes": 344,
+    "sha256": "7a4c6f51e4f0273f7b6878a518845bc3640cab893019891a4db1b9a889f91358"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/aio-buffered-compaction-build.log",
+    "bytes": 467,
+    "sha256": "8764c0ef33fc3f6d6f28bcfb1739d06a83b7ae26cb42e64b0794f48e131cf469"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/retained-failure-databases.json",
+    "bytes": 40266,
+    "sha256": "d10dda3d7ab4127051899694f0723c56e0e9275f3b31c07582a8ac8514d08490"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-build.log",
+    "bytes": 28912,
+    "sha256": "1b442be727c1c4ff1f983a31aeec6b5a86373749b513a895532e45034d821b99"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-batch2/results.json",
+    "bytes": 607,
+    "sha256": "f57ecc31c8bc07b437afff5f82349c38f3f5e24a7acb10bc5ab510eb8e7eb7c2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-batch2/f2-hold/verify0.stderr",
+    "bytes": 579,
+    "sha256": "664ea84f8dccd7ee4e649eb097c0b0926cd79410b5192ce3ff0904caa3e973e3"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-batch2/f2-hold/verify0.stdout",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-batch2/f2-hold/verify1.stderr",
+    "bytes": 579,
+    "sha256": "5286c9736e73de420ceac9dde55408bc0c2d6dc8599fcfcb561a0e7f51f7790e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-batch2/f2-hold/prepare.stderr",
+    "bytes": 582,
+    "sha256": "03a0b9b1f4eb104557e20d02f2a3a9c0475f628a220ee4881a01968de8780a63"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-batch2/f2-hold/serve.log",
+    "bytes": 113,
+    "sha256": "163bf1b30308d96dfb09f7aafe47f05bf3c5007d3f2cadacd75f09ec2f905bf2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-batch2/f2-hold/verify1.stdout",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-batch2/f2-hold/prepare.stdout",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-batch2/f2-kill-before-sync/verify0.stderr",
+    "bytes": 579,
+    "sha256": "7dabfacd25e760eb295fb1864ba9653faa541bf5dfb117d6049540ac1e19b82c"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-batch2/f2-kill-before-sync/verify0.stdout",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-batch2/f2-kill-before-sync/verify1.stderr",
+    "bytes": 579,
+    "sha256": "7e3a3231aff26d63bc227c51baeabf058113b8424b430e1d74caa984a43e3235"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-batch2/f2-kill-before-sync/prepare.stderr",
+    "bytes": 582,
+    "sha256": "6fe1fba17aaaf80c770d61f510c51d16c95fcb7cc04b3d86f42d02de897cfbd8"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-batch2/f2-kill-before-sync/serve.log",
+    "bytes": 113,
+    "sha256": "163bf1b30308d96dfb09f7aafe47f05bf3c5007d3f2cadacd75f09ec2f905bf2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-batch2/f2-kill-before-sync/verify1.stdout",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-batch2/f2-kill-before-sync/prepare.stdout",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-batch2/f2-fail/prepare.stderr",
+    "bytes": 582,
+    "sha256": "79116289bd6512253f40a48fa3ddb8c9cfaf4132ab555ce8ae9315de9fcebfa8"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-batch2/f2-fail/serve.log",
+    "bytes": 707,
+    "sha256": "ad39f7b9504fc32f52f680320754bd0b9518db96ca6fd11676f52d8e6dca1b59"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-batch2/f2-fail/prepare.stdout",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/reentry/aio-batch2.stderr.log",
+    "bytes": 62,
+    "sha256": "d77a90a15be4a2e69689c38feefb151ea10bbd1eebc02921e1cfd6b529607a61"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/reentry/aio-nocache.stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/reentry/results.json",
+    "bytes": 304,
+    "sha256": "ccab57e5493893193746b71a3754f15a672af104b196ff226a8e47d95979de1e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/reentry/aio-batch2.stdout.log",
+    "bytes": 51,
+    "sha256": "ee590d63738a37559a24b39a9612033af4075af400c25ffc6bcdc762bc3e83af"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/reentry/aio-nocache.stdout.log",
+    "bytes": 51,
+    "sha256": "514ed6cfed82de2644230651ac057b793e45f558dc6167caf0d6ac2de17ec866"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/results.json",
+    "bytes": 127074,
+    "sha256": "539a27147d2dcdf0ec6ab6cfeb32f29af6c59c98396a9b481fcf4192f7d8996e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-nocache-update-r2/processes.jsonl",
+    "bytes": 775,
+    "sha256": "6c60b9ebf3ffb61e4d06a6cbbf535055e725b977c3a711ae6e715a771b5db5c1"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-nocache-update-r2/gc.jsonl",
+    "bytes": 65664,
+    "sha256": "aaca6909cefa6408bcaec16bd0cce0ee308591755f64b04b483e067565d5bedc"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-nocache-update-r2/output.log",
+    "bytes": 21617,
+    "sha256": "4d8df7921bb9d43905464de06260ec8dbceb2d9f629921516dedee149bacb914"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-nocache-update-r2/resources.jsonl",
+    "bytes": 2690,
+    "sha256": "b726378568bab3db561c1ee96f4d2eee0b22be47eb9f79bc5623a6b5d4a463f7"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-batch2-load-r1/processes.jsonl",
+    "bytes": 772,
+    "sha256": "a28f93dc1265e68ed49aafe0cf8e85393248cf1e92349427bc7512f25bc38ee7"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-batch2-load-r1/gc.jsonl",
+    "bytes": 52599,
+    "sha256": "2b723d82b2158ad7465ec1cc87bf84f0e55ee392aceff53d98975fb623cf8de9"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-batch2-load-r1/output.log",
+    "bytes": 17267,
+    "sha256": "245b0f4248685968e13c5c2193904c073dc6d16030c165276219a652874b77b7"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-batch2-load-r1/resources.jsonl",
+    "bytes": 2093,
+    "sha256": "259c92228a1f20febe75b5eca227a185d4d6d126f427a5f59420589f4c9db2fa"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-nocache-contest_mix-r2/processes.jsonl",
+    "bytes": 788,
+    "sha256": "a78c9f12b88932c61db8b122d7125732252bb5734c4c034d8ea64ef8436d2f24"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-nocache-contest_mix-r2/gc.jsonl",
+    "bytes": 47206,
+    "sha256": "d01a470b7e67b601a0264c420cfdead636d3e058a9e5f5b4873087afd662cf7e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-nocache-contest_mix-r2/output.log",
+    "bytes": 20591,
+    "sha256": "8237c2234b62ff65e1040c3d51836de7e707a0683621addfb452bb1db1d5b2a7"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-nocache-contest_mix-r2/resources.jsonl",
+    "bytes": 2579,
+    "sha256": "c113a19c020df89cfce6e5388b3c1cd0bd67dbf61d328619832bbf2df370d490"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-nocache-load-r2/processes.jsonl",
+    "bytes": 773,
+    "sha256": "c559463000a7973c31066968c80bb302d6fe6c7a6251a00ec5d1e6dc5cc1345d"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-nocache-load-r2/gc.jsonl",
+    "bytes": 41584,
+    "sha256": "585849fe6c921b3a60189a96e6dba32d6eafc95e20622d9c62b9370955828051"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-nocache-load-r2/output.log",
+    "bytes": 19236,
+    "sha256": "1a52ea5b56506b0c70be9fd2639cb5a8fa4c2698d530d0a56e2d5ca7fc49cab7"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-nocache-load-r2/resources.jsonl",
+    "bytes": 2345,
+    "sha256": "ca9e84393a7b86027dd3d6f1f22f246d6e06506c390074efd4f4e0edd1e5b8ee"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-batch2-update-r1/processes.jsonl",
+    "bytes": 777,
+    "sha256": "c6875c89f751fdb7ac1677d66556fbb5ac9e870808d32447c67a88a15d7e38fa"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-batch2-update-r1/gc.jsonl",
+    "bytes": 65765,
+    "sha256": "cba4eb133e13755bcc72bc13bfc8e97e11366c3d65126d2d62be130e1ace23e3"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-batch2-update-r1/output.log",
+    "bytes": 19635,
+    "sha256": "645e766742f9cb97a4aa58130dc61f3cb5fbb4973fe7d648923acad4e4be2738"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-batch2-update-r1/resources.jsonl",
+    "bytes": 2324,
+    "sha256": "a42899273cda6fb297db9c872247af4bcef88d030e740830af4bb27410db5f83"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-batch2-contest_mix-r1/processes.jsonl",
+    "bytes": 786,
+    "sha256": "8b0d892cb40e013a744a52b59e8650ea787174d5eef100f316aadfc1239b3bfc"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-batch2-contest_mix-r1/gc.jsonl",
+    "bytes": 65006,
+    "sha256": "9f9ac14b30a695a1db84c837dccca2fcfc53e1a158a0f9f96c349c6b42f55743"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-batch2-contest_mix-r1/output.log",
+    "bytes": 20952,
+    "sha256": "9d53c0b6decd1c570a01ad724662979072690ea674542088f5e6680a4fe8d541"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-batch2-contest_mix-r1/resources.jsonl",
+    "bytes": 2587,
+    "sha256": "4c274f9715c3f9bc1ea832a94cab77a6eefbd47892527fad2dd56487c86c90f3"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-nocache-update-r1/processes.jsonl",
+    "bytes": 773,
+    "sha256": "dfacd0f40a584e61519f9a61a5ae7b163050865d57285ab6034a754ed9dbc47a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-nocache-update-r1/gc.jsonl",
+    "bytes": 55456,
+    "sha256": "73fff539dd66558c27cdff1d2134a4f57ac581ebf42fefc302cff03bd6737c4b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-nocache-update-r1/output.log",
+    "bytes": 19285,
+    "sha256": "4ff7e957f5b1a430d758be62e6d6bc45df71a1244d93bb6f83c78be47b7020fb"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-nocache-update-r1/resources.jsonl",
+    "bytes": 2322,
+    "sha256": "d3d581507b4023e9377029688165ffd1a7ad4c86610db5dab95ffd84a0854139"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-nocache-contest_mix-r1/processes.jsonl",
+    "bytes": 790,
+    "sha256": "48f89f78c34d2c19f2ba0d35999861ff4dffac4ca6cb565c98bc7af270927698"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-nocache-contest_mix-r1/gc.jsonl",
+    "bytes": 65275,
+    "sha256": "39206ee4c8da91cdb88a0594dd2d4b7caba26022ec6153322fa13bbb013e991e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-nocache-contest_mix-r1/output.log",
+    "bytes": 22009,
+    "sha256": "a1d6cefaa4e3e90f8de776453908d1ea3df6d2ed523471dfed8b0d7c4b5dc919"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-nocache-contest_mix-r1/resources.jsonl",
+    "bytes": 2696,
+    "sha256": "f1d177ff3476d14f0e907b1b566f48762495554e9748bcef0d2d7d84d5bf72b4"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-batch2-load-r2/processes.jsonl",
+    "bytes": 772,
+    "sha256": "1eb63bf5d8f8b784f056b8eef45f81b38908e751ecaa9792603724db0619fd2c"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-batch2-load-r2/gc.jsonl",
+    "bytes": 54537,
+    "sha256": "8e84f91c86d1c762e5c5790ba1b0b4d9bb70a50676e4c2fb09d587909b3d0911"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-batch2-load-r2/output.log",
+    "bytes": 19960,
+    "sha256": "974521e7689f556155b33990b00ce8fc2c2c842d2959f576db15d9c296b8549a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-batch2-load-r2/resources.jsonl",
+    "bytes": 2456,
+    "sha256": "08f38d7841fde4ce54cbf05d1e340cb5898560bb9a2c7dff85e7ad9957e81f93"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-nocache-load-r1/processes.jsonl",
+    "bytes": 761,
+    "sha256": "2d34bcdf82466ae848d255397746292db001abab6aec03fcffb0e97d931c9680"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-nocache-load-r1/gc.jsonl",
+    "bytes": 54985,
+    "sha256": "fcb2c8ccf06f54b21b9abdb6827558f68ad792f127516b4b8dda31002b0c865c"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-nocache-load-r1/output.log",
+    "bytes": 17086,
+    "sha256": "2d77e0b107d4965f711ab618df81fe9c8bd4433c6bb5bff7b6ec3ab2505c14c1"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-nocache-load-r1/resources.jsonl",
+    "bytes": 1920,
+    "sha256": "48a2e0ba3e2465b5cf0cb1d0b534f7f8e9aaed3debb05a25756848df76084a9c"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-batch2-update-r2/processes.jsonl",
+    "bytes": 776,
+    "sha256": "98c5340433f3320043a783cfbd08929346c4e6d334878b2f893b0444316c325e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-batch2-update-r2/gc.jsonl",
+    "bytes": 50719,
+    "sha256": "49e58aeec72198525c2e4e305661b3609824405dc3177110eefc92bfb5b2606d"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-batch2-update-r2/output.log",
+    "bytes": 20363,
+    "sha256": "a67ceae15125838f8aedf5018076afdafbadcaf4e0b0b1d2d8b14ed59505cb9b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-batch2-update-r2/resources.jsonl",
+    "bytes": 2443,
+    "sha256": "25842a894dd63375fe516771afab4304e4f03fdc9ffc8ffee7fb81a71dd724eb"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-batch2-contest_mix-r2/processes.jsonl",
+    "bytes": 786,
+    "sha256": "0e1aa7484a2adfdb2589d1469e2a35075befb050de0b11749df988bd10bc14f7"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-batch2-contest_mix-r2/gc.jsonl",
+    "bytes": 56717,
+    "sha256": "01df58f1b2348ea61b256636112fcdbd925a13f557eb46750da97c528c1b4483"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-batch2-contest_mix-r2/output.log",
+    "bytes": 22206,
+    "sha256": "17a53e78756568ee541fb19ad562cb1d24b585e7b9d79d923a0046a0e8b55211"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/confirm/aio-batch2-contest_mix-r2/resources.jsonl",
+    "bytes": 2698,
+    "sha256": "76708ccebe50a5fa96306f6a02d88fba340c536de7e650df28987eb724e42744"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/results.json",
+    "bytes": 2900,
+    "sha256": "e726c0d552594cddf999e5dc523daeaa7294515b63afe8fb8c587195e86e5d0e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/concurrent-qhps71nb/processes.jsonl",
+    "bytes": 703,
+    "sha256": "22e3db24d09193121af931acd60539761b100427504dd2808698bb81a0b1d5ed"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/concurrent-qhps71nb/output.log",
+    "bytes": 1573,
+    "sha256": "9e6975e13be22c7d2716dc149f93b7ad0fc738b572907443106c653f18af7ff6"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/concurrent-qhps71nb/resources.jsonl",
+    "bytes": 1048,
+    "sha256": "0a1b8a1030a84bba4e8be7fef49dbcde42512ead2b6c887b00d13eba85926fe1"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/basic-bb02d5nb/processes.jsonl",
+    "bytes": 692,
+    "sha256": "9ba751f1557589a398d10e275d696d092cd6706ba79da89a25adfa24af166ef4"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/basic-bb02d5nb/output.log",
+    "bytes": 1192,
+    "sha256": "5b91c67cf1a8d686db6514fcc32c24b2e4c88b6cf302e90d4b83b59129c0fafe"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/recovery-saqic0r2/gc-trace.jsonl",
+    "bytes": 3195,
+    "sha256": "a75b33e7a9b4a97e9675e45d80bd526430ec8117b22db5fc19f0cd3bcfe21a62"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/recovery-saqic0r2/processes.jsonl",
+    "bytes": 693,
+    "sha256": "26f54118c4ebd9a543003637a722db36b9bcee5687f0ba399550635b2f267af4"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/recovery-saqic0r2/output.log",
+    "bytes": 1480,
+    "sha256": "4f86a3ed4c74db6ee132128728c472ed70626bd3b278b09b55f3c366d5a73b36"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/recovery-saqic0r2/resources.jsonl",
+    "bytes": 1379,
+    "sha256": "e1e7b47587aff3c694d3d9844fab1a79a5ae1ae43796bc2687706982015d49e0"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/crash_recovery-v86bvbgj/gc-trace.jsonl",
+    "bytes": 14244,
+    "sha256": "79cd70d746d37743aa18206166f80efddec03b8dd36fba6a30e51d60d9b14c52"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/crash_recovery-v86bvbgj/processes.jsonl",
+    "bytes": 16025,
+    "sha256": "d19b61713b12a1c3348abd8d63c35736c1ab7fb1398ee93fa0cb696a24603dc1"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/crash_recovery-v86bvbgj/output.log",
+    "bytes": 631,
+    "sha256": "310388b27e66b985604dfff310cf8b10550ad40003f8924006843e397c2899f6"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/crash_recovery-v86bvbgj/resources.jsonl",
+    "bytes": 10851,
+    "sha256": "c6c62a4a8a2df2ba024426f8994192ea7a9195bda6f1a319f250ac391031f26e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/crash_recovery-v86bvbgj/taycan-crash-m5kejz0c/trial-0.log.verify-135729459750.stdout",
+    "bytes": 431,
+    "sha256": "5dfd147769ca404b40ddede881475ee287b866dd6938cdbc7d39f4bd4605f6a4"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/crash_recovery-v86bvbgj/taycan-crash-m5kejz0c/trial-4.log",
+    "bytes": 117,
+    "sha256": "43a87c2ac3a356ad294c1d3fb015bca49043229e32fe4d2263c280025f8488ab"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/crash_recovery-v86bvbgj/taycan-crash-m5kejz0c/trial-4.log.prepare-182208906083.stdout",
+    "bytes": 436,
+    "sha256": "231fc7927ea487ab4de4ab0a831b161325de1750948161d31430e5992f4d6539"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/crash_recovery-v86bvbgj/taycan-crash-m5kejz0c/trial-1.log",
+    "bytes": 117,
+    "sha256": "43a87c2ac3a356ad294c1d3fb015bca49043229e32fe4d2263c280025f8488ab"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/crash_recovery-v86bvbgj/taycan-crash-m5kejz0c/trial-4.log.verify-196275008625.stdout",
+    "bytes": 435,
+    "sha256": "31dda3469ac39138d31f66e07372749e44905897cfc675ce59e14b148bd97983"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/crash_recovery-v86bvbgj/taycan-crash-m5kejz0c/trial-0.log",
+    "bytes": 117,
+    "sha256": "43a87c2ac3a356ad294c1d3fb015bca49043229e32fe4d2263c280025f8488ab"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/crash_recovery-v86bvbgj/taycan-crash-m5kejz0c/trial-0.log.prepare-114900298625.stdout",
+    "bytes": 436,
+    "sha256": "2d789827b0280eebc2110df7584d71dd4263a2cb21e2bb5dce64650d695bb353"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/crash_recovery-v86bvbgj/taycan-crash-m5kejz0c/trial-2.log",
+    "bytes": 117,
+    "sha256": "43a87c2ac3a356ad294c1d3fb015bca49043229e32fe4d2263c280025f8488ab"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/crash_recovery-v86bvbgj/taycan-crash-m5kejz0c/trial-3.log",
+    "bytes": 117,
+    "sha256": "43a87c2ac3a356ad294c1d3fb015bca49043229e32fe4d2263c280025f8488ab"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/crash_recovery-v86bvbgj/taycan-crash-m5kejz0c/trial-1.log.verify-151901290750.stdout",
+    "bytes": 431,
+    "sha256": "9d4d81886d6175b4e94e8a0a541c594deee87d559d24d917a13809176bfb0e7a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/crash_recovery-v86bvbgj/taycan-crash-m5kejz0c/trial-2.log.verify-168292832125.stdout",
+    "bytes": 431,
+    "sha256": "9e3c72f9a34e1a045f4f6d5b5131f2a443acfd041aa2b9dada249a0ad467b39f"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/crash_recovery-v86bvbgj/taycan-crash-m5kejz0c/trial-3.log.prepare-169224157625.stdout",
+    "bytes": 436,
+    "sha256": "231fc7927ea487ab4de4ab0a831b161325de1750948161d31430e5992f4d6539"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/crash_recovery-v86bvbgj/taycan-crash-m5kejz0c/trial-2.log.verify-167114938041.stdout",
+    "bytes": 435,
+    "sha256": "25606a531ede8cc270555ae4360f604924a338a01c5c4e120b06f06f582f5126"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/crash_recovery-v86bvbgj/taycan-crash-m5kejz0c/trial-3.log.verify-180233525833.stdout",
+    "bytes": 434,
+    "sha256": "32f91b98d578cf810bcb899f96b7e42ae27007a74289718234649b5017c8f459"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/crash_recovery-v86bvbgj/taycan-crash-m5kejz0c/trial-0.log.verify-134555777125.stdout",
+    "bytes": 435,
+    "sha256": "8b7e9ccff6d14c3b6f8899ab9c88a4d9f9e6cbb41aef0ea44d761a3654063a3a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/crash_recovery-v86bvbgj/taycan-crash-m5kejz0c/trial-1.log.verify-150968579500.stdout",
+    "bytes": 435,
+    "sha256": "fd8d25f9ecfa31be55a5b0d936ec06d640f8f7da2685f26f593f718cd44d92ed"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/crash_recovery-v86bvbgj/taycan-crash-m5kejz0c/trial-1.log.prepare-136632759625.stdout",
+    "bytes": 436,
+    "sha256": "231fc7927ea487ab4de4ab0a831b161325de1750948161d31430e5992f4d6539"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/crash_recovery-v86bvbgj/taycan-crash-m5kejz0c/trial-4.log.verify-197225920250.stdout",
+    "bytes": 431,
+    "sha256": "44e9d6086d91c57ff3e705808aae7768841c41d9a43c11bb7a7410e92b658a35"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/crash_recovery-v86bvbgj/taycan-crash-m5kejz0c/trial-2.log.prepare-152684479291.stdout",
+    "bytes": 436,
+    "sha256": "231fc7927ea487ab4de4ab0a831b161325de1750948161d31430e5992f4d6539"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/crash_recovery-v86bvbgj/taycan-crash-m5kejz0c/trial-3.log.verify-181233412458.stdout",
+    "bytes": 431,
+    "sha256": "ff3dbee0d46215d0d5d26b413d964cd6079a55863aec69fe39a7e43c085a58b6"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/compaction-vx_0qsx4/external-guard.json",
+    "bytes": 512,
+    "sha256": "c11f9f52d8f74cabaa40d9d9ed18b2bf97a52deae140cc68677ef6a025afc368"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/compaction-vx_0qsx4/gc-trace.jsonl",
+    "bytes": 265205,
+    "sha256": "dc7b06716bce51c46205a59c432a9659154311d7b9cfd182836519a6a25ebafc"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/compaction-vx_0qsx4/processes.jsonl",
+    "bytes": 718,
+    "sha256": "e97005ebb34a74fb3aadc25d029dcdb316bab3fff1a3e14949fc094f81623f89"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/compaction-vx_0qsx4/output.log",
+    "bytes": 307,
+    "sha256": "531227a6732193492bb3014f19201ff50f2036c2ff308a0e792d5df6e019c07a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-candidate/compaction-vx_0qsx4/resources.jsonl",
+    "bytes": 5113,
+    "sha256": "7ac8e2a4a3dbfcd621e891e8657538805a64dbeff7cd047e678c6462a8f3fabc"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-crash/taycan-crash-u9hu8usu/trial-0.log.verify-17575475500.stdout",
+    "bytes": 620,
+    "sha256": "279cbeb4ea77a7e51488254abdc7d2ba0f581e09bb374dc82af224701d1c7b76"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-crash/taycan-crash-u9hu8usu/trial-4.log",
+    "bytes": 117,
+    "sha256": "43a87c2ac3a356ad294c1d3fb015bca49043229e32fe4d2263c280025f8488ab"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-crash/taycan-crash-u9hu8usu/trial-1.log",
+    "bytes": 117,
+    "sha256": "43a87c2ac3a356ad294c1d3fb015bca49043229e32fe4d2263c280025f8488ab"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-crash/taycan-crash-u9hu8usu/trial-0.log",
+    "bytes": 117,
+    "sha256": "43a87c2ac3a356ad294c1d3fb015bca49043229e32fe4d2263c280025f8488ab"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-crash/taycan-crash-u9hu8usu/trial-2.log",
+    "bytes": 117,
+    "sha256": "43a87c2ac3a356ad294c1d3fb015bca49043229e32fe4d2263c280025f8488ab"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-crash/taycan-crash-u9hu8usu/trial-2.log.prepare-34666463291.stdout",
+    "bytes": 628,
+    "sha256": "2baba9aaee22670fba786d54e2c77d7e5d310febee4dfd51b2073e1f2bef53cf"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-crash/taycan-crash-u9hu8usu/trial-2.log.verify-51507031041.stdout",
+    "bytes": 620,
+    "sha256": "d94b89fa0a20e7c5849a5e6bb4d7e30fa4bdee369d5d1dd3c34ea8c9470b7dea"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-crash/taycan-crash-u9hu8usu/trial-3.log",
+    "bytes": 117,
+    "sha256": "43a87c2ac3a356ad294c1d3fb015bca49043229e32fe4d2263c280025f8488ab"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-crash/taycan-crash-u9hu8usu/processes.jsonl",
+    "bytes": 14550,
+    "sha256": "a514c9f9aed20e7baa652c906afcb4ae0eccca6e2b9d2dd9a0a39aa5a2af4330"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-crash/taycan-crash-u9hu8usu/trial-1.log.verify-33662887541.stdout",
+    "bytes": 621,
+    "sha256": "81f5be803dc24f91ae5ca701afef57a9fb8e8b75896b1e34f90dcd4f1ecadbcf"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-crash/taycan-crash-u9hu8usu/trial-0.log.prepare-54410541.stdout",
+    "bytes": 628,
+    "sha256": "181f9854e3b75e3cabdee5d269065c12823d9aa4e37838da1051c13302c0bb56"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-crash/taycan-crash-u9hu8usu/trial-1.log.verify-32525360875.stdout",
+    "bytes": 624,
+    "sha256": "3816c3ddc48e62cceca6fc9708900bda2cafff1500b6c81155146d9c8967f253"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-crash/taycan-crash-u9hu8usu/trial-0.log.verify-16139300041.stdout",
+    "bytes": 624,
+    "sha256": "0e95848e54996820166f8f3a9d32354d9def55684da160058957ce8f7050daea"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-crash/taycan-crash-u9hu8usu/trial-4.log.prepare-64282173750.stdout",
+    "bytes": 628,
+    "sha256": "42226006dcce615cf4b9bc6bce65e46e24c2f738538b370570a7f44fc5c02b93"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-crash/taycan-crash-u9hu8usu/trial-4.log.verify-79759323458.stdout",
+    "bytes": 620,
+    "sha256": "fd1a05ad08f14800349785c2cd358454f53def338919dbae0e135b490ea262cd"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-crash/taycan-crash-u9hu8usu/trial-3.log.verify-62275662125.stdout",
+    "bytes": 622,
+    "sha256": "01129c3565bf9494affc94072c0f7e192f1ee1a6bd5155ee878c579415a2f9ce"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-crash/taycan-crash-u9hu8usu/trial-3.log.verify-63453407208.stdout",
+    "bytes": 619,
+    "sha256": "200dca876a3288261c3df1553965b07ace10af813978d80a609fad53eed90ea3"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-crash/taycan-crash-u9hu8usu/trial-3.log.prepare-52287402791.stdout",
+    "bytes": 628,
+    "sha256": "a9ab4ef2a0638f635620f6da7b6a934540cd4e9d7e8988960d82643005254de6"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-crash/taycan-crash-u9hu8usu/trial-1.log.prepare-18524835416.stdout",
+    "bytes": 628,
+    "sha256": "5ffce07451727372c0673ee3f8331ce6a3f7ce80a0b1543715b0351252b84913"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-crash/taycan-crash-u9hu8usu/trial-2.log.verify-50673547291.stdout",
+    "bytes": 624,
+    "sha256": "87ad92b85baa0c4761687c2de08f710efcdf89ae3188ae8d18b60eb54626235a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-crash/taycan-crash-u9hu8usu/trial-4.log.verify-79034883958.stdout",
+    "bytes": 624,
+    "sha256": "43303ff3ea4eaf998a884cb630f26f3140ab827afbffb3bc958d19a1d60fb64d"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/results.json",
+    "bytes": 2889,
+    "sha256": "9bfee1965e5df518039f203072bf6feca7f38c5750bd01ade28bb9f5fca94be1"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/concurrent-7tprsnox/processes.jsonl",
+    "bytes": 688,
+    "sha256": "df73e0f3e90800edc74aab77654a976be2857458ffdd20eb123a18d146a919d1"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/concurrent-7tprsnox/output.log",
+    "bytes": 1573,
+    "sha256": "a24daebfde9d20941e2a73b048b30a1a80eb135f38923e6649b8103290e3650f"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/concurrent-7tprsnox/resources.jsonl",
+    "bytes": 1036,
+    "sha256": "456c06163bce312023614d7dbb46dc36242b62f5d4163a9981f764342296b8ff"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/crash_recovery-zgu5p6pu/gc-trace.jsonl",
+    "bytes": 10623,
+    "sha256": "33170d13f88cabc5ea3b2e1eb5ab736dcd42446fc09849040ae89b5d9715d62f"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/crash_recovery-zgu5p6pu/processes.jsonl",
+    "bytes": 15882,
+    "sha256": "40d4edbc179a850499574bb192ff49a6dd7e18e0c1ae9359a655d7b9c905e88c"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/crash_recovery-zgu5p6pu/output.log",
+    "bytes": 629,
+    "sha256": "fa0601d7c16350915db5358b18e2ba885cacd58e882da7308f8a2e63c950ecbc"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/crash_recovery-zgu5p6pu/resources.jsonl",
+    "bytes": 8997,
+    "sha256": "351817d43b0fe336ff632d1800658dd9bcfa4052f7c62e71fdd7051b022d2d5d"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/crash_recovery-zgu5p6pu/taycan-crash-q3vx38_5/trial-0.log.verify-492082201583.stdout",
+    "bytes": 431,
+    "sha256": "1d961141576e39fa8443291200fe804476c4041aa6a692668ac62538b87ab1e3"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/crash_recovery-zgu5p6pu/taycan-crash-q3vx38_5/trial-3.log.verify-526404815125.stdout",
+    "bytes": 434,
+    "sha256": "32f91b98d578cf810bcb899f96b7e42ae27007a74289718234649b5017c8f459"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/crash_recovery-zgu5p6pu/taycan-crash-q3vx38_5/trial-4.log",
+    "bytes": 117,
+    "sha256": "43a87c2ac3a356ad294c1d3fb015bca49043229e32fe4d2263c280025f8488ab"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/crash_recovery-zgu5p6pu/taycan-crash-q3vx38_5/trial-1.log.verify-503631520333.stdout",
+    "bytes": 434,
+    "sha256": "03f3c48a69f368f00a2cfd4a007b5d37cc50e03f48cca4948bf5737cacd8a5f1"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/crash_recovery-zgu5p6pu/taycan-crash-q3vx38_5/trial-1.log",
+    "bytes": 117,
+    "sha256": "43a87c2ac3a356ad294c1d3fb015bca49043229e32fe4d2263c280025f8488ab"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/crash_recovery-zgu5p6pu/taycan-crash-q3vx38_5/trial-1.log.prepare-493036596916.stdout",
+    "bytes": 436,
+    "sha256": "231fc7927ea487ab4de4ab0a831b161325de1750948161d31430e5992f4d6539"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/crash_recovery-zgu5p6pu/taycan-crash-q3vx38_5/trial-0.log",
+    "bytes": 117,
+    "sha256": "43a87c2ac3a356ad294c1d3fb015bca49043229e32fe4d2263c280025f8488ab"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/crash_recovery-zgu5p6pu/taycan-crash-q3vx38_5/trial-2.log",
+    "bytes": 117,
+    "sha256": "43a87c2ac3a356ad294c1d3fb015bca49043229e32fe4d2263c280025f8488ab"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/crash_recovery-zgu5p6pu/taycan-crash-q3vx38_5/trial-3.log.prepare-519255276708.stdout",
+    "bytes": 436,
+    "sha256": "231fc7927ea487ab4de4ab0a831b161325de1750948161d31430e5992f4d6539"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/crash_recovery-zgu5p6pu/taycan-crash-q3vx38_5/trial-3.log",
+    "bytes": 117,
+    "sha256": "43a87c2ac3a356ad294c1d3fb015bca49043229e32fe4d2263c280025f8488ab"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/crash_recovery-zgu5p6pu/taycan-crash-q3vx38_5/trial-4.log.prepare-528408974083.stdout",
+    "bytes": 436,
+    "sha256": "231fc7927ea487ab4de4ab0a831b161325de1750948161d31430e5992f4d6539"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/crash_recovery-zgu5p6pu/taycan-crash-q3vx38_5/trial-4.log.verify-540364678541.stdout",
+    "bytes": 431,
+    "sha256": "44e9d6086d91c57ff3e705808aae7768841c41d9a43c11bb7a7410e92b658a35"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/crash_recovery-zgu5p6pu/taycan-crash-q3vx38_5/trial-0.log.prepare-478720691250.stdout",
+    "bytes": 436,
+    "sha256": "231fc7927ea487ab4de4ab0a831b161325de1750948161d31430e5992f4d6539"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/crash_recovery-zgu5p6pu/taycan-crash-q3vx38_5/trial-2.log.prepare-505098303916.stdout",
+    "bytes": 436,
+    "sha256": "dc2d212e4a5a2dced48994d70572d2bb62e24c67a578598ce1a64e9b25bec95d"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/crash_recovery-zgu5p6pu/taycan-crash-q3vx38_5/trial-2.log.verify-517118032666.stdout",
+    "bytes": 435,
+    "sha256": "b0e4c10d7cec3981c76b8066f0386abb787dc9f288da86127ce95d0b04769a62"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/crash_recovery-zgu5p6pu/taycan-crash-q3vx38_5/trial-4.log.verify-538740135666.stdout",
+    "bytes": 435,
+    "sha256": "e7493910c78b9ff782b7126c71959473d45b3c00b8583667eb68801fc5e03575"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/crash_recovery-zgu5p6pu/taycan-crash-q3vx38_5/trial-3.log.verify-527396640208.stdout",
+    "bytes": 431,
+    "sha256": "ff3dbee0d46215d0d5d26b413d964cd6079a55863aec69fe39a7e43c085a58b6"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/crash_recovery-zgu5p6pu/taycan-crash-q3vx38_5/trial-2.log.verify-518319225916.stdout",
+    "bytes": 431,
+    "sha256": "9e3c72f9a34e1a045f4f6d5b5131f2a443acfd041aa2b9dada249a0ad467b39f"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/crash_recovery-zgu5p6pu/taycan-crash-q3vx38_5/trial-0.log.verify-490887572916.stdout",
+    "bytes": 435,
+    "sha256": "099c41e2f075eaa89d1e3663d78fb33eeb48368e97271fd46e8992a7f39df2ac"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/crash_recovery-zgu5p6pu/taycan-crash-q3vx38_5/trial-1.log.verify-504395345958.stdout",
+    "bytes": 431,
+    "sha256": "9d4d81886d6175b4e94e8a0a541c594deee87d559d24d917a13809176bfb0e7a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/compaction-w_gh5rnj/external-guard.json",
+    "bytes": 549,
+    "sha256": "7ae7f294ad17a1732503c5ff8c88788a6c8d1cdf536997bd2897ab1df88f28ae"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/compaction-w_gh5rnj/gc-trace.jsonl",
+    "bytes": 189004,
+    "sha256": "bff1fc753ed4c0489652635fc751920712b24fbba40709420055574b105f6b1a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/compaction-w_gh5rnj/processes.jsonl",
+    "bytes": 711,
+    "sha256": "a37aa3952c9a5bd074cfdb61bee33ad7590eb639d5bb603a3eddc5367ccff3a8"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/compaction-w_gh5rnj/output.log",
+    "bytes": 307,
+    "sha256": "531227a6732193492bb3014f19201ff50f2036c2ff308a0e792d5df6e019c07a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/compaction-w_gh5rnj/resources.jsonl",
+    "bytes": 30780,
+    "sha256": "0e58b844e758149cc5ebfcc2cb4d1ec361f1b484364e31b6ed5e300fa69fc839"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/recovery-23hy6s2d/gc-trace.jsonl",
+    "bytes": 5734,
+    "sha256": "dec6b4ebd20d9d81f319da0a34384175db6679314be270acf70477aa8d6a3d53"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/recovery-23hy6s2d/processes.jsonl",
+    "bytes": 685,
+    "sha256": "6a35b381d796a6c9b5453b7e194b57bcdd1d90889e58632a41a7cc3ab4db9097"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/recovery-23hy6s2d/output.log",
+    "bytes": 1475,
+    "sha256": "f135ac1812202d89a581cca2c7144d73ec396b84752f744938e3f576f86b5b59"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/recovery-23hy6s2d/resources.jsonl",
+    "bytes": 1033,
+    "sha256": "65e82bbdce222d6b762d2893c305e2949e0c159b9fb2071e801ea6b2cf532c9c"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/basic-632_7qlc/processes.jsonl",
+    "bytes": 684,
+    "sha256": "2645a1b1a81e5dfc68fd82e605c7d42a10934feb221a0c46bfc822394491774b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-enabled/basic-632_7qlc/output.log",
+    "bytes": 1192,
+    "sha256": "8cb44d3fa4f86427f4b48bc32b5d16a64f0885155d3b524dd2557575f3d261dd"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-batch2/results.json",
+    "bytes": 1597,
+    "sha256": "d135eae4af544e21e032d77b941bcf9131cc1c60c48aa3b05e6c16e6d46b5f50"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-batch2/f2/earlier-page-lost-0.stdout",
+    "bytes": 19,
+    "sha256": "0c42965d564914fc574ba557cd4412cfb5f81b1eddf0646895b10aaae53da970"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-batch2/f2/stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-batch2/f2/all-survives-0.stdout",
+    "bytes": 19,
+    "sha256": "43b10dcff59fa1eca9350228d24f5e65a0ed68a2711813388fb373e2a2068f9a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-batch2/f2/all-lost-1.stdout",
+    "bytes": 19,
+    "sha256": "0c42965d564914fc574ba557cd4412cfb5f81b1eddf0646895b10aaae53da970"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-batch2/f2/tail-page-lost-0.stderr",
+    "bytes": 467,
+    "sha256": "cb6d0d75d5606a8c3e1318fcbe25ce43d8fa4c9e901cfeb0144174729bb6040d"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-batch2/f2/tail-page-lost-0.stdout",
+    "bytes": 19,
+    "sha256": "0c42965d564914fc574ba557cd4412cfb5f81b1eddf0646895b10aaae53da970"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-batch2/f2/earlier-page-lost-0.stderr",
+    "bytes": 546,
+    "sha256": "8ca961af9ee5e773e84183dc46b5ea6792eaeab2a8409ecd04ed91eefe0311a5"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-batch2/f2/all-lost-1.stderr",
+    "bytes": 467,
+    "sha256": "f60fe9e1d92b539532b20e0df81c9e467b8240481d6ee4efe39a10c019608ad7"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-batch2/f2/all-survives-0.stderr",
+    "bytes": 469,
+    "sha256": "03bcde74f61eb3b19747b1ff093434136b11bb6e30b12035c667d55de80b3637"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-batch2/f2/all-survives-1.stdout",
+    "bytes": 19,
+    "sha256": "43b10dcff59fa1eca9350228d24f5e65a0ed68a2711813388fb373e2a2068f9a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-batch2/f2/all-lost-0.stdout",
+    "bytes": 19,
+    "sha256": "0c42965d564914fc574ba557cd4412cfb5f81b1eddf0646895b10aaae53da970"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-batch2/f2/earlier-page-lost-1.stdout",
+    "bytes": 19,
+    "sha256": "0c42965d564914fc574ba557cd4412cfb5f81b1eddf0646895b10aaae53da970"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-batch2/f2/tail-page-lost-1.stderr",
+    "bytes": 466,
+    "sha256": "458c675360291a1537a5ef94e44d29a41643c4fc9ba4115a38f6d1b63363a50d"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-batch2/f2/tail-page-lost-1.stdout",
+    "bytes": 19,
+    "sha256": "0c42965d564914fc574ba557cd4412cfb5f81b1eddf0646895b10aaae53da970"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-batch2/f2/all-lost-0.stderr",
+    "bytes": 467,
+    "sha256": "9a5c12130598bd0b1b4c04bfdece3d15c9023e64e08e8f4f43ff15d9854ff5cb"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-batch2/f2/all-survives-1.stderr",
+    "bytes": 469,
+    "sha256": "14a6325201b62a3f78fe78a33b84aa4b7de55fcb0f8bf0d4e91c496e33435ab0"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-batch2/f2/earlier-page-lost-1.stderr",
+    "bytes": 466,
+    "sha256": "98117f16085e8757ac9434c988d7604fe725cb15eca7f87181f402f917dd9a56"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-hot-inline/results.json",
+    "bytes": 1597,
+    "sha256": "d135eae4af544e21e032d77b941bcf9131cc1c60c48aa3b05e6c16e6d46b5f50"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-hot-inline/f2/earlier-page-lost-0.stdout",
+    "bytes": 19,
+    "sha256": "0c42965d564914fc574ba557cd4412cfb5f81b1eddf0646895b10aaae53da970"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-hot-inline/f2/stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-hot-inline/f2/all-survives-0.stdout",
+    "bytes": 19,
+    "sha256": "43b10dcff59fa1eca9350228d24f5e65a0ed68a2711813388fb373e2a2068f9a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-hot-inline/f2/all-lost-1.stdout",
+    "bytes": 19,
+    "sha256": "0c42965d564914fc574ba557cd4412cfb5f81b1eddf0646895b10aaae53da970"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-hot-inline/f2/tail-page-lost-0.stderr",
+    "bytes": 285,
+    "sha256": "23700763029e723a69adbd9bbd3ca70a7cced5a718d29c2f849a4d1d766a28e1"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-hot-inline/f2/tail-page-lost-0.stdout",
+    "bytes": 19,
+    "sha256": "0c42965d564914fc574ba557cd4412cfb5f81b1eddf0646895b10aaae53da970"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-hot-inline/f2/earlier-page-lost-0.stderr",
+    "bytes": 364,
+    "sha256": "cae4bc7c33da7939395df1b7b6da4ef75cc74f9c88727944a0ca4e195713990e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-hot-inline/f2/all-lost-1.stderr",
+    "bytes": 284,
+    "sha256": "1da91b0c4239db6fbd595ac80840640024bc3d9562a36c08b26ad11082bc1298"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-hot-inline/f2/all-survives-0.stderr",
+    "bytes": 287,
+    "sha256": "d6d8b6306c68f1c2a04e14e44b2e38e070b112b16a8b1d4d7a364344362650b9"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-hot-inline/f2/all-survives-1.stdout",
+    "bytes": 19,
+    "sha256": "43b10dcff59fa1eca9350228d24f5e65a0ed68a2711813388fb373e2a2068f9a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-hot-inline/f2/all-lost-0.stdout",
+    "bytes": 19,
+    "sha256": "0c42965d564914fc574ba557cd4412cfb5f81b1eddf0646895b10aaae53da970"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-hot-inline/f2/earlier-page-lost-1.stdout",
+    "bytes": 19,
+    "sha256": "0c42965d564914fc574ba557cd4412cfb5f81b1eddf0646895b10aaae53da970"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-hot-inline/f2/tail-page-lost-1.stderr",
+    "bytes": 284,
+    "sha256": "1da91b0c4239db6fbd595ac80840640024bc3d9562a36c08b26ad11082bc1298"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-hot-inline/f2/tail-page-lost-1.stdout",
+    "bytes": 19,
+    "sha256": "0c42965d564914fc574ba557cd4412cfb5f81b1eddf0646895b10aaae53da970"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-hot-inline/f2/all-lost-0.stderr",
+    "bytes": 285,
+    "sha256": "436c312cc94059d2e4b7812f6b204e2ddaa921cc67e5607cfc12d009608c061e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-hot-inline/f2/all-survives-1.stderr",
+    "bytes": 286,
+    "sha256": "f0ec0e17b36eea30bf6816a24a7ad5f5d0e9ee1541d50aa5634ae1329b0a9970"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss-hot-inline/f2/earlier-page-lost-1.stderr",
+    "bytes": 284,
+    "sha256": "1da91b0c4239db6fbd595ac80840640024bc3d9562a36c08b26ad11082bc1298"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2/results.json",
+    "bytes": 9771,
+    "sha256": "0cf3c8dce8b8154077f068895163d708e50668a01608bc167faa02fba60de47a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2/contest_mix/processes.jsonl",
+    "bytes": 772,
+    "sha256": "1ea3b0a1b4a8e5929cd0a08bcc150ab42c3df42f34a57032b93f46a4dc800cd2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2/contest_mix/output.log",
+    "bytes": 18756,
+    "sha256": "a75332a87c48d76f0fc9e0c9e7661470f4047967a6b458fa19bd4a6805f70241"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2/update/processes.jsonl",
+    "bytes": 762,
+    "sha256": "cfb3f903d3c83c69743c17de07d7c260f25dcd3d47242cd7fe03532d6669bfc4"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2/update/output.log",
+    "bytes": 18752,
+    "sha256": "6004fa0c2c02409c054d4ffd17fa6196d63166b729b1b0749db9d515abf95123"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2/load/processes.jsonl",
+    "bytes": 757,
+    "sha256": "7fa4844fe4a2808789ff699d8ccb65864967f16cad2525e18ab8c70542723b9a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2/load/output.log",
+    "bytes": 16195,
+    "sha256": "5bcc43e3956e171b302410d436687371a0fafde54e91d5e65672d4bc525c17b9"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch4/results.json",
+    "bytes": 9774,
+    "sha256": "b6e3f1226eedd5e214471e974a61de1d48ecd3d1e6b817e7ce1fce17b9232688"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch4/contest_mix/processes.jsonl",
+    "bytes": 772,
+    "sha256": "9b42aa07a34af93588c029b94a4a770a6013cbaa6a8ee69eeb2f4abf247b07a9"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch4/contest_mix/output.log",
+    "bytes": 20587,
+    "sha256": "5f2750bf3722730c0a34d277cff4f8cee1247cdfd28e1e8fc10a942cfb637b61"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch4/update/processes.jsonl",
+    "bytes": 762,
+    "sha256": "0e95d122bc39413fed743a8e0f51292b2878319099d90b4de1e60254d5655646"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch4/update/output.log",
+    "bytes": 18741,
+    "sha256": "10d5248016eac84407e97d7ef2db2afbca6d231445ba8666b1012820627c0b4c"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch4/load/processes.jsonl",
+    "bytes": 753,
+    "sha256": "b38fb0ae74f0c859a61b30a01a6a91bee4ffd92f49ee0d6f4f5873de90d33737"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch4/load/output.log",
+    "bytes": 16380,
+    "sha256": "57a5a05c9bf69a958666937001af32c0f60591e12b2bc3d4e692833e593c615c"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-hot-inline/results.json",
+    "bytes": 607,
+    "sha256": "f57ecc31c8bc07b437afff5f82349c38f3f5e24a7acb10bc5ab510eb8e7eb7c2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-hot-inline/f2-hold/verify0.stderr",
+    "bytes": 397,
+    "sha256": "3c368ee9278cd2a4783bbd650f1dfc5fd9bb42daecda2bf3ba3b8eba19104166"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-hot-inline/f2-hold/verify0.stdout",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-hot-inline/f2-hold/verify1.stderr",
+    "bytes": 397,
+    "sha256": "fd18208603ad87eaaea005cc2ca6c696084fba42a5b966a099d14bf4e916be47"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-hot-inline/f2-hold/prepare.stderr",
+    "bytes": 402,
+    "sha256": "45d1cdc696183ae609784159bfe7bc591a48001044f61aa5e8759fa19a37d546"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-hot-inline/f2-hold/serve.log",
+    "bytes": 113,
+    "sha256": "163bf1b30308d96dfb09f7aafe47f05bf3c5007d3f2cadacd75f09ec2f905bf2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-hot-inline/f2-hold/verify1.stdout",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-hot-inline/f2-hold/prepare.stdout",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-hot-inline/f2-kill-before-sync/verify0.stderr",
+    "bytes": 397,
+    "sha256": "f124295738a7245cc2967bc9347f8edb189c5930e9e23a6738150e0751e5ea28"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-hot-inline/f2-kill-before-sync/verify0.stdout",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-hot-inline/f2-kill-before-sync/verify1.stderr",
+    "bytes": 397,
+    "sha256": "fd18208603ad87eaaea005cc2ca6c696084fba42a5b966a099d14bf4e916be47"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-hot-inline/f2-kill-before-sync/prepare.stderr",
+    "bytes": 402,
+    "sha256": "45d1cdc696183ae609784159bfe7bc591a48001044f61aa5e8759fa19a37d546"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-hot-inline/f2-kill-before-sync/serve.log",
+    "bytes": 113,
+    "sha256": "163bf1b30308d96dfb09f7aafe47f05bf3c5007d3f2cadacd75f09ec2f905bf2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-hot-inline/f2-kill-before-sync/verify1.stdout",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-hot-inline/f2-kill-before-sync/prepare.stdout",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-hot-inline/f2-fail/prepare.stderr",
+    "bytes": 402,
+    "sha256": "45d1cdc696183ae609784159bfe7bc591a48001044f61aa5e8759fa19a37d546"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-hot-inline/f2-fail/serve.log",
+    "bytes": 524,
+    "sha256": "b44143880c1596db47d9cd3603d6a7ab96644b97a5fed8f80e82af563e22e7db"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries-hot-inline/f2-fail/prepare.stdout",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/screen/results.json",
+    "bytes": 47422,
+    "sha256": "97aea712ec4f93dfbe842f7765c89e6ddd2d00a63d2449025a47b321a9710378"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/screen/hot-inline-buffered-load-r1/processes.jsonl",
+    "bytes": 790,
+    "sha256": "497cc0a136590f39e055c529b95814ca6c14ea057a0fa833ef45d11cfe49b86b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/screen/hot-inline-buffered-load-r1/gc.jsonl",
+    "bytes": 50646,
+    "sha256": "6b03b0a01bd24102a5ca1f520d75599df6d444910a3916f910762fac22d8fe3b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/screen/hot-inline-buffered-load-r1/output.log",
+    "bytes": 13489,
+    "sha256": "1c5022ee8b13526139eff487888e8e9caf518f50cb2edbbf418b6d2a9c84fc85"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/screen/hot-inline-buffered-load-r1/resources.jsonl",
+    "bytes": 1640,
+    "sha256": "ce1e2100732c22acbfdeff34aeff8a2be7932ce9a624370b7773667eafa8177d"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/screen/aio-nocache-load-r1/processes.jsonl",
+    "bytes": 774,
+    "sha256": "26bb0b2bde6cfa874c5a7819d2b86268c5d6f04c6663d3b075b24c7c5d17a690"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/screen/aio-nocache-load-r1/gc.jsonl",
+    "bytes": 51055,
+    "sha256": "c1c509d0383dd62eac407ca93100e74a14c5307b3cd0f371c1c4025b0c63e04d"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/screen/aio-nocache-load-r1/output.log",
+    "bytes": 16367,
+    "sha256": "af861838f50408e64d61c4eaf08cf0fc3562864f20161929f5bddeb4bd3bafb5"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/screen/aio-nocache-load-r1/resources.jsonl",
+    "bytes": 1836,
+    "sha256": "93ab4fe0ddf89f536a936d271f2c88bb9e6aac52ac22584f7649639a25e6ebcb"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/screen/hot-inline-nocache-load-r1/processes.jsonl",
+    "bytes": 788,
+    "sha256": "443ba6f9141da00bd1146144fe66ff1a57dd489ea16ab0c09f711e47229201c0"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/screen/hot-inline-nocache-load-r1/gc.jsonl",
+    "bytes": 54632,
+    "sha256": "81d0d6799fd88054b87e4464838e2d0e65ca7ef0be906bb52b836be50f9d9754"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/screen/hot-inline-nocache-load-r1/output.log",
+    "bytes": 14734,
+    "sha256": "3e7b7a0b9932755583862c72a2a284041b82167e3e75ecce4a0e16a2125323ab"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/screen/hot-inline-nocache-load-r1/resources.jsonl",
+    "bytes": 1751,
+    "sha256": "950021499cf5b909c3ddf2da98e73c06744dddc77cb2effb588ca79665d4c2cf"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/screen/aio-buffered-load-r1/processes.jsonl",
+    "bytes": 777,
+    "sha256": "0f66f193d22fb63bf44be610dc9779b64c5d483610b1b8dde79a4c1f612cd5c3"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/screen/aio-buffered-load-r1/gc.jsonl",
+    "bytes": 51284,
+    "sha256": "be9bf87e87a435a043e56f208d3c1b44e7072c5ea7c1e46b98416dd00ecb037b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/screen/aio-buffered-load-r1/output.log",
+    "bytes": 12033,
+    "sha256": "ce4a138816b614b9608a85203fe47ab4cae838ce03667e9c4ac2282bada0dd90"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/screen/aio-buffered-load-r1/resources.jsonl",
+    "bytes": 1402,
+    "sha256": "b80609e89932bb8f2e494b446e1a4a69ebe552c2866c4a473f56bb9d1ee87a28"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-batch4/results.json",
+    "bytes": 2925,
+    "sha256": "f400b722b98d8a3e620f85974d440b311ad6c0599aaafbbab883d2642533aad0"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-batch4/basic-oa94hjcp/processes.jsonl",
+    "bytes": 672,
+    "sha256": "763abb35e9d48c9a0ed4ea30c6ed8d876f7e655714abafa788a24862f5e43bbd"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-batch4/basic-oa94hjcp/output.log",
+    "bytes": 1549,
+    "sha256": "cd1fa23ea29b60f6c7ac59d7f77006391205cda2fb67f4f6979ca394182e80f4"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-batch4/recovery-g19wvg2k/gc-trace.jsonl",
+    "bytes": 5500,
+    "sha256": "99be930e28204366ce08fbdccb0a1f638009344787451619308fca29a2eb54d0"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-batch4/recovery-g19wvg2k/processes.jsonl",
+    "bytes": 683,
+    "sha256": "a718ac2cf550d312f9ffb04cb9decc1b72fbcaac523b61695b5185d5e306a69e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-batch4/recovery-g19wvg2k/output.log",
+    "bytes": 2055,
+    "sha256": "7924bf5ade00aeed7d3a481b658ae7a6974dec0b8a347a05499b9a2852b75ecb"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-batch4/recovery-g19wvg2k/resources.jsonl",
+    "bytes": 1702,
+    "sha256": "55d7b60295e1636681525987c95113cedbc3a12df90b27c6bfdd9225f14f8ef5"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-batch4/crash_recovery-iopwjspq/gc-trace.jsonl",
+    "bytes": 5971,
+    "sha256": "2e2304da7e1968db865c0d3725a0820a779777233672ba64929add16e56937af"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-batch4/crash_recovery-iopwjspq/processes.jsonl",
+    "bytes": 2390,
+    "sha256": "6ea9b9a2a5a6aaa0bed86c81841f47253cce39ab6aa8c2c26b09545a98ead928"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-batch4/crash_recovery-iopwjspq/output.log",
+    "bytes": 174,
+    "sha256": "b97a09682a32e72ed13e3a3608cf7cb6f88ad436fd829e6e23186c9722601432"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-batch4/crash_recovery-iopwjspq/resources.jsonl",
+    "bytes": 2666,
+    "sha256": "b3ef2580f65128ce8f80872e73ebc6378110adf5b8da5a8a48231971a9302e30"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-batch4/crash_recovery-iopwjspq/taycan-crash-hjx_y74a/trial-0.log.prepare-54288930916.stdout",
+    "bytes": 628,
+    "sha256": "233355da425d3311ef120e395dd65046ac3989e9f605d8a0d696617d75f029a7"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-batch4/crash_recovery-iopwjspq/taycan-crash-hjx_y74a/trial-0.log",
+    "bytes": 117,
+    "sha256": "43a87c2ac3a356ad294c1d3fb015bca49043229e32fe4d2263c280025f8488ab"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-batch4/crash_recovery-iopwjspq/taycan-crash-hjx_y74a/trial-0.log.verify-96458228375.stdout",
+    "bytes": 687,
+    "sha256": "e2f4056a1df31168a1c88d839ed9c01a0ee5608c6a8c160c69bf1f7cd1742dc9"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-batch4/compaction-05mqymza/gc-trace.jsonl",
+    "bytes": 8508,
+    "sha256": "c6f3f331df77e8693e4bf730507c781c96c297c1c1a486a4ea1832b10b5aabfc"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-batch4/compaction-05mqymza/processes.jsonl",
+    "bytes": 708,
+    "sha256": "d2b09da9b40f778ea858be1380ea9922ef527483cd1866c9fa64eaa10801870d"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-batch4/compaction-05mqymza/output.log",
+    "bytes": 2048,
+    "sha256": "7dfdc8d6b87c9d29aa25554cf9d06ee0c9f66c4b7edc59c8fbc18d4d0fd2c5d2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-batch4/compaction-05mqymza/resources.jsonl",
+    "bytes": 1048,
+    "sha256": "d4fa8a2b8d90bc748c6b715e46c4f3a6769ac9049f97e47e108484585f2eb311"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-batch4/concurrent-qes74rig/processes.jsonl",
+    "bytes": 691,
+    "sha256": "b22461813cdf80d39ae85d671d491256eee8a13d9f2aacaf88c774851127fc68"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-batch4/concurrent-qes74rig/output.log",
+    "bytes": 2143,
+    "sha256": "c94c0f4d1dcf088504dac28ff307f49e358934e12d2d6aae4fb95e4a83ff4936"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/public-batch4/concurrent-qes74rig/resources.jsonl",
+    "bytes": 1385,
+    "sha256": "5cb75632186f18b57e59a915af5c9fcf72b2966941cda6d43ece481c26e44d04"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/hot-inline-compaction-complete/results.json",
+    "bytes": 618,
+    "sha256": "4c6bf38280ff45595787ccab998aaaf76de07e769970b8c048f77982a9751681"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/hot-inline-compaction-complete/compaction-1rk_m466/gc-trace.jsonl",
+    "bytes": 460027,
+    "sha256": "89c7edb20c23c94e7a75982fc72e9d1f65b704f378a675f430b2588b838868f6"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/hot-inline-compaction-complete/compaction-1rk_m466/processes.jsonl",
+    "bytes": 719,
+    "sha256": "d99cb072d74092ffc3b6876bafbd64790644118b18d577fd4cc6bcb0cbdfd0c4"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/hot-inline-compaction-complete/compaction-1rk_m466/output.log",
+    "bytes": 307,
+    "sha256": "531227a6732193492bb3014f19201ff50f2036c2ff308a0e792d5df6e019c07a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/hot-inline-compaction-complete/compaction-1rk_m466/resources.jsonl",
+    "bytes": 42275,
+    "sha256": "441540d1c352e1a63513ab34fa534a89f32078b4609c085afe11b2114ab5f956"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-after-data-sync-verify2.stderr.log",
+    "bytes": 579,
+    "sha256": "6d9929e54e93c4244e437655a385d7f82f90e7c12e8636ea9b15cce270484660"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/partial-tail.stderr.log",
+    "bytes": 473,
+    "sha256": "b725f8239e7031c16c5e1f6811b71ccaf42a99131e0cc400337ef53a5530facc"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-after-wal-verify2.stdout.log",
+    "bytes": 48,
+    "sha256": "68f28d343f469620e0a95eb7c75932e62f9e6e1e414af0bc96e9b6f74411992e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-after-root-prepare.stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-after-root-verify1.stderr.log",
+    "bytes": 466,
+    "sha256": "d510bd1c3dec96cf84e0fbae3cd94b01a73af51003c831bb7c3d91828aaae458"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-after-wal-verify1.stderr.log",
+    "bytes": 579,
+    "sha256": "e26dd88295ffade1ea8a533203b4e8174f1db170fc6678c4e09e6962a1eb92d1"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-after-data-sync-verify1.stdout.log",
+    "bytes": 49,
+    "sha256": "ab55e6414b57cb5fe7d10273a6323f46a5851090009f1c1c3b9785389f21c5b1"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/same-key-write.stdout.log",
+    "bytes": 522,
+    "sha256": "55ad4c52195b50b8b94f21da8751eb5f3f1853bc210177bc537a1f3c80739520"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/apply-error.stderr.log",
+    "bytes": 461,
+    "sha256": "c8fa7ebd3bf37f516c4c988b93ed4c6b50f6cf59bf53f1e6db97186d41003e3b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-ack-prepare.stderr.log",
+    "bytes": 583,
+    "sha256": "c01f8cb6c11a7d9c9132477e2d14f4bba0c551f47af20216ce4259febb5cf8d2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-ack-verify1.stdout.log",
+    "bytes": 49,
+    "sha256": "599a74a9424f8f0c4ca0a305be99714ab54a54fc4f8f8c9e440da1494179f55a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-data-flush-verify1.stderr.log",
+    "bytes": 580,
+    "sha256": "e3e96a09ffe0742e57fd14044e8e054fa7d1cbd7757c71b2d104ac0b84629925"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/recovery.stdout.log",
+    "bytes": 379,
+    "sha256": "7273a435d41eafb3c03eb32ec43b143b7ccc464a6f635b0c9da207b699752d59"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-ack-verify2.stderr.log",
+    "bytes": 579,
+    "sha256": "210d9e341299a6c4c3205ce091d46189805c81ad83d10c011ffdeff181589926"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-data-sync-verify1.stderr.log",
+    "bytes": 579,
+    "sha256": "4b0442048320afcbfd05c0f9e4cab8f07234314c62f4d34952eb3d02a854924b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-data-sync-verify1.stdout.log",
+    "bytes": 48,
+    "sha256": "edd046a50a401fd4c61e5ee770e5dd67d0bd3f65782a745401ca7036b94ad6b6"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/sync-error.stdout.log",
+    "bytes": 28,
+    "sha256": "d332b0edf0f0946c054f0b29d0dfc546130788c7f32e571977bbb9598c9dd01b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/span-write.stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-root-verify1.stdout.log",
+    "bytes": 51,
+    "sha256": "dfe15123eb7e1a8212c5ad48a5995697c87549c3559f46f42d41d0203b07bb7c"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-root-verify1.stdout.log",
+    "bytes": 21,
+    "sha256": "12bcdf60c91775e2856786a5f0a76785d4053bfef51f8492ec389b19e3c2dad6"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/real-hash-collision.stdout.log",
+    "bytes": 40,
+    "sha256": "7819797d1d11f01284fc8037becef8e2724b247c1d8d2e58b0c41eb0cdc885f5"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/same-key-recover-2.stderr.log",
+    "bytes": 467,
+    "sha256": "55f1a5f0f56001b464354a9b9124629fbe1a9a1b93c7a5c48ba60253e7d674d3"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/span-recover-1.stderr.log",
+    "bytes": 473,
+    "sha256": "9ab3e629e9f66864fae59c21bc67dba8a11d4e409fa9e9046b2739d9d1cd4f11"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-after-root-verify2.stdout.log",
+    "bytes": 21,
+    "sha256": "12bcdf60c91775e2856786a5f0a76785d4053bfef51f8492ec389b19e3c2dad6"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-data-flush-verify1.stderr.log",
+    "bytes": 466,
+    "sha256": "bffa61f682a751e90a54f7737b17d8213d8cfe9ada56a1033cd766ea7f3aac70"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/embedded-marker-recover-1.stdout.log",
+    "bytes": 30,
+    "sha256": "c3a891505a7ab82243d0223460429f70a7e602cfe85fe6cf9ca8e7cc206882d9"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-after-data-sync-prepare.stderr.log",
+    "bytes": 584,
+    "sha256": "603fae387f196b8be55ee2d2c8eddfba4e0451dea04bb438b787a4076054b235"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/basic.stdout.log",
+    "bytes": 492,
+    "sha256": "e32b1e0f904ceb4d99903fc733fdc0cb50e948473dc4a6c8b4b072326f25a1f4"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/span-recover-2.stdout.log",
+    "bytes": 22,
+    "sha256": "835a9cefad0fce51c00aa2c89bc104e9db11d1200939a300bce225b50c7332c9"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-after-root-verify1.stderr.log",
+    "bytes": 580,
+    "sha256": "d6e842b306f853c145ce7190ec58a2889b38931aae11aeca42a27b4316bd7439"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-data-flush-verify2.stdout.log",
+    "bytes": 51,
+    "sha256": "ac4135876438b9038d688b6430bfe5cac4ca0041aff2ae4a123307ed4c355ff9"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/io-error.stderr.log",
+    "bytes": 550,
+    "sha256": "38dc0b1fdbd28b1ed66b51382423f26eba22a241af686a8dcf73a87bafac0299"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/embedded-marker-recover-2.stderr.log",
+    "bytes": 469,
+    "sha256": "5c868297d8ff077ffa2e018e32529beaa5182a24cb3081eb39da75da162d4007"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/same-key-recover-1.stdout.log",
+    "bytes": 23,
+    "sha256": "db4dd8a066ee2d32bca98b941d1166eda1ba42cf4657f4c3c23963c676a697fd"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-after-wal-prepare.stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/embedded-marker-write.stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/root-corrupt.stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-root-verify2.stderr.log",
+    "bytes": 466,
+    "sha256": "f3e019e9f6426ef72d99314b86c59cc7e512019e77206e609b1cef0930e2e783"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-root-verify2.stderr.log",
+    "bytes": 579,
+    "sha256": "b41f7385f8a52863d38fcd931f8b25172c10ef68fded5c01ce769546bafda6d3"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-data-flush-verify2.stdout.log",
+    "bytes": 20,
+    "sha256": "ee85392ad150ec801367b34eeac93e996ef5ef38c437970e6b03f7179e52448f"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-ack-verify1.stdout.log",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/results.json",
+    "bytes": 40270,
+    "sha256": "1ccefdd245b5bb4c4ef6ef93b604f4b7bab6d8c34a3ef0374b2039aaea59d06a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-data-sync-verify2.stdout.log",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-data-sync-verify2.stderr.log",
+    "bytes": 468,
+    "sha256": "6bb868809e467fb6372c7e9a8dba5b15bdfcc062fdfc4dc03de59652ee87b2b3"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-data-sync-prepare.stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-data-flush-prepare.stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-ack-verify2.stderr.log",
+    "bytes": 466,
+    "sha256": "3407739c465b145f3c01de0eab61d8e4513ab4317cc19111a931c05fab10bde3"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/footer-corrupt.stderr.log",
+    "bytes": 214,
+    "sha256": "f65841a721153bed64a551f6c13c39662b287b6a406c1742ac5d4355123c1093"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-root-prepare.stderr.log",
+    "bytes": 582,
+    "sha256": "2a0679e93a65c339b50d663a8b50056fa0b503af8aac7db33d37098e26ce09a8"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-after-data-sync-verify2.stderr.log",
+    "bytes": 469,
+    "sha256": "1157e7be3915333c8cf32dd517e3493666977960476387f9356c4358f0cfe018"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/missing-data.stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/data-corrupt.stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent.stdout.log",
+    "bytes": 502,
+    "sha256": "6922f504df6bd6083b5f2b7de6121ed5ee6e94dfad6ea55b1b395e5685eb6764"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-after-wal-verify2.stdout.log",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-after-data-sync-verify1.stdout.log",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-after-root-verify2.stdout.log",
+    "bytes": 50,
+    "sha256": "ca25dedc97c0a181063fe19942796b99feb632a5fda72aade370c773a22d2053"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-after-wal-verify1.stderr.log",
+    "bytes": 467,
+    "sha256": "b71c9c30973172b535abe01bc13a727fdb49ee553cef20782d3c5c905031e0c4"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-after-data-sync-verify1.stderr.log",
+    "bytes": 465,
+    "sha256": "2996ccc2baa62f514f725bfb6d2678f9e5ff87dd46a7365aba81d12e71541ef6"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/same-key-write.stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-ack-verify1.stderr.log",
+    "bytes": 466,
+    "sha256": "86adb3f9f70099f1ffab48133dfbef48d7fabb9e53e034c92bac05baa78d6906"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-ack-prepare.stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/apply-error.stdout.log",
+    "bytes": 28,
+    "sha256": "d332b0edf0f0946c054f0b29d0dfc546130788c7f32e571977bbb9598c9dd01b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-after-root-verify1.stdout.log",
+    "bytes": 50,
+    "sha256": "ca25dedc97c0a181063fe19942796b99feb632a5fda72aade370c773a22d2053"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-after-root-prepare.stderr.log",
+    "bytes": 585,
+    "sha256": "85f2c9d9e3f5a221558e7189aa844bd700b29ac3a86ee349c230cbc77f622bff"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-after-wal-verify2.stderr.log",
+    "bytes": 465,
+    "sha256": "49f7c268ded44e63ff41467ec422dbaf579c29b52a5bdc82bef27299b406487b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/partial-tail.stdout.log",
+    "bytes": 22,
+    "sha256": "835a9cefad0fce51c00aa2c89bc104e9db11d1200939a300bce225b50c7332c9"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-after-data-sync-verify2.stdout.log",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-after-wal-verify1.stdout.log",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/same-key-recover-2.stdout.log",
+    "bytes": 23,
+    "sha256": "db4dd8a066ee2d32bca98b941d1166eda1ba42cf4657f4c3c23963c676a697fd"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/real-hash-collision.stderr.log",
+    "bytes": 1439,
+    "sha256": "0e3f6f0f8a5487501423f6920acfff5215e3d790fd09cfb7ddebf41ebfa07e6b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-data-flush-verify1.stdout.log",
+    "bytes": 51,
+    "sha256": "ac4135876438b9038d688b6430bfe5cac4ca0041aff2ae4a123307ed4c355ff9"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-after-data-sync-prepare.stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/embedded-marker-recover-1.stderr.log",
+    "bytes": 468,
+    "sha256": "c96db7facae38fb43ab6f0d25acc16b2345963d782d36f04a71fe763b150c742"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/span-recover-1.stdout.log",
+    "bytes": 22,
+    "sha256": "835a9cefad0fce51c00aa2c89bc104e9db11d1200939a300bce225b50c7332c9"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-after-root-verify2.stderr.log",
+    "bytes": 580,
+    "sha256": "f53417718336aea0c621c342f27133f72225f15020f2b78ae706474551dd9377"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/sync-error.stderr.log",
+    "bytes": 462,
+    "sha256": "3424dc7d68cea085cc8cb9ef2840b1ac8f259dd5965397d2d5a2d7e2a9ab052b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-data-sync-verify1.stderr.log",
+    "bytes": 467,
+    "sha256": "699a6a500d46bc6409beb283da7f833a12386f9eb4299952b28faaddcc15762c"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-data-sync-verify1.stdout.log",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/recovery.stderr.log",
+    "bytes": 1547,
+    "sha256": "e62fb1eb62e5d7786fe68ab8ba6b3503590fc57fa54c75b339acd5f2d3d07c4b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-data-flush-verify1.stdout.log",
+    "bytes": 20,
+    "sha256": "ee85392ad150ec801367b34eeac93e996ef5ef38c437970e6b03f7179e52448f"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-ack-verify2.stdout.log",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/span-write.stdout.log",
+    "bytes": 23,
+    "sha256": "fb4b7c08776e66fd9beb5b19e22099c9659aa98fc71a468105af8017b86d3849"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-root-verify1.stderr.log",
+    "bytes": 466,
+    "sha256": "23dd413cb5354882720bc610e5448c3d5bff4998d2012a08a8188090d61c9d57"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-root-verify1.stderr.log",
+    "bytes": 581,
+    "sha256": "d4a2be6ba9a2cd9bcb9b63b08b3e6ab20af90dbaeeb76c8b871e31c3dba4f6d8"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-root-verify2.stdout.log",
+    "bytes": 51,
+    "sha256": "dfe15123eb7e1a8212c5ad48a5995697c87549c3559f46f42d41d0203b07bb7c"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-root-verify2.stdout.log",
+    "bytes": 21,
+    "sha256": "12bcdf60c91775e2856786a5f0a76785d4053bfef51f8492ec389b19e3c2dad6"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-data-sync-verify2.stdout.log",
+    "bytes": 48,
+    "sha256": "edd046a50a401fd4c61e5ee770e5dd67d0bd3f65782a745401ca7036b94ad6b6"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-data-sync-verify2.stderr.log",
+    "bytes": 582,
+    "sha256": "3dc7e43613c18529d160d68bf424e210a118dc7d7488de690e5b63336b9ac222"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-data-flush-verify2.stderr.log",
+    "bytes": 579,
+    "sha256": "b4b8e2d512ea5e00778e13b6d1326cdf6e9ea1c97f8aa0092492e51168dc73b3"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-ack-verify1.stderr.log",
+    "bytes": 580,
+    "sha256": "0756c18703e2a117d9ae72098116e2b7d6a508459fc2e17332f8c32f4f050a8f"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-data-flush-verify2.stderr.log",
+    "bytes": 467,
+    "sha256": "5cb6ee16b13f6c55a5c7689da6633acbd8b7a92ab373dee3c80727af12727fe5"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/embedded-marker-recover-2.stdout.log",
+    "bytes": 30,
+    "sha256": "c3a891505a7ab82243d0223460429f70a7e602cfe85fe6cf9ca8e7cc206882d9"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/io-error.stdout.log",
+    "bytes": 28,
+    "sha256": "d332b0edf0f0946c054f0b29d0dfc546130788c7f32e571977bbb9598c9dd01b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/basic.stderr.log",
+    "bytes": 1060,
+    "sha256": "77ceb38c29bb96b9cc02d5fcac94fdefecdfd9b4a5007386e5839f3be44ae7f6"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/span-recover-2.stderr.log",
+    "bytes": 471,
+    "sha256": "3205bfbf6c90f8a3127968086e606924d321d7a7711f571f25212856a580d2d6"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-after-root-verify1.stdout.log",
+    "bytes": 21,
+    "sha256": "12bcdf60c91775e2856786a5f0a76785d4053bfef51f8492ec389b19e3c2dad6"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/root-corrupt.stderr.log",
+    "bytes": 45,
+    "sha256": "fc3488d6b5a5bbbd704e7bba050b4defd44c6f27947cbc1139bf6ba10e3641c2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/embedded-marker-write.stdout.log",
+    "bytes": 20,
+    "sha256": "7640f95057aacb8054fbbb7adada98e69ef3170e980e849579e027143ca6e3b8"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/same-key-recover-1.stderr.log",
+    "bytes": 467,
+    "sha256": "52adec139d173d006ef3f3e8dbab1d6a07ef87dc87b50d01ad2703f13b7ccae3"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-after-wal-prepare.stderr.log",
+    "bytes": 582,
+    "sha256": "b637b90592e22ddb0ece5e4ee9a17953f472ddcbe6fd1f1d2acd048d87b75641"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/missing-data.stderr.log",
+    "bytes": 205,
+    "sha256": "8b04220c91b1911a7c8bc83808543e5c4a7bdfbb44f685f2b067242bfbce4847"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-after-wal-verify2.stderr.log",
+    "bytes": 579,
+    "sha256": "d92c47dc4f3bb224915b773f26de56ec650e1ce3f73eab186fc51d566acf2efb"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent.stderr.log",
+    "bytes": 1561,
+    "sha256": "fbd98ced28a6ab794f0c9a353832860159e14a874ef7df34c337fb3ce1159672"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/data-corrupt.stderr.log",
+    "bytes": 236,
+    "sha256": "fd6afeb11a6fa8d380eee785fecbe392454b343d5a5a456e7fa29c83e3004bd6"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-after-wal-verify1.stdout.log",
+    "bytes": 48,
+    "sha256": "68f28d343f469620e0a95eb7c75932e62f9e6e1e414af0bc96e9b6f74411992e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-after-root-verify2.stderr.log",
+    "bytes": 466,
+    "sha256": "9a7b021e5f9477c720c1ae06b8795e1c65f86ebbe2e5655df3ea543f9f8b8d40"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-after-data-sync-verify1.stderr.log",
+    "bytes": 579,
+    "sha256": "786300262e3dcfd30acded1ed9cdb666801426bcc1c92e012cd69bb6fa7fd178"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-data-flush-prepare.stderr.log",
+    "bytes": 584,
+    "sha256": "cf848f4dd52b4125656b6379e4a513f2c32229da3307c4d31764db616bfa27e4"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-ack-verify2.stdout.log",
+    "bytes": 49,
+    "sha256": "599a74a9424f8f0c4ca0a305be99714ab54a54fc4f8f8c9e440da1494179f55a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-data-sync-prepare.stderr.log",
+    "bytes": 582,
+    "sha256": "074c9f784dd0a9a0f69d8a7f0d201310db4c1c09f1ade47e9ff38db0dfc8df2f"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-after-data-sync-verify2.stdout.log",
+    "bytes": 49,
+    "sha256": "ab55e6414b57cb5fe7d10273a6323f46a5851090009f1c1c3b9785389f21c5b1"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/footer-corrupt.stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-root-prepare.stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-after-root/stderr.log",
+    "bytes": 138,
+    "sha256": "2b89a214763b9c42671e974eaa26ab6aa5b0f7a1ceaebb8a691013423e4378bd"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-after-root/stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/original-sdk-crash/processes.jsonl",
+    "bytes": 15235,
+    "sha256": "3a84b6f378a4ffbdd8d154a047d1881c9c7a8ca249d88e7112804b0a0c5c785b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/original-sdk-crash/output.log",
+    "bytes": 588,
+    "sha256": "b493a424e24f00a5002d30e7990eed6b135ed4369d98e8526acfe9a985392404"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/original-sdk-crash/taycan-crash-rrghyo9s/trial-4.log",
+    "bytes": 113,
+    "sha256": "163bf1b30308d96dfb09f7aafe47f05bf3c5007d3f2cadacd75f09ec2f905bf2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/original-sdk-crash/taycan-crash-rrghyo9s/trial-0.log.verify-9592388125.stdout",
+    "bytes": 601,
+    "sha256": "cc5ec371b04f49b0903f86ddc0e87cc235b80b14858a0645986f7bac5c3963a7"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/original-sdk-crash/taycan-crash-rrghyo9s/trial-1.log.prepare-10317778583.stdout",
+    "bytes": 585,
+    "sha256": "97d9f235f6eca1bcd12832456de6e6df6672a53e3d83c477fdae241f680c6263"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/original-sdk-crash/taycan-crash-rrghyo9s/trial-1.log",
+    "bytes": 113,
+    "sha256": "163bf1b30308d96dfb09f7aafe47f05bf3c5007d3f2cadacd75f09ec2f905bf2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/original-sdk-crash/taycan-crash-rrghyo9s/trial-0.log",
+    "bytes": 113,
+    "sha256": "163bf1b30308d96dfb09f7aafe47f05bf3c5007d3f2cadacd75f09ec2f905bf2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/original-sdk-crash/taycan-crash-rrghyo9s/trial-2.log",
+    "bytes": 113,
+    "sha256": "163bf1b30308d96dfb09f7aafe47f05bf3c5007d3f2cadacd75f09ec2f905bf2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/original-sdk-crash/taycan-crash-rrghyo9s/trial-3.log",
+    "bytes": 113,
+    "sha256": "163bf1b30308d96dfb09f7aafe47f05bf3c5007d3f2cadacd75f09ec2f905bf2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/original-sdk-crash/taycan-crash-rrghyo9s/trial-1.log.verify-11503491375.stdout",
+    "bytes": 601,
+    "sha256": "6ad5b56a46953c6470574ad33ce961fb22fb545ea74e281e145e20ab94a19c33"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/original-sdk-crash/taycan-crash-rrghyo9s/trial-2.log.prepare-11958648000.stdout",
+    "bytes": 585,
+    "sha256": "32a1aaa02e3eff43a47c15583c42caefe76a96dae4395a6e93e8a3d28c57c3fb"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/original-sdk-crash/taycan-crash-rrghyo9s/trial-1.log.verify-11128922750.stdout",
+    "bytes": 600,
+    "sha256": "484c7e8276a468936235290f31b13019cd861f8662e80c16631c1d2adde2f43f"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/original-sdk-crash/taycan-crash-rrghyo9s/trial-4.log.prepare-14798735416.stdout",
+    "bytes": 582,
+    "sha256": "06a70d66dc33c048a007494f849da8c8030737f4c687c150443c28c50ff15065"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/original-sdk-crash/taycan-crash-rrghyo9s/trial-4.log.verify-15794124375.stdout",
+    "bytes": 600,
+    "sha256": "5bb7a7da3cc9cc5f68d614d8d5a18a799c465f09b358d9788b16df99b6d1e7ed"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/original-sdk-crash/taycan-crash-rrghyo9s/trial-0.log.verify-9938582083.stdout",
+    "bytes": 601,
+    "sha256": "49ab043c6b8f328d1b5f6777903ff1730b2e7c8cc85e4155b161cbbf2b390e00"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/original-sdk-crash/taycan-crash-rrghyo9s/trial-3.log.verify-14458522666.stdout",
+    "bytes": 600,
+    "sha256": "4ff7c32de4bdd6e93ae8d3d64a25f4151b609754a271885a167cff149e76e852"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/original-sdk-crash/taycan-crash-rrghyo9s/trial-3.log.verify-14143692708.stdout",
+    "bytes": 601,
+    "sha256": "d59c0c35ba874f32832cf44d0285bbd7e11c08b72e24f778a222de94e706bf05"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/original-sdk-crash/taycan-crash-rrghyo9s/trial-4.log.verify-15223531708.stdout",
+    "bytes": 601,
+    "sha256": "6bba48be70cec3ff5ef01b66069094785ffdfceedfc4a10701a1166d807f1ac0"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/original-sdk-crash/taycan-crash-rrghyo9s/trial-2.log.verify-13215013916.stdout",
+    "bytes": 601,
+    "sha256": "191b4cc82eb4d627337fe6e975eded4af157501cae0a587132b2960f9a692ce7"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/original-sdk-crash/taycan-crash-rrghyo9s/trial-2.log.verify-12885063208.stdout",
+    "bytes": 602,
+    "sha256": "52495c38f458aacb63e0c861e2ef4a06cdf1948d85d64790d40dd20199af03e0"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/original-sdk-crash/taycan-crash-rrghyo9s/trial-3.log.prepare-13653672500.stdout",
+    "bytes": 585,
+    "sha256": "47aa325f25fa14cf7b36129bfc3b9ef57f5c682ec518e8be30ec2bec929cf7ab"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/original-sdk-crash/taycan-crash-rrghyo9s/trial-0.log.prepare-9180221958.stdout",
+    "bytes": 585,
+    "sha256": "5a7da9d5fb2d5bc4d440f014e34e87fd4f8e8fdd113acbf92a6f4fe1b308f301"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-after-data-sync/stderr.log",
+    "bytes": 30,
+    "sha256": "7bddce8d1b2a3b647755db59f347619e7f1e3d84fd03958874d06330c400bf0a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-after-data-sync/stdout.log",
+    "bytes": 546,
+    "sha256": "0bdf4179449dfa7d365a1b29328e4ec39d00a8d2c90f333003b12fd962ab64a0"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-data-flush/stderr.log",
+    "bytes": 145,
+    "sha256": "c3e96cd55a8dea424de677847e271b9c1a5053746d9dafb29b8b49bf48977240"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-data-flush/stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-ack/stderr.log",
+    "bytes": 138,
+    "sha256": "0b87c83d97fd6bb8c7d25a25fdce7967c02a94d52704ce5c03e2894d3ff58ccc"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-ack/stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-root/stderr.log",
+    "bytes": 139,
+    "sha256": "43327586fa3f57c60f9735164539c30af2d47a906ee45f7908b1c0d4e207e839"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-root/stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-ack/stderr.log",
+    "bytes": 25,
+    "sha256": "62a11519286d158661a42a333e63cee150dd76e25de0d31c55cb175473b43d2a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-ack/stdout.log",
+    "bytes": 551,
+    "sha256": "a54d62eba32bef7e20961a1c3a11693cee47c7c1b63104553960736dcd531307"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-after-data-sync/stderr.log",
+    "bytes": 143,
+    "sha256": "e20252060d133500ca94f027025c7f61ad4dec88512f8b0d2734a7fd4b588f93"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-after-data-sync/stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-data-sync/stderr.log",
+    "bytes": 31,
+    "sha256": "3219e7358417aba8324d3e0c122f2a4bc4286483ecaa13f20d45fed65ca67fe7"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-data-sync/stdout.log",
+    "bytes": 531,
+    "sha256": "af9ae07319fa73f390e75e478984c7e2c52d3bcc1a5312d28cccc53a29051142"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-after-root/stderr.log",
+    "bytes": 25,
+    "sha256": "f4c8c04d4665ff6001ccfc3da6c2f72ef010d5a8d01f8624586d4edd42362a5b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-after-root/stdout.log",
+    "bytes": 596,
+    "sha256": "11485a50b314dd3f3d0b4604ff55882b15b496fde949c0a553981f46a1b25d3e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-after-wal/stderr.log",
+    "bytes": 137,
+    "sha256": "a37c380c46eacd26d3f2d46d1d4fcf0e41087b9e5b692c4173c6baa55ab4a74e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-after-wal/stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-after-wal/stderr.log",
+    "bytes": 24,
+    "sha256": "f5f38c184428e24fca121994a243cda5ff548c0cf20a2b59e914259f18758496"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-after-wal/stdout.log",
+    "bytes": 544,
+    "sha256": "6bc478b78c827672a78f6b5d8b5955cfe0271fe5da70bfa6ad9c2d227c194886"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-data-sync/stderr.log",
+    "bytes": 144,
+    "sha256": "d408fd46a4d72b6baaed07d368f0198086d0cb5504f0e183f666903be1b559f2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/single-before-data-sync/stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-data-flush/stderr.log",
+    "bytes": 32,
+    "sha256": "37757cb494555b4d4e326a7dbb30fc21b79294f40c3cdc22a05a5ba2250b2432"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-data-flush/stdout.log",
+    "bytes": 559,
+    "sha256": "0ac9e98087c4c753688cb86dc95c4aa8ca15069e6caf2f5c39e2db50676f50cd"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-root/stderr.log",
+    "bytes": 26,
+    "sha256": "25dcadc79c0900beae4bd344acf935fac08f057287768ae9f8868a4fb8e7c33f"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation-batch2/concurrent-before-root/stdout.log",
+    "bytes": 647,
+    "sha256": "4006bf6d05b9983e60fd1307c58f68e847430643dab4e580964503aae1bf25ac"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss/results.json",
+    "bytes": 1597,
+    "sha256": "d135eae4af544e21e032d77b941bcf9131cc1c60c48aa3b05e6c16e6d46b5f50"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss/f2/earlier-page-lost-0.stdout",
+    "bytes": 19,
+    "sha256": "0c42965d564914fc574ba557cd4412cfb5f81b1eddf0646895b10aaae53da970"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss/f2/stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss/f2/all-survives-0.stdout",
+    "bytes": 19,
+    "sha256": "43b10dcff59fa1eca9350228d24f5e65a0ed68a2711813388fb373e2a2068f9a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss/f2/all-lost-1.stdout",
+    "bytes": 19,
+    "sha256": "0c42965d564914fc574ba557cd4412cfb5f81b1eddf0646895b10aaae53da970"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss/f2/tail-page-lost-0.stderr",
+    "bytes": 285,
+    "sha256": "5ad58d8b118260c2207097479237e8ae6d680baecdd53c9f5fe1d8ce5b92e54c"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss/f2/tail-page-lost-0.stdout",
+    "bytes": 19,
+    "sha256": "0c42965d564914fc574ba557cd4412cfb5f81b1eddf0646895b10aaae53da970"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss/f2/earlier-page-lost-0.stderr",
+    "bytes": 364,
+    "sha256": "cae4bc7c33da7939395df1b7b6da4ef75cc74f9c88727944a0ca4e195713990e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss/f2/all-lost-1.stderr",
+    "bytes": 284,
+    "sha256": "1da91b0c4239db6fbd595ac80840640024bc3d9562a36c08b26ad11082bc1298"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss/f2/all-survives-0.stderr",
+    "bytes": 287,
+    "sha256": "dc8191338b3badb6aecd71782b1424ae1c7a57b517750208ee296c2b0492d37c"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss/f2/all-survives-1.stdout",
+    "bytes": 19,
+    "sha256": "43b10dcff59fa1eca9350228d24f5e65a0ed68a2711813388fb373e2a2068f9a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss/f2/all-lost-0.stdout",
+    "bytes": 19,
+    "sha256": "0c42965d564914fc574ba557cd4412cfb5f81b1eddf0646895b10aaae53da970"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss/f2/earlier-page-lost-1.stdout",
+    "bytes": 19,
+    "sha256": "0c42965d564914fc574ba557cd4412cfb5f81b1eddf0646895b10aaae53da970"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss/f2/tail-page-lost-1.stderr",
+    "bytes": 284,
+    "sha256": "1da91b0c4239db6fbd595ac80840640024bc3d9562a36c08b26ad11082bc1298"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss/f2/tail-page-lost-1.stdout",
+    "bytes": 19,
+    "sha256": "0c42965d564914fc574ba557cd4412cfb5f81b1eddf0646895b10aaae53da970"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss/f2/all-lost-0.stderr",
+    "bytes": 285,
+    "sha256": "436c312cc94059d2e4b7812f6b204e2ddaa921cc67e5607cfc12d009608c061e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss/f2/all-survives-1.stderr",
+    "bytes": 286,
+    "sha256": "5d8acf90765399cd8d97b59312620bfbae5543b6d02bc082f878ee2a6170ae6f"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/same-page-loss/f2/earlier-page-lost-1.stderr",
+    "bytes": 284,
+    "sha256": "fd1c6fab8cc83decb719b2a6afeafd57dfd8173480a591acdd873902091bf371"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-after-data-sync-verify2.stderr.log",
+    "bytes": 397,
+    "sha256": "2a2c9b8cc211b458edbe161356d47187d22ff1de8f7f6a61f69cd91c7059bee0"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/partial-tail.stderr.log",
+    "bytes": 291,
+    "sha256": "ac4ee6581625ed24d68da88b2525e173b1df77a8b1b36e8910ab38ce412a2fb6"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-after-wal-verify2.stdout.log",
+    "bytes": 50,
+    "sha256": "a17b729aed7e154bed50a6f797941b673357a358427db341e3f33257cf7690fc"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-after-root-prepare.stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-after-root-verify1.stderr.log",
+    "bytes": 284,
+    "sha256": "f94a59611098645fde1034bfb0ea09ce1fef43ab2a9d8557e564328b4341239a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-after-wal-verify1.stderr.log",
+    "bytes": 397,
+    "sha256": "3c368ee9278cd2a4783bbd650f1dfc5fd9bb42daecda2bf3ba3b8eba19104166"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-after-data-sync-verify1.stdout.log",
+    "bytes": 51,
+    "sha256": "5484ed5c7cb2516f0cf0ce1d32273af5831c3a36bbaee81f41a5b4dac28a5c6b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/same-key-write.stdout.log",
+    "bytes": 522,
+    "sha256": "55ad4c52195b50b8b94f21da8751eb5f3f1853bc210177bc537a1f3c80739520"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/apply-error.stderr.log",
+    "bytes": 281,
+    "sha256": "efb844eede3c7629c4421ee5286005d8b5f1270aabdc061ead3df0aed4d84b06"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-ack-prepare.stderr.log",
+    "bytes": 402,
+    "sha256": "45d1cdc696183ae609784159bfe7bc591a48001044f61aa5e8759fa19a37d546"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-ack-verify1.stdout.log",
+    "bytes": 50,
+    "sha256": "49b3f292b2328aa68c0f24014554d4f2f1fc6cda05e1c425af922a8dc4ac1a8e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-data-flush-verify1.stderr.log",
+    "bytes": 397,
+    "sha256": "6b51c85a0d921eef6f2419a828f9d6225e965238e1f50b754a8409eca7759193"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/recovery.stdout.log",
+    "bytes": 379,
+    "sha256": "0305ac2abd695c7784825f46d7fbaf4e6451d55df7ef469d227e5de0d122803b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-ack-verify2.stderr.log",
+    "bytes": 397,
+    "sha256": "2a2c9b8cc211b458edbe161356d47187d22ff1de8f7f6a61f69cd91c7059bee0"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-data-sync-verify1.stderr.log",
+    "bytes": 397,
+    "sha256": "3c368ee9278cd2a4783bbd650f1dfc5fd9bb42daecda2bf3ba3b8eba19104166"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-data-sync-verify1.stdout.log",
+    "bytes": 51,
+    "sha256": "f8c50cafab67dcfe434c77a8c6993abc640e8a8aba18ff5b1ed82171c532142a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/sync-error.stdout.log",
+    "bytes": 28,
+    "sha256": "d332b0edf0f0946c054f0b29d0dfc546130788c7f32e571977bbb9598c9dd01b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/span-write.stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-root-verify1.stdout.log",
+    "bytes": 50,
+    "sha256": "adcacd542448281c4c73fcfa7c39057c3403af7cf7cff55db87c307dd09abd33"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-root-verify1.stdout.log",
+    "bytes": 21,
+    "sha256": "12bcdf60c91775e2856786a5f0a76785d4053bfef51f8492ec389b19e3c2dad6"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/real-hash-collision.stdout.log",
+    "bytes": 40,
+    "sha256": "7819797d1d11f01284fc8037becef8e2724b247c1d8d2e58b0c41eb0cdc885f5"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/same-key-recover-2.stderr.log",
+    "bytes": 284,
+    "sha256": "3a03f97ed857b5756cf48d00037f39b00423d4ef224760906780957bf00028a0"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/span-recover-1.stderr.log",
+    "bytes": 291,
+    "sha256": "c7adf40b89460a822c4c0558f7d2d76cc461e8d744df70aed524a14c9aaa2521"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-after-root-verify2.stdout.log",
+    "bytes": 21,
+    "sha256": "12bcdf60c91775e2856786a5f0a76785d4053bfef51f8492ec389b19e3c2dad6"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-data-flush-verify1.stderr.log",
+    "bytes": 284,
+    "sha256": "4558d384eee91ceb9c34918ee0f8f1ac39ef6210464c664b246276e5783ee45b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/embedded-marker-recover-1.stdout.log",
+    "bytes": 30,
+    "sha256": "c3a891505a7ab82243d0223460429f70a7e602cfe85fe6cf9ca8e7cc206882d9"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-after-data-sync-prepare.stderr.log",
+    "bytes": 402,
+    "sha256": "45d1cdc696183ae609784159bfe7bc591a48001044f61aa5e8759fa19a37d546"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/basic.stdout.log",
+    "bytes": 489,
+    "sha256": "6231bfe875d13ba4ad7a1827dbc7501da0ac88ac105b1cdc01e9fd7778b0a4e6"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/span-recover-2.stdout.log",
+    "bytes": 22,
+    "sha256": "835a9cefad0fce51c00aa2c89bc104e9db11d1200939a300bce225b50c7332c9"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-after-root-verify1.stderr.log",
+    "bytes": 397,
+    "sha256": "12140fdecdfa36827b695413a271bbac9966876dca1cc1522c1c684c4998fe18"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-data-flush-verify2.stdout.log",
+    "bytes": 50,
+    "sha256": "a8e6b8328425851d9457abe0a270f138763cab405be57ed3db72d93f2251702d"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/io-error.stderr.log",
+    "bytes": 370,
+    "sha256": "af70e21827fe2d7656bff885de70b2e22b34965547f4ce9aed5bf6a323aa9a85"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/embedded-marker-recover-2.stderr.log",
+    "bytes": 286,
+    "sha256": "87484b7a2bbe3089872c03353a104a0057f52ef73196219aa13f6af3a96aa3db"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/same-key-recover-1.stdout.log",
+    "bytes": 23,
+    "sha256": "db4dd8a066ee2d32bca98b941d1166eda1ba42cf4657f4c3c23963c676a697fd"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-after-wal-prepare.stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/embedded-marker-write.stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/root-corrupt.stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-root-verify2.stderr.log",
+    "bytes": 284,
+    "sha256": "21abd618a5199aa249ab2ec7fd6ec8ce8c1dfb96fd7f9ed9aa8c0726d8d1ca4c"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-root-verify2.stderr.log",
+    "bytes": 397,
+    "sha256": "0ab320aaca740ae34e8b3d627a9a43febf358ed0a821c097065c9319ade45bc8"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-data-flush-verify2.stdout.log",
+    "bytes": 20,
+    "sha256": "ee85392ad150ec801367b34eeac93e996ef5ef38c437970e6b03f7179e52448f"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-ack-verify1.stdout.log",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/results.json",
+    "bytes": 40016,
+    "sha256": "d40d2a01407b7ee04451e4c4efdb7e3347a6278f6d3d8b35d30346d55ce76f11"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-data-sync-verify2.stdout.log",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-data-sync-verify2.stderr.log",
+    "bytes": 284,
+    "sha256": "e46fcec954136a97f9a5efb27fb825e62f1bef67592e973c48d3190f7a0b1ac5"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-data-sync-prepare.stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-data-flush-prepare.stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-ack-verify2.stderr.log",
+    "bytes": 284,
+    "sha256": "275a2008d44cd409b7cbe97073ad03ce8940fa078f120009e15707b190d4783d"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/footer-corrupt.stderr.log",
+    "bytes": 49,
+    "sha256": "cf82dab4ff56c6d463d820c0619c40a57faaa2bf3ccc19550c5bef7cce6f4f97"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-root-prepare.stderr.log",
+    "bytes": 402,
+    "sha256": "bf261c17493799046e214b670f4380c7d10bcf146f97bef65dff1117fef0a787"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-after-data-sync-verify2.stderr.log",
+    "bytes": 284,
+    "sha256": "2a27805623417e27506665335cdf6c60ffab7d30e03d9d9ad77bad9f4013b010"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/missing-data.stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/data-corrupt.stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent.stdout.log",
+    "bytes": 502,
+    "sha256": "907d0349754045a82ca76bffee7d0447e1692e5adbbc9d70ad62fd78b6058260"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-after-wal-verify2.stdout.log",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-after-data-sync-verify1.stdout.log",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-after-root-verify2.stdout.log",
+    "bytes": 51,
+    "sha256": "83cdb1d028e75cebf096fb146693412c15705c0fd397da9966cc3e688dc64ca2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-after-wal-verify1.stderr.log",
+    "bytes": 284,
+    "sha256": "52fc237be1211867f15d41dec415d7556f3d513b855f87e34f1d64ea18ff3047"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-after-data-sync-verify1.stderr.log",
+    "bytes": 284,
+    "sha256": "72e72481d5dd3affb590be289ae5756aeb94e0be21544f84308fa79ea19a82c5"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/same-key-write.stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-ack-verify1.stderr.log",
+    "bytes": 284,
+    "sha256": "72e72481d5dd3affb590be289ae5756aeb94e0be21544f84308fa79ea19a82c5"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-ack-prepare.stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/apply-error.stdout.log",
+    "bytes": 28,
+    "sha256": "d332b0edf0f0946c054f0b29d0dfc546130788c7f32e571977bbb9598c9dd01b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-after-root-verify1.stdout.log",
+    "bytes": 51,
+    "sha256": "83cdb1d028e75cebf096fb146693412c15705c0fd397da9966cc3e688dc64ca2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-after-root-prepare.stderr.log",
+    "bytes": 402,
+    "sha256": "45d1cdc696183ae609784159bfe7bc591a48001044f61aa5e8759fa19a37d546"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-after-wal-verify2.stderr.log",
+    "bytes": 284,
+    "sha256": "88fac1058e1ca78983b793c8a1a566fc5f86dde1f7ef5ebdf81a981358418fb7"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/partial-tail.stdout.log",
+    "bytes": 22,
+    "sha256": "835a9cefad0fce51c00aa2c89bc104e9db11d1200939a300bce225b50c7332c9"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-after-data-sync-verify2.stdout.log",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-after-wal-verify1.stdout.log",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/same-key-recover-2.stdout.log",
+    "bytes": 23,
+    "sha256": "db4dd8a066ee2d32bca98b941d1166eda1ba42cf4657f4c3c23963c676a697fd"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/real-hash-collision.stderr.log",
+    "bytes": 887,
+    "sha256": "b86b32bdfe81b3bde6bc0f34a31bf2f50008888c040c60920e3c4fd1a57f56a7"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-data-flush-verify1.stdout.log",
+    "bytes": 50,
+    "sha256": "a8e6b8328425851d9457abe0a270f138763cab405be57ed3db72d93f2251702d"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-after-data-sync-prepare.stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/embedded-marker-recover-1.stderr.log",
+    "bytes": 286,
+    "sha256": "fce6778e42a3ac9a9e44a9fe56a030280b5486d2b01b4742de69df579b5d6606"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/span-recover-1.stdout.log",
+    "bytes": 22,
+    "sha256": "835a9cefad0fce51c00aa2c89bc104e9db11d1200939a300bce225b50c7332c9"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-after-root-verify2.stderr.log",
+    "bytes": 397,
+    "sha256": "0ab320aaca740ae34e8b3d627a9a43febf358ed0a821c097065c9319ade45bc8"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/sync-error.stderr.log",
+    "bytes": 282,
+    "sha256": "a59f65ee0c2fdb3578e569ab53b8bc0176186d69b63c5c644c82b3d6e4d6ee39"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-data-sync-verify1.stderr.log",
+    "bytes": 284,
+    "sha256": "52fc237be1211867f15d41dec415d7556f3d513b855f87e34f1d64ea18ff3047"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-data-sync-verify1.stdout.log",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/recovery.stderr.log",
+    "bytes": 997,
+    "sha256": "dfcfbff00c3a8a79e3f2fccc2564c98aa60ab2acbfeb06d0ef3c013063d56000"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-data-flush-verify1.stdout.log",
+    "bytes": 20,
+    "sha256": "ee85392ad150ec801367b34eeac93e996ef5ef38c437970e6b03f7179e52448f"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-ack-verify2.stdout.log",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/span-write.stdout.log",
+    "bytes": 23,
+    "sha256": "fb4b7c08776e66fd9beb5b19e22099c9659aa98fc71a468105af8017b86d3849"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-root-verify1.stderr.log",
+    "bytes": 284,
+    "sha256": "43558a00915fa6a3e3a1952b57ebf98fd97c23fb597b1a877fb15a7927b6ffd7"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-root-verify1.stderr.log",
+    "bytes": 399,
+    "sha256": "744043babd6e610c18824b4a41f54aa68609f2ed0f8616ad5649c624a65275d2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-root-verify2.stdout.log",
+    "bytes": 50,
+    "sha256": "adcacd542448281c4c73fcfa7c39057c3403af7cf7cff55db87c307dd09abd33"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-root-verify2.stdout.log",
+    "bytes": 21,
+    "sha256": "12bcdf60c91775e2856786a5f0a76785d4053bfef51f8492ec389b19e3c2dad6"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-data-sync-verify2.stdout.log",
+    "bytes": 51,
+    "sha256": "f8c50cafab67dcfe434c77a8c6993abc640e8a8aba18ff5b1ed82171c532142a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-data-sync-verify2.stderr.log",
+    "bytes": 397,
+    "sha256": "2a2c9b8cc211b458edbe161356d47187d22ff1de8f7f6a61f69cd91c7059bee0"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-data-flush-verify2.stderr.log",
+    "bytes": 397,
+    "sha256": "6b51c85a0d921eef6f2419a828f9d6225e965238e1f50b754a8409eca7759193"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-ack-verify1.stderr.log",
+    "bytes": 397,
+    "sha256": "3c368ee9278cd2a4783bbd650f1dfc5fd9bb42daecda2bf3ba3b8eba19104166"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-data-flush-verify2.stderr.log",
+    "bytes": 284,
+    "sha256": "88fac1058e1ca78983b793c8a1a566fc5f86dde1f7ef5ebdf81a981358418fb7"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/embedded-marker-recover-2.stdout.log",
+    "bytes": 30,
+    "sha256": "c3a891505a7ab82243d0223460429f70a7e602cfe85fe6cf9ca8e7cc206882d9"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/io-error.stdout.log",
+    "bytes": 28,
+    "sha256": "d332b0edf0f0946c054f0b29d0dfc546130788c7f32e571977bbb9598c9dd01b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/basic.stderr.log",
+    "bytes": 696,
+    "sha256": "546c5b7e281c6c7107fb4607bbe0075be63d5fe2f12054f1f5a3a8af7cd6e075"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/span-recover-2.stderr.log",
+    "bytes": 289,
+    "sha256": "d37eb1df66be073e76338ae35cacf16ff52995c61d64809ee8ed986b07805c2b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-after-root-verify1.stdout.log",
+    "bytes": 21,
+    "sha256": "12bcdf60c91775e2856786a5f0a76785d4053bfef51f8492ec389b19e3c2dad6"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/root-corrupt.stderr.log",
+    "bytes": 45,
+    "sha256": "fc3488d6b5a5bbbd704e7bba050b4defd44c6f27947cbc1139bf6ba10e3641c2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/embedded-marker-write.stdout.log",
+    "bytes": 20,
+    "sha256": "7640f95057aacb8054fbbb7adada98e69ef3170e980e849579e027143ca6e3b8"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/same-key-recover-1.stderr.log",
+    "bytes": 285,
+    "sha256": "19a5a39fba66d7f5beb3e33b6f2b9978190a274905754c2d104557c272ca9876"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-after-wal-prepare.stderr.log",
+    "bytes": 402,
+    "sha256": "45d1cdc696183ae609784159bfe7bc591a48001044f61aa5e8759fa19a37d546"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/missing-data.stderr.log",
+    "bytes": 40,
+    "sha256": "386d0f79d0a918993b9186760b059e9d53a5361b8c204409571e52e6a505efb7"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-after-wal-verify2.stderr.log",
+    "bytes": 397,
+    "sha256": "2a2c9b8cc211b458edbe161356d47187d22ff1de8f7f6a61f69cd91c7059bee0"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent.stderr.log",
+    "bytes": 1006,
+    "sha256": "1fe9b1448749263c3e576558d191a4f1eff49d9836528295b0a210c90e447fa0"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/data-corrupt.stderr.log",
+    "bytes": 71,
+    "sha256": "3fb07711fdc170d85836b55035db392350ddfaea10164afaacb0d239213c40c1"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-after-wal-verify1.stdout.log",
+    "bytes": 50,
+    "sha256": "a17b729aed7e154bed50a6f797941b673357a358427db341e3f33257cf7690fc"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-after-root-verify2.stderr.log",
+    "bytes": 284,
+    "sha256": "4b03efc0d502915cc6844fcd6fa6dbf1a0ce1295ccbd428d84c7680f5394749e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-after-data-sync-verify1.stderr.log",
+    "bytes": 397,
+    "sha256": "3c368ee9278cd2a4783bbd650f1dfc5fd9bb42daecda2bf3ba3b8eba19104166"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-data-flush-prepare.stderr.log",
+    "bytes": 402,
+    "sha256": "45d1cdc696183ae609784159bfe7bc591a48001044f61aa5e8759fa19a37d546"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-ack-verify2.stdout.log",
+    "bytes": 50,
+    "sha256": "49b3f292b2328aa68c0f24014554d4f2f1fc6cda05e1c425af922a8dc4ac1a8e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-data-sync-prepare.stderr.log",
+    "bytes": 402,
+    "sha256": "bf261c17493799046e214b670f4380c7d10bcf146f97bef65dff1117fef0a787"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-after-data-sync-verify2.stdout.log",
+    "bytes": 51,
+    "sha256": "5484ed5c7cb2516f0cf0ce1d32273af5831c3a36bbaee81f41a5b4dac28a5c6b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/footer-corrupt.stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-root-prepare.stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-after-root/stderr.log",
+    "bytes": 138,
+    "sha256": "2b89a214763b9c42671e974eaa26ab6aa5b0f7a1ceaebb8a691013423e4378bd"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-after-root/stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/original-sdk-crash/processes.jsonl",
+    "bytes": 15134,
+    "sha256": "acc915f9dbbd7654f3c20bb016dcf7f43a699736213cce125c4216d76b030e89"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/original-sdk-crash/output.log",
+    "bytes": 581,
+    "sha256": "50db3ed2714025fa72a7979a5ab1e3b2a74b6ca252c3a1bfaeeba3b63b6c7565"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/original-sdk-crash/taycan-crash-8amgig7v/trial-4.log.verify-11179356958.stdout",
+    "bytes": 418,
+    "sha256": "65b228d232ac500eb8c68f4a5840af2099bb2cca8c487e105a5b6915047cbdbc"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/original-sdk-crash/taycan-crash-8amgig7v/trial-0.log.verify-6817036375.stdout",
+    "bytes": 418,
+    "sha256": "e278520c3058d92b1219769dee1f4506e1600da44aa95fc3a3a9e2d410a216b0"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/original-sdk-crash/taycan-crash-8amgig7v/trial-4.log",
+    "bytes": 113,
+    "sha256": "163bf1b30308d96dfb09f7aafe47f05bf3c5007d3f2cadacd75f09ec2f905bf2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/original-sdk-crash/taycan-crash-8amgig7v/trial-2.log.verify-8887027625.stdout",
+    "bytes": 419,
+    "sha256": "1f645a7263df2dcf7082e2ac19e1129a370e63f4f863a0beb67be2772a4e13f8"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/original-sdk-crash/taycan-crash-8amgig7v/trial-3.log.prepare-9516133041.stdout",
+    "bytes": 402,
+    "sha256": "45d1cdc696183ae609784159bfe7bc591a48001044f61aa5e8759fa19a37d546"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/original-sdk-crash/taycan-crash-8amgig7v/trial-1.log",
+    "bytes": 113,
+    "sha256": "163bf1b30308d96dfb09f7aafe47f05bf3c5007d3f2cadacd75f09ec2f905bf2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/original-sdk-crash/taycan-crash-8amgig7v/trial-0.log",
+    "bytes": 113,
+    "sha256": "163bf1b30308d96dfb09f7aafe47f05bf3c5007d3f2cadacd75f09ec2f905bf2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/original-sdk-crash/taycan-crash-8amgig7v/trial-2.log",
+    "bytes": 113,
+    "sha256": "163bf1b30308d96dfb09f7aafe47f05bf3c5007d3f2cadacd75f09ec2f905bf2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/original-sdk-crash/taycan-crash-8amgig7v/trial-1.log.verify-8147393833.stdout",
+    "bytes": 417,
+    "sha256": "4c398ab82f7b59b871d4564bbeab071cf8206a8112dba8421dfbb8b16dbc61a8"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/original-sdk-crash/taycan-crash-8amgig7v/trial-3.log",
+    "bytes": 113,
+    "sha256": "163bf1b30308d96dfb09f7aafe47f05bf3c5007d3f2cadacd75f09ec2f905bf2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/original-sdk-crash/taycan-crash-8amgig7v/trial-3.log.verify-10157390875.stdout",
+    "bytes": 417,
+    "sha256": "16aed8904b11abec7732de08f2588a03b5c9dbcc20c5ee835eb9368026218cf1"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/original-sdk-crash/taycan-crash-8amgig7v/trial-0.log.prepare-6114639500.stdout",
+    "bytes": 402,
+    "sha256": "bf261c17493799046e214b670f4380c7d10bcf146f97bef65dff1117fef0a787"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/original-sdk-crash/taycan-crash-8amgig7v/trial-1.log.verify-7544360166.stdout",
+    "bytes": 417,
+    "sha256": "fe24bd11828856107490c04502c5bcb32f4aca291f170c05c3bb2642bdbcded4"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/original-sdk-crash/taycan-crash-8amgig7v/trial-2.log.prepare-8543279833.stdout",
+    "bytes": 402,
+    "sha256": "45d1cdc696183ae609784159bfe7bc591a48001044f61aa5e8759fa19a37d546"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/original-sdk-crash/taycan-crash-8amgig7v/trial-2.log.verify-9188363875.stdout",
+    "bytes": 418,
+    "sha256": "e278520c3058d92b1219769dee1f4506e1600da44aa95fc3a3a9e2d410a216b0"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/original-sdk-crash/taycan-crash-8amgig7v/trial-1.log.prepare-7119873458.stdout",
+    "bytes": 402,
+    "sha256": "45d1cdc696183ae609784159bfe7bc591a48001044f61aa5e8759fa19a37d546"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/original-sdk-crash/taycan-crash-8amgig7v/trial-3.log.verify-9859484291.stdout",
+    "bytes": 418,
+    "sha256": "0e034d05884ba9af9340177bd6f5c82c3f6754db7543794d589a5e3acb7c3c90"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/original-sdk-crash/taycan-crash-8amgig7v/trial-0.log.verify-6518707916.stdout",
+    "bytes": 419,
+    "sha256": "71cb493feabee82ef20c10d4d389f7f440e791878804e0727fa6b5b67a763187"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/original-sdk-crash/taycan-crash-8amgig7v/trial-4.log.verify-10840637125.stdout",
+    "bytes": 419,
+    "sha256": "c4051630d18a9f03274dbdd82f9d2baecdd603de2001c3553d8dd28dad893318"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/original-sdk-crash/taycan-crash-8amgig7v/trial-4.log.prepare-10469720958.stdout",
+    "bytes": 402,
+    "sha256": "bf261c17493799046e214b670f4380c7d10bcf146f97bef65dff1117fef0a787"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-after-data-sync/stderr.log",
+    "bytes": 30,
+    "sha256": "7bddce8d1b2a3b647755db59f347619e7f1e3d84fd03958874d06330c400bf0a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-after-data-sync/stdout.log",
+    "bytes": 548,
+    "sha256": "5941c30ceada07856d8bf493741155eb0593f6cd3e69e406ea7bfedddd441ced"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-data-flush/stderr.log",
+    "bytes": 145,
+    "sha256": "c3e96cd55a8dea424de677847e271b9c1a5053746d9dafb29b8b49bf48977240"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-data-flush/stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-ack/stderr.log",
+    "bytes": 138,
+    "sha256": "0b87c83d97fd6bb8c7d25a25fdce7967c02a94d52704ce5c03e2894d3ff58ccc"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-ack/stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-root/stderr.log",
+    "bytes": 139,
+    "sha256": "43327586fa3f57c60f9735164539c30af2d47a906ee45f7908b1c0d4e207e839"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-root/stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-ack/stderr.log",
+    "bytes": 25,
+    "sha256": "62a11519286d158661a42a333e63cee150dd76e25de0d31c55cb175473b43d2a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-ack/stdout.log",
+    "bytes": 563,
+    "sha256": "e5a6390b3baa2c3c9f49c57c8d6c2dad792c41129e841c7317c108cabcfda79d"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-after-data-sync/stderr.log",
+    "bytes": 143,
+    "sha256": "e20252060d133500ca94f027025c7f61ad4dec88512f8b0d2734a7fd4b588f93"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-after-data-sync/stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-data-sync/stderr.log",
+    "bytes": 31,
+    "sha256": "3219e7358417aba8324d3e0c122f2a4bc4286483ecaa13f20d45fed65ca67fe7"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-data-sync/stdout.log",
+    "bytes": 552,
+    "sha256": "874e66850ddac876cc020907b757621625079c47959ce4352cdde9c2e104460e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-after-root/stderr.log",
+    "bytes": 25,
+    "sha256": "f4c8c04d4665ff6001ccfc3da6c2f72ef010d5a8d01f8624586d4edd42362a5b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-after-root/stdout.log",
+    "bytes": 622,
+    "sha256": "8bd4b304c123324007a4e8c7429dd406012b6617879ca921839766ce46e446bd"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-after-wal/stderr.log",
+    "bytes": 137,
+    "sha256": "a37c380c46eacd26d3f2d46d1d4fcf0e41087b9e5b692c4173c6baa55ab4a74e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-after-wal/stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-after-wal/stderr.log",
+    "bytes": 24,
+    "sha256": "f5f38c184428e24fca121994a243cda5ff548c0cf20a2b59e914259f18758496"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-after-wal/stdout.log",
+    "bytes": 552,
+    "sha256": "89cbc85d0edd24ac60a018e90f8a83114e53a778d92f63cb99127c083d4efd8f"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-data-sync/stderr.log",
+    "bytes": 144,
+    "sha256": "d408fd46a4d72b6baaed07d368f0198086d0cb5504f0e183f666903be1b559f2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/single-before-data-sync/stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-data-flush/stderr.log",
+    "bytes": 32,
+    "sha256": "37757cb494555b4d4e326a7dbb30fc21b79294f40c3cdc22a05a5ba2250b2432"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-data-flush/stdout.log",
+    "bytes": 536,
+    "sha256": "c2522eabb1bde19724b1ebcb3f4d644d5c12405d5dc61153c3fcb02242361bb8"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-root/stderr.log",
+    "bytes": 26,
+    "sha256": "25dcadc79c0900beae4bd344acf935fac08f057287768ae9f8868a4fb8e7c33f"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/validation/concurrent-before-root/stdout.log",
+    "bytes": 616,
+    "sha256": "09b1097f70702b93f2710de3cde25feb38a13d1b4197aa6e425e350ed9ec9788"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/batch2-compaction/output.log",
+    "bytes": 1679,
+    "sha256": "925b623f043d32387d596812860d7273be7b5764cd9db30518e447a1aebace3e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/results.json",
+    "bytes": 26262,
+    "sha256": "4b3cc7ed0700ce716928643797f0244c5a446682028f27fec33c2de918247881"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/hot-inline-nocache-concurrent-r1/processes.jsonl",
+    "bytes": 636,
+    "sha256": "16ba7d9dd4d50ebe6a709f570360db75b5f6d7208abd1ca000d0780b6cf3dbfb"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/hot-inline-nocache-concurrent-r1/output.log",
+    "bytes": 1544,
+    "sha256": "cc86d9140c8c77049fb24e569924635913a301d8841aa64e9dded2f8b4844565"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/hot-inline-nocache-concurrent-r1/resources.jsonl",
+    "bytes": 115,
+    "sha256": "bd680c0f7c60e1e5bbfa2c5822b2f4a36ea139869a9f7a56910560b99335f6cd"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/hot-inline-buffered-recovery-r1/processes.jsonl",
+    "bytes": 633,
+    "sha256": "75346296efa7b0dc43ef7e107cb071c89ca025ca945df2129859308e4e313c0e"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/hot-inline-buffered-recovery-r1/output.log",
+    "bytes": 1413,
+    "sha256": "9460fef71609c1081194bd9a05988ef4ac065b906166be67f512a36ea7cea727"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/hot-inline-buffered-recovery-r1/resources.jsonl",
+    "bytes": 115,
+    "sha256": "bd051208515b19ffd38cfee3eb1d6d6540d09d7b7266b1c0c0e89c13673a4df7"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/hot-inline-buffered-concurrent-r1/processes.jsonl",
+    "bytes": 637,
+    "sha256": "046a9c524056c48a48cb2a898c470047dbf2699df5cfe272cd1532b636073115"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/hot-inline-buffered-concurrent-r1/output.log",
+    "bytes": 1544,
+    "sha256": "358671367acfbbc3e7522a72e1929bd61e3e5e261489f8ef03e77ed2b600907a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/hot-inline-buffered-concurrent-r1/resources.jsonl",
+    "bytes": 115,
+    "sha256": "53f37fcb83a0ced0523883f4adf0ed9dca8aa503677e7872abac54b3f946984a"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/aio-buffered-basic-r1/processes.jsonl",
+    "bytes": 614,
+    "sha256": "3b6add40418aec39cc6fdd96faabd412f4e98589144a3a6ab24fb70a45141d2b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/aio-buffered-basic-r1/output.log",
+    "bytes": 1187,
+    "sha256": "979fe56ae754b8cfd4c46f3c9581fb0668aebb6b478a2a062b5aacc8a471ae82"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/aio-nocache-basic-r1/processes.jsonl",
+    "bytes": 610,
+    "sha256": "a1154f330c00f1bce2eb0911a828c4154137ce5cbb64d3b2deab8daf98519bcc"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/aio-nocache-basic-r1/output.log",
+    "bytes": 1187,
+    "sha256": "ddf2e90b05b734a9332bb2f1477bde798e96ea3d80982b50d325194ce8196154"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/aio-buffered-recovery-r1/processes.jsonl",
+    "bytes": 612,
+    "sha256": "b2150ae5ba0204ee1b06c850fd6253f0774d40b1bd46f7f67a4099d1fd4e93a7"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/aio-buffered-recovery-r1/output.log",
+    "bytes": 1413,
+    "sha256": "93eff7f9a005acbe2a06c32bff04e08a893628c8a4b12f1a1b5b898206a4bbb2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/aio-buffered-recovery-r1/resources.jsonl",
+    "bytes": 115,
+    "sha256": "f97ef7299eebc93557f6228451d5a978ea391fcd390cd83e0cf53dea295b9fc3"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/aio-nocache-concurrent-r1/processes.jsonl",
+    "bytes": 615,
+    "sha256": "9e13b1dc8c9157dc2b26546d768e06f04034aa7df91755178a92d9b5dfec6b44"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/aio-nocache-concurrent-r1/output.log",
+    "bytes": 1544,
+    "sha256": "091c6d5f974cda1e988a85e93cc7eab33ededaa34e66579f2a00a798a7fb4928"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/aio-nocache-concurrent-r1/resources.jsonl",
+    "bytes": 116,
+    "sha256": "9acd8bc4263ae625a0e40f9169acefe4e1f4558569c1301ba00a786ae54683b5"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/hot-inline-nocache-recovery-r1/processes.jsonl",
+    "bytes": 631,
+    "sha256": "428501f6ded3815cb5eb21581d9b13f11444651b1d96d314ed2d5273e5b0a98b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/hot-inline-nocache-recovery-r1/output.log",
+    "bytes": 1413,
+    "sha256": "d2c52d71cc93ce5ed351bed1f4da7f078d680009abd1ae05add09c02f238dbfb"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/hot-inline-nocache-recovery-r1/resources.jsonl",
+    "bytes": 115,
+    "sha256": "66099f854323c1898b97c3827fe831007c17d80412833608ca25f306f0b2f926"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/aio-nocache-recovery-r1/processes.jsonl",
+    "bytes": 618,
+    "sha256": "3eda8fcf092a897bcb9603ffdce6a52163cd15eb11daad2c135c7d31d262ce61"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/aio-nocache-recovery-r1/output.log",
+    "bytes": 1413,
+    "sha256": "4a05927cd3c74a273d2957dcb160e5e70fd5eac9af59501093fef6b000b72f17"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/aio-buffered-concurrent-r1/processes.jsonl",
+    "bytes": 623,
+    "sha256": "b7885acc4b43732a929089e6386854edc61c258f38df90d724912368aaf1619f"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/aio-buffered-concurrent-r1/output.log",
+    "bytes": 1544,
+    "sha256": "8ac4bf872489dfa04598759fa9b018f3967064887788efdc65dd4862a23bcbdf"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/aio-buffered-concurrent-r1/resources.jsonl",
+    "bytes": 115,
+    "sha256": "35f9e448b2637892c401bcc273821349b1de0d292f00df0d4ca012949570bfa1"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/hot-inline-buffered-basic-r1/processes.jsonl",
+    "bytes": 620,
+    "sha256": "2e97505d16c241d8c7201f1aee719148431c9c11da49e6175f3766c2dfcf3bbc"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/hot-inline-buffered-basic-r1/output.log",
+    "bytes": 1187,
+    "sha256": "2ae4a94c8f79ddd13a263b981d0ec9522bb05a28da944b401d96b9abdd7006e7"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/hot-inline-buffered-basic-r1/resources.jsonl",
+    "bytes": 115,
+    "sha256": "25055e8094955380965572df413debf5d30c63187e1318908761a8fc1d03368d"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/hot-inline-nocache-basic-r1/processes.jsonl",
+    "bytes": 625,
+    "sha256": "566d0eeac95667f77c544d728de0792250c00e440cee3568807aa72eb7898ab5"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/hot-inline-nocache-basic-r1/output.log",
+    "bytes": 1189,
+    "sha256": "963bde17b56b84a51f1fc348152806bade59a40bfe64c1242fe336d7c126d16b"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/preflight/hot-inline-nocache-basic-r1/resources.jsonl",
+    "bytes": 115,
+    "sha256": "7d973f025dda09d481334fa60c97eaa1821236b9a14330f232c462697fda0442"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries/results.json",
+    "bytes": 607,
+    "sha256": "f57ecc31c8bc07b437afff5f82349c38f3f5e24a7acb10bc5ab510eb8e7eb7c2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries/f2-hold/verify0.stderr",
+    "bytes": 397,
+    "sha256": "f124295738a7245cc2967bc9347f8edb189c5930e9e23a6738150e0751e5ea28"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries/f2-hold/verify0.stdout",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries/f2-hold/verify1.stderr",
+    "bytes": 397,
+    "sha256": "720b9d8e6b6f1456545a4245ee3c206218b9969b7c46137f76c03af81912b6a1"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries/f2-hold/prepare.stderr",
+    "bytes": 402,
+    "sha256": "45d1cdc696183ae609784159bfe7bc591a48001044f61aa5e8759fa19a37d546"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries/f2-hold/serve.log",
+    "bytes": 113,
+    "sha256": "163bf1b30308d96dfb09f7aafe47f05bf3c5007d3f2cadacd75f09ec2f905bf2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries/f2-hold/verify1.stdout",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries/f2-hold/prepare.stdout",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries/f2-kill-before-sync/verify0.stderr",
+    "bytes": 397,
+    "sha256": "3c368ee9278cd2a4783bbd650f1dfc5fd9bb42daecda2bf3ba3b8eba19104166"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries/f2-kill-before-sync/verify0.stdout",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries/f2-kill-before-sync/verify1.stderr",
+    "bytes": 397,
+    "sha256": "fd18208603ad87eaaea005cc2ca6c696084fba42a5b966a099d14bf4e916be47"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries/f2-kill-before-sync/prepare.stderr",
+    "bytes": 402,
+    "sha256": "45d1cdc696183ae609784159bfe7bc591a48001044f61aa5e8759fa19a37d546"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries/f2-kill-before-sync/serve.log",
+    "bytes": 113,
+    "sha256": "163bf1b30308d96dfb09f7aafe47f05bf3c5007d3f2cadacd75f09ec2f905bf2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries/f2-kill-before-sync/verify1.stdout",
+    "bytes": 20,
+    "sha256": "60d87b7dc46af9fe7ad939cbdc3c7a444525ebcaed3bc8f48b235c4ea62852e2"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries/f2-kill-before-sync/prepare.stdout",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries/f2-fail/prepare.stderr",
+    "bytes": 402,
+    "sha256": "bf261c17493799046e214b670f4380c7d10bcf146f97bef65dff1117fef0a787"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries/f2-fail/serve.log",
+    "bytes": 524,
+    "sha256": "ac9cafbd6afe5c79ab64efa006e56ede64cfe1c9f664952e1ba86b829157ca82"
+  },
+  {
+    "path": "analysis/f2-single-commit-io-20261114/syscall-boundaries/f2-fail/prepare.stdout",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

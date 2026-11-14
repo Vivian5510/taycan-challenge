@@ -1,0 +1,40 @@
+seed=20261021 num_keys=100000 key_mode=random key_size=16 value_size=4096 reader_threads=4 mem_limit_bytes=4294967296
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Compaction
+[ RUN      ] Compaction.ConcurrentUpdatesAndSpaceReclamation
+/Users/rosy/devspace/code/taycan-challenge/taycan_participant_sdk/tests/compaction_test.cc:51: Failure
+Failed
+seed=20261021 key_id=8095 version=2: IOError: IOError
+
+/Users/rosy/devspace/code/taycan-challenge/taycan_participant_sdk/tests/compaction_test.cc:51: Failure
+Failed
+seed=20261021 key_id=4058 version=2: IOError: IOError
+
+/Users/rosy/devspace/code/taycan-challenge/taycan_participant_sdk/tests/compaction_test.cc:68: Failure
+Failed
+seed=20261021 key_id=85855 version=1: IOError: IOError; value mismatch or read failed
+
+/Users/rosy/devspace/code/taycan-challenge/taycan_participant_sdk/tests/compaction_test.cc:78: Failure
+Value of: failed
+  Actual: true
+Expected: false
+
+F2_COMMIT_COUNTS single_operations=106076 full_index=9
+F2_DATA_PREFIX commits=106076 data_syncs=106134 directory_syncs=59 write_calls=106545 write_bytes=489998336 stable_tail=489993728 base_tail=489993728 recovered_commits=0
+F2_PREFIX_INDEX cross_key_links=0
+F2_AIO_BATCH limit=4 polls=8769697 callbacks=2330 multi_polls=369
+F2_AIO_BATCH limit=4 polls=8757324 callbacks=271 multi_polls=4
+F2_AIO_BATCH limit=4 polls=8770675 callbacks=108867 multi_polls=403
+F2_SYNC_IO sync_calls=106558 write_calls=111477 write_bytes=851157530
+Preserved failed test directory: "/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/public-batch4/compaction-05mqymza/taycan-test-EJjkIo"
+[  FAILED  ] Compaction.ConcurrentUpdatesAndSpaceReclamation (20732 ms)
+[----------] 1 test from Compaction (20732 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (20732 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] Compaction.ConcurrentUpdatesAndSpaceReclamation
+
+ 1 FAILED TEST

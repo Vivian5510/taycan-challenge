@@ -1,0 +1,6 @@
+{
+  "reason": "hot-inline candidate compaction stalled at GC maintenance gate; stopped; candidate rejected",
+  "pid": 58016,
+  "command": "/Users/rosy/devspace/code/taycan-challenge/build/f2-io-hot-inline-nocache-20261114/compaction_test --num_keys=100000 --key_size=16 --value_size=4096 --rounds=10 --mem_limit_bytes=4294967296 --seed=20261021 --data_dir=/Users/rosy/devspace/code/taycan-challenge/analysis/f2-single-commit-io-20261114/public-candidate/compaction-vx_0qsx4",
+  "stopped_at": 1794655804.986511
+}

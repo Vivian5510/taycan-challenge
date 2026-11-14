@@ -1,0 +1,24 @@
+START aio-nocache-basic-r1
+PASS aio-nocache-basic-r1 None 
+START aio-nocache-recovery-r1
+PASS aio-nocache-recovery-r1 None 
+START aio-nocache-concurrent-r1
+PASS aio-nocache-concurrent-r1 None 
+START aio-buffered-basic-r1
+PASS aio-buffered-basic-r1 None 
+START aio-buffered-recovery-r1
+PASS aio-buffered-recovery-r1 None 
+START aio-buffered-concurrent-r1
+PASS aio-buffered-concurrent-r1 None 
+START hot-inline-nocache-basic-r1
+PASS hot-inline-nocache-basic-r1 None 
+START hot-inline-nocache-recovery-r1
+PASS hot-inline-nocache-recovery-r1 None 
+START hot-inline-nocache-concurrent-r1
+PASS hot-inline-nocache-concurrent-r1 None 
+START hot-inline-buffered-basic-r1
+PASS hot-inline-buffered-basic-r1 None 
+START hot-inline-buffered-recovery-r1
+PASS hot-inline-buffered-recovery-r1 None 
+START hot-inline-buffered-concurrent-r1
+PASS hot-inline-buffered-concurrent-r1 None 

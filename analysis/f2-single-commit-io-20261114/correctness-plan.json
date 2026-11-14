@@ -1,0 +1,14 @@
+{
+  "variant": "aio-buffered",
+  "basic": "original fixed binary/long cases",
+  "recovery": "100000keys",
+  "concurrent": "10000keys",
+  "compaction": "100000keys x10rounds and original space/value/reopen assertions",
+  "sigkill": "original100000key5trials",
+  "boundary_records": 71,
+  "sync_boundary_checks": 3,
+  "page_loss_cases": 4,
+  "gc_phases": "concurrent-copy +7internalkillboundaries",
+  "budget_bytes": 4294967296,
+  "assertions_unchanged": true
+}

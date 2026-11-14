@@ -1,0 +1,4 @@
+{
+  "variant": "aio-batch2",
+  "reason": "AIO completion batch2 candidate; batch4 rejected by compaction/crash regression"
+}

@@ -1,0 +1,1 @@
+seed=20261021 num_keys=100000 key_mode=random key_size=16 value_size=128 reader_threads=4 mem_limit_bytes=4294967296

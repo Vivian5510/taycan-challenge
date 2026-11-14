@@ -1,0 +1,25 @@
+seed=20261021 num_keys=1000 key_mode=random key_size=32 value_size=256 reader_threads=4 mem_limit_bytes=4294967296
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from Concurrent
+[ RUN      ] Concurrent.DisjointKeys
+F2_COMMIT_COUNTS single_operations=4000 full_index=1
+F2_DATA_PREFIX commits=4000 data_syncs=4000 directory_syncs=1 write_calls=4001 write_bytes=2048512 stable_tail=2048512 base_tail=512 recovered_commits=0
+F2_PREFIX_INDEX cross_key_links=0
+F2_SYNC_IO sync_calls=4033 write_calls=4519 write_bytes=10963109
+[       OK ] Concurrent.DisjointKeys (263 ms)
+[ RUN      ] Concurrent.SingleWriterVersionBounds
+F2_COMMIT_COUNTS single_operations=11000 full_index=1
+F2_DATA_PREFIX commits=11000 data_syncs=11000 directory_syncs=1 write_calls=15002 write_bytes=7681024 stable_tail=5632512 base_tail=512 recovered_commits=0
+F2_PREFIX_INDEX cross_key_links=0
+F2_SYNC_IO sync_calls=15066 write_calls=16038 write_bytes=25510218
+F2_COMMIT_COUNTS single_operations=0 full_index=1
+F2_DATA_PREFIX commits=0 data_syncs=0 directory_syncs=0 write_calls=15002 write_bytes=7681024 stable_tail=5632512 base_tail=5632512 recovered_commits=11000
+F2_PREFIX_INDEX cross_key_links=0
+F2_SYNC_IO sync_calls=15105 write_calls=16558 write_bytes=36521975
+[       OK ] Concurrent.SingleWriterVersionBounds (1165 ms)
+[----------] 2 tests from Concurrent (1428 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (1428 ms total)
+[  PASSED  ] 2 tests.

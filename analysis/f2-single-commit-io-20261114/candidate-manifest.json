@@ -1,0 +1,18 @@
+{
+  "variant": "aio-buffered",
+  "binaries": {
+    "build/f2-io-aio-buffered-20261114/taycan_kv_bench": "926477b66edaab45ab8383053e11b5a8f91cc3a76a992cc9610b761dd2110b1c",
+    "build/f2-io-aio-buffered-20261114/basic_test": "48236a5620e8202a1aee828f784aa9fad574a016fcf52cd7aa16d84fd4cae3a9",
+    "build/f2-io-aio-buffered-20261114/recovery_test": "fbb60ff7cd0606476cd78503d041021425951b4d0faeb00611f614ad3e16e80b",
+    "build/f2-io-aio-buffered-20261114/concurrent_test": "7bc8ed6c81d952e3660f93a775480ba7d51f44aa91935f855bd47eef752c1640",
+    "build/f2-io-aio-buffered-20261114/crash_worker": "67c5f23dc9d6da6abf5969b5870e4cba6af19c3f9ff78aacb0dc4f5b926a1e33",
+    "build/f2-io-aio-buffered-20261114/compaction_test": "8279d1afc32177abe2b9274f2d2817ac1f6916e8a430ca2cd828b400221e124b",
+    "build/f2-io-aio-buffered-20261114/engine/f2_sync_api_probe": "e8a1f966bf86d3dad7116fb22dd50cf9f482b41b35d2e5469abab5be28b77ce0"
+  },
+  "fsync_before_ack": true,
+  "hot_log_cache": "OS buffered file descriptor",
+  "cold_log_and_index_cache": "F_NOCACHE as baseline",
+  "durable_compaction": true,
+  "per_call_commits": true,
+  "group_commit": false
+}

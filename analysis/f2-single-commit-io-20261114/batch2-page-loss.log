@@ -1,0 +1,4 @@
+f2 all-lost PASS
+f2 all-survives PASS
+f2 earlier-page-lost PASS
+f2 tail-page-lost PASS

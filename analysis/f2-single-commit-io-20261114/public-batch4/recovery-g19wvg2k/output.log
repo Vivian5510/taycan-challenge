@@ -1,0 +1,32 @@
+seed=20261021 num_keys=100000 key_mode=random key_size=64 value_size=128 reader_threads=4 mem_limit_bytes=4294967296
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Recovery
+[ RUN      ] Recovery.ReopenTwice
+F2_COMMIT_COUNTS single_operations=200000 full_index=2
+F2_DATA_PREFIX commits=200000 data_syncs=200000 directory_syncs=13 write_calls=200001 write_bytes=102400512 stable_tail=102400512 base_tail=67109376 recovered_commits=0
+F2_PREFIX_INDEX cross_key_links=0
+F2_AIO_BATCH limit=4 polls=9233669 callbacks=516 multi_polls=62
+F2_AIO_BATCH limit=4 polls=9229111 callbacks=2 multi_polls=0
+F2_AIO_BATCH limit=4 polls=9232052 callbacks=200517 multi_polls=75
+F2_SYNC_IO sync_calls=200082 write_calls=201037 write_bytes=120229716
+F2_COMMIT_COUNTS single_operations=100000 full_index=2
+F2_DATA_PREFIX commits=100000 data_syncs=100000 directory_syncs=6 write_calls=300001 write_bytes=153600512 stable_tail=153600512 base_tail=146019328 recovered_commits=68928
+F2_PREFIX_INDEX cross_key_links=0
+F2_AIO_BATCH limit=4 polls=4744586 callbacks=799 multi_polls=128
+F2_AIO_BATCH limit=4 polls=4739296 callbacks=37 multi_polls=0
+F2_AIO_BATCH limit=4 polls=4743936 callbacks=100906 multi_polls=185
+F2_SYNC_IO sync_calls=300174 write_calls=302128 write_bytes=244172467
+F2_COMMIT_COUNTS single_operations=0 full_index=1
+F2_DATA_PREFIX commits=0 data_syncs=0 directory_syncs=0 write_calls=300001 write_bytes=153600512 stable_tail=153600512 base_tail=153600512 recovered_commits=14807
+F2_PREFIX_INDEX cross_key_links=0
+F2_AIO_BATCH limit=4 polls=203609 callbacks=529 multi_polls=113
+F2_AIO_BATCH limit=4 polls=201623 callbacks=18 multi_polls=3
+F2_AIO_BATCH limit=4 polls=204555 callbacks=533 multi_polls=114
+F2_SYNC_IO sync_calls=300213 write_calls=302648 write_bytes=255184227
+[       OK ] Recovery.ReopenTwice (24485 ms)
+[----------] 1 test from Recovery (24485 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (24485 ms total)
+[  PASSED  ] 1 test.
