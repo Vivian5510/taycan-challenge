@@ -14,7 +14,6 @@ parser.add_argument('--fix-recovery-frontier', type=int, choices=(0, 1), default
 parser.add_argument('--commit-experiment', type=int, choices=(0, 1), default=0)
 parser.add_argument('--sync-experiment', type=int, choices=(0, 1), default=0)
 parser.add_argument('--hybrid-experiment', type=int, choices=(0, 1), default=0)
-parser.add_argument('--rocks-experiment', type=int, choices=(0, 1), default=0)
 parser.add_argument('--prefix-experiment', type=int, choices=(0, 1), default=0)
 args = parser.parse_args()
 here = Path(__file__).resolve().parent
@@ -125,13 +124,7 @@ if args.sync_experiment:
             '#include "f2_commit_experiment.h"\n#include "f2_sync_experiment.h"')
     replace('core/f2.h', '#include "f2_commit_members.inc"',
             '#include "f2_commit_members.inc"\n#include "f2_sync_members.inc"')
-if args.rocks_experiment:
-    assert args.sync_experiment
-    shutil.copyfile(here.parent / 'rocksdb-commit-reference/rocksdb_commit.h', destination / 'core/rocksdb_commit.h')
-    shutil.copyfile(here / 'f2_rocks_members.inc', destination / 'core/f2_rocks_members.inc')
-    replace('core/f2.h', '#include "f2_sync_members.inc"',
-            '#include "f2_sync_members.inc"\n#include "f2_rocks_members.inc"')
-if args.hybrid_experiment or args.rocks_experiment:
+if args.hybrid_experiment or args.prefix_experiment:
     # Both durable paths must reject a failed checkpoint rather than publish
     # a new recovery root based on an unconditional successful callback.
     replace('core/checkpoint_state.h',
@@ -190,17 +183,16 @@ if args.hybrid_experiment or args.prefix_experiment:
             '  if (tail_address.offset() != 0) std::memset(Page(tail_address.page()) + tail_address.offset(), 0, kPageSize - tail_address.offset());\n'
             '  tail_page_offset_.store(tail_address);')
 if args.prefix_experiment:
-    assert args.rocks_experiment
+    # The native data-log format uses RocksDB CRC32C only; it does not require
+    # the RocksDB WriteThread/WAL adapter. Keeping these switches independent
+    # lets the main F2 build use direct single-request commits.
     shutil.copyfile(here / 'f2_prefix_experiment.h', destination / 'core/f2_prefix_experiment.h')
     shutil.copyfile(here / 'f2_prefix_members.inc', destination / 'core/f2_prefix_members.inc')
     shutil.copyfile(here / 'f2_prefix_index.inc', destination / 'core/f2_prefix_index.inc')
-    shutil.copyfile(here / 'f2_prefix_pipeline.inc', destination / 'core/f2_prefix_pipeline.inc')
-    from prepare_commit_wait import generate as generate_commit_wait
-    generate_commit_wait(destination / 'core/f2_commit_wait.h')
     for name in ('f2_gc_trace.h', 'f2_gc_file.inc', 'f2_gc_members.inc'):
         shutil.copyfile(here / name, destination / 'core' / name)
-    replace('core/f2.h', '#include "f2_rocks_members.inc"',
-            '#include "f2_rocks_members.inc"\n#include "f2_prefix_members.inc"\n#ifdef F2_PREFIX_PIPELINE\n#include "f2_prefix_pipeline.inc"\n#endif\n#ifdef F2_DURABLE_COMPACTION\n#include "f2_gc_members.inc"\n#endif')
+    replace('core/f2.h', '#include "f2_sync_members.inc"',
+            '#include "f2_sync_members.inc"\n#include "f2_prefix_members.inc"\n#ifdef F2_DURABLE_COMPACTION\n#include "f2_gc_members.inc"\n#endif')
     replace('device/file_system_disk.h', '#include "../core/gc_state.h"',
             '#include "../core/gc_state.h"\n#ifdef F2_DURABLE_COMPACTION\n#include "../core/f2_gc_trace.h"\n#endif')
     replace('device/file_system_disk.h',

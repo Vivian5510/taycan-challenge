@@ -42,14 +42,12 @@
       }
     }
     if(files.empty())throw std::runtime_error("native commit produced no data writes");
-    const auto begin=std::chrono::steady_clock::now();
     for(const auto& file:files) {
       experimental::SyncPath(file);++s.prefix.data_syncs;
       if(s.prefix.synced_files.insert(file).second) {
         experimental::SyncDirectory(std::filesystem::path(file).parent_path());++s.prefix.directory_syncs;
       }
     }
-    s.rocks->NoteDataLogSyncNs(std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now()-begin).count());
   }
   void PrefixCommit(uint64_t first,uint64_t last,uint64_t count) {
     auto& s=*sync_state_;
@@ -58,11 +56,7 @@
     if(experimental::kPrefixBlock%hot_store.disk.sector_size())
       throw std::runtime_error("native seal unit is incompatible with device sector size");
     const uint64_t from=
-#ifdef F2_PREFIX_PIPELINE
-      s.prefix.prepared_tail;
-#else
       s.prefix.stable_tail;
-#endif
     const uint64_t at=PrefixOpenTail();
     const uint32_t marker_size=PrefixMarkerSize();
     const uint64_t end=(at+marker_size+experimental::kPrefixBlock-1)&~(experimental::kPrefixBlock-1);
@@ -97,14 +91,10 @@
       if(std::chrono::steady_clock::now()>flush_deadline)throw std::runtime_error("native data-log flush frontier stalled");
     }
     CompletePending(true);
-#ifdef F2_PREFIX_PIPELINE
-    s.prefix.prepared_tail=end;
-#else
     if(inject)experimental::Fault("before-data-sync");
     PrefixSyncDataFiles();
     if(inject)experimental::Fault("after-data-sync");
     s.prefix.stable_tail=end;++s.prefix.commits;
-#endif
   }
   uint64_t PrefixFileEnd() const {
     uint64_t end=0;const auto directory=sync_state_->root/"hot";
@@ -202,7 +192,7 @@
         stable=sector_end;serial=footer.last;record_at=sector_end;crc=0;++s.prefix.recovered_commits;
       }
     }
-    s.prefix.base_tail=base_tail;s.prefix.stable_tail=stable;s.serial=serial;s.rocks->SetRecoveredSequence(serial);
+    s.prefix.base_tail=base_tail;s.prefix.stable_tail=stable;s.serial=serial;
     s.prefix.prepared_tail=stable;
   }
   Status PrefixRecover(const Guid& base,uint32_t& version) {

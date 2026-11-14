@@ -61,10 +61,6 @@ class SyncBackend final:public FasterBackend {
       if(item.path().filename()!="LOCK") throw std::runtime_error("missing sync recovery root");
     if(recover && std::string(F2_SYNC_STRATEGY)=="commit-log" && !fs::exists(directory_/"F2-COMMIT-0"))
       throw std::runtime_error("missing commit log");
-#if defined(F2_ROCKS_WAL) && !defined(F2_DATA_PREFIX)
-    if(recover && !fs::is_regular_file(directory_/"wal"/(token+".log")))
-      throw std::runtime_error("missing WAL generation referenced by recovery root");
-#endif
 #if defined(F2_DATA_PREFIX) && !defined(F2_DURABLE_COMPACTION)
     if(recover && !fs::is_regular_file(directory_/"hot"/"log.log0"))
       throw std::runtime_error("native recovery data log missing");
@@ -85,13 +81,7 @@ class SyncBackend final:public FasterBackend {
     uint64_t reclaim=std::max<uint64_t>(8ULL<<20,budget/64);
     if(const char* override_bytes=std::getenv("F2_SYNC_RECLAIM_BYTES")) reclaim=std::stoull(override_bytes);
     if(!reclaim) throw std::runtime_error("zero reclaim threshold");
-    store_->SyncConfigure(directory_.string(),format,std::string(F2_SYNC_STRATEGY)=="commit-log",cutoff,[this]{Touch();},reclaim,hybrid,
-#ifdef F2_ROCKS_WAL
-      token);
-    store_->SyncSetApply([this](uint32_t op,const std::string& key,const std::string& value,uint64_t serial){return Apply(op,key,value,serial);});
-#else
-      base_token);
-#endif
+    store_->SyncConfigure(directory_.string(),format,std::string(F2_SYNC_STRATEGY)=="commit-log",cutoff,[this]{Touch();},reclaim,hybrid,base_token);
 #ifdef F2_DURABLE_COMPACTION
     store_->PrefixGcConfigure();
 #endif
@@ -113,27 +103,18 @@ class SyncBackend final:public FasterBackend {
 #ifdef F2_DURABLE_COMPACTION
     store_->PrefixGcStart();
 #endif
-#ifdef F2_PREFIX_PIPELINE
-    store_->PrefixStartPipeline();
-#endif
   }
   ~SyncBackend() override {
     if(store_) {try{store_->SyncClose();}catch(const std::exception& e){std::fprintf(stderr,"SYNC_CLOSE_FAIL %s\n",e.what());}
       std::fprintf(stderr,
-#ifdef F2_ROCKS_WAL
-        "F2_COMMIT_COUNTS wal_groups=%llu full_index=%llu\n",
+#ifdef F2_DATA_PREFIX
+        "F2_COMMIT_COUNTS single_operations=%llu full_index=%llu\n",
 #else
         "F2_COMMIT_COUNTS log_only=%llu full_index=%llu\n",
 #endif
         (unsigned long long)store_->SyncLogCommits(),(unsigned long long)store_->SyncFullCheckpoints());
-#ifdef F2_ROCKS_WAL
-      store_->SyncPrintRocksCounters();
-#endif
 #ifdef F2_DATA_PREFIX
       store_->PrefixPrintCounters();
-#endif
-#ifdef F2_PREFIX_PIPELINE
-      store_->PrefixPrintPipelineCounters();
 #endif
       store_.reset();}
     std::fprintf(stderr,"F2_SYNC_IO sync_calls=%llu write_calls=%llu write_bytes=%llu\n",

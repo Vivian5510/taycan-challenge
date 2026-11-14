@@ -1,5 +1,9 @@
 # 本地源码与深度移植记录
 
+本文是 2026-11-02/03 的历史实验记录。2026-11-14 起，本文所述 WriteThread/
+WriteBatch 分组与 prefix pipeline 仅保留在 `experiment/f2-group-commit-preserved-20261114`；
+main 使用 F2 单请求提交，只保留 CRC32C 复用。[当前拆分说明](../../docs/main-without-group-commit-20261114.md)。
+
 2026-11-02 补充核对见 [提交与完成通知源码走查](../../analysis/f2-commit-source-study-20261102/README.md)。此前 Tsavorite 移植复用了提交覆盖思路，但 C++ 两线程、共享队列锁和等待机制属于本地实现，并没有等价复用其 Task 调度；本地流水线已暴露并修正全体广播问题。同步等待应优先继续直接复用 RocksDB WriteThread。
 
 2026-11-03 的独立候选见 [开源等待与 I/O 实验](../../analysis/f2-open-source-wait-20261103/README.md)。`prepare_commit_wait.py` 从固定 RocksDB `write_thread.cc` 提取完整的 BlockingAwaitState/AwaitState/SetState 方法（只更名、移除 DB 计时与测试钩子），继续用上游 Writer 与 AdaptationContext；生成的 `f2_commit_wait.h`、Apache 许可及来源哈希一起保留。`F2_PIPELINE_LOCAL_WAIT` 为显式开关，默认关闭。批量 AIO 完成候选借鉴 KVell 的批量组织，但仍使用本地 macOS POSIX AIO，并不复用其 O_DIRECT 提交语义。

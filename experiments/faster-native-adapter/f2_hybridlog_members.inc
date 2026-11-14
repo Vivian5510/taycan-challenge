@@ -1,5 +1,5 @@
-// Quiescent committed-prefix protocol. Existing SyncMutate admits one caller-led
-// group at a time. No new mutation enters until its hot HybridLog prefix is
+// Quiescent committed-prefix protocol. SyncMutate admits one request
+// at a time. No new mutation enters until its hot HybridLog prefix is
 // stable and its recovery descriptor is published. No additional WAL.
  public:
   Guid HybridLogCommit(uint64_t required) {

@@ -1,5 +1,5 @@
-// F2 synchronous commit experiment: caller-led groups, one in-flight operation
-// per caller. Journal and total mutation order belong to the F2 instance.
+// F2 synchronous commit support. Each public mutation is assigned one serial;
+// persistence and recovery state belong to the F2 instance.
 #pragma once
 #include "f2_commit_experiment.h"
 #include <functional>
@@ -9,12 +9,6 @@
 #include <sstream>
 #include <cstdlib>
 #include <csignal>
-#ifdef F2_ROCKS_WAL
-#include "rocksdb_commit.h"
-#if F2_PIPELINE_LOCAL_WAIT
-#include "f2_commit_wait.h"
-#endif
-#endif
 #ifdef F2_DATA_PREFIX
 #include "f2_prefix_experiment.h"
 #endif
@@ -126,37 +120,22 @@ inline void PurgeHybridMetadata(const std::filesystem::path& root,const std::str
   }
   for(const auto& path:obsolete)std::filesystem::remove_all(path);
 }
-struct SyncRequest {
-  uint32_t op;
-  const std::string& key;
-  const std::string& value;
-  std::function<Status(uint64_t)> apply;
-  bool done=false;
-  Status status=Status::Corruption;
-};
 class SyncState {
  public:
   std::filesystem::path root;
   std::string format;
-  bool journal=false, leading=false;
+  bool journal=false;
   bool hybrid=false;
   std::string base_token;
   uint64_t base_tail=0,log_commits=0,full_checkpoints=0;
   std::atomic<bool> poisoned{false};
-  uint64_t serial=0, cutoff=0, groups=0, operations=0, reclaim_bytes=1<<20;
+  uint64_t serial=0, cutoff=0, reclaim_bytes=1<<20;
   std::unique_ptr<BatchLog> log;
   std::function<void()> touch;
   std::mutex mutex;
-  std::condition_variable cv;
-  std::deque<SyncRequest*> pending;
   std::shared_mutex gate;
-#ifdef F2_ROCKS_WAL
-  reference::Counters rocks_stats;
-  std::unique_ptr<reference::Committer> rocks;
-  std::function<Status(uint32_t,const std::string&,const std::string&,uint64_t)> rocks_apply;
 #ifdef F2_DATA_PREFIX
   PrefixState prefix;
-#endif
 #endif
 };
 }}}

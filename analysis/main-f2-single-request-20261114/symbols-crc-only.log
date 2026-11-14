@@ -1,0 +1,11 @@
+0000000100057fd0 t unsigned int rocksdb::crc32c::ExtendImpl<&rocksdb::crc32c::DefaultCRC32(unsigned long long*, unsigned char const**)>(unsigned int, char const*, unsigned long)
+0000000100057f14 T rocksdb::crc32c::Crc32cCombine(unsigned int, unsigned int, unsigned long)
+0000000100057d80 T rocksdb::crc32c::ExtendARMImpl(unsigned int, char const*, unsigned long)
+0000000100057d84 T rocksdb::crc32c::IsFastCrc32Supported()
+0000000100057f08 T rocksdb::crc32c::Extend(unsigned int, char const*, unsigned long)
+0000000100068198 b rocksdb::crc32c::ChosenExtend
+000000010005e294 s rocksdb::crc32c::crc32c_powers
+000000010005e38c s rocksdb::crc32c::table0_
+000000010005ef8c s rocksdb::crc32c::table1_
+000000010005eb8c s rocksdb::crc32c::table2_
+000000010005e78c s rocksdb::crc32c::table3_

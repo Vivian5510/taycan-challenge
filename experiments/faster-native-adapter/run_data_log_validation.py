@@ -26,7 +26,6 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--build-dir', type=Path, required=True)
     parser.add_argument('--results', type=Path, required=True)
-    parser.add_argument('--pipeline-boundary', action='store_true', help='Also kill a 128-writer group after preparation overlaps a prior sync')
     args = parser.parse_args()
     build, out = args.build_dir.resolve(), args.results.resolve()
     out.mkdir(parents=True, exist_ok=False)
@@ -61,17 +60,12 @@ def main():
             print(name, row['status'], flush=True)
 
     def boundary(point, concurrent, writers=16):
-        name = ('group-' if concurrent else 'single-') + point
+        name = ('concurrent-' if concurrent else 'single-') + point
         folder = out / name
         folder.mkdir()
         db = folder / 'db'
         env = dict(os.environ, F2_SYNC_FAULT=point, F2_SYNC_FAULT_MIN_SERIAL='65',
                    F2_SYNC_RECLAIM_BYTES='4096' if concurrent else '65536')
-        if point == 'after-overlapping-prepare':
-            # This point specifically requires multiple prepared groups. The
-            # tiny checkpoint setting used by publication-boundary tests
-            # deliberately drains every group and cannot exercise overlap.
-            env['F2_SYNC_RECLAIM_BYTES'] = str(64 << 20)
         common = [build / 'crash_worker', '--num_keys=64', '--key_size=32', '--value_size=256',
                   '--mem_limit_bytes=' + str(4 << 30), '--seed=20261021', '--db_path=' + str(db)]
         if not concurrent:
@@ -209,8 +203,10 @@ def main():
         for repeat in (1, 2):
             run('embedded-marker-recover-' + str(repeat), [probe, 'embedded-marker-verify', embedded])
         collision = run('real-hash-collision', [probe, 'hash-collision', out / 'collision-db'], env=env)
-        if not any(int(n) > 0 for n in re.findall(r'cross_key_links=(\d+)', collision.stderr)):
-            raise RuntimeError('real staged hash collision was not exercised')
+        # One request per commit no longer stages multiple keys together. The
+        # probe still verifies two actual colliding keys, 16 writers and reopen.
+        if 'REAL_HASH_COLLISION PASS' not in collision.stdout:
+            raise RuntimeError('real hash collision probe did not complete')
         def monitored(*a, **kw):
             kw.update(rss_reader=read_macos_rss, rss_source='macOS libproc; not Linux VmRSS')
             return ProcessRunner(*a, **kw)
@@ -229,8 +225,6 @@ def main():
         for concurrent in (False, True):
             for point in points:
                 boundary(point, concurrent)
-        if args.pipeline_boundary:
-            boundary('after-overlapping-prepare', True, 128)
         report['status'] = 'PASS'
     except BaseException as error:
         report.update(status='FAIL', reason=str(error))

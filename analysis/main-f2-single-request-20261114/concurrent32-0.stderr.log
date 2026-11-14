@@ -1,0 +1,4 @@
+F2_COMMIT_COUNTS single_operations=8192 full_index=1
+F2_DATA_PREFIX commits=8192 data_syncs=8192 directory_syncs=1 write_calls=8193 write_bytes=4194816 stable_tail=4194816 base_tail=512 recovered_commits=0
+F2_PREFIX_INDEX cross_key_links=0
+F2_SYNC_IO sync_calls=8225 write_calls=8711 write_bytes=138938476

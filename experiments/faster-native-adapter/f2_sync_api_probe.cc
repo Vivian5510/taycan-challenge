@@ -28,52 +28,6 @@ int main(int argc,char** argv) {
     KVEngine* raw=nullptr;Check(KVEngine::Open(argv[2],budget,&raw));std::unique_ptr<KVEngine> engine(raw);
     const std::string key(32,'k');
     const std::string phase=argv[1];
-#ifdef F2_PREFIX_PIPELINE_TEST
-    if(phase=="pipeline-overlap-verify") {
-      std::vector<unsigned> states;
-      for(unsigned id=0;id<128;++id){
-        std::string k(32,'p');for(unsigned i=0;i<4;++i)k[i]=char(id>>(i*8));
-        std::string v;auto status=engine->Get(k,&v);unsigned state=0;
-        if(status.IsNotFound()){if(id%5)throw std::runtime_error("old pipeline key lost");state=1;}
-        else{Check(status);if(v=="new" && id%5)state=1;else if(v!="old")throw std::runtime_error("torn pipeline value");}
-        states.push_back(state);
-      }
-      std::string encoded;for(unsigned i=0;i<states.size();++i){if(i)encoded+=",";encoded+=std::to_string(states[i]);}
-      if(argc>3 && encoded!=argv[3])throw std::runtime_error("pipeline state changed after reopen");
-      std::cout<<"PIPELINE_RECOVERED "<<encoded<<std::endl;return 0;
-    }
-    if(phase=="pipeline-visibility" || phase=="pipeline-overlap-kill") {
-      auto pipeline_key=[](unsigned id){std::string k(32,'p');for(unsigned i=0;i<4;++i)k[i]=char(id>>(i*8));return k;};
-      for(unsigned id=0;id<128;++id)Check(engine->Put(pipeline_key(id),"old"));
-      if(phase=="pipeline-overlap-kill") {
-        ::setenv("F2_SYNC_FAULT","after-overlapping-prepare",1);::setenv("F2_SYNC_FAULT_MIN_SERIAL","129",1);
-      }
-      int release[2],notice[2];if(::pipe(release)||::pipe(notice))throw std::runtime_error("pipeline test pipe failed");
-      ::setenv("F2_PIPELINE_TEST_RELEASE_FD",std::to_string(release[0]).c_str(),1);
-      ::setenv("F2_PIPELINE_TEST_NOTICE_FD",std::to_string(notice[1]).c_str(),1);
-      std::atomic<unsigned> ready{0},done{0};std::atomic<bool> first{false},rest{false};std::vector<std::thread> writers;
-      for(unsigned id=0;id<128;++id)writers.emplace_back([&,id]{++ready;while(!(id?rest.load():first.load()))std::this_thread::yield();
-        Check(id%5?engine->Put(pipeline_key(id),"new"):engine->Delete(pipeline_key(id)));++done;});
-      while(ready!=128)std::this_thread::yield();first=true;
-      char byte=0;if(::read(notice[0],&byte,1)!=1||byte!='R')throw std::runtime_error("pipeline test missing sync hold");
-      rest=true;
-      std::this_thread::sleep_for(std::chrono::milliseconds(20));
-      if(done)throw std::runtime_error("pipeline acknowledged before durable sync");
-      for(unsigned id=0;id<128;++id){std::string v;Check(engine->Get(pipeline_key(id),&v));if(v!="old")throw std::runtime_error("uncommitted pipeline value visible");}
-      byte='G';if(::write(release[1],&byte,1)!=1)throw std::runtime_error("pipeline release failed");
-      for(auto& writer:writers)writer.join();
-      ::unsetenv("F2_PIPELINE_TEST_RELEASE_FD");::unsetenv("F2_PIPELINE_TEST_NOTICE_FD");
-      for(int fd:{release[0],release[1],notice[0],notice[1]})::close(fd);
-      for(unsigned reopen=0;reopen<3;++reopen){
-        for(unsigned id=0;id<128;++id){std::string v;auto s=engine->Get(pipeline_key(id),&v);
-          if(id%5){Check(s);if(v!="new")throw std::runtime_error("pipeline update lost");}
-          else if(!s.IsNotFound())throw std::runtime_error("pipeline delete lost");}
-        if(reopen!=2){engine.reset();raw=nullptr;Check(KVEngine::Open(argv[2],budget,&raw));engine.reset(raw);}
-      }
-      std::cout<<"PIPELINE_VISIBILITY PASS old_reads=128 updates_deletes=128 reopen=2"<<std::endl;
-      return 0;
-    }
-#endif
     if(phase=="embedded-marker-write-kill" || phase=="embedded-marker-verify") {
       std::string value(100*1024-1,'x');
       auto encode=[&](size_t offset,uint64_t n,unsigned bytes){for(unsigned i=0;i<bytes;++i)value.at(offset+i)=char(n>>(8*i));};
