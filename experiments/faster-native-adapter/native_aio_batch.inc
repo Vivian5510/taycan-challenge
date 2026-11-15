@@ -1,5 +1,15 @@
 // Experimental batch completion drain. Same submission and error semantics as
 // native_aio_file.inc; callbacks always execute after releasing handler mutex.
+//
+// Reentry contract: collect up to F2_AIO_COMPLETION_BATCH ready jobs in one
+// locked pass (amortising poll overhead), but only execute one callback per
+// outer TryComplete() invocation.  Jobs [1..N-1] are pushed back to the front
+// of aio_jobs_ — marked inline_completed so the dequeue check sees them as
+// ready — before the lock is released.  A callback that re-enters TryComplete()
+// while waiting for a sibling will find those siblings in aio_jobs_ and can
+// dispatch them.  Executing the whole batch before any re-entry would hide
+// siblings from a waiting callback, forming a dependency cycle (confirmed by
+// completion_reentry_probe, 2026-11-14).
 bool QueueIoHandler::TryComplete() {
   std::array<std::unique_ptr<AioJob>,F2_AIO_COMPLETION_BATCH> completed;
   size_t count=0;
@@ -26,12 +36,22 @@ bool QueueIoHandler::TryComplete() {
       completed[count++]=std::move(*it);
       it=aio_jobs_.erase(it);
     }
+    // Return completed[1..count-1] to the front of aio_jobs_ so that re-entrant
+    // TryComplete() calls can find and dispatch them.  Set inline_completed so
+    // the dequeue check above treats them as immediately ready (their I/O is
+    // done; only the callback is deferred).  Insertion order: push in reverse
+    // so completed[1] ends up at the front.
+    for(size_t i=count;i>1;--i){
+      completed[i-1]->inline_completed=true;
+      aio_jobs_.push_front(std::move(completed[i-1]));
+    }
     SubmitQueuedLocked();
-    aio_completion_callbacks_+=count;
+    if(count>0)++aio_completion_callbacks_;
     if(count>1)++aio_multi_completion_polls_;
   }
-  for(size_t i=0;i<count;++i) {
-    auto& job=*completed[i];
+  if(count==0)return progressed;
+  {
+    auto& job=*completed[0];
     auto status=job.error?Status::IOError:Status::Ok;
 #ifdef F2_COMMIT_EXPERIMENT
     if(!job.read){++core::experimental::write_calls;core::experimental::write_bytes+=job.done;

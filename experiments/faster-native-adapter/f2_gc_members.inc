@@ -97,11 +97,16 @@
       SyncCheckpointAndReclaim();
       prefix_gc_publishing_=false;
       // Every checkpoint dependency and the root are stable at this point.
-      hot_store.disk.log().PrefixReleaseTruncation();
+      // Pass a cross-store drain so that PrefixReleaseTruncation's epoch spin
+      // can service I/O on all three handlers, not just the one being truncated.
+      // Without this, a reader with a pending I/O on a different store's handler
+      // can block epoch advancement and stall the truncation indefinitely.
+      auto cross_drain=[this]{CompletePending(false);Refresh();};
+      hot_store.disk.log().PrefixReleaseTruncation(cross_drain);
       experimental::SyncDirectory(s.root/"hot");PrefixGcPhase("after-hot-truncate");
-      cold_store.disk.log().PrefixReleaseTruncation();
+      cold_store.disk.log().PrefixReleaseTruncation(cross_drain);
       experimental::SyncDirectory(s.root/"cold");PrefixGcPhase("after-cold-truncate");
-      index.disk.log().PrefixReleaseTruncation();
+      index.disk.log().PrefixReleaseTruncation(cross_drain);
       experimental::SyncDirectory(s.root/"cold"/"cold-index");PrefixGcPhase("after-index-truncate");
       StopSession();session=false;PrefixGcPhase("complete");
     } catch(...) {
