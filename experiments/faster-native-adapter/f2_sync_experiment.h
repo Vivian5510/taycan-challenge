@@ -2,6 +2,7 @@
 // persistence and recovery state belong to the F2 instance.
 #pragma once
 #include "f2_commit_experiment.h"
+#include <deque>
 #include <functional>
 #include <map>
 #include <set>
@@ -120,19 +121,29 @@ inline void PurgeHybridMetadata(const std::filesystem::path& root,const std::str
   }
   for(const auto& path:obsolete)std::filesystem::remove_all(path);
 }
+// One pending synchronous mutation. The leader picks up all waiting requests
+// within a bounded window and commits them together as one WAL frame.
+struct SyncRequest {
+  uint32_t op;
+  const std::string& key;
+  const std::string& value;
+  std::function<Status(uint64_t)> apply;
+  bool done=false;
+  Status status=Status::Corruption;
+};
 class SyncState {
  public:
   std::filesystem::path root;
   std::string format;
-  bool journal=false;
-  bool hybrid=false;
-  std::string base_token;
-  uint64_t base_tail=0,log_commits=0,full_checkpoints=0;
+  bool journal=false, leading=false;
+  uint64_t full_checkpoints=0, groups=0, operations=0;
   std::atomic<bool> poisoned{false};
   uint64_t serial=0, cutoff=0, reclaim_bytes=1<<20;
   std::unique_ptr<BatchLog> log;
   std::function<void()> touch;
   std::mutex mutex;
+  std::condition_variable cv;
+  std::deque<SyncRequest*> pending;
   std::shared_mutex gate;
 #ifdef F2_DATA_PREFIX
   PrefixState prefix;

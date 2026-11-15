@@ -39,8 +39,9 @@ class SyncBackend final:public FasterBackend {
       +" durable-gc-v1 segment-bits="+std::to_string(F2_DATA_SEGMENT_BITS)+" index-budget-divisor=65536"
 #endif
       ;
-    std::string token,base_token;uint64_t cutoff=0,prefix_base_tail=0;
-    const bool hybrid=std::string(F2_SYNC_STRATEGY)=="hybridlog";
+    std::string token;uint64_t cutoff=0,prefix_base_tail=0;
+    const bool use_journal=std::string(F2_SYNC_STRATEGY)=="commit-log"
+                           ||std::string(F2_SYNC_STRATEGY)=="hybridlog";
     bool recover=fs::exists(directory_/"F2-SYNC-CURRENT");
     if(recover) {
       std::ifstream input(directory_/"F2-SYNC-CURRENT");std::string n,existing,c;
@@ -48,9 +49,7 @@ class SyncBackend final:public FasterBackend {
 #ifdef F2_DATA_PREFIX
       const std::string native_tail=c;prefix_base_tail=std::stoull(c);std::getline(input,c);
 #endif
-      if(hybrid){base_token=c;std::getline(input,c);}
       auto payload=token+"\n"+n+"\n"+existing+"\n";
-      if(hybrid)payload+=base_token+"\n";
 #ifdef F2_DATA_PREFIX
       payload+=native_tail+"\n";
 #endif
@@ -59,7 +58,7 @@ class SyncBackend final:public FasterBackend {
       cutoff=std::stoull(n);
     } else for(const auto& item:fs::directory_iterator(directory_))
       if(item.path().filename()!="LOCK") throw std::runtime_error("missing sync recovery root");
-    if(recover && std::string(F2_SYNC_STRATEGY)=="commit-log" && !fs::exists(directory_/"F2-COMMIT-0"))
+    if(recover && use_journal && !fs::exists(directory_/"F2-COMMIT-0"))
       throw std::runtime_error("missing commit log");
 #if defined(F2_DATA_PREFIX) && !defined(F2_DURABLE_COMPACTION)
     if(recover && !fs::is_regular_file(directory_/"hot"/"log.log0"))
@@ -81,7 +80,7 @@ class SyncBackend final:public FasterBackend {
     uint64_t reclaim=std::max<uint64_t>(8ULL<<20,budget/64);
     if(const char* override_bytes=std::getenv("F2_SYNC_RECLAIM_BYTES")) reclaim=std::stoull(override_bytes);
     if(!reclaim) throw std::runtime_error("zero reclaim threshold");
-    store_->SyncConfigure(directory_.string(),format,std::string(F2_SYNC_STRATEGY)=="commit-log",cutoff,[this]{Touch();},reclaim,hybrid,base_token);
+    store_->SyncConfigure(directory_.string(),format,use_journal,cutoff,[this]{Touch();},reclaim);
 #ifdef F2_DURABLE_COMPACTION
     store_->PrefixGcConfigure();
 #endif
@@ -91,9 +90,6 @@ class SyncBackend final:public FasterBackend {
       store_->PrefixFindCommittedTail(prefix_base_tail,cutoff);
       Check(store_->PrefixRecover(fc::Guid::Parse(token),version));
 #else
-#ifdef F2_HYBRID_EXPERIMENT
-      if(hybrid)Check(store_->HybridLogRecover(fc::Guid::Parse(base_token),fc::Guid::Parse(token),version));else
-#endif
       Check(store_->Recover(fc::Guid::Parse(token),version,sessions));
 #endif
     }
