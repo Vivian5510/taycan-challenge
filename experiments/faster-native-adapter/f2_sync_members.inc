@@ -8,6 +8,13 @@
       s.log=std::make_unique<experimental::BatchLog>(s.root,0);
       experimental::SyncDirectory(s.root);
     }
+    // Architecture-experiment knobs — read once at open time so hot paths avoid getenv.
+    auto envbool=[](const char* n){const char* v=std::getenv(n);return v&&v[0]=='1'&&!v[1];};
+    s.opt_adaptive=envbool("F2_GC_ADAPTIVE");
+    s.opt_pipeline=envbool("F2_GC_PIPELINE");
+    s.opt_lockfree=envbool("F2_GC_LOCKFREE");
+    if(const char* b=std::getenv("F2_GC_MIN_BATCH")) s.opt_min_batch=std::stoull(b);
+    else s.opt_min_batch=4;
   }
   template<class Apply>
   uint64_t SyncReplay(Apply apply) {
@@ -109,48 +116,146 @@
     }
   }
 #else
-  // Group-commit path for non-prefix strategies (hybridlog, commit-log, checkpoint).
-  // All concurrent Put/Delete callers queue here. The leader gathers within a
-  // bounded window, writes one WAL frame, applies the batch to F2, then triggers
-  // a checkpoint only when the WAL has grown past reclaim_bytes.
+  // Group-commit path for non-prefix strategies.
+  // Three independently-toggled architecture experiments controlled at open time:
+  //   F2_GC_ADAPTIVE=1   : drain early once opt_min_batch requests are ready
+  //   F2_GC_PIPELINE=1   : release the leader flag right after drain so the next
+  //                        group starts collecting while this one does WAL+apply;
+  //                        stage_mutex serialises the WAL/serial/apply phases
+  //   F2_GC_LOCKFREE=1   : followers push onto a Treiber stack instead of the
+  //                        mutex-held deque; leader CAS-swaps the whole stack at
+  //                        drain time; cv/mutex still used for leader election
+  //                        and done notifications (correct, no UB spin on bool)
   template<class Native>
   Status SyncMutate(uint32_t op,const std::string& key,const std::string& value,Native native) {
     auto& s=*sync_state_;
     experimental::SyncRequest own{op,key,value,native};
+
+    // Enqueue: Treiber push (lock-free) OR hold mutex and push to deque.
+    // Either way we then enter the mutex path for leader election and waiting.
+    if(s.opt_lockfree) {
+      own.lf_next=s.lf_stack.load(std::memory_order_relaxed);
+      while(!s.lf_stack.compare_exchange_weak(own.lf_next,&own,
+              std::memory_order_release,std::memory_order_relaxed)) {}
+      s.lf_count.fetch_add(1,std::memory_order_release);
+    }
+
     std::unique_lock<std::mutex> lock(s.mutex);
-    if(s.poisoned) return Status::IOError;
-    s.pending.push_back(&own);
+    if(s.poisoned.load(std::memory_order_relaxed)) return Status::IOError;
+    if(!s.opt_lockfree) s.pending.push_back(&own);
+
     while(!own.done) {
-      if(s.leading) { s.cv.wait(lock,[&]{return own.done||!s.leading;}); continue; }
-      s.leading=true;
-      // Bounded gathering window — lets concurrent callers join the batch without
-      // allowing a single-threaded caller to spin forever.
+      if(s.leading.load(std::memory_order_relaxed)) {
+        // Not the leader — wait until the current leader finishes its batch.
+        s.cv.wait(lock,[&]{return own.done||!s.leading.load(std::memory_order_relaxed);});
+        continue;
+      }
+      s.leading.store(true,std::memory_order_relaxed);
+
+      // Collect window.
       const char* wait_us_env=std::getenv("F2_WAL_GROUP_WAIT_US");
       const auto wait=std::chrono::microseconds(wait_us_env?std::stoull(wait_us_env):100);
-      s.cv.wait_for(lock,wait);
-      std::vector<experimental::SyncRequest*> group(s.pending.begin(),s.pending.end());
-      s.pending.clear(); lock.unlock();
+      if(s.opt_adaptive) {
+        auto deadline=std::chrono::steady_clock::now()+wait;
+        while(true) {
+          size_t depth=s.opt_lockfree
+            ?s.lf_count.load(std::memory_order_acquire)
+            :s.pending.size();
+          if(depth>=s.opt_min_batch) break;
+          if(s.cv.wait_until(lock,deadline)==std::cv_status::timeout) break;
+        }
+      } else {
+        s.cv.wait_for(lock,wait);
+      }
+
+      // Drain into local group.
+      std::vector<experimental::SyncRequest*> group;
+      if(s.opt_lockfree) {
+        // Atomic swap: grab the whole stack in one CAS, then reverse to FIFO.
+        experimental::SyncRequest* head=s.lf_stack.exchange(nullptr,std::memory_order_acquire);
+        s.lf_count.store(0,std::memory_order_relaxed);
+        while(head){ group.push_back(head); head=head->lf_next; }
+        std::reverse(group.begin(),group.end());
+      } else {
+        group.assign(s.pending.begin(),s.pending.end());
+        s.pending.clear();
+      }
+      if(group.empty()) {
+        // Spurious wakeup with nothing queued yet — give up leadership and retry.
+        s.leading.store(false,std::memory_order_relaxed);
+        s.cv.notify_all();
+        continue;
+      }
+      for(auto* r:group) r->in_group=true;
+
+      if(s.opt_pipeline) {
+        // Release leadership immediately so the next thread can start collecting
+        // while we do the expensive WAL+apply work under stage_mutex.
+        s.leading.store(false,std::memory_order_relaxed);
+        s.cv.notify_all();
+        lock.unlock();
+
+        bool session=false; bool failed=false;
+        try {
+          std::unique_lock<std::mutex> stage(s.stage_mutex);
+          uint64_t next=s.serial;
+          if(s.log) {
+            for(auto* r:group) s.log->Stage(r->op,r->key,r->value,++next);
+            s.log->Commit();
+          }
+          const char* minimum=std::getenv("F2_SYNC_FAULT_MIN_SERIAL");
+          const bool inject=minimum&&s.serial+group.size()>=std::stoull(minimum);
+          if(inject) experimental::Fault("after-wal");
+          std::unique_lock<std::shared_mutex> gate(s.gate);
+          StartSession(); session=true;
+          if(std::getenv("F2_SYNC_FAIL_APPLY"))throw std::runtime_error("injected F2 apply failure");
+          next=s.serial;
+          for(auto* r:group){
+            r->status=r->apply(++next);
+            if(r->status!=Status::Ok)throw std::runtime_error("F2 group apply failed");
+          }
+          s.serial=next;
+          if(!s.log||s.log->Bytes()>=s.reclaim_bytes) SyncCheckpointAndReclaim();
+          if(inject) experimental::Fault("before-ack");
+          CompletePending(true); StopSession(); session=false;
+          ++s.groups; s.operations+=group.size();
+        } catch(...) {
+          failed=true;
+          if(session){try{CompletePending(true);StopSession();}catch(...){}}
+        }
+        lock.lock();
+        if(failed) {
+          s.poisoned.store(true,std::memory_order_relaxed);
+          for(auto* r:s.pending){r->status=Status::IOError;r->done=true;}
+          s.pending.clear();
+        }
+        for(auto* r:group){r->status=failed?Status::IOError:r->status;r->done=true;}
+        s.cv.notify_all();
+        continue; // re-check own.done
+      }
+
+      // Baseline / adaptive: hold leading across WAL+apply.
+      lock.unlock();
       bool session=false; bool failed=false;
       try {
         uint64_t next=s.serial;
-        // One WAL fdatasync covers the entire batch.
         if(s.log) {
           for(auto* r:group) s.log->Stage(r->op,r->key,r->value,++next);
           s.log->Commit();
         }
         const char* minimum=std::getenv("F2_SYNC_FAULT_MIN_SERIAL");
-        const bool inject=minimum && s.serial+group.size()>=std::stoull(minimum);
+        const bool inject=minimum&&s.serial+group.size()>=std::stoull(minimum);
         if(inject) experimental::Fault("after-wal");
         std::unique_lock<std::shared_mutex> gate(s.gate);
         StartSession(); session=true;
         if(std::getenv("F2_SYNC_FAIL_APPLY"))throw std::runtime_error("injected F2 apply failure");
         next=s.serial;
-        for(auto* r:group) {
+        for(auto* r:group){
           r->status=r->apply(++next);
-          if(r->status!=Status::Ok) throw std::runtime_error("F2 group apply failed");
+          if(r->status!=Status::Ok)throw std::runtime_error("F2 group apply failed");
         }
         s.serial=next;
-        if(!s.log || s.log->Bytes()>=s.reclaim_bytes) SyncCheckpointAndReclaim();
+        if(!s.log||s.log->Bytes()>=s.reclaim_bytes) SyncCheckpointAndReclaim();
         if(inject) experimental::Fault("before-ack");
         CompletePending(true); StopSession(); session=false;
         ++s.groups; s.operations+=group.size();
@@ -160,12 +265,13 @@
       }
       lock.lock();
       if(failed) {
-        s.poisoned=true;
+        s.poisoned.store(true,std::memory_order_relaxed);
         for(auto* r:s.pending){r->status=Status::IOError;r->done=true;}
         s.pending.clear();
       }
       for(auto* r:group){r->status=failed?Status::IOError:r->status;r->done=true;}
-      s.leading=false; s.cv.notify_all();
+      s.leading.store(false,std::memory_order_relaxed);
+      s.cv.notify_all();
     }
     return own.status;
   }

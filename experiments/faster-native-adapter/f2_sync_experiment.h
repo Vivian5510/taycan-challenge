@@ -2,12 +2,17 @@
 // persistence and recovery state belong to the F2 instance.
 #pragma once
 #include "f2_commit_experiment.h"
+#include <atomic>
+#include <chrono>
+#include <condition_variable>
 #include <deque>
 #include <functional>
 #include <map>
 #include <set>
 #include <shared_mutex>
 #include <sstream>
+#include <thread>
+#include <vector>
 #include <cstdlib>
 #include <csignal>
 #ifdef F2_DATA_PREFIX
@@ -130,12 +135,18 @@ struct SyncRequest {
   std::function<Status(uint64_t)> apply;
   bool done=false;
   Status status=Status::Corruption;
+  SyncRequest* lf_next=nullptr; // Treiber-stack link for lock-free enqueue variant
+  // Set by the leader when draining this request into a batch. Pipeline variant
+  // uses this to prevent group members from attempting to become a new leader
+  // while the current leader is still doing stage/sync/apply.
+  bool in_group=false;
 };
 class SyncState {
  public:
   std::filesystem::path root;
   std::string format;
-  bool journal=false, leading=false;
+  bool journal=false;
+  std::atomic<bool> leading{false}; // atomic so lock-free path can CAS
   uint64_t full_checkpoints=0, groups=0, operations=0;
   std::atomic<bool> poisoned{false};
   uint64_t serial=0, cutoff=0, reclaim_bytes=1<<20;
@@ -145,6 +156,19 @@ class SyncState {
   std::condition_variable cv;
   std::deque<SyncRequest*> pending;
   std::shared_mutex gate;
+  // Architecture-experiment knobs (read once from env in SyncConfigure)
+  // F2_GC_ADAPTIVE=1   : drain early when min_batch requests are ready
+  // F2_GC_PIPELINE=1   : release leadership after drain so next group collects
+  //                       during current group's stage+sync+apply; stage_mutex
+  //                       serialises the WAL/serial/apply phases
+  // F2_GC_LOCKFREE=1   : followers enqueue via atomic Treiber stack (no mutex)
+  bool opt_adaptive=false;
+  size_t opt_min_batch=4;
+  bool opt_pipeline=false;
+  bool opt_lockfree=false;
+  std::mutex stage_mutex; // pipeline: serialises stage+sync+apply across leaders
+  std::atomic<SyncRequest*> lf_stack{nullptr}; // lock-free Treiber stack head
+  std::atomic<size_t> lf_count{0};             // approximate queue depth for adaptive
 #ifdef F2_DATA_PREFIX
   PrefixState prefix;
 #endif
