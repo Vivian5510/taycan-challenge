@@ -1,0 +1,68 @@
+{
+  "source": "Contest document fcABtadeNuBIhN1Y8yLL6cvDT, revision 1470, fetched 2026-11-20",
+  "source_attachment": {
+    "filename": "taycan_participant_sdk_2026_11_17_16_51.tar.gz",
+    "sha256": "0badac7a24da3bd2733ee764e48489cf2f2248b18b3087c9f92ff7ef49b47b46"
+  },
+  "num_keys": 200000000,
+  "key_size_bytes": {"min": 16, "max": 32, "default": 32},
+  "value_size_bytes": 256,
+  "memory_unit": "The contest document says GB without specifying byte counts. Local profiles use GiB (1024^3 bytes).",
+  "memory_tiers": {
+    "4g": {"mem_limit_bytes": 4294967296, "score_weight": 0.7},
+    "16g": {"mem_limit_bytes": 17179869184, "score_weight": 0.3}
+  },
+  "performance": {
+    "threads": 32,
+    "machine": {"cpu_cores": 64, "storage": "NVMe SSD", "ram": "376 GB"},
+    "data_preparation": {
+      "num_keys": 200000000,
+      "mem_limit_bytes": 68719476736,
+      "minimum_average_ops_per_second": 60000,
+      "workload": "unique_key_load"
+    },
+    "warmup": {
+      "workload": "same as measured read/write workload",
+      "duration_seconds": null,
+      "note": "Evaluator standardizes the warmup procedure; duration is not published."
+    },
+    "steady_state": {
+      "duration_seconds": 600,
+      "get_put_delete_percent": [60, 30, 10],
+      "key_distribution": "random",
+      "minimum_average_ops_per_second": 50000
+    },
+    "recovery_probe": {
+      "operations": [100, 100, 100],
+      "operation_order": ["Get", "Put", "Get"],
+      "timing": "from Open start through completion of final readback",
+      "threads": 1,
+      "thread_count_note": "The document does not specify recovery-probe concurrency; local profile uses one thread."
+    },
+    "page_cache_policy": "Evaluator clears the OS page cache before each performance test and round, then leaves it alone during measurement."
+  },
+  "scoring": {
+    "objective_points": 80,
+    "metrics": {
+      "throughput": {"weight": 0.4, "direction": "higher_is_better"},
+      "read_p99_latency": {"weight": 0.25, "direction": "lower_is_better"},
+      "write_p99_latency": {"weight": 0.25, "direction": "lower_is_better"},
+      "recovery_seconds": {"weight": 0.1, "direction": "lower_is_better"}
+    },
+    "formula": "80 * (0.40*T + 0.25*R + 0.25*W + 0.10*O)",
+    "bonuses": {"checkpoint_points": 10, "compaction_points": 5, "design_document_points": 5},
+    "gate": "Correctness and both performance minimums must pass before objective scoring."
+  },
+  "correctness": {
+    "memory_tier": "4g",
+    "public_sdk_mem_limit_bytes": 268435456,
+    "development_mem_limit_bytes": 4294967296,
+    "num_keys_policy": "Keep public per-scenario defaults; do not replace every correctness case with 200 million keys",
+    "key_value_policy": "Keep each public scenario's default sizes, including large-key/value edge cases. Performance dataset uses 16..32 B keys and 256 B values.",
+    "rss_allowance": "The public runner allows 8 MiB plus its explicit reference-state storage where applicable, in addition to floor(1.1 * mem_limit_bytes).",
+    "fixed_basic_cases": "Public Basic retains its manually constructed binary, empty and long key/value cases"
+  },
+  "rss_limit_ratio": {"numerator": 11, "denominator": 10},
+  "paired_dataset": "Use the same key size, seed, generator and 200 million distinct key IDs in both memory tiers",
+  "score_policy": "Do not calculate an official rank or total score from local benchmark runs."
+}

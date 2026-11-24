@@ -10,4 +10,4 @@
 - 性能逐格运行，保留至少 20 GiB 可用空间，单个开发数据库上限 2 GiB。
   成功后保留日志/指标/哈希并清理数据库；原始失败和中断状态不得改写。
 - `analysis/`、`build/`、研究 checkout 和数据库默认不进 Git；必要小型报告和清单可显式加入。
-- 恢复边界、源码哈希、构建参数及实验保留位置见 `docs/main-pre-dfly-baseline.md`。
+- 当前结构和架构见 `docs/architecture.md`；历史主干恢复依据保存在 `archive/docs-legacy/`。

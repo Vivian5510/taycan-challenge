@@ -1,5 +1,10 @@
 /analysis/
 /build/
+!/build/
+/build/*
+!/build/*.zip
+!/build/*.pdf
+/archive/build-history/
 /dist/
 /research/
 /third_party/helio/

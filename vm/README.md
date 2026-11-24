@@ -55,10 +55,11 @@ limactl shell --workdir=/workspace/taycan-challenge taycan-ubuntu24 sudo journal
 
 ```sh
 limactl shell --workdir=/workspace/taycan-challenge taycan-ubuntu24 bash -c '
-  cd /workspace/taycan-challenge/taycan_participant_sdk
+  cd /workspace/taycan-challenge/code/taycan_participant_sdk
   cmake -S . -B /var/lib/taycan-workspace/build -DCMAKE_BUILD_TYPE=Release
   cmake --build /var/lib/taycan-workspace/build --parallel 8
-  python3 tests/run_tests.py --build-dir /var/lib/taycan-workspace/build \
+  python3 /workspace/taycan-challenge/script/taycan/tests/run_tests.py \
+    --build-dir /var/lib/taycan-workspace/build \
     --tests basic,recovery,concurrent \
     --results-dir /var/lib/taycan-results/smoke
 '
@@ -72,9 +73,9 @@ limactl shell --workdir=/workspace/taycan-challenge taycan-ubuntu24 bash -c '
 
 ## 正确性与压测入口
 
-`tests/run_correctness.py` 保留官方参数与验收逻辑；独立的压测程序通过
+`script/taycan/tests/run_correctness.py` 保留官方参数与验收逻辑；独立的压测程序通过
 `-DTAYCAN_BUILD_PERF_BENCHMARKS=ON` 开启。压测命令、压力档位和竞品来源见
-[压测说明](../taycan_participant_sdk/benchmarks/README.md)。
+[当前性能结论](../docs/performance-status.md)。
 
 性能数据应在 VM 空闲时收集；脚本会检查其他 Taycan 测试进程，默认拒绝与它们同时压测。
 小规模工具验证可以显式传 `--allow-shared-host`，该结果会标注资源竞争。
