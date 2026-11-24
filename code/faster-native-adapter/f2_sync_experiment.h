@@ -157,6 +157,14 @@ inline void MarkDirty(const std::string& path) {
     ++prefix_file_generations[path].dirty;
 #endif
 }
+#ifdef F2_AIO_RWF_DSYNC
+inline void MarkDurable(const std::string& path) {
+  std::lock_guard<std::mutex> lock(dirty_mutex);
+  dirty_paths.insert(path);
+  auto& generation=prefix_file_generations[path];
+  generation.durable=++generation.dirty;
+}
+#endif
 inline void SyncPath(const std::filesystem::path& path) {
 #ifdef F2_DATA_PREFIX
   std::shared_ptr<PrefixSyncDescriptor> descriptor;
@@ -281,8 +289,11 @@ class SyncState {
   std::condition_variable collect_cv;
   std::deque<SyncRequest*> pending;
   ReadWriteGate gate;
-  // Architecture-experiment knobs (read once from env in SyncConfigure)
-  // F2_GC_ADAPTIVE=1   : drain early when min_batch requests are ready
+  // Runtime overrides, read once from env in SyncConfigure. Linux data-log
+  // defaults to adaptive collection with a 32-request batch threshold.
+  // F2_GC_ADAPTIVE=0   : disable adaptive collection
+  // F2_GC_MIN_BATCH=N  : override the request threshold
+  // F2_GC_BATCH_NOTIFY=0: use the condition-variable collector
   // F2_GC_PIPELINE=1   : release leadership after drain so next group collects
   //                       during current group's stage+sync+apply; stage_mutex
   //                       serialises the WAL/serial/apply phases

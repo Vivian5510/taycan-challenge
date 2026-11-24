@@ -492,13 +492,13 @@ def main(argv=None):
         for path in sorted((PROJECT/'code/rocksdb-commit-reference').glob('*')):
             if path.is_file():
                 source_hashes[str(path.relative_to(PROJECT))] = sha256(path)
-    source_hashes['benchmarks/kv_bench.cc'] = sha256(Path(__file__).with_name('kv_bench.cc'))
+    source_hashes['benchmarks/kv_bench.cc'] = sha256(SDK / 'benchmarks' / 'kv_bench.cc')
     source_hashes['evaluation-config.json'] = sha256(SDK / 'evaluation-config.json')
     report = dict(schema_version=2, status='RUNNING', classification='local performance; not official scoring',
                   native_development=args.native_development,
                   acceptance_status='NOT_RUN: official acceptance requires Linux x86_64',
                   tested_engine=identity['engine'], engine_identity=identity, cross_engine_comparison=False,
-                  comparison_policy=json.loads(Path(__file__).with_name('baseline-policy.json').read_text()),
+                  comparison_policy=json.loads((SDK / 'benchmarks' / 'baseline-policy.json').read_text()),
                   profile=args.profile, mode=args.mode, parameters=params, binary_sha256=sha256(binary),
                   linked_libraries=linked_libraries(binary),
                   monitor_parameters=dict(sample_interval_ms=args.sample_interval_ms,

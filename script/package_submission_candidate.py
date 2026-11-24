@@ -21,16 +21,17 @@ def copy_tree(source: Path, destination: Path) -> None:
 def write_readme() -> None:
     readme = """# Taycan Submission Candidate
 
-This archive follows the contest code-delivery shape: complete C++ implementation, CMake configuration, and this README. It is a source candidate, not a passing submission.
+This archive follows the contest code-delivery shape: complete C++ implementation, CMake configuration, and this README. It is an interim source submission; passing contest acceptance has not been established.
 
 ## Status
 
 - Engine base: F2/FASTER, pinned at `research/FASTER`.
 - Linux durability candidate: F2 `data-log`; the data log uses F2 HybridLog records and a checksummed commit footer before advancing the durable frontier and acknowledging writes.
-- Compaction: requires `TAYCAN_F2_DURABLE_COMPACTION=ON`; the full official compaction and crash matrix has not been completed for this package snapshot.
+- Correctness build: enable `TAYCAN_F2_DURABLE_COMPACTION=ON` for the crash-safe compaction implementation. This configuration currently uses the `fdatasync` hot-log path because `RWF_DSYNC` is disabled when durable compaction is enabled.
+- Fastest measured diagnostic: `TAYCAN_F2_DURABLE_COMPACTION=OFF` with Linux `pwritev2(RWF_DSYNC)`, 300,000 keys, 32 callers, 4 GiB; three-run median 47,790 ops/s. That diagnostic is below the 60,000 ops/s contest Load gate and does not verify compaction.
+- Package smoke: the extracted archive configured and built in Release mode with `data-log`, durable compaction off, and `RWF_DSYNC` on. A reduced 1,000-key run passed basic, overwrite, delete, recovery, concurrent, and two SIGKILL crash-recovery trials. This is diagnostic coverage, not the default-size public suite.
 - Checkpoint: `CreateCheckpoint` remains unsupported and is an optional scoring feature.
-- Performance: the latest native Linux diagnostic was 300,000 keys, 32 callers, 4 GiB, with a 47,300 ops/s median. The contest load gate is 2e8 keys and at least 60,000 ops/s. This diagnostic does not pass that gate.
-- Official 2e8-key load, both 4/16 GiB 600-second mixed workloads, and all required final correctness cases have not been verified on this exact archive.
+- Official 2e8-key load, both 4/16 GiB 600-second mixed workloads, and the default-size public correctness matrix have not been verified on this exact archive.
 
 Do not treat this archive as accepted or fully evaluated.
 
@@ -41,7 +42,7 @@ The build is intended for Linux x86_64 and requires an offline-provisioned toolc
 From this directory:
 
 ```sh
-cmake -S code/taycan_participant_sdk -B /tmp/taycan-build -DCMAKE_BUILD_TYPE=Release -DTAYCAN_BUILD_PERF_BENCHMARKS=ON -DTAYCAN_F2_SYNC_STRATEGY=data-log -DTAYCAN_F2_DURABLE_COMPACTION=ON -DTAYCAN_F2_DATA_SEGMENT_BITS=23
+cmake -S code/taycan_participant_sdk -B /tmp/taycan-build -DCMAKE_BUILD_TYPE=Release -DTAYCAN_BUILD_PERF_BENCHMARKS=ON -DTAYCAN_F2_SYNC_STRATEGY=data-log -DTAYCAN_F2_DURABLE_COMPACTION=ON -DTAYCAN_F2_AIO_RWF_DSYNC=OFF -DTAYCAN_F2_DATA_SEGMENT_BITS=23
 cmake --build /tmp/taycan-build --parallel
 ```
 
@@ -51,7 +52,7 @@ Run the public correctness harness from this directory:
 python3 script/taycan/tests/run_correctness.py --build-dir /tmp/taycan-build --results-dir /var/tmp/taycan-correctness
 ```
 
-The archive was assembled without running this build. The listed system libraries and final Linux x86_64 configuration still need verification in the target evaluation environment.
+This is the correctness-oriented build configuration. To reproduce the fastest measured diagnostic instead, set `TAYCAN_F2_DURABLE_COMPACTION=OFF` and `TAYCAN_F2_AIO_RWF_DSYNC=ON`; that configuration has not passed the required compaction tests. Neither configuration has completed the contest's full-scale performance gates.
 
 ## Layout
 
@@ -61,7 +62,7 @@ The archive was assembled without running this build. The listed system librarie
 - `research/FASTER/cc/src/`: pinned upstream FASTER/F2 source used by the build.
 - `research/rocksdb-v8.9.1/`: CRC32C header dependency and upstream license notices.
 
-The separate architecture design PDF is delivered beside this archive as `taycan_design_document.pdf`.
+This archive contains the code deliverable only. No design document or benchmark report is included.
 """
     (PACKAGE_ROOT / "README.md").write_text(readme)
 

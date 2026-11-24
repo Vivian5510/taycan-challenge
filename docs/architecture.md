@@ -18,7 +18,7 @@ flowchart LR
   I -->|冷索引项| D[磁盘 ColdIndex]
   A --> Q[同步提交协调]
   Q --> W[连续日志范围 / commit footer]
-  W --> S[fdatasync 与目录同步]
+  W --> S[RWF_DSYNC 写完成或 fdatasync / 目录同步]
   S --> P[发布稳定持久化前沿]
   P --> R[发布索引并唤醒请求]
   H --> G[Checkpoint / Compaction 与段回收]
@@ -31,9 +31,11 @@ flowchart LR
 
 Linux `data-log` 候选利用 F2 HybridLog 作为主要数据记录，不另存一份完整 Value WAL。每个提交组分配连续 serial 和 HybridLog 地址范围，将操作应用到 F2 并生成固定格式的 commit footer。footer 含范围、操作数和 CRC，用于恢复时区分完整提交组和尾部不完整数据。
 
-数据文件完成写入后，对相关日志文件执行 `fdatasync`；首次创建段时还同步目录项。同步成功后推进 `stable_tail`/durable serial，发布索引并唤醒组内调用者。任何写入、同步或发布失败都会使实例失败关闭，不能继续对后续请求返回成功。恢复从持久 root/checkpoint 起点读取完整 footer 链，丢弃合法的不完整尾部并拒绝内部损坏。
+Linux `data-log` 默认对 hot HybridLog 使用 AIO `pwritev2(RWF_DSYNC)`，让每个 AIO 写在完成前达到数据持久化语义，避免随后再对同一数据文件单独调用 `fdatasync`。这会把等待从独立同步阶段移入 AIO 写完成阶段；它不减少每个提交组必须完成的持久写次数，也不假定内核一定下发某种特定 NVMe 命令。日志段扩展时默认先按 4 MiB 块写零并同步，以提前分配 ext4 文件空间，避免每个提交组在文件扩展时承担分配开销；仅设置 `F2_PREFIX_PREWRITE=0` 可关闭此策略。读取默认使用 `UntilPublish`：提交开始时若没有读者，写者持有独占 gate；有读者时，读者在同步期间可使用旧索引，写者在持久化完成后短暂独占并发布新索引。`F2_PREFIX_READ_OVERLAP=0` 强制关闭该重叠。首次创建日志段仍同步目录项；元数据、checkpoint 和关闭相应选项的兼容构建保留原有 `fsync`/`fdatasync` 路径。只有所有记录写完成且 footer 写入达到持久化边界后，才推进 `stable_tail`/durable serial、发布索引并唤醒组内调用者。任何写入、同步或发布失败都会使实例失败关闭，不能继续对后续请求返回成功。恢复从持久 root/checkpoint 起点读取完整 footer 链，丢弃合法的不完整尾部并拒绝内部损坏。
 
-批次收集是提交调度，不改变 API 的成功语义：组内每个请求都要等同一提交组完成同步和索引发布。现有基线由首个收集者提交；本分支新候选允许最后到达、凑满阈值的线程接手提交。后者缩短了满批交接时间，但实测总 Load 吞吐回退，故默认关闭。
+批次收集是提交调度，不改变 API 的成功语义：组内每个请求都要等同一提交组完成同步和索引发布。Linux `data-log` 默认启用自适应批次通知，首个收集者等待至 32 个请求或 50 μs 上限后提交；`F2_GC_MIN_BATCH` 可覆盖阈值，`F2_GC_ADAPTIVE=0` 或 `F2_GC_BATCH_NOTIFY=0` 可关闭。另一个允许最后到达线程接手提交的候选能缩短满批交接时间，但实测总 Load 吞吐回退，故仍默认关闭。
+
+`F2_SHARD_COUNT=N` 可选启用开发中的单 key 分片原型：按稳定 FNV-1a hash 将请求路由到 N 个独立 F2 store，每个 store 有自己的索引、HybridLog 和提交状态，并在根目录 manifest 中固定分片数。它保留每个 Put/Delete 的持久化后 ACK，但不实现固定 owner 线程或 fiber 消息队列；单机测试中分片使 batch 变小、吞吐下降，因此默认仍是 1。性能数据和正确性范围见[分片架构可行性实验](performance-status.md#dragonfly-shard-架构可行性)。
 
 ## 索引与内存
 

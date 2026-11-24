@@ -42,11 +42,15 @@ struct PrefixState {
   };
   enum class Readers { Exclusive, DuringSync, UntilPublish };
   bool prewrite = false;
-  Readers readers = Readers::Exclusive;
+  Readers readers = Readers::UntilPublish;
   uint64_t allocated_segment = UINT64_MAX;
   uint64_t allocated_end = 0;
   uint64_t prewritten_bytes = 0;
   uint64_t data_sync_ns = 0;
+  uint64_t durable_sync_ns = 0;
+  uint64_t durable_batches = 0;
+  uint64_t durable_jobs = 0;
+  uint64_t max_durable_batch = 0;
   uint64_t apply_ns = 0;
   uint64_t session_start_ns = 0;
   uint64_t index_apply_ns = 0;

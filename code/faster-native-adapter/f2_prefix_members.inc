@@ -43,7 +43,17 @@
     }
     if(files.empty())throw std::runtime_error("native commit produced no data writes");
     for(const auto& file:files) {
+#ifdef F2_AIO_RWF_DSYNC
+      {
+        std::lock_guard<std::mutex> lock(experimental::dirty_mutex);
+        auto found=experimental::prefix_file_generations.find(file);
+        if(found==experimental::prefix_file_generations.end() ||
+           found->second.durable<found->second.dirty)
+          throw std::runtime_error("native RWF_DSYNC write is not durable");
+      }
+#else
       experimental::SyncPath(file);++s.prefix.data_syncs;
+#endif
       if(s.prefix.synced_files.insert(file).second) {
         experimental::SyncDirectory(std::filesystem::path(file).parent_path());++s.prefix.directory_syncs;
       }
@@ -56,7 +66,11 @@
     std::map<std::string,uint64_t> snapshot;
     std::lock_guard<std::mutex> lock(experimental::dirty_mutex);
     for(const auto& [path,generation]:experimental::prefix_file_generations) {
+#ifdef F2_AIO_RWF_DSYNC
+      if(path.compare(0,prefix.size(),prefix)==0 && experimental::dirty_paths.count(path))
+#else
       if(path.compare(0,prefix.size(),prefix)==0 && generation.dirty>generation.durable)
+#endif
         snapshot.emplace(path,generation.dirty);
     }
     if(snapshot.empty())throw std::runtime_error("native commit has no unsynced file generations");
@@ -65,11 +79,22 @@
   void PrefixSyncDataFiles(const std::map<std::string,uint64_t>& files) {
     if(files.empty())throw std::runtime_error("native durable job has no file generations");
     for(const auto& [name,generation]:files) {
+#ifdef F2_AIO_RWF_DSYNC
+      (void)generation;
+      std::lock_guard<std::mutex> lock(experimental::dirty_mutex);
+      auto found=experimental::prefix_file_generations.find(name);
+      if(found==experimental::prefix_file_generations.end() || found->second.durable<generation)
+        throw std::runtime_error("native RWF_DSYNC generation not durable");
+      if(found->second.durable==found->second.dirty)
+        experimental::dirty_paths.erase(name);
+#else
       experimental::SyncPath(name);++sync_state_->prefix.data_syncs;
+#endif
       if(sync_state_->prefix.synced_files.insert(name).second) {
         experimental::SyncDirectory(std::filesystem::path(name).parent_path());
         ++sync_state_->prefix.directory_syncs;
       }
+#ifndef F2_AIO_RWF_DSYNC
       std::lock_guard<std::mutex> lock(experimental::dirty_mutex);
       auto found=experimental::prefix_file_generations.find(name);
       if(found==experimental::prefix_file_generations.end() || found->second.dirty<generation)
@@ -77,6 +102,7 @@
       found->second.durable=std::max(found->second.durable,generation);
       if(found->second.durable==found->second.dirty)
         experimental::dirty_paths.erase(name);
+#endif
     }
   }
   void PrefixPrepareStorage(uint64_t from, uint64_t end) {
@@ -195,8 +221,6 @@
     if (sync_now) PrefixSyncDataFiles();
     else if (async_prepare) {
       auto snapshot=PrefixSnapshotDirtyFiles();
-      s.prefix.data_sync_ns += std::chrono::duration_cast<std::chrono::nanoseconds>(
-          std::chrono::steady_clock::now() - sync_start).count();
       s.prefix.prepared_tail=end;
       ++s.prefix.commits;
       return snapshot;
@@ -382,5 +406,8 @@
       (unsigned long long)p.record_prepare_ns,(unsigned long long)p.flush_ns,
       (unsigned long long)p.publish_wait_ns,(unsigned long long)p.session_complete_ns,
       (unsigned long long)p.session_stop_ns);
+    std::fprintf(stderr,"F2_PREFIX_DURABLE batches=%llu jobs=%llu max_batch=%llu sync_ns=%llu\n",
+      (unsigned long long)p.durable_batches,(unsigned long long)p.durable_jobs,
+      (unsigned long long)p.max_durable_batch,(unsigned long long)p.durable_sync_ns);
 #endif
   }

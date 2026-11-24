@@ -204,21 +204,42 @@ if args.hybrid_experiment or args.prefix_experiment:
             '  tail_page_offset_.store(tail_address);')
 if args.prefix_experiment:
     if sys.platform.startswith('linux'):
+        replace('environment/file_linux.h', '#include <libaio.h>',
+                '#include <libaio.h>\n#include <linux/fs.h>\n#include <sys/uio.h>')
         replace('environment/file_linux.h',
                 '    core::AsyncIOCallback callback;\n  };\n\n  inline io_context_t',
-                '    core::AsyncIOCallback callback;\n    std::string write_path;\n  };\n\n  inline io_context_t')
+                '    core::AsyncIOCallback callback;\n'
+                '    std::string write_path;\n'
+                '    struct iovec durable_vector{};\n'
+                '    bool durable_write=false;\n'
+                '    void PrepareDurableWrite(int fd,uint8_t* buffer,uint32_t length,size_t offset) {\n'
+                '      durable_vector.iov_base=buffer;\n'
+                '      durable_vector.iov_len=length;\n'
+                '      ::io_prep_pwritev2(&parent_iocb,fd,&durable_vector,1,offset,RWF_DSYNC);\n'
+                '      ::io_set_callback(&parent_iocb,IoCompletionCallback);\n'
+                '      durable_write=true;\n'
+                '    }\n'
+                '  };\n\n  inline io_context_t')
         replace('environment/file_linux.cc', '#include "file_linux.h"',
                 '#include "file_linux.h"\n#include "../core/f2_sync_experiment.h"')
         replace('environment/file_linux.cc',
                 '  callback_context->callback(callback_context->caller_context, return_status, bytes_transferred);',
                 '  if (!callback_context->write_path.empty()) {\n'
                 '    const auto& path = callback_context->write_path;\n'
-                '    if (res2 != 0 || bytes_transferred != iocb->u.c.nbytes || return_status != Status::Ok ||\n'
-                '        !experimental::MarkDirtyDataDescriptor(path, iocb->aio_fildes)) {\n'
+                '    const size_t expected_bytes = callback_context->durable_write\n'
+                '      ? callback_context->durable_vector.iov_len : iocb->u.c.nbytes;\n'
+                '    if (res2 != 0 || bytes_transferred != expected_bytes || return_status != Status::Ok ||\n'
+                '        (!callback_context->durable_write &&\n'
+                '         !experimental::MarkDirtyDataDescriptor(path, iocb->aio_fildes))) {\n'
                 '      return_status = Status::IOError;\n'
                 '      experimental::MarkIoFailure(path);\n'
                 '    } else {\n'
+                '#ifdef F2_AIO_RWF_DSYNC\n'
+                '      if(callback_context->durable_write) experimental::MarkDurable(path);\n'
+                '      else experimental::MarkDirty(path);\n'
+                '#else\n'
                 '      experimental::MarkDirty(path);\n'
+                '#endif\n'
                 '      if (path.find("/hot/log.log") != std::string::npos) {\n'
                 '        ++experimental::prefix_write_calls;\n'
                 '        experimental::prefix_write_bytes += bytes_transferred;\n'
@@ -234,6 +255,10 @@ if args.prefix_experiment:
                 '      buffer, nullptr, callback);\n'
                 '  if (operationType == FileOperationType::Write) {\n'
                 '    io_context->write_path = filename();\n'
+                '#ifdef F2_AIO_RWF_DSYNC\n'
+                '    if (filename().find("/hot/log.log") != std::string::npos)\n'
+                '      io_context->PrepareDurableWrite(fd_,buffer,length,offset);\n'
+                '#endif\n'
                 '    if (std::getenv("F2_SYNC_FAIL_WRITE")) {\n'
                 '      experimental::MarkIoFailure(filename());\n'
                 '      return Status::IOError;\n'

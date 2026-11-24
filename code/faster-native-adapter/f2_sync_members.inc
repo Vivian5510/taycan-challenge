@@ -8,7 +8,9 @@
         std::unique_lock<std::mutex> lock(s.durable_mutex);
         s.durable_cv.wait(lock,[&]{return s.durable_stop||!s.durable_jobs.empty();});
         if(!s.durable_stop && s.async_wait_us) {
-          s.durable_cv.wait_for(lock,std::chrono::microseconds(s.async_wait_us));
+          s.durable_cv.wait_for(lock,std::chrono::microseconds(s.async_wait_us),[&]{
+            return s.durable_stop||s.durable_jobs.size()>1;
+          });
         }
         jobs.assign(s.durable_jobs.begin(),s.durable_jobs.end());
         s.durable_jobs.clear();
@@ -23,6 +25,7 @@
         for(const auto& [path,generation]:job->files)
           file_frontier[path]=std::max(file_frontier[path],generation);
       }
+      const auto sync_start=std::chrono::steady_clock::now();
       try {
         const char* minimum=std::getenv("F2_SYNC_FAULT_MIN_SERIAL");
         const bool inject=minimum && max_serial>=std::stoull(minimum);
@@ -36,6 +39,11 @@
         std::fprintf(stderr,"F2_ASYNC_WRITER_FAIL pending_jobs=%zu reason=unknown\n",jobs.size());
         status=Status::IOError;
       }
+      s.prefix.durable_sync_ns+=std::chrono::duration_cast<std::chrono::nanoseconds>(
+        std::chrono::steady_clock::now()-sync_start).count();
+      ++s.prefix.durable_batches;
+      s.prefix.durable_jobs+=jobs.size();
+      s.prefix.max_durable_batch=std::max<uint64_t>(s.prefix.max_durable_batch,jobs.size());
       if(status!=Status::Ok) {
         std::fflush(stderr);
         s.durable_error=true;
@@ -114,14 +122,17 @@
     }
     // Architecture-experiment knobs — read once at open time so hot paths avoid getenv.
     auto envbool=[](const char* n){const char* v=std::getenv(n);return v&&v[0]=='1'&&!v[1];};
-    s.opt_adaptive=envbool("F2_GC_ADAPTIVE");
     s.opt_pipeline=envbool("F2_GC_PIPELINE");
     s.opt_lockfree=envbool("F2_GC_LOCKFREE");
 #ifdef F2_LINUX_DATA_PREFIX
-    s.opt_batch_notify=envbool("F2_GC_BATCH_NOTIFY");
+    const char* adaptive=std::getenv("F2_GC_ADAPTIVE");
+    s.opt_adaptive=!adaptive||envbool("F2_GC_ADAPTIVE");
+    s.opt_async_writer=envbool("F2_PREFIX_ASYNC_WRITER");
+    s.opt_batch_notify=s.opt_adaptive&&!s.opt_async_writer&&!s.opt_pipeline&&!s.opt_lockfree;
+    if(const char* batch_notify=std::getenv("F2_GC_BATCH_NOTIFY"))
+      s.opt_batch_notify=envbool("F2_GC_BATCH_NOTIFY");
     s.opt_batch_takeover=envbool("F2_GC_BATCH_TAKEOVER");
     s.opt_batch_profile=envbool("F2_GC_BATCH_PROFILE");
-    s.opt_async_writer=envbool("F2_PREFIX_ASYNC_WRITER");
     if(s.opt_batch_notify && (!s.opt_adaptive || s.opt_async_writer || s.opt_pipeline || s.opt_lockfree))
       throw std::runtime_error("batch completion requires synchronous adaptive queue collection");
     if(s.opt_batch_takeover && !s.opt_batch_notify)
@@ -130,12 +141,16 @@
       throw std::runtime_error("Linux data-log pipeline requires the durable writer");
     if(const char* async_wait=std::getenv("F2_PREFIX_ASYNC_WAIT_US"))
       s.async_wait_us=std::stoull(async_wait);
-    s.prefix.prewrite = envbool("F2_PREFIX_PREWRITE");
+    const char* prewrite=std::getenv("F2_PREFIX_PREWRITE");
+    s.prefix.prewrite=!prewrite||envbool("F2_PREFIX_PREWRITE");
     using Readers = experimental::PrefixState::Readers;
     if (const char* overlap = std::getenv("F2_PREFIX_READ_OVERLAP")) {
+      if (std::strcmp(overlap, "0") == 0) s.prefix.readers = Readers::Exclusive;
       if (std::strcmp(overlap, "1") == 0) s.prefix.readers = Readers::DuringSync;
       if (std::strcmp(overlap, "2") == 0) s.prefix.readers = Readers::UntilPublish;
     }
+#else
+    s.opt_adaptive=envbool("F2_GC_ADAPTIVE");
 #endif
     const char* atomic_readers=std::getenv("F2_GATE_ATOMIC_READERS");
     s.opt_atomic_readers=!(atomic_readers && atomic_readers[0]=='0' && !atomic_readers[1]);
@@ -146,7 +161,11 @@
     if(const char* wait_us=std::getenv("F2_WAL_GROUP_WAIT_US"))
       s.group_wait_us=std::stoull(wait_us);
     if(const char* b=std::getenv("F2_GC_MIN_BATCH")) s.opt_min_batch=std::stoull(b);
+#ifdef F2_LINUX_DATA_PREFIX
+    else s.opt_min_batch=32;
+#else
     else s.opt_min_batch=4;
+#endif
   }
   template<class Apply>
   uint64_t SyncReplay(Apply apply) {
@@ -316,7 +335,9 @@
   Status SyncMutate(uint32_t op,const std::string& key,const std::string& value,Native native) {
     auto& s=*sync_state_;
     experimental::SyncRequest own{op,key,value,native};
-    std::vector<experimental::SyncRequest*> group;
+    thread_local std::vector<experimental::SyncRequest*> group;
+    group.clear();
+    if(group.capacity()<128)group.reserve(128);
     bool batch_owner=false;
 #ifdef F2_LINUX_DATA_PREFIX
     std::shared_ptr<experimental::BatchCompletion> batch;
@@ -603,8 +624,12 @@
         using Readers = experimental::PrefixState::Readers;
         std::unique_lock<experimental::ReadWriteGate> gate(s.gate,std::defer_lock);
         std::shared_lock<experimental::ReadWriteGate> staging(s.gate,std::defer_lock);
-        if (s.prefix.readers == Readers::UntilPublish) staging.lock();
-        else gate.lock();
+        if (s.prefix.readers == Readers::UntilPublish) {
+          // Keep the single-writer path exclusive when no reader needs overlap.
+          if(!gate.try_lock()) staging.lock();
+        } else {
+          gate.lock();
+        }
         const auto apply_start = std::chrono::steady_clock::now();
 #else
         std::unique_lock<experimental::ReadWriteGate> gate(s.gate);

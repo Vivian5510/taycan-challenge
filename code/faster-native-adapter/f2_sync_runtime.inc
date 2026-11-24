@@ -200,5 +200,140 @@ class SyncBackend final:public FasterBackend {
   }
   fs::path directory_;SyncDirectoryLock lock_;std::unique_ptr<Store> store_;
 };
+
+constexpr unsigned kMaxF2Shards=64;
+const char* kF2ShardFormat="f2-shards-v1";
+const char* kF2ShardHash="fnv1a64-v1";
+
+std::optional<unsigned> ReadShardCount(const fs::path& directory) {
+  const auto manifest=directory/"F2-SHARDS";
+  if(!fs::exists(manifest))return std::nullopt;
+  std::ifstream input(manifest);
+  std::string version,count,hash,crc;
+  if(!std::getline(input,version)||!std::getline(input,count)||
+     !std::getline(input,hash)||!std::getline(input,crc)||
+     version!=kF2ShardFormat||hash!=kF2ShardHash)
+    throw std::runtime_error("invalid F2 shard manifest");
+  const std::string payload=version+"\n"+count+"\n"+hash+"\n";
+  if(std::stoull(crc)!=ex::CRC(payload.data(),payload.size()))
+    throw std::runtime_error("corrupt F2 shard manifest");
+  const auto shards=std::stoul(count);
+  if(shards<2||shards>kMaxF2Shards)
+    throw std::runtime_error("unsupported F2 shard count");
+  return static_cast<unsigned>(shards);
 }
-std::unique_ptr<FasterBackend> CreateFasterBackend(const std::string& directory,uint64_t budget){return std::make_unique<SyncBackend>(directory,budget);}
+
+void WriteShardManifest(const fs::path& directory,unsigned shards) {
+  const std::string payload=std::string(kF2ShardFormat)+"\n"+std::to_string(shards)+"\n"+
+                            kF2ShardHash+"\n";
+  const std::string content=payload+std::to_string(ex::CRC(payload.data(),payload.size()))+"\n";
+  const auto temporary=directory/"F2-SHARDS.tmp";
+  const auto manifest=directory/"F2-SHARDS";
+  const int fd=::open(temporary.c_str(),O_CREAT|O_TRUNC|O_WRONLY|O_CLOEXEC,0600);
+  if(fd<0)throw std::runtime_error("create F2 shard manifest failed");
+  try {
+    size_t written=0;
+    while(written<content.size()) {
+      const auto result=::write(fd,content.data()+written,content.size()-written);
+      if(result<0&&errno==EINTR)continue;
+      if(result<=0)throw std::runtime_error("write F2 shard manifest failed");
+      written+=size_t(result);
+    }
+    ex::Sync(fd);
+  } catch(...) {
+    ::close(fd);
+    throw;
+  }
+  if(::close(fd)<0)throw std::runtime_error("close F2 shard manifest failed");
+  if(::rename(temporary.c_str(),manifest.c_str()))
+    throw std::runtime_error("publish F2 shard manifest failed");
+  ex::SyncDirectory(directory);
+}
+
+uint64_t StableKeyHash(const std::string& key) {
+  uint64_t hash=14695981039346656037ULL;
+  for(unsigned char byte:key) {
+    hash^=byte;
+    hash*=1099511628211ULL;
+  }
+  return hash;
+}
+
+class ShardedSyncBackend final:public FasterBackend {
+ public:
+  ShardedSyncBackend(const std::string& directory,uint64_t budget,unsigned shards)
+      :directory_(fs::absolute(directory).lexically_normal()),lock_(directory_/"LOCK"),shards_(shards) {
+    if(shards_<2||shards_>kMaxF2Shards)throw std::runtime_error("unsupported F2 shard count");
+    const auto existing=ReadShardCount(directory_);
+    if(existing) {
+      if(*existing!=shards_)throw std::runtime_error("F2 shard count differs from persisted layout");
+    } else {
+      for(const auto& entry:fs::directory_iterator(directory_))
+        if(entry.path().filename()!="LOCK"&&entry.path().filename()!="F2-SHARDS.tmp")
+          throw std::runtime_error("cannot shard a non-empty F2 database");
+      const auto temporary=directory_/"F2-SHARDS.tmp";
+      if(fs::exists(temporary))fs::remove(temporary);
+      WriteShardManifest(directory_,shards_);
+    }
+
+    const uint64_t shard_budget=budget/shards_;
+    if(shard_budget<(16ULL<<20))throw std::runtime_error("F2 shard budget is below 16 MiB");
+    backends_.reserve(shards_);
+    for(unsigned shard=0;shard<shards_;++shard) {
+      const auto shard_directory=directory_/("shard-"+std::to_string(shard));
+      if(existing) {
+        if(!fs::is_directory(shard_directory)||!fs::is_regular_file(shard_directory/"F2-SYNC-CURRENT"))
+          throw std::runtime_error("missing persisted F2 shard");
+      } else {
+        fs::create_directories(shard_directory);
+      }
+      backends_.push_back(std::make_unique<SyncBackend>(shard_directory.string(),shard_budget));
+    }
+    if(!existing)ex::SyncDirectory(directory_);
+  }
+
+  F2Result Put(const std::string& key,const std::string& value) override {
+    return Owner(key).Put(key,value);
+  }
+  F2Result Get(const std::string& key,std::string* value) override {
+    return Owner(key).Get(key,value);
+  }
+  F2Result Delete(const std::string& key) override {
+    return Owner(key).Delete(key);
+  }
+
+ private:
+  FasterBackend& Owner(const std::string& key) {
+    return *backends_[StableKeyHash(key)%shards_];
+  }
+
+  fs::path directory_;
+  SyncDirectoryLock lock_;
+  unsigned shards_;
+  std::vector<std::unique_ptr<FasterBackend>> backends_;
+};
+}
+std::unique_ptr<FasterBackend> CreateFasterBackend(const std::string& directory,uint64_t budget) {
+  const auto root=fs::absolute(directory).lexically_normal();
+  const auto persisted=ReadShardCount(root);
+  unsigned requested=0;
+  if(const char* value=std::getenv("F2_SHARD_COUNT")) {
+    size_t consumed=0;
+    const auto parsed=std::stoul(value,&consumed);
+    if(consumed!=std::strlen(value)||parsed<1||parsed>kMaxF2Shards)
+      throw std::runtime_error("invalid F2_SHARD_COUNT");
+    requested=static_cast<unsigned>(parsed);
+  }
+  if(persisted) {
+    if(requested&&requested!=*persisted)
+      throw std::runtime_error("F2_SHARD_COUNT differs from persisted layout");
+    std::fprintf(stderr,"F2_SHARD_LAYOUT count=%u routing=%s\n",*persisted,kF2ShardHash);
+    return std::make_unique<ShardedSyncBackend>(root.string(),budget,*persisted);
+  }
+  if(requested<2) {
+    std::fprintf(stderr,"F2_SHARD_LAYOUT count=1 routing=single\n");
+    return std::make_unique<SyncBackend>(root.string(),budget);
+  }
+  std::fprintf(stderr,"F2_SHARD_LAYOUT count=%u routing=%s\n",requested,kF2ShardHash);
+  return std::make_unique<ShardedSyncBackend>(root.string(),budget,requested);
+}

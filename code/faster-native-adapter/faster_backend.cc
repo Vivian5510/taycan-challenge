@@ -21,6 +21,7 @@
 #include <filesystem>
 #include <fstream>
 #include <memory>
+#include <optional>
 #include <mutex>
 #include <stdexcept>
 #include <string>

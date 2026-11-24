@@ -29,6 +29,8 @@
 
 #if defined(TAYCAN_BENCH_PLATFORM_SYNC)
 constexpr const char* kPlatformSync = TAYCAN_BENCH_PLATFORM_SYNC;
+#elif defined(F2_AIO_RWF_DSYNC)
+constexpr const char* kPlatformSync = "Linux: hot-log AIO pwritev2 RWF_DSYNC; metadata and directories use fsync";
 #elif defined(__APPLE__)
 constexpr const char* kPlatformSync = "macOS: contestant Sync uses F_FULLFSYNC; verify baseline implementation separately";
 #else
