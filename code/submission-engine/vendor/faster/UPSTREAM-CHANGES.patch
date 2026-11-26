@@ -1,0 +1,540 @@
+--- upstream/core/address.h
++++ build-copy/core/address.h
+@@ -33,7 +33,7 @@
+   static constexpr uint64_t kReadCacheMask = ((uint64_t)1 << (kAddressBits - 1));
+   static constexpr uint64_t kMaxAddress = ((uint64_t)1 << kAddressBits) - 1;
+   /// --of which 25 bits are used for offsets into a page, of size 2^25 = 32 MB.
+-  static constexpr uint64_t kOffsetBits = 25;
++  static constexpr uint64_t kOffsetBits = 20;
+   static constexpr uint32_t kMaxOffset = ((uint32_t)1 << kOffsetBits) - 1;
+   /// --and the remaining 23 bits are used for the page index, allowing for approximately 8 million
+   /// pages.
+--- upstream/core/checkpoint_state.h
++++ build-copy/core/checkpoint_state.h
+@@ -224,10 +224,10 @@
+     // TODO: status was always Status::Ok on original FASTER code -- normally should check if failed is true
+     if (callback_context) {
+       const auto& callback = reinterpret_cast<InternalHybridLogPersistenceCallback>(hybrid_log_persistence_callback);
+-      callback(callback_context, Status::Ok, serial_num);
++      callback(callback_context, failed.load() ? Status::IOError : Status::Ok, serial_num);
+     } else {
+       const auto& callback = reinterpret_cast<HybridLogPersistenceCallback>(hybrid_log_persistence_callback);
+-      callback(Status::Ok, serial_num);
++      callback(failed.load() ? Status::IOError : Status::Ok, serial_num);
+     }
+   }
+ 
+--- upstream/core/checkpoint_state_f2.h
++++ build-copy/core/checkpoint_state_f2.h
+@@ -33,6 +33,9 @@
+ 
+ class HotColdCheckpointState {
+  public:
++  std::condition_variable* experiment_cv = nullptr;
++  std::atomic<uint32_t> experiment_cold_callbacks{0};
++  std::atomic<bool> experiment_cold_failed{false};
+   typedef std::chrono::time_point<std::chrono::system_clock> time_point_t;
+ 
+   HotColdCheckpointState()
+--- upstream/core/f2.h
++++ build-copy/core/f2.h
+@@ -7,6 +7,8 @@
+ #include "faster.h"
+ #include "guid.h"
+ 
++#include "f2_commit_experiment.h"
++#include "f2_sync_experiment.h"
+ #include "checkpoint_state_f2.h"
+ #include "internal_contexts.h"
+ #include "internal_contexts_f2.h"
+@@ -55,6 +57,7 @@
+     cold_store.SetOtherStore(&hot_store);
+ 
+ 
++    checkpoint_.experiment_cv = &experiment_cv_;
+     InitializeCompaction();
+ 
+     // launch background thread
+@@ -80,6 +83,7 @@
+     if (background_worker_thread_.joinable()) {
+       // shut down compaction thread
+       background_worker_active_.store(false);
++    experiment_cv_.notify_one();
+       background_worker_thread_.join();
+     }
+   }
+@@ -89,7 +93,7 @@
+ 
+  public:
+   /// Thread-related operations
+-  Guid StartSession();
++  Guid StartSession(Guid guid = Guid());
+   uint64_t ContinueSession(const Guid& guid);
+   void StopSession();
+   void Refresh();
+@@ -209,6 +213,11 @@
+ 
+   // checkpoint-related
+   HotColdCheckpointState checkpoint_;
++#include "f2_commit_members.inc"
++#include "f2_sync_members.inc"
++#ifdef F2_DURABLE_COMPACTION
++#include "f2_gc_members.inc"
++#endif
+ };
+ 
+ template<class K, class V, class D, class HHI, class CHI>
+@@ -226,11 +235,11 @@
+ }
+ 
+ template<class K, class V, class D, class HHI, class CHI>
+-inline Guid F2Kv<K, V, D, HHI, CHI>::StartSession() {
++inline Guid F2Kv<K, V, D, HHI, CHI>::StartSession(Guid guid) {
+   if (checkpoint_.phase.load() != CheckpointPhase::REST) {
+     throw std::runtime_error{ "Can start new session only in REST phase!" };
+   }
+-  Guid guid = Guid::Create();
++  if (Guid::IsNull(guid)) guid = Guid::Create();
+   Guid ret_guid = hot_store.StartSession(guid);
+   assert(ret_guid == guid);
+   ret_guid = cold_store.StartSession(guid);
+@@ -629,6 +638,7 @@
+ 
+   // For now we just ask the background thread to do the checkpoint, on the next possible moment
+   checkpoint_.hot_store_status.store(StoreCheckpointStatus::REQUESTED);
++  experiment_cv_.notify_one();
+   return true;
+ }
+ 
+@@ -653,6 +663,7 @@
+   // Update global result if (1) first thread to arrive, or (2) non-ok result
+   while (1) {
+     Status global_result = checkpoint->hot_store_checkpoint_result.load();
++    if (global_result != Status::Corruption && result == Status::Ok) break;
+     if (global_result == Status::Corruption || result != Status::Ok) {
+       if (checkpoint->hot_store_checkpoint_result.compare_exchange_strong(global_result, result)) {
+         break; // success on updated global result
+@@ -688,6 +699,7 @@
+     }
+     log_debug("Requesting cold store checkpoint...");
+     checkpoint->cold_store_status.store(StoreCheckpointStatus::REQUESTED);
++    checkpoint->experiment_cv->notify_one();
+   }
+ }
+ 
+@@ -898,6 +910,9 @@
+         assert(checkpoint->phase.load() == CheckpointPhase::COLD_STORE_CHECKPOINT);
+         assert(checkpoint->cold_store_status.load() == StoreCheckpointStatus::ACTIVE);
+ 
++        if (result != Status::Ok) checkpoint->experiment_cold_failed.store(true);
++        if (checkpoint->experiment_cold_callbacks.fetch_sub(1) != 1) return;
++        if (checkpoint->experiment_cold_failed.load()) result = Status::IOError;
+         StoreCheckpointStatus status;
+         if ((status = checkpoint->cold_store_status.load()) != StoreCheckpointStatus::ACTIVE) {
+           log_error("Unexpected checkpoint status for COLD store [expected: %s, actual: %s]",
+@@ -913,6 +928,8 @@
+       };
+ 
+       log_debug("Issuing cold store checkpoint... (active sessions: %u)", cold_store.NumActiveSessions());
++      checkpoint_.experiment_cold_callbacks.store(cold_store.NumActiveSessions());
++      checkpoint_.experiment_cold_failed.store(false);
+       bool success = cold_store.InternalCheckpoint(nullptr, callback, checkpoint_.token,
+                                                   static_cast<void*>(&checkpoint_));
+       if (!success) {
+@@ -952,7 +969,16 @@
+             !ShouldCompactHlog(cold_store, StoreType::COLD, cold_log_compaction_config, until_address));
+     if (wait) {
+       compaction_scheduled_.store(false);
+-      std::this_thread::sleep_for(check_interval);
++      if (!experiment_wakeup_) {
++        std::this_thread::sleep_for(check_interval);
++      } else {
++        std::unique_lock<std::mutex> lock(experiment_mutex_);
++        experiment_cv_.wait_for(lock, check_interval, [&] {
++          return !background_worker_active_.load() ||
++            checkpoint_.hot_store_status.load() == StoreCheckpointStatus::REQUESTED ||
++            checkpoint_.cold_store_status.load() == StoreCheckpointStatus::REQUESTED;
++        });
++      }
+     }
+ 
+   } while(background_worker_active_.load());
+--- upstream/core/faster.h
++++ build-copy/core/faster.h
+@@ -418,6 +418,7 @@
+   LightEpoch epoch_;
+   // FASTER System state
+   AtomicSystemState system_state_;
++#include "f2_prefix_index.inc"
+ 
+  public:
+   disk_t disk;
+@@ -1387,6 +1388,7 @@
+   }
+   assert(index_status == Status::Ok);
+ 
++  PrefixOverrideEntry(pending_context);
+   const HashBucketEntry expected_entry{ pending_context.entry };
+   const AtomicHashBucketEntry* atomic_entry{ pending_context.atomic_entry };
+   // (Note that address will be Address::kInvalidAddress, if the atomic_entry was created.)
+@@ -1518,7 +1520,7 @@
+   pending_context.write_deep_key_at(const_cast<key_t*>(&record->key()));
+   pending_context.Put(record);
+ 
+-  index_status = hash_index_.TryUpdateEntry(thread_context, pending_context, new_address);
++  index_status = PrefixStageEntry(thread_context, pending_context, new_address);
+   if (index_status == Status::Ok) {
+     // Installed the new record in the hash table.
+     return OperationStatus::SUCCESS;
+@@ -1816,6 +1818,7 @@
+     pending_context.clear_index_op();
+   }
+ 
++  PrefixOverrideEntry(pending_context);
+   const HashBucketEntry expected_entry{ pending_context.entry };
+   if(index_status == Status::NotFound) {
+     // no record found
+@@ -1899,7 +1902,7 @@
+   }
+ 
+   // Mutable Region: Update the record in-place
+-  if(address >= read_only_address) {
++  if(address >= read_only_address && !force_tombstone) {
+     record_t* record = reinterpret_cast<record_t*>(hlog.Get(address));
+     // If the record is the head of the hash chain, try to update the hash chain and completely
+     // elide record only if the previous address points to invalid address
+@@ -1925,8 +1928,9 @@
+       hlog_address },
+   };
+   pending_context.write_deep_key_at(const_cast<key_t*>(&record->key()));
+-
+-  index_status = hash_index_.TryUpdateEntry(thread_context, pending_context, new_address);
++  new (&record->value()) value_t{};
++
++  index_status = PrefixStageEntry(thread_context, pending_context, new_address);
+   if (index_status == Status::Ok) {
+     return OperationStatus::SUCCESS;
+   } else if (index_status == Status::Aborted) {
+@@ -2843,6 +2847,10 @@
+   } else {
+     start_page = end_page - (capacity - hlog.kNumHeadPages);
+   }
++#ifdef F2_DURABLE_COMPACTION
++  start_page=std::max(start_page,checkpoint_.index_metadata.log_begin_address.page());
++  disk.log().begin_segment_.store(checkpoint_.index_metadata.log_begin_address.control()/disk_t::log_file_t::kSegmentSize);
++#endif
+   RecoveryStatus recovery_status{ start_page, end_page };
+ 
+   uint32_t num_pages = end_page - start_page;
+@@ -3193,7 +3201,7 @@
+           }
+           if(flushed) {
+             // write context info
+-            WriteCprContext();
++            if(WriteCprContext() != Status::Ok) checkpoint_.failed = true;
+             // Thread ack that it has written its CPU context.
+             if(epoch_.FinishThreadPhase(Phase::WAIT_FLUSH)) {
+               GlobalMoveToNextState(current_state);
+@@ -3480,9 +3488,10 @@
+     }
+     version = checkpoint_.log_metadata.version;
+   }
++  const uint32_t recovered_version = checkpoint_.log_metadata.version;
+   checkpoint_.RecoverDone();
+   system_state_.store(SystemState{ Action::None, Phase::REST,
+-                                   checkpoint_.log_metadata.version + 1 });
++                                   recovered_version + 1 });
+   return status;
+ #undef BREAK_NOT_OK
+ }
+--- upstream/core/log_scan.h
++++ build-copy/core/log_scan.h
+@@ -358,11 +358,10 @@
+   typedef Record<key_t, value_t> record_t;
+ 
+   ConcurrentLogPage()
+-    : page_{ nullptr }
++    : status{ ConcurrentLogPageStatus{ ReadStatus::Read, CloseStatus::Closed } }
++    , page_{ nullptr }
+     , page_size_{ Address::kMaxOffset + 1 }
+     , page_address_{ Address::kInvalidAddress } {
+-      // default state
+-      status.store(ConcurrentLogPageStatus{ ReadStatus::Read, CloseStatus::Closed });
+       current_offset_.store(0);
+   }
+   ~ConcurrentLogPage() {
+@@ -466,6 +466,7 @@
+   typedef Record<key_t, value_t> record_t;
+   typedef ConcurrentLogPage<key_t, value_t> concurrent_log_page_t;
+   typedef ConcurrentLogPageIterator<faster_t> log_page_iter_t;
++  using page_buffer_t = std::shared_ptr<concurrent_log_page_t[]>;
+ 
+   static_assert(hlog_t::kPageSize == Address::kMaxOffset + 1);
+ 
+@@ -480,7 +481,7 @@
+    , until_{ until }
+    , num_pages_{ num_pages } {
+     // Allocate pages
+-    pages_ = new concurrent_log_page_t[num_pages];
++    pages_.reset(new concurrent_log_page_t[num_pages]);
+     for (uint16_t idx = 0; idx < num_pages; ++idx) {
+       pages_[idx].Allocate(log->sector_size);
+     }
+@@ -488,12 +489,9 @@
+     PrefetchNextPages();
+   }
+ 
+-  ~ConcurrentLogPageIterator() {
+-    if (pages_) {
+-      delete[] pages_;
+-    }
+-    pages_ = nullptr;
+-  }
++  // Epoch and I/O callbacks can finish after the scan returns.
++  // Their shared page owner must not depend on this stack object.
++  ~ConcurrentLogPageIterator() = default;
+ 
+   /// Disallow copy constructor and copy assigner.
+   ConcurrentLogPageIterator(const ConcurrentLogPageIterator& from) = delete;
+@@ -502,16 +500,13 @@
+   /// Action to be performed for when all threads have agreed that a page is processed.
+   class OnPageProcessed_Context : public IAsyncContext {
+    public:
+-    OnPageProcessed_Context(log_page_iter_t* iterator_,
+-                            Address old_head_address_)
+-      : iterator{ iterator_ }
+-      , old_head_address{ old_head_address_ } {
++    OnPageProcessed_Context(page_buffer_t pages_, concurrent_log_page_t* page_)
++      : pages{ std::move(pages_) }, page{ page_ } {
+     }
+ 
+     /// The deep-copy constructor.
+     OnPageProcessed_Context(const OnPageProcessed_Context& other)
+-      : iterator{ other.iterator }
+-      , old_head_address{ other.old_head_address } {
++      : pages{ other.pages }, page{ other.page } {
+     }
+ 
+    protected:
+@@ -520,16 +515,16 @@
+     }
+ 
+    public:
+-    log_page_iter_t* iterator;
+-    Address old_head_address;
++    page_buffer_t pages;
++    concurrent_log_page_t* page;
+   };
+ 
+   /// Action to be performed for when all threads have agreed that a page is read.
+   class OnPageRead_Context : public IAsyncContext {
+    public:
+-    OnPageRead_Context(log_page_iter_t* iterator_, Address start_address_,
++    OnPageRead_Context(page_buffer_t pages_, concurrent_log_page_t* page_, Address start_address_,
+                       Address until_address_, size_t bytes_to_read_)
+-      : iterator{ iterator_ }
++      : pages{ std::move(pages_) }, page{ page_ }
+       , start_address{ start_address_ }
+       , until_address{ until_address_ }
+       , bytes_to_read{ bytes_to_read_ } {
+@@ -537,7 +532,7 @@
+ 
+     /// The deep-copy constructor.
+     OnPageRead_Context(const OnPageRead_Context& other)
+-      : iterator{ other.iterator }
++      : pages{ other.pages }, page{ other.page }
+       , start_address{ other.start_address }
+       , until_address{ other.until_address }
+       , bytes_to_read{ other.bytes_to_read } {
+@@ -549,7 +544,8 @@
+     }
+ 
+    public:
+-    log_page_iter_t* iterator;
++    page_buffer_t pages;
++    concurrent_log_page_t* page;
+     Address start_address;
+     Address until_address;
+     size_t bytes_to_read;
+@@ -602,7 +598,7 @@
+     CallbackContext<OnPageProcessed_Context> context{ ctxt };
+ 
+     // Mark page as closed
+-    auto& old_page = context->iterator->Page(context->old_head_address.page());
++    auto& old_page = *context->page;
+     old_page.Reset();
+ 
+     ConcurrentLogPageStatus expected{ ReadStatus::Read, CloseStatus::Open };
+@@ -620,7 +616,7 @@
+     CallbackContext<OnPageRead_Context> context{ ctxt };
+     assert(bytes == context->bytes_to_read);
+ 
+-    auto& page = context->iterator->Page(context->start_address.page());
++    auto& page = *context->page;
+     page.Initialize(context->start_address, context->until_address);
+ 
+     ConcurrentLogPageStatus expected{ ReadStatus::InProgress, CloseStatus::Closed };
+@@ -637,7 +633,7 @@
+     Address desired_head_address{ head_address.page() + 1, 0 };
+     bool won_cas = head_address_.compare_exchange_strong(head_address, desired_head_address);
+     if (won_cas) {
+-      OnPageProcessed_Context context{ this, head_address };
++      OnPageProcessed_Context context{ pages_, &Page(head_address.page()) };
+       IAsyncContext* context_copy;
+       Status result = context.DeepCopy(context_copy);
+       assert(result == Status::Ok);
+@@ -707,7 +703,7 @@
+     }
+     else {
+       // Issue an IO to the persistent layer in an async fashion
+-      OnPageRead_Context context{ this, start_address, until_, bytes_to_read };
++      OnPageRead_Context context{ pages_, &page, start_address, until_, bytes_to_read };
+       hlog_->file->ReadAsync(Address{ start_address.page(), buffer_offset }.control(),
+                             reinterpret_cast<void*>(page.buffer() + buffer_offset),
+                             bytes_to_read, OnPageRead, context);
+@@ -729,7 +725,7 @@
+   /// Logical address within the log at which to stop scanning.
+   Address until_;
+   /// Page collection
+-  concurrent_log_page_t* pages_;
++  page_buffer_t pages_;
+   uint16_t num_pages_;
+ };
+ 
+--- upstream/core/malloc_fixed_page_size.h
++++ build-copy/core/malloc_fixed_page_size.h
+@@ -29,7 +29,7 @@
+   static constexpr uint64_t kMaxAddress = ((uint64_t)1 << kAddressBits) - 1;
+ 
+   /// --of which 20 bits are used for offsets into a page, of size 2^20 = 1 million items.
+-  static constexpr uint64_t kOffsetBits = 20;
++  static constexpr uint64_t kOffsetBits = 12;
+   static constexpr uint64_t kMaxOffset = ((uint64_t)1 << kOffsetBits) - 1;
+ 
+   /// --and the remaining 28 bits are used for the page index, allowing for approximately 256
+--- upstream/core/persistent_memory_malloc.h
++++ build-copy/core/persistent_memory_malloc.h
+@@ -1074,12 +1074,13 @@
+ void PersistentMemoryMalloc<D>::RecoveryReset(Address begin_address_, Address head_address_,
+     Address tail_address) {
+   begin_address.store(begin_address_);
++  if (tail_address.offset() != 0) std::memset(Page(tail_address.page()) + tail_address.offset(), 0, kPageSize - tail_address.offset());
+   tail_page_offset_.store(tail_address);
+   // issue read request to all pages until head lag
+   head_address.store(head_address_);
+   safe_head_address.store(head_address_);
+ 
+-  flushed_until_address.store(Address{ tail_address.page(), 0 });
++  flushed_until_address.store(tail_address);
+   read_only_address.store(tail_address);
+   safe_read_only_address.store(tail_address);
+ 
+--- upstream/device/file_system_disk.h
++++ build-copy/device/file_system_disk.h
+@@ -9,6 +9,9 @@
+ #include <string>
+ 
+ #include "../core/gc_state.h"
++#ifdef F2_DURABLE_COMPACTION
++#include "../core/f2_gc_trace.h"
++#endif
+ #include "../core/guid.h"
+ #include "../core/light_epoch.h"
+ #include "../core/utility.h"
+@@ -146,7 +149,7 @@
+ 
+   FileSystemSegmentBundle(handler_t* handler, uint64_t begin_segment_, uint64_t end_segment_,
+                           bundle_t& other)
+-    : filename_{ std::move(other.filename_) }
++    : filename_{ other.filename_ }
+     , file_options_{ other.file_options_ }
+     , owner_{ true }
+     , begin_segment{ begin_segment_ }
+@@ -233,6 +236,7 @@
+   bool owner_;
+ 
+  public:
++  const std::string& PrefixFilename() const {return filename_;}
+   const uint64_t begin_segment;
+   const uint64_t end_segment;
+ };
+@@ -277,6 +281,12 @@
+   }
+   void Truncate(uint64_t new_begin_offset, const core::GcState& gc_state) {
+     uint64_t new_begin_segment = new_begin_offset / kSegmentSize;
++#ifdef F2_DURABLE_COMPACTION
++    if(prefix_defer_truncation_) {
++      prefix_deferred_begin_=std::max(prefix_deferred_begin_,new_begin_segment);
++      gc_state.IssueTruncateCallback(new_begin_segment*kSegmentSize);return;
++    }
++#endif
+     begin_segment_ = new_begin_segment;
+     TruncateSegments(new_begin_segment, gc_state);
+   }
+@@ -415,8 +425,16 @@
+       core::CallbackContext<Context> context{ ctxt };
+       for(uint64_t idx = context->files->begin_segment; idx < context->new_begin_segment; ++idx) {
+         file_t& file = context->files->file(idx);
++#ifdef F2_DURABLE_COMPACTION
++        const auto path=context->files->PrefixFilename()+std::to_string(idx);
++        const auto bytes=std::filesystem::file_size(path);
++        if(file.Close()!=core::Status::Ok || file.Delete()!=core::Status::Ok)
++          throw std::runtime_error("native segment retirement failed");
++        core::experimental::GcDeleted(path,bytes);
++#else
+         file.Close();
+         file.Delete();
++#endif
+       }
+       std::free(context->files);
+       context->gc_state->IssueTruncateCallback(context->new_begin_segment * kSegmentSize);
+@@ -450,6 +468,9 @@
+     epoch_->BumpCurrentEpoch(callback, context_copy);
+   }
+ 
++#ifdef F2_DURABLE_COMPACTION
++#include "../core/f2_gc_file.inc"
++#endif
+   std::atomic<uint64_t> begin_segment_;
+   std::atomic<bundle_t*> files_;
+   handler_t* handler_;
+--- upstream/index/cold_index.h
++++ build-copy/index/cold_index.h
+@@ -132,6 +132,9 @@
+     store_ = std::make_unique<store_t>(store_config, config.in_mem_size,
+                                       this->root_path_, config.mutable_fraction);
+   }
++#ifdef F2_DURABLE_COMPACTION
++  store_t& PrefixIndexStore() {return *store_;}
++#endif
+   void SetRefreshCallback(void* faster, RefreshCallback callback) {
+     store_->SetRefreshCallback(faster, callback);
+   }
+--- upstream/environment/file_linux.cc
++++ build-copy/environment/file_linux.cc
+@@ -190,7 +190,24 @@
+   struct iocb* iocbs[1];
+   iocbs[0] = reinterpret_cast<struct iocb*>(io_context.get());
+ 
+-  int result = ::io_submit(io_object_, 1, iocbs);
++  int result;
++  for (;;) {
++    result = ::io_submit(io_object_, 1, iocbs);
++    if (result == -EINTR) continue;
++    if (result != -EAGAIN) break;
++    // A checkpoint can enqueue more writes than the AIO ring can retain.
++    // Completed requests still consume slots until their events are reaped.
++    // Drain one event and run its callback before retrying this same request.
++    struct io_event event{};
++    struct timespec timeout{0, 1000000};
++    int count = ::io_getevents(io_object_, 1, 1, &event, &timeout);
++    if (count == 1) {
++      auto completion = reinterpret_cast<io_callback_t>(event.data);
++      completion(io_object_, event.obj, event.res, event.res2);
++    } else if (count < 0 && count != -EINTR) {
++      return Status::IOError;
++    }
++  }
+   if(result != 1) {
+     return Status::IOError;
+   }

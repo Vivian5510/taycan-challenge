@@ -1,0 +1,52 @@
+{
+  "target": "Linux x86_64, GCC 8.3 or newer, C++17",
+  "f2": {
+    "name": "Microsoft FASTER C++ / F2",
+    "upstream": "https://github.com/microsoft/FASTER.git",
+    "commit": "332ea7da532a688acf648ee60c4f63a1caeaf1f7",
+    "license_files": [
+      "LICENSES/FASTER-MIT.txt",
+      "LICENSES/Tsavorite-MIT.txt"
+    ],
+    "patch": "vendor/faster/UPSTREAM-CHANGES.patch",
+    "generated_source": "vendor/faster/"
+  },
+  "dependencies": [
+    {
+      "name": "oneTBB",
+      "version": "2022.3.0",
+      "source_archive": "https://archive.ubuntu.com/ubuntu/pool/universe/o/onetbb/onetbb_2022.3.0.orig.tar.xz",
+      "sha256": "a59619b21e2e4b9f78e319faf16c0c2f5b0ee31b9527b6d1c0163de5322cab2b",
+      "target": "shared TBB::tbb built from vendor sources; RUNPATH is set on SDK executables",
+      "license_files": [
+        "vendor/oneTBB/LICENSE.txt"
+      ]
+    },
+    {
+      "name": "libaio",
+      "version": "0.3.113",
+      "source_archive": "https://www.kernel.org/pub/linux/libs/aio/libaio-0.3.113.tar.gz",
+      "sha256": "2c44d1c5fd0d43752287c9ae1eb9c023f04ef848ea8d4aafa46e9aedb678200b",
+      "target": "static taycan_libaio",
+      "license_files": [
+        "LICENSES/libaio-LGPL-2.1.txt"
+      ]
+    },
+    {
+      "name": "libuuid (util-linux)",
+      "version": "2.41.3",
+      "source_archive": "https://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.41.3.orig.tar.xz",
+      "sha256": "3330d873f0fceb5560b89a7dc14e4f3288bbd880e96903ed9b50ec2b5799e58b",
+      "target": "static taycan_uuid",
+      "license_files": [
+        "LICENSES/libuuid-BSD.txt",
+        "LICENSES/COPYING.BSD-3-Clause",
+        "LICENSES/COPYING.LGPL-2.1-or-later"
+      ]
+    }
+  ],
+  "not_used": [
+    "RocksDB storage engine",
+    "RocksDB CRC32C"
+  ]
+}
