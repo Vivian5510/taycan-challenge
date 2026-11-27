@@ -18,3 +18,7 @@
 这些是 4 vCPU QEMU 环境中的诊断值，不是原版与修复版回归对照或正式门槛结果。原包编译失败和修复初期 AIO EAGAIN 造成 Open 卡住的失败均保留，最终修复版另行记录 PASS。
 
 专项补验：同一包与二进制在 CentOS 7 中运行官方 checkpoint（2,048 Key，4 KiB Value）和 compaction（4,096 Key，4 KiB Value、10 轮）均 PASS，仍采用官方 256 MiB 预算和空间断言。Checkpoint 的独立副本与并发一致性两个用例通过；Compaction 空间、最新值/删除状态及重开全量检查通过，事件证据确认 34 个完整 GC 周期、hot/cold/cold-index 共 82 次原生 compaction 成功、删除 92 个旧段。最终目录 46,146,535 字节，小于本次允许的 50,454,496 字节。此为小规模诊断，默认规模及压缩过程中故障注入未验收；成功数据库已清理。
+
+后续收到空目录 Open 的 `cold-index ... IOError`。在 CentOS 7 的 tmpfs 上复现了 O_DIRECT `EINVAL`，错误可从 checkpoint `ht.dat` 打开失败向上冒泡；XFS/ext4 上同一 4 GiB 空目录 Open 通过。新版增加 O_DIRECT 不支持时的 buffered fallback 与失败专属 errno/path 日志。11 月 27 日包在 XFS/tmpfs 上的干净构建、官方 basic 和 4 GiB Open-only smoke 均通过。用户实际文件系统未知，因此 tmpfs 是已证实可触发的条件，不代表已确认用户机器环境；详见空目录 Open 专项分析和原始日志。
+
+Open 空目录报 \`cold-index: checkpointing of hash chunk FasterKv failed! [status: IOError]\` 后，另在 CentOS 7 上按 4 GiB 预算复现 O_DIRECT 文件系统兼容性。XFS、ext4 正常；tmpfs 返回 EINVAL，拒绝 WAL/checkpoint 文件的 O_DIRECT open。禁用 WAL direct 仅为到达 checkpoint 文件，精确看到 cold-index \`ht.dat\` 的 O_DIRECT open EINVAL。11 月 27 日包对 WAL 和 FASTER 文件增加了 O_DIRECT EINVAL/EOPNOTSUPP 回退到 O_DSYNC buffered I/O；XFS/tmpfs 新空目录的独立 \`KVEngine::Open\` smoke 均通过。若实际目录不是 tmpfs 或其它拒绝 O_DIRECT 的文件系统，根因还需根据该机文件系统和新增 F2_IO_ERROR 日志确认。

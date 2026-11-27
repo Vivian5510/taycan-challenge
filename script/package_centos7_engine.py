@@ -16,7 +16,7 @@ def sha(path):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--sdk', type=Path, default=ROOT / 'taycan_participant_sdk_2026_11_17.tar.gz')
-    parser.add_argument('--output', type=Path, default=ROOT / 'build/engine-centos7.tar.gz')
+    parser.add_argument('--output', type=Path, default=ROOT / 'build/engine-centos7-20261127.tar.gz')
     args = parser.parse_args()
     source = ROOT / 'code/submission-engine'
     for line in (source / 'vendor/SOURCES.sha256').read_text().splitlines():

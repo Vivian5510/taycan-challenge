@@ -165,6 +165,16 @@ class BatchLog {
       // Use a separate descriptor for durable frames and keep allocation above
       // on its original write + fdatasync path.
       direct_fd_=::open(path.c_str(),O_RDWR|O_DSYNC|O_CLOEXEC|(direct_?O_DIRECT:0));
+      if(direct_fd_<0 && direct_ && (errno==EINVAL || errno==EOPNOTSUPP)) {
+        const int direct_error=errno;
+        direct_fd_=::open(path.c_str(),O_RDWR|O_DSYNC|O_CLOEXEC);
+        if(direct_fd_>=0) {
+          direct_=false;
+          aio_=false;
+          std::fprintf(stderr,"F2_WAL_DIRECT_FALLBACK path=%s errno=%d reason=%s\n",
+                       path.c_str(),direct_error,std::strerror(direct_error));
+        }
+      }
       if(direct_fd_<0) {::close(fd_);fd_=-1;throw std::runtime_error("open durable WAL failed");}
     }
     if(direct_) {

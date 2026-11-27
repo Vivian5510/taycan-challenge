@@ -18,6 +18,33 @@ namespace environment {
 
 using namespace FASTER::core;
 
+namespace {
+// Error-only diagnostics. Resolve the fd path only when a syscall has failed;
+// successful I/O does not pay for readlink, formatting, or logging.
+void ReportIoError(const char* stage, int fd, long result, uint64_t offset,
+                   uint64_t length, const void* buffer, const char* known_path = nullptr) {
+  const int saved_errno = errno;
+  const int error = result < 0 ? int(-result) : EIO;
+  char path[1024] = {};
+  if (known_path) {
+    std::snprintf(path, sizeof(path), "%s", known_path);
+  } else {
+    char link[64];
+    std::snprintf(link, sizeof(link), "/proc/self/fd/%d", fd);
+    const auto count = ::readlink(link, path, sizeof(path) - 1);
+    if (count < 0) std::snprintf(path, sizeof(path), "<fd=%d>", fd);
+  }
+  std::fprintf(stderr,
+               "F2_IO_ERROR stage=%s path=%s fd=%d errno=%d reason=%s "
+               "result=%ld offset=%llu length=%llu buffer_alignment_4096=%llu\n",
+               stage, path, fd, error, std::strerror(error), result,
+               static_cast<unsigned long long>(offset),
+               static_cast<unsigned long long>(length),
+               static_cast<unsigned long long>(reinterpret_cast<uintptr_t>(buffer) % 4096));
+  errno = saved_errno;
+}
+} // namespace
+
 #ifdef _DEBUG
 #define DCHECK_ALIGNMENT(o, l, b) \
 do { \
@@ -36,8 +63,20 @@ Status File::Open(int flags, FileCreateDisposition create_disposition, bool* exi
 
   int create_flags = GetCreateDisposition(create_disposition);
 
-  /// Always unbuffered (O_DIRECT).
+  /// Prefer unbuffered I/O; some filesystems reject O_DIRECT at open time.
   fd_ = ::open(filename_.c_str(), flags | O_RDWR | create_flags, S_IRUSR | S_IWUSR);
+  if(fd_ < 0 && (flags & O_DIRECT) && (errno == EINVAL || errno == EOPNOTSUPP)) {
+    const int direct_error = errno;
+    fd_ = ::open(filename_.c_str(), (flags & ~O_DIRECT) | O_RDWR | create_flags,
+                 S_IRUSR | S_IWUSR);
+    if(fd_ >= 0) {
+      static std::atomic_flag warned = ATOMIC_FLAG_INIT;
+      if(!warned.test_and_set(std::memory_order_relaxed)) {
+        std::fprintf(stderr, "F2_IO_DIRECT_FALLBACK path=%s errno=%d reason=%s\n",
+                     filename_.c_str(), direct_error, std::strerror(direct_error));
+      }
+    }
+  }
 
   if(exists) {
     // Let the caller know whether the file we tried to open or create (already) exists.
@@ -53,6 +92,7 @@ Status File::Open(int flags, FileCreateDisposition create_disposition, bool* exi
     }
   }
   if(fd_ == -1) {
+    ReportIoError("open", fd_, -errno, 0, 0, nullptr, filename_.c_str());
     log_warn("I/O Error: %s", strerror(errno));
     return Status::IOError;
   }
@@ -70,6 +110,7 @@ Status File::Close() {
     int result = ::close(fd_);
     fd_ = -1;
     if(result == -1) {
+      ReportIoError("close", -1, -errno, 0, 0, nullptr, filename_.c_str());
       log_warn("I/O Error: %s", strerror(errno));
       return Status::IOError;
     }
@@ -114,6 +155,8 @@ void QueueIoHandler::IoCompletionCallback(io_context_t ctx, struct iocb* iocb, l
   size_t bytes_transferred;
   Status return_status;
   if(res < 0) {
+    ReportIoError("aio-completion", iocb->aio_fildes, res,
+                  iocb->u.c.offset, iocb->u.c.nbytes, iocb->u.c.buf);
     return_status = Status::IOError;
     bytes_transferred = 0;
   } else {
@@ -205,10 +248,13 @@ Status QueueFile::ScheduleOperation(FileOperationType operationType, uint8_t* bu
       auto completion = reinterpret_cast<io_callback_t>(event.data);
       completion(io_object_, event.obj, event.res, event.res2);
     } else if (count < 0 && count != -EINTR) {
+      ReportIoError("aio-drain", fd_, count, offset, length, buffer, filename().c_str());
       return Status::IOError;
     }
   }
   if(result != 1) {
+    ReportIoError(operationType == FileOperationType::Read ? "aio-submit-read" : "aio-submit-write",
+                  fd_, result, offset, length, buffer, filename().c_str());
     return Status::IOError;
   }
 

@@ -512,6 +512,22 @@
    }
 --- upstream/environment/file_linux.cc
 +++ build-copy/environment/file_linux.cc
+@@ -39,2 +39,14 @@
+-  /// Always unbuffered (O_DIRECT).
++  /// Prefer unbuffered I/O; some filesystems reject O_DIRECT at open time.
+   fd_ = ::open(filename_.c_str(), flags | O_RDWR | create_flags, S_IRUSR | S_IWUSR);
++  if(fd_ < 0 && (flags & O_DIRECT) && (errno == EINVAL || errno == EOPNOTSUPP)) {
++    const int direct_error = errno;
++    fd_ = ::open(filename_.c_str(), (flags & ~O_DIRECT) | O_RDWR | create_flags,
++                 S_IRUSR | S_IWUSR);
++    if(fd_ >= 0) {
++      static std::atomic_flag warned = ATOMIC_FLAG_INIT;
++      if(!warned.test_and_set(std::memory_order_relaxed)) {
++        std::fprintf(stderr, "F2_IO_DIRECT_FALLBACK path=%s errno=%d reason=%s\n",
++                     filename_.c_str(), direct_error, std::strerror(direct_error));
++      }
++    }
++  }
 @@ -190,7 +190,24 @@
    struct iocb* iocbs[1];
    iocbs[0] = reinterpret_cast<struct iocb*>(io_context.get());
